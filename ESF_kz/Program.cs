@@ -16,7 +16,7 @@ namespace ESF_kz
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			string ialogResult = (((detailsESFfieldAttribute)Attribute.GetCustomAttribute((typeof(ESF)).GetField("registrationNumber"), typeof(detailsESFfieldAttribute))).details);
+			string ialogResult = (((detailsESFfieldAttribute)Attribute.GetCustomAttribute((typeof(ESF)).GetField("registrationNumber"), typeof(detailsESFfieldAttribute))).details1);
 			Application.Run(new Form1());
 			
 		}

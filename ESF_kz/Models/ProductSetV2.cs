@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ESF_kz.Models
+namespace ESF_kz
 {
 	//Данные по товарам, работам, услугам(G)
-	class ProductSet
+	class ProductSetV2
 	{
 		//Код валюты (G 33.1)
 		string currencyCode;
@@ -16,29 +16,29 @@ namespace ESF_kz.Models
 		//fractionDigits value="6", totalDigits value="18"
 		float currencyRate;
 
-		//Тип НДС ('Без НДС – не РК')
+		//Тип НДС ('Без НДС – не РК')-
 		NdsRateType ndsRateType;
 
-		//Список ТРУ
-		List<Product> products;
+		//Список ТРУ+
+		List<ProductV2> products;
 
-		//Итоговая Акциз-Сумма (G 10)
+		//Итоговая Акциз-Сумма (G 10)+
 		//fractionDigits value="2", totalDigits value="17"
 		float totalExciseAmount;
 
-		//Итоговая НДС-Сумма (G 13)
+		//Итоговая НДС-Сумма (G 13)+
 		//fractionDigits value="2", totalDigits value="17"
 		float totalNdsAmount;
 
-		//Итоговая стоимость ТРУ с учетом НДС (G 14)
+		//Итоговая стоимость ТРУ с учетом НДС (G 14)+
 		//fractionDigits value="2", totalDigits value="17"
 		float totalPriceWithTax;
 
-		//Итоговая стоимость ТРУ без учета НДС (G 8)
+		//Итоговая стоимость ТРУ без учета НДС (G 8)+
 		//fractionDigits value="2", totalDigits value="17"
 		float totalPriceWithoutTax;
 
-		//Итоговый размер оборота по реализации (G 11)
+		//Итоговый размер оборота по реализации (G 11)+
 		//fractionDigits value="2", totalDigits value="17"
 		float totalTurnoverSize;
 	}

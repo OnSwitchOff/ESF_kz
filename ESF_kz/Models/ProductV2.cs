@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Товар (работа, услуга)
-	class Product : AbstractProduct
+	class ProductV2 : AbstractProduct
 	{
 		//Дополнительные данные (G 18)
 		string additional;
 
-		//Идентификатор товара, работ, услуг (G 17)
+		//Идентификатор товара, работ, услуг (G 17)-
 		string catalogTruId;
 
 		//Наименование ТРУ (G 3)
@@ -26,7 +26,7 @@ namespace ESF_kz
 		//fractionDigits value="2",minInclusive value="0",totalDigits value="14"
 		float exciseRate;
 
-		//Классификатор продукции по видам экономической деятельности
+		//Классификатор продукции по видам экономической деятельности-
 		string kpvedCode;
 
 		//НДС-Сумма(G 13)
@@ -44,20 +44,20 @@ namespace ESF_kz
 		//fractionDigits value = "2", totalDigits value="17
 		float priceWithoutTax;
 
-		//Декларации на товары, заявления в рамках ТС, СТ-1 или СТ-KZ(G 15)
+		//Декларации на товары, заявления в рамках ТС, СТ-1 или СТ-KZ(G 15)-
 		string productDeclaration;
 
-		//Номер товарной позиции из заявления в рамках ТС или Декларации на товары (G 16)
+		//Номер товарной позиции из заявления в рамках ТС или Декларации на товары (G 16)-
 		string productNumberInDeclaration;
 
 		//Кол-во (объем) (G 6)
 		//fractionDigits value="6", totalDigits value="18"
 		float quantity;
 
-		//Наименование товаров по классификатору ТН ВЭД ЕАЭС(G 3/1)
+		//Наименование товаров по классификатору ТН ВЭД ЕАЭС(G 3/1)-
 		string tnvedName;
 
-		//Признак происхождения ТРУ (G 2)
+		//Признак происхождения ТРУ (G 2)-
 		TruOriginCode truOriginCode;
 
 		//Размер оборота по реализации (облагаемый/необлагаемый оборот) (G 11)
