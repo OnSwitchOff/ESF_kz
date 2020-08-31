@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ENUMs\CustomerType.cs" />
+    <Compile Include="ENUMs\InvoiceType.cs" />
+    <Compile Include="ENUMs\NdsRateType.cs" />
+    <Compile Include="ENUMs\PaperReasonType.cs" />
+    <Compile Include="ENUMs\SellerType.cs" />
+    <Compile Include="ENUMs\TruOriginCode.cs" />
     <Compile Include="ESF.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -53,6 +59,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AbstractCustomer.cs" />
+    <Compile Include="Models\AbstractInvoice.cs" />
+    <Compile Include="Models\AbstractProduct.cs" />
+    <Compile Include="Models\AbstractProductShare.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductSet.cs" />
+    <Compile Include="Models\PublicOffice.cs" />
+    <Compile Include="Models\RelatedInvoice.cs" />
+    <Compile Include="Models\Seller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -80,5 +95,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
