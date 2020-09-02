@@ -88,6 +88,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\panelESFpartA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartA.Designer.cs">
+      <DependentUpon>panelESFpartA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartB.Designer.cs">
+      <DependentUpon>panelESFpartB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PanelESFpartC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PanelESFpartC.Designer.cs">
+      <DependentUpon>PanelESFpartC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AbstractCustomer.cs" />
     <Compile Include="Models\AbstractInvoice.cs" />
     <Compile Include="Models\AbstractProduct.cs" />
@@ -119,6 +137,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartA.resx">
+      <DependentUpon>panelESFpartA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartB.resx">
+      <DependentUpon>panelESFpartB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PanelESFpartC.resx">
+      <DependentUpon>PanelESFpartC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
