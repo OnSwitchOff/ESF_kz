@@ -64,14 +64,14 @@ namespace ESF_kz
 			SessionService.createSessionResponse CreateSessionResponse;
 			SessionService.closeSessionResponse CloseSessionResponse;
 
-			try
+			/*try
 			{
 				CreateSessionResponse = service.createSession(CreateSessionRequest);
 			}
 			catch (Exception)
 			{
 				CloseSessionResponse = service.closeSessionByCredentials(CloseSessionByCredentialsRequest);
-			}
+			}*/
 			
 			Application.Run(new ESF_form());
 			

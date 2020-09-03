@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFpartC : UserControl
+	public partial class panelESFpartG : UserControl
 	{
-		public panelESFpartC()
+		public panelESFpartG()
 		{
 			InitializeComponent();
+		}
+
+		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }

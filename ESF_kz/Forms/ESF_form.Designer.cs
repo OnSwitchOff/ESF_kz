@@ -31,22 +31,8 @@ namespace ESF_kz
 		/// </summary>
 		private void InitializeComponent()
 		{
-
-			this.PanelESFpartA = new panelESFpartA();
-			this.PanelESFpartB = new panelESFpartB();
-
-			this.PanelESFpartA.Dock = DockStyle.Fill;
-			this.PanelESFpartB.Dock = DockStyle.Fill;
-
-			//this.PanelESFpartA.Visible = false;
-			//this.PanelESFpartB.Visible = false;
-
-			
-
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.btnESFpartL = new System.Windows.Forms.Button();
 			this.btnESFpartK = new System.Windows.Forms.Button();
@@ -60,17 +46,28 @@ namespace ESF_kz
 			this.btnESFpartC = new System.Windows.Forms.Button();
 			this.btnESFpartA = new System.Windows.Forms.Button();
 			this.btnESFpartB = new System.Windows.Forms.Button();
+			this.PanelESFpartA = new ESF_kz.Forms.panelESFpartA();
+			this.PanelESFpartB = new ESF_kz.Forms.panelESFpartB();
+			this.PanelESFpartC = new ESF_kz.Forms.panelESFpartC();
+			this.PanelESFpartD = new ESF_kz.Forms.panelESFpartD();
+			this.PanelESFpartE = new ESF_kz.Forms.panelESFpartE();
+			this.PanelESFpartF = new ESF_kz.Forms.panelESFpartF();
+			this.PanelESFpartG = new ESF_kz.Forms.panelESFpartG();
+			this.PanelESFpartH = new ESF_kz.Forms.panelESFpartH();
+			this.PanelESFpartI = new ESF_kz.Forms.panelESFpartI();
+			this.PanelESFpartJ = new ESF_kz.Forms.panelESFpartJ();
+			this.PanelESFpartK = new ESF_kz.Forms.panelESFpartK();
+			this.PanelESFpartL = new ESF_kz.Forms.panelESFpartL();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
-			this.panel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
-
-
-			splitContainer1.Panel2.Controls.Add(PanelESFpartA);
-			splitContainer1.Panel2.Controls.Add(PanelESFpartB);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -102,29 +99,22 @@ namespace ESF_kz
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartA);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartB);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartC);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartD);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartE);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartF);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartG);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartH);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartI);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartJ);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartK);
+			this.splitContainer1.Panel2.Controls.Add(this.PanelESFpartL);
 			this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.splitContainer1.Size = new System.Drawing.Size(1067, 578);
 			this.splitContainer1.SplitterDistance = 256;
 			this.splitContainer1.TabIndex = 5;
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(3, 3);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1067, 58);
-			this.panel1.TabIndex = 6;
-			// 
-			// label1
-			// 
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(1067, 58);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "ЭЛЕКТРОННЫЙ СЧЕТ ФАКТУРА";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -171,6 +161,7 @@ namespace ESF_kz
 			this.btnESFpartL.Text = "Раздел L. Сведения по ЭЦП";
 			this.btnESFpartL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartL.UseVisualStyleBackColor = true;
+			this.btnESFpartL.Click += new System.EventHandler(this.btnESFpartL_Click);
 			// 
 			// btnESFpartK
 			// 
@@ -182,6 +173,7 @@ namespace ESF_kz
 			this.btnESFpartK.Text = "Раздел K. Дополнительные сведения";
 			this.btnESFpartK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartK.UseVisualStyleBackColor = true;
+			this.btnESFpartK.Click += new System.EventHandler(this.btnESFpartK_Click);
 			// 
 			// btnESFpartJ
 			// 
@@ -193,6 +185,7 @@ namespace ESF_kz
 			this.btnESFpartJ.Text = "Раздел J. Реквизиты поверенного (оператора) получателя";
 			this.btnESFpartJ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartJ.UseVisualStyleBackColor = true;
+			this.btnESFpartJ.Click += new System.EventHandler(this.btnESFpartJ_Click);
 			// 
 			// btnESFpartI
 			// 
@@ -204,6 +197,7 @@ namespace ESF_kz
 			this.btnESFpartI.Text = "Раздел I. Реквизиты поверенного (оператора) поставщика";
 			this.btnESFpartI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartI.UseVisualStyleBackColor = true;
+			this.btnESFpartI.Click += new System.EventHandler(this.btnESFpartI_Click);
 			// 
 			// btnESFpartH
 			// 
@@ -215,6 +209,7 @@ namespace ESF_kz
 			this.btnESFpartH.Text = "Раздел H. Данные по товарам, работам, услугам участников совместной деятельности";
 			this.btnESFpartH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartH.UseVisualStyleBackColor = true;
+			this.btnESFpartH.Click += new System.EventHandler(this.btnESFpartH_Click);
 			// 
 			// btnESFpartG
 			// 
@@ -226,6 +221,7 @@ namespace ESF_kz
 			this.btnESFpartG.Text = "Раздел G. Данные по товарам, работам, услугам";
 			this.btnESFpartG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartG.UseVisualStyleBackColor = true;
+			this.btnESFpartG.Click += new System.EventHandler(this.btnESFpartG_Click);
 			// 
 			// btnESFpartF
 			// 
@@ -237,6 +233,7 @@ namespace ESF_kz
 			this.btnESFpartF.Text = "Раздел F. Реквизиты документов, подтверждающих поставку товаров, работ, услуг";
 			this.btnESFpartF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartF.UseVisualStyleBackColor = true;
+			this.btnESFpartF.Click += new System.EventHandler(this.btnESFpartF_Click);
 			// 
 			// btnESFpartE
 			// 
@@ -248,6 +245,7 @@ namespace ESF_kz
 			this.btnESFpartE.Text = "Раздел Е. Договор (контракт)";
 			this.btnESFpartE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartE.UseVisualStyleBackColor = true;
+			this.btnESFpartE.Click += new System.EventHandler(this.btnESFpartE_Click);
 			// 
 			// btnESFpartD
 			// 
@@ -259,6 +257,7 @@ namespace ESF_kz
 			this.btnESFpartD.Text = "Раздел D. Реквизиты грузоотправителя и грузополучателя";
 			this.btnESFpartD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartD.UseVisualStyleBackColor = true;
+			this.btnESFpartD.Click += new System.EventHandler(this.btnESFpartD_Click);
 			// 
 			// btnESFpartC
 			// 
@@ -270,6 +269,7 @@ namespace ESF_kz
 			this.btnESFpartC.Text = "Раздел С. Реквизиты получателя";
 			this.btnESFpartC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartC.UseVisualStyleBackColor = true;
+			this.btnESFpartC.Click += new System.EventHandler(this.btnESFpartC_Click);
 			// 
 			// btnESFpartA
 			// 
@@ -295,6 +295,163 @@ namespace ESF_kz
 			this.btnESFpartB.UseVisualStyleBackColor = true;
 			this.btnESFpartB.Click += new System.EventHandler(this.btnESFpartB_Click);
 			// 
+			// PanelESFpartA
+			// 
+			this.PanelESFpartA.AutoSize = true;
+			this.PanelESFpartA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartA.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartA.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartA.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartA.Name = "PanelESFpartA";
+			this.PanelESFpartA.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartA.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartA.TabIndex = 0;
+			// 
+			// PanelESFpartB
+			// 
+			this.PanelESFpartB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartB.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartB.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartB.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartB.Name = "PanelESFpartB";
+			this.PanelESFpartB.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartB.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartB.TabIndex = 1;
+			// 
+			// PanelESFpartC
+			// 
+			this.PanelESFpartC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartC.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartC.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartC.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartC.Name = "PanelESFpartC";
+			this.PanelESFpartC.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartC.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartC.TabIndex = 2;
+			// 
+			// PanelESFpartD
+			// 
+			this.PanelESFpartD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartD.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartD.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartD.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartD.Name = "PanelESFpartD";
+			this.PanelESFpartD.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartD.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartD.TabIndex = 3;
+			// 
+			// PanelESFpartE
+			// 
+			this.PanelESFpartE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartE.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartE.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartE.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartE.Name = "PanelESFpartE";
+			this.PanelESFpartE.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartE.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartE.TabIndex = 4;
+			// 
+			// PanelESFpartF
+			// 
+			this.PanelESFpartF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartF.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartF.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartF.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartF.Name = "PanelESFpartF";
+			this.PanelESFpartF.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartF.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartF.TabIndex = 5;
+			// 
+			// PanelESFpartG
+			// 
+			this.PanelESFpartG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartG.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartG.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartG.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartG.Name = "PanelESFpartG";
+			this.PanelESFpartG.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartG.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartG.TabIndex = 6;
+			// 
+			// PanelESFpartH
+			// 
+			this.PanelESFpartH.AutoSize = true;
+			this.PanelESFpartH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartH.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartH.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartH.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartH.Name = "PanelESFpartH";
+			this.PanelESFpartH.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartH.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartH.TabIndex = 7;
+			// 
+			// PanelESFpartI
+			// 
+			this.PanelESFpartI.AutoSize = true;
+			this.PanelESFpartI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartI.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartI.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartI.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartI.Name = "PanelESFpartI";
+			this.PanelESFpartI.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartI.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartI.TabIndex = 8;
+			// 
+			// PanelESFpartJ
+			// 
+			this.PanelESFpartJ.AutoSize = true;
+			this.PanelESFpartJ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartJ.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartJ.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartJ.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartJ.Name = "PanelESFpartJ";
+			this.PanelESFpartJ.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartJ.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartJ.TabIndex = 9;
+			// 
+			// PanelESFpartK
+			// 
+			this.PanelESFpartK.AutoSize = true;
+			this.PanelESFpartK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartK.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartK.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartK.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartK.Name = "PanelESFpartK";
+			this.PanelESFpartK.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartK.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartK.TabIndex = 10;
+			// 
+			// PanelESFpartL
+			// 
+			this.PanelESFpartL.AutoSize = true;
+			this.PanelESFpartL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.PanelESFpartL.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.PanelESFpartL.Location = new System.Drawing.Point(0, 0);
+			this.PanelESFpartL.Margin = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartL.Name = "PanelESFpartL";
+			this.PanelESFpartL.Padding = new System.Windows.Forms.Padding(10);
+			this.PanelESFpartL.Size = new System.Drawing.Size(807, 578);
+			this.PanelESFpartL.TabIndex = 11;
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(3, 3);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1067, 58);
+			this.panel1.TabIndex = 6;
+			// 
+			// label1
+			// 
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Location = new System.Drawing.Point(0, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(1067, 58);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "ЭЛЕКТРОННЫЙ СЧЕТ ФАКТУРА";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// ESF_form
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,10 +463,12 @@ namespace ESF_kz
 			this.Text = "ESF_form";
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
-			this.panel1.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -334,5 +493,15 @@ namespace ESF_kz
 		private System.Windows.Forms.Button btnESFpartB;
 		private panelESFpartA PanelESFpartA;
 		private panelESFpartB PanelESFpartB;
+		private panelESFpartC PanelESFpartC;
+		private panelESFpartD PanelESFpartD;
+		private panelESFpartE PanelESFpartE;
+		private panelESFpartF PanelESFpartF;
+		private panelESFpartG PanelESFpartG;
+		private panelESFpartH PanelESFpartH;
+		private panelESFpartI PanelESFpartI;
+		private panelESFpartJ PanelESFpartJ;
+		private panelESFpartK PanelESFpartK;
+		private panelESFpartL PanelESFpartL;
 	}
 }

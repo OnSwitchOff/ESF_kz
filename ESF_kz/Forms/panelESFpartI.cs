@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFpartC : UserControl
+	public partial class panelESFpartI : UserControl
 	{
-		public panelESFpartC()
+		public panelESFpartI()
 		{
 			InitializeComponent();
 		}

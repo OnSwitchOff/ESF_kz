@@ -100,11 +100,71 @@
     <Compile Include="Forms\panelESFpartB.Designer.cs">
       <DependentUpon>panelESFpartB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PanelESFpartC.cs">
+    <Compile Include="Forms\panelESFpartC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\PanelESFpartC.Designer.cs">
-      <DependentUpon>PanelESFpartC.cs</DependentUpon>
+    <Compile Include="Forms\panelESFpartC.Designer.cs">
+      <DependentUpon>panelESFpartC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartD.Designer.cs">
+      <DependentUpon>panelESFpartD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartE.Designer.cs">
+      <DependentUpon>panelESFpartE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartF.Designer.cs">
+      <DependentUpon>panelESFpartF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartG.Designer.cs">
+      <DependentUpon>panelESFpartG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartH.Designer.cs">
+      <DependentUpon>panelESFpartH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartI.Designer.cs">
+      <DependentUpon>panelESFpartI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartJ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartJ.Designer.cs">
+      <DependentUpon>panelESFpartJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartL.Designer.cs">
+      <DependentUpon>panelESFpartL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFPartHtab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFPartHtab.Designer.cs">
+      <DependentUpon>panelESFPartHtab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartK.Designer.cs">
+      <DependentUpon>panelESFpartK.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AbstractCustomer.cs" />
     <Compile Include="Models\AbstractInvoice.cs" />
@@ -144,8 +204,38 @@
     <EmbeddedResource Include="Forms\panelESFpartB.resx">
       <DependentUpon>panelESFpartB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PanelESFpartC.resx">
-      <DependentUpon>PanelESFpartC.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\panelESFpartC.resx">
+      <DependentUpon>panelESFpartC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartD.resx">
+      <DependentUpon>panelESFpartD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartE.resx">
+      <DependentUpon>panelESFpartE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartF.resx">
+      <DependentUpon>panelESFpartF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartG.resx">
+      <DependentUpon>panelESFpartG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartH.resx">
+      <DependentUpon>panelESFpartH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartI.resx">
+      <DependentUpon>panelESFpartI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartJ.resx">
+      <DependentUpon>panelESFpartJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFPartHtab.resx">
+      <DependentUpon>panelESFPartHtab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartK.resx">
+      <DependentUpon>panelESFpartK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartL.resx">
+      <DependentUpon>panelESFpartL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
