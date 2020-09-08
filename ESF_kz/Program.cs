@@ -72,7 +72,7 @@ namespace ESF_kz
 			{
 				CloseSessionResponse = service.closeSessionByCredentials(CloseSessionByCredentialsRequest);
 			}
-			
+
 			Application.Run(new ESF_form());
 			
 		}

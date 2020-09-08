@@ -113,7 +113,7 @@ namespace ESF_kz.Forms
 		//Делегат проверки -1.1 Номер учетной системы-
 		private void tbAccSysNum_Validating(object sender, CancelEventArgs e)
 		{
-			Regex regex = new Regex(@"\d{1,30}");
+			Regex regex = new Regex(@"^\d{1,30}$");
 			bool flag = regex.IsMatch(tbPartA_AccSysNum.Text);
 			if (!flag)
 			{

@@ -249,6 +249,7 @@
 			this.tbPartB_certificateSeries.Name = "tbPartB_certificateSeries";
 			this.tbPartB_certificateSeries.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB_certificateSeries.TabIndex = 20;
+			this.tbPartB_certificateSeries.TextChanged += new System.EventHandler(this.tbPartB_certificateSeries_TextChanged);
 			// 
 			// tbPartB_certificateNum
 			// 
@@ -257,6 +258,7 @@
 			this.tbPartB_certificateNum.Name = "tbPartB_certificateNum";
 			this.tbPartB_certificateNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB_certificateNum.TabIndex = 21;
+			this.tbPartB_certificateNum.TextChanged += new System.EventHandler(this.tbPartB_certificateNum_TextChanged);
 			// 
 			// chbxPartB_isBranchNonResident
 			// 
@@ -350,6 +352,7 @@
 			this.tbPartB_address.Name = "tbPartB_address";
 			this.tbPartB_address.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB_address.TabIndex = 27;
+			this.tbPartB_address.TextChanged += new System.EventHandler(this.tbPartB_address_TextChanged);
 			// 
 			// tbPartB_shareParticipation
 			// 
@@ -358,6 +361,7 @@
 			this.tbPartB_shareParticipation.Name = "tbPartB_shareParticipation";
 			this.tbPartB_shareParticipation.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB_shareParticipation.TabIndex = 28;
+			this.tbPartB_shareParticipation.TextChanged += new System.EventHandler(this.tbPartB_shareParticipation_TextChanged);
 			// 
 			// l_PartB_trailer
 			// 
@@ -561,6 +565,7 @@
 			this.tbPartB1_kbe.Name = "tbPartB1_kbe";
 			this.tbPartB1_kbe.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB1_kbe.TabIndex = 38;
+			this.tbPartB1_kbe.TextChanged += new System.EventHandler(this.tbPartB1_kbe_TextChanged);
 			// 
 			// tbPartB1_iik
 			// 
@@ -569,6 +574,7 @@
 			this.tbPartB1_iik.Name = "tbPartB1_iik";
 			this.tbPartB1_iik.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB1_iik.TabIndex = 39;
+			this.tbPartB1_iik.TextChanged += new System.EventHandler(this.tbPartB1_iik_TextChanged);
 			// 
 			// tbPartB1_bik
 			// 
@@ -577,6 +583,7 @@
 			this.tbPartB1_bik.Name = "tbPartB1_bik";
 			this.tbPartB1_bik.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB1_bik.TabIndex = 40;
+			this.tbPartB1_bik.TextChanged += new System.EventHandler(this.tbPartB1_bik_TextChanged);
 			// 
 			// tbPartB1_bank
 			// 
@@ -585,6 +592,7 @@
 			this.tbPartB1_bank.Name = "tbPartB1_bank";
 			this.tbPartB1_bank.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB1_bank.TabIndex = 41;
+			this.tbPartB1_bank.TextChanged += new System.EventHandler(this.tbPartB1_bank_TextChanged);
 			// 
 			// tbPartB_reorganizedTin
 			// 
@@ -593,6 +601,7 @@
 			this.tbPartB_reorganizedTin.Name = "tbPartB_reorganizedTin";
 			this.tbPartB_reorganizedTin.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB_reorganizedTin.TabIndex = 42;
+			this.tbPartB_reorganizedTin.TextChanged += new System.EventHandler(this.tbPartB_reorganizedTin_TextChanged);
 			// 
 			// tbPartB_name
 			// 
@@ -601,6 +610,7 @@
 			this.tbPartB_name.Name = "tbPartB_name";
 			this.tbPartB_name.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB_name.TabIndex = 43;
+			this.tbPartB_name.TextChanged += new System.EventHandler(this.tbPartB_name_TextChanged);
 			// 
 			// label19
 			// 
