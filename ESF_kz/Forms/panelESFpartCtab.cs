@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFpartB : UserControl
+	public partial class panelESFpartCtab : UserControl
 	{
-		public panelESFpartB()
+		public panelESFpartCtab()
 		{
 			InitializeComponent();
-		}
-
-		public TabControl getTabControll()
-		{
-			return this.tabControl1;
 		}
 	}
 }

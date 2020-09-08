@@ -28,20 +28,29 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.l_PartI_sellerAgentDocNum = new System.Windows.Forms.Label();
+			this.l_PartI_sellerAgentDocDate = new System.Windows.Forms.Label();
+			this.tbPartI_sellerAgentDocNum = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.dtpPartI_sellerAgentDocDate = new System.Windows.Forms.DateTimePicker();
+			this.l_PartI_sellerAgentTin = new System.Windows.Forms.Label();
+			this.l_PartI_sellerAgentName = new System.Windows.Forms.Label();
+			this.l_PartI_sellerAgentAddress = new System.Windows.Forms.Label();
+			this.tbPartI_sellerAgentTin = new System.Windows.Forms.TextBox();
+			this.tbPartI_sellerAgentName = new System.Windows.Forms.TextBox();
+			this.tbPartI_sellerAgentAddress = new System.Windows.Forms.TextBox();
+			this.epPartI_sellerAgentTin = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartI_sellerAgentName = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartI_sellerAgentAddress = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartI_sellerAgentDocNum = new System.Windows.Forms.ErrorProvider(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentTin)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentName)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentAddress)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentDocNum)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -51,17 +60,17 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
-			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
-			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 6);
-			this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 5);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartI_sellerAgentDocNum, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartI_sellerAgentDocDate, 0, 6);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartI_sellerAgentDocNum, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 6);
-			this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.label6, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
-			this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 2);
-			this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.dtpPartI_sellerAgentDocDate, 1, 6);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartI_sellerAgentTin, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartI_sellerAgentName, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartI_sellerAgentAddress, 0, 3);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartI_sellerAgentTin, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartI_sellerAgentName, 1, 2);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartI_sellerAgentAddress, 1, 3);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -89,35 +98,35 @@
 			this.label1.Text = "38. Документ";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// label2
+			// l_PartI_sellerAgentDocNum
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(4, 231);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(449, 45);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "38.1 Номер";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentDocNum.AutoSize = true;
+			this.l_PartI_sellerAgentDocNum.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartI_sellerAgentDocNum.Location = new System.Drawing.Point(4, 231);
+			this.l_PartI_sellerAgentDocNum.Name = "l_PartI_sellerAgentDocNum";
+			this.l_PartI_sellerAgentDocNum.Size = new System.Drawing.Size(449, 45);
+			this.l_PartI_sellerAgentDocNum.TabIndex = 1;
+			this.l_PartI_sellerAgentDocNum.Text = "38.1 Номер";
+			this.l_PartI_sellerAgentDocNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label3
+			// l_PartI_sellerAgentDocDate
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label3.Location = new System.Drawing.Point(4, 277);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(449, 45);
-			this.label3.TabIndex = 3;
-			this.label3.Text = "38.2 Дата";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentDocDate.AutoSize = true;
+			this.l_PartI_sellerAgentDocDate.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartI_sellerAgentDocDate.Location = new System.Drawing.Point(4, 277);
+			this.l_PartI_sellerAgentDocDate.Name = "l_PartI_sellerAgentDocDate";
+			this.l_PartI_sellerAgentDocDate.Size = new System.Drawing.Size(449, 45);
+			this.l_PartI_sellerAgentDocDate.TabIndex = 3;
+			this.l_PartI_sellerAgentDocDate.Text = "38.2 Дата";
+			this.l_PartI_sellerAgentDocDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox2
+			// tbPartI_sellerAgentDocNum
 			// 
-			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox2.Location = new System.Drawing.Point(460, 243);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(450, 20);
-			this.textBox2.TabIndex = 14;
+			this.tbPartI_sellerAgentDocNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartI_sellerAgentDocNum.Location = new System.Drawing.Point(460, 243);
+			this.tbPartI_sellerAgentDocNum.Name = "tbPartI_sellerAgentDocNum";
+			this.tbPartI_sellerAgentDocNum.Size = new System.Drawing.Size(400, 20);
+			this.tbPartI_sellerAgentDocNum.TabIndex = 14;
 			// 
 			// label9
 			// 
@@ -132,73 +141,93 @@
 			this.label9.Text = "Раздел I. Реквизиты поверенного (оператора) поставщика";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// dateTimePicker1
+			// dtpPartI_sellerAgentDocDate
 			// 
-			this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.dateTimePicker1.Location = new System.Drawing.Point(460, 289);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(450, 20);
-			this.dateTimePicker1.TabIndex = 46;
+			this.dtpPartI_sellerAgentDocDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartI_sellerAgentDocDate.Location = new System.Drawing.Point(460, 289);
+			this.dtpPartI_sellerAgentDocDate.Name = "dtpPartI_sellerAgentDocDate";
+			this.dtpPartI_sellerAgentDocDate.Size = new System.Drawing.Size(200, 20);
+			this.dtpPartI_sellerAgentDocDate.TabIndex = 46;
 			// 
-			// label4
+			// l_PartI_sellerAgentTin
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.label4.Location = new System.Drawing.Point(4, 47);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(449, 45);
-			this.label4.TabIndex = 47;
-			this.label4.Text = "35. БИН";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentTin.AutoSize = true;
+			this.l_PartI_sellerAgentTin.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartI_sellerAgentTin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentTin.Location = new System.Drawing.Point(4, 47);
+			this.l_PartI_sellerAgentTin.Name = "l_PartI_sellerAgentTin";
+			this.l_PartI_sellerAgentTin.Size = new System.Drawing.Size(449, 45);
+			this.l_PartI_sellerAgentTin.TabIndex = 47;
+			this.l_PartI_sellerAgentTin.Text = "35. БИН";
+			this.l_PartI_sellerAgentTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label5
+			// l_PartI_sellerAgentName
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.label5.Location = new System.Drawing.Point(4, 93);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(449, 45);
-			this.label5.TabIndex = 48;
-			this.label5.Text = "36. Поверенный";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentName.AutoSize = true;
+			this.l_PartI_sellerAgentName.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartI_sellerAgentName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentName.Location = new System.Drawing.Point(4, 93);
+			this.l_PartI_sellerAgentName.Name = "l_PartI_sellerAgentName";
+			this.l_PartI_sellerAgentName.Size = new System.Drawing.Size(449, 45);
+			this.l_PartI_sellerAgentName.TabIndex = 48;
+			this.l_PartI_sellerAgentName.Text = "36. Поверенный";
+			this.l_PartI_sellerAgentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label6
+			// l_PartI_sellerAgentAddress
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.label6.Location = new System.Drawing.Point(4, 139);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(449, 45);
-			this.label6.TabIndex = 49;
-			this.label6.Text = "37. Адрес места нахождения";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentAddress.AutoSize = true;
+			this.l_PartI_sellerAgentAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartI_sellerAgentAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartI_sellerAgentAddress.Location = new System.Drawing.Point(4, 139);
+			this.l_PartI_sellerAgentAddress.Name = "l_PartI_sellerAgentAddress";
+			this.l_PartI_sellerAgentAddress.Size = new System.Drawing.Size(449, 45);
+			this.l_PartI_sellerAgentAddress.TabIndex = 49;
+			this.l_PartI_sellerAgentAddress.Text = "37. Адрес места нахождения";
+			this.l_PartI_sellerAgentAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox1
+			// tbPartI_sellerAgentTin
 			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(460, 59);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(450, 20);
-			this.textBox1.TabIndex = 50;
+			this.tbPartI_sellerAgentTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartI_sellerAgentTin.Location = new System.Drawing.Point(460, 59);
+			this.tbPartI_sellerAgentTin.Name = "tbPartI_sellerAgentTin";
+			this.tbPartI_sellerAgentTin.Size = new System.Drawing.Size(400, 20);
+			this.tbPartI_sellerAgentTin.TabIndex = 50;
 			// 
-			// textBox3
+			// tbPartI_sellerAgentName
 			// 
-			this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox3.Location = new System.Drawing.Point(460, 105);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(450, 20);
-			this.textBox3.TabIndex = 51;
+			this.tbPartI_sellerAgentName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartI_sellerAgentName.Location = new System.Drawing.Point(460, 105);
+			this.tbPartI_sellerAgentName.Name = "tbPartI_sellerAgentName";
+			this.tbPartI_sellerAgentName.Size = new System.Drawing.Size(400, 20);
+			this.tbPartI_sellerAgentName.TabIndex = 51;
 			// 
-			// textBox4
+			// tbPartI_sellerAgentAddress
 			// 
-			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox4.Location = new System.Drawing.Point(460, 151);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(450, 20);
-			this.textBox4.TabIndex = 52;
+			this.tbPartI_sellerAgentAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartI_sellerAgentAddress.Location = new System.Drawing.Point(460, 151);
+			this.tbPartI_sellerAgentAddress.Name = "tbPartI_sellerAgentAddress";
+			this.tbPartI_sellerAgentAddress.Size = new System.Drawing.Size(400, 20);
+			this.tbPartI_sellerAgentAddress.TabIndex = 52;
+			// 
+			// epPartI_sellerAgentTin
+			// 
+			this.epPartI_sellerAgentTin.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartI_sellerAgentTin.ContainerControl = this;
+			// 
+			// epPartI_sellerAgentName
+			// 
+			this.epPartI_sellerAgentName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartI_sellerAgentName.ContainerControl = this;
+			// 
+			// epPartI_sellerAgentAddress
+			// 
+			this.epPartI_sellerAgentAddress.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartI_sellerAgentAddress.ContainerControl = this;
+			// 
+			// epPartI_sellerAgentDocNum
+			// 
+			this.epPartI_sellerAgentDocNum.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartI_sellerAgentDocNum.ContainerControl = this;
 			// 
 			// panelESFpartI
 			// 
@@ -209,6 +238,10 @@
 			this.Size = new System.Drawing.Size(914, 598);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentTin)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentName)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentAddress)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartI_sellerAgentDocNum)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -217,16 +250,20 @@
 
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.Label l_PartI_sellerAgentDocNum;
+		private System.Windows.Forms.Label l_PartI_sellerAgentDocDate;
+		private System.Windows.Forms.TextBox tbPartI_sellerAgentDocNum;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.DateTimePicker dtpPartI_sellerAgentDocDate;
+		private System.Windows.Forms.Label l_PartI_sellerAgentTin;
+		private System.Windows.Forms.Label l_PartI_sellerAgentName;
+		private System.Windows.Forms.Label l_PartI_sellerAgentAddress;
+		private System.Windows.Forms.TextBox tbPartI_sellerAgentTin;
+		private System.Windows.Forms.TextBox tbPartI_sellerAgentName;
+		private System.Windows.Forms.TextBox tbPartI_sellerAgentAddress;
+		private System.Windows.Forms.ErrorProvider epPartI_sellerAgentTin;
+		private System.Windows.Forms.ErrorProvider epPartI_sellerAgentName;
+		private System.Windows.Forms.ErrorProvider epPartI_sellerAgentAddress;
+		private System.Windows.Forms.ErrorProvider epPartI_sellerAgentDocNum;
 	}
 }

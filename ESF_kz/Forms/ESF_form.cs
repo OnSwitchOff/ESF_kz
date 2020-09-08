@@ -40,11 +40,34 @@ namespace ESF_kz
 
 		private void btnESFpartB_Click(object sender, EventArgs e)
 		{
+			panelESFpartBtab PannelESFPartBtab1 = new panelESFpartBtab();
+			panelESFpartBtab PannelESFPartBtab2 = new panelESFpartBtab();
+			PannelESFPartBtab1.Dock = DockStyle.Fill;
+			PannelESFPartBtab2.Dock = DockStyle.Fill;
+			if (this.PanelESFpartB.getTabControll().TabPages.Count < 2)
+			{
+				this.PanelESFpartB.getTabControll().TabPages.Add("taB 1");
+				this.PanelESFpartB.getTabControll().TabPages.Add("taB 2");
+			}
+			this.PanelESFpartB.getTabControll().TabPages[0].Controls.Add(PannelESFPartBtab1);
+			this.PanelESFpartB.getTabControll().TabPages[1].Controls.Add(PannelESFPartBtab2);
 			this.PanelESFpartB.BringToFront();
+
 		}
 
 		private void btnESFpartC_Click(object sender, EventArgs e)
 		{
+			panelESFpartCtab PannelESFPartCtab1 = new panelESFpartCtab();
+			panelESFpartCtab PannelESFPartCtab2 = new panelESFpartCtab();
+			PannelESFPartCtab1.Dock = DockStyle.Fill;
+			PannelESFPartCtab2.Dock = DockStyle.Fill;
+			if (this.PanelESFpartC.getTabControll().TabPages.Count < 2)
+			{
+				this.PanelESFpartC.getTabControll().TabPages.Add("taB 1");
+				this.PanelESFpartC.getTabControll().TabPages.Add("taB 2");
+			}
+			this.PanelESFpartC.getTabControll().TabPages[0].Controls.Add(PannelESFPartCtab1);
+			this.PanelESFpartC.getTabControll().TabPages[1].Controls.Add(PannelESFPartCtab2);
 			this.PanelESFpartC.BringToFront();
 		}
 

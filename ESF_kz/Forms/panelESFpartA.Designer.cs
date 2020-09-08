@@ -165,6 +165,7 @@ namespace ESF_kz.Forms
 			this.tbPartA_Num.Name = "tbPartA_Num";
 			this.tbPartA_Num.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_Num.TabIndex = 2;
+			this.tbPartA_Num.TextChanged += new System.EventHandler(this.tbPartA_Num_TextChanged);
 			// 
 			// label3
 			// 
@@ -323,6 +324,7 @@ namespace ESF_kz.Forms
 			this.dtpPartA_TurnoverDate.Name = "dtpPartA_TurnoverDate";
 			this.dtpPartA_TurnoverDate.Size = new System.Drawing.Size(200, 20);
 			this.dtpPartA_TurnoverDate.TabIndex = 17;
+			this.dtpPartA_TurnoverDate.Value = new System.DateTime(2020, 9, 4, 14, 49, 4, 937);
 			this.dtpPartA_TurnoverDate.ValueChanged += new System.EventHandler(this.dtpPartA_TurnoverDate_ValueChanged);
 			// 
 			// chbxPartA_isCorrectedESF

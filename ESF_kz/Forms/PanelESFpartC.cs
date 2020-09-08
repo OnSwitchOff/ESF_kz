@@ -16,5 +16,9 @@ namespace ESF_kz.Forms
 		{
 			InitializeComponent();
 		}
+		public TabControl getTabControll()
+		{
+			return this.tabControl1;
+		}
 	}
 }

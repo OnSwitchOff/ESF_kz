@@ -28,14 +28,17 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.l_PartF_deliveryDocNum = new System.Windows.Forms.Label();
+			this.l_PartF_deliveryDocDate = new System.Windows.Forms.Label();
+			this.tbPartF_deliveryDocNum = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.dtpPartF_deliveryDocDate = new System.Windows.Forms.DateTimePicker();
+			this.epPartF_deliveryDocNum = new System.Windows.Forms.ErrorProvider(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.epPartF_deliveryDocNum)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -45,11 +48,11 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartF_deliveryDocNum, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartF_deliveryDocDate, 0, 3);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartF_deliveryDocNum, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.dtpPartF_deliveryDocDate, 1, 3);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -79,35 +82,35 @@
 			this.label1.Text = "32. Документ, подтверждающий поставку товаров, работ, услуг";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// label2
+			// l_PartF_deliveryDocNum
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(4, 113);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(384, 55);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "32.1 номер";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartF_deliveryDocNum.AutoSize = true;
+			this.l_PartF_deliveryDocNum.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartF_deliveryDocNum.Location = new System.Drawing.Point(4, 113);
+			this.l_PartF_deliveryDocNum.Name = "l_PartF_deliveryDocNum";
+			this.l_PartF_deliveryDocNum.Size = new System.Drawing.Size(384, 55);
+			this.l_PartF_deliveryDocNum.TabIndex = 1;
+			this.l_PartF_deliveryDocNum.Text = "32.1 номер";
+			this.l_PartF_deliveryDocNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label3
+			// l_PartF_deliveryDocDate
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label3.Location = new System.Drawing.Point(4, 169);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(384, 55);
-			this.label3.TabIndex = 3;
-			this.label3.Text = "32.2 дата";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartF_deliveryDocDate.AutoSize = true;
+			this.l_PartF_deliveryDocDate.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartF_deliveryDocDate.Location = new System.Drawing.Point(4, 169);
+			this.l_PartF_deliveryDocDate.Name = "l_PartF_deliveryDocDate";
+			this.l_PartF_deliveryDocDate.Size = new System.Drawing.Size(384, 55);
+			this.l_PartF_deliveryDocDate.TabIndex = 3;
+			this.l_PartF_deliveryDocDate.Text = "32.2 дата";
+			this.l_PartF_deliveryDocDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox2
+			// tbPartF_deliveryDocNum
 			// 
-			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox2.Location = new System.Drawing.Point(395, 130);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(384, 20);
-			this.textBox2.TabIndex = 14;
+			this.tbPartF_deliveryDocNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartF_deliveryDocNum.Location = new System.Drawing.Point(395, 130);
+			this.tbPartF_deliveryDocNum.Name = "tbPartF_deliveryDocNum";
+			this.tbPartF_deliveryDocNum.Size = new System.Drawing.Size(350, 20);
+			this.tbPartF_deliveryDocNum.TabIndex = 14;
 			// 
 			// label9
 			// 
@@ -122,13 +125,17 @@
 			this.label9.Text = "Раздел F. Реквизиты документов, подтверждающих поставку товаров, работ, услуг";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// dateTimePicker1
+			// dtpPartF_deliveryDocDate
 			// 
-			this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.dateTimePicker1.Location = new System.Drawing.Point(395, 186);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(384, 20);
-			this.dateTimePicker1.TabIndex = 46;
+			this.dtpPartF_deliveryDocDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartF_deliveryDocDate.Location = new System.Drawing.Point(395, 186);
+			this.dtpPartF_deliveryDocDate.Name = "dtpPartF_deliveryDocDate";
+			this.dtpPartF_deliveryDocDate.Size = new System.Drawing.Size(200, 20);
+			this.dtpPartF_deliveryDocDate.TabIndex = 46;
+			// 
+			// epPartF_deliveryDocNum
+			// 
+			this.epPartF_deliveryDocNum.ContainerControl = this;
 			// 
 			// panelESFpartF
 			// 
@@ -139,6 +146,7 @@
 			this.Size = new System.Drawing.Size(783, 561);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.epPartF_deliveryDocNum)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -147,10 +155,11 @@
 
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.Label l_PartF_deliveryDocNum;
+		private System.Windows.Forms.Label l_PartF_deliveryDocDate;
+		private System.Windows.Forms.TextBox tbPartF_deliveryDocNum;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.DateTimePicker dtpPartF_deliveryDocDate;
+		private System.Windows.Forms.ErrorProvider epPartF_deliveryDocNum;
 	}
 }

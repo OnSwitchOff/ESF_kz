@@ -100,11 +100,23 @@
     <Compile Include="Forms\panelESFpartB.Designer.cs">
       <DependentUpon>panelESFpartB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\panelESFpartBtab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartBtab.Designer.cs">
+      <DependentUpon>panelESFpartBtab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\panelESFpartC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\panelESFpartC.Designer.cs">
       <DependentUpon>panelESFpartC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelESFpartCtab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelESFpartCtab.Designer.cs">
+      <DependentUpon>panelESFpartCtab.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\panelESFpartD.cs">
       <SubType>UserControl</SubType>
@@ -204,8 +216,14 @@
     <EmbeddedResource Include="Forms\panelESFpartB.resx">
       <DependentUpon>panelESFpartB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartBtab.resx">
+      <DependentUpon>panelESFpartBtab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\panelESFpartC.resx">
       <DependentUpon>panelESFpartC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelESFpartCtab.resx">
+      <DependentUpon>panelESFpartCtab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\panelESFpartD.resx">
       <DependentUpon>panelESFpartD.cs</DependentUpon>

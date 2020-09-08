@@ -28,29 +28,43 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
+			this.l_PartE_contractNum = new System.Windows.Forms.Label();
+			this.l_PartE_contractDate = new System.Windows.Forms.Label();
+			this.l_PartE_term = new System.Windows.Forms.Label();
+			this.l_PartE_transportTypeCode = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
-			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
-			this.textBox12 = new System.Windows.Forms.TextBox();
+			this.l_PartE_warrant = new System.Windows.Forms.Label();
+			this.l_PartE_warrantDate = new System.Windows.Forms.Label();
+			this.tbPartE_contractDate = new System.Windows.Forms.TextBox();
+			this.tbPartE_contractNum = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox7 = new System.Windows.Forms.TextBox();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.tbPartE_transportTypeCode = new System.Windows.Forms.TextBox();
+			this.tbPartE_warrant = new System.Windows.Forms.TextBox();
+			this.rbPartE_hasContractTrue = new System.Windows.Forms.RadioButton();
+			this.rbPartE_hasContractFalse = new System.Windows.Forms.RadioButton();
+			this.l_PartE_destination = new System.Windows.Forms.Label();
+			this.l_PartE_deliveryConditionCode = new System.Windows.Forms.Label();
+			this.tbPartE_destination = new System.Windows.Forms.TextBox();
+			this.tbPartE_deliveryConditionCode = new System.Windows.Forms.TextBox();
+			this.tbPartE_term = new System.Windows.Forms.TextBox();
+			this.dtpPartE_warrantDate = new System.Windows.Forms.DateTimePicker();
+			this.epPartE_contractNum = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartE_contractDate = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartE_term = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartE_transportTypeCode = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartE_warrant = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartE_destination = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartE_deliveryConditionCode = new System.Windows.Forms.ErrorProvider(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_contractNum)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_contractDate)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_term)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_transportTypeCode)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_warrant)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_destination)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_deliveryConditionCode)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -59,27 +73,26 @@
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
-			this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
-			this.tableLayoutPanel1.Controls.Add(this.label6, 0, 6);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_contractNum, 0, 3);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_contractDate, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_term, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_transportTypeCode, 0, 6);
 			this.tableLayoutPanel1.Controls.Add(this.label7, 0, 7);
-			this.tableLayoutPanel1.Controls.Add(this.label8, 0, 8);
-			this.tableLayoutPanel1.Controls.Add(this.label12, 0, 9);
-			this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 4);
-			this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 7);
-			this.tableLayoutPanel1.Controls.Add(this.textBox12, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_warrant, 0, 8);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_warrantDate, 0, 9);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartE_contractDate, 1, 4);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartE_contractNum, 1, 3);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 6);
-			this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 8);
-			this.tableLayoutPanel1.Controls.Add(this.radioButton1, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.radioButton2, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 10);
-			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 11);
-			this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 10);
-			this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 11);
-			this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 5);
-			this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 9);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartE_transportTypeCode, 1, 6);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartE_warrant, 1, 8);
+			this.tableLayoutPanel1.Controls.Add(this.rbPartE_hasContractTrue, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.rbPartE_hasContractFalse, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_destination, 0, 10);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartE_deliveryConditionCode, 0, 11);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartE_destination, 1, 10);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartE_deliveryConditionCode, 1, 11);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartE_term, 1, 5);
+			this.tableLayoutPanel1.Controls.Add(this.dtpPartE_warrantDate, 1, 9);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -99,49 +112,49 @@
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(920, 651);
 			this.tableLayoutPanel1.TabIndex = 4;
 			// 
-			// label3
+			// l_PartE_contractNum
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label3.Location = new System.Drawing.Point(4, 163);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(452, 53);
-			this.label3.TabIndex = 3;
-			this.label3.Text = "27.3 номер ";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_contractNum.AutoSize = true;
+			this.l_PartE_contractNum.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_contractNum.Location = new System.Drawing.Point(4, 163);
+			this.l_PartE_contractNum.Name = "l_PartE_contractNum";
+			this.l_PartE_contractNum.Size = new System.Drawing.Size(452, 53);
+			this.l_PartE_contractNum.TabIndex = 3;
+			this.l_PartE_contractNum.Text = "27.3 номер ";
+			this.l_PartE_contractNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label4
+			// l_PartE_contractDate
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label4.Location = new System.Drawing.Point(4, 217);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(452, 53);
-			this.label4.TabIndex = 4;
-			this.label4.Text = "27.4 дата";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_contractDate.AutoSize = true;
+			this.l_PartE_contractDate.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_contractDate.Location = new System.Drawing.Point(4, 217);
+			this.l_PartE_contractDate.Name = "l_PartE_contractDate";
+			this.l_PartE_contractDate.Size = new System.Drawing.Size(452, 53);
+			this.l_PartE_contractDate.TabIndex = 4;
+			this.l_PartE_contractDate.Text = "27.4 дата";
+			this.l_PartE_contractDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label5
+			// l_PartE_term
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label5.Location = new System.Drawing.Point(4, 271);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(452, 53);
-			this.label5.TabIndex = 5;
-			this.label5.Text = "28. Условия оплаты по договору";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_term.AutoSize = true;
+			this.l_PartE_term.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_term.Location = new System.Drawing.Point(4, 271);
+			this.l_PartE_term.Name = "l_PartE_term";
+			this.l_PartE_term.Size = new System.Drawing.Size(452, 53);
+			this.l_PartE_term.TabIndex = 5;
+			this.l_PartE_term.Text = "28. Условия оплаты по договору";
+			this.l_PartE_term.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label6
+			// l_PartE_transportTypeCode
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label6.Location = new System.Drawing.Point(4, 325);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(452, 53);
-			this.label6.TabIndex = 6;
-			this.label6.Text = "29. Способ отправления ";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_transportTypeCode.AutoSize = true;
+			this.l_PartE_transportTypeCode.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_transportTypeCode.Location = new System.Drawing.Point(4, 325);
+			this.l_PartE_transportTypeCode.Name = "l_PartE_transportTypeCode";
+			this.l_PartE_transportTypeCode.Size = new System.Drawing.Size(452, 53);
+			this.l_PartE_transportTypeCode.TabIndex = 6;
+			this.l_PartE_transportTypeCode.Text = "29. Способ отправления ";
+			this.l_PartE_transportTypeCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label7
 			// 
@@ -154,59 +167,43 @@
 			this.label7.Text = "30. Поставка товаров осуществлена по доверенности";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label8
+			// l_PartE_warrant
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label8.Location = new System.Drawing.Point(4, 433);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(452, 53);
-			this.label8.TabIndex = 8;
-			this.label8.Text = "30.1 номер";
-			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_warrant.AutoSize = true;
+			this.l_PartE_warrant.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_warrant.Location = new System.Drawing.Point(4, 433);
+			this.l_PartE_warrant.Name = "l_PartE_warrant";
+			this.l_PartE_warrant.Size = new System.Drawing.Size(452, 53);
+			this.l_PartE_warrant.TabIndex = 8;
+			this.l_PartE_warrant.Text = "30.1 номер";
+			this.l_PartE_warrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label12
+			// l_PartE_warrantDate
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label12.Location = new System.Drawing.Point(4, 487);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(452, 53);
-			this.label12.TabIndex = 12;
-			this.label12.Text = "30.2 дата";
-			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_warrantDate.AutoSize = true;
+			this.l_PartE_warrantDate.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_warrantDate.Location = new System.Drawing.Point(4, 487);
+			this.l_PartE_warrantDate.Name = "l_PartE_warrantDate";
+			this.l_PartE_warrantDate.Size = new System.Drawing.Size(452, 53);
+			this.l_PartE_warrantDate.TabIndex = 12;
+			this.l_PartE_warrantDate.Text = "30.2 дата";
+			this.l_PartE_warrantDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox6
+			// tbPartE_contractDate
 			// 
-			this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox6.Location = new System.Drawing.Point(463, 233);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(453, 20);
-			this.textBox6.TabIndex = 27;
+			this.tbPartE_contractDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartE_contractDate.Location = new System.Drawing.Point(463, 233);
+			this.tbPartE_contractDate.Name = "tbPartE_contractDate";
+			this.tbPartE_contractDate.Size = new System.Drawing.Size(400, 20);
+			this.tbPartE_contractDate.TabIndex = 27;
 			// 
-			// textBox4
+			// tbPartE_contractNum
 			// 
-			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox4.Location = new System.Drawing.Point(463, 287);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(453, 20);
-			this.textBox4.TabIndex = 41;
-			// 
-			// textBox5
-			// 
-			this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox5.Location = new System.Drawing.Point(463, 395);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(453, 20);
-			this.textBox5.TabIndex = 42;
-			// 
-			// textBox12
-			// 
-			this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox12.Location = new System.Drawing.Point(463, 179);
-			this.textBox12.Name = "textBox12";
-			this.textBox12.Size = new System.Drawing.Size(453, 20);
-			this.textBox12.TabIndex = 43;
+			this.tbPartE_contractNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartE_contractNum.Location = new System.Drawing.Point(463, 179);
+			this.tbPartE_contractNum.Name = "tbPartE_contractNum";
+			this.tbPartE_contractNum.Size = new System.Drawing.Size(400, 20);
+			this.tbPartE_contractNum.TabIndex = 43;
 			// 
 			// label9
 			// 
@@ -221,95 +218,138 @@
 			this.label9.Text = "Раздел Е. Договор (контракт)";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// textBox1
+			// tbPartE_transportTypeCode
 			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(463, 341);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(453, 20);
-			this.textBox1.TabIndex = 46;
+			this.tbPartE_transportTypeCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartE_transportTypeCode.Location = new System.Drawing.Point(463, 341);
+			this.tbPartE_transportTypeCode.Name = "tbPartE_transportTypeCode";
+			this.tbPartE_transportTypeCode.Size = new System.Drawing.Size(400, 20);
+			this.tbPartE_transportTypeCode.TabIndex = 46;
 			// 
-			// textBox3
+			// tbPartE_warrant
 			// 
-			this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox3.Location = new System.Drawing.Point(463, 449);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(453, 20);
-			this.textBox3.TabIndex = 47;
+			this.tbPartE_warrant.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartE_warrant.Location = new System.Drawing.Point(463, 449);
+			this.tbPartE_warrant.Name = "tbPartE_warrant";
+			this.tbPartE_warrant.Size = new System.Drawing.Size(400, 20);
+			this.tbPartE_warrant.TabIndex = 47;
 			// 
-			// radioButton1
+			// rbPartE_hasContractTrue
 			// 
-			this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-			this.radioButton1.AutoSize = true;
-			this.tableLayoutPanel1.SetColumnSpan(this.radioButton1, 2);
-			this.radioButton1.Location = new System.Drawing.Point(298, 58);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(324, 47);
-			this.radioButton1.TabIndex = 48;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "27.1 Договор (контракт) на поставку товаров, работ, услуг\r\n";
-			this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.radioButton1.UseVisualStyleBackColor = true;
+			this.rbPartE_hasContractTrue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.rbPartE_hasContractTrue.AutoSize = true;
+			this.tableLayoutPanel1.SetColumnSpan(this.rbPartE_hasContractTrue, 2);
+			this.rbPartE_hasContractTrue.Location = new System.Drawing.Point(298, 58);
+			this.rbPartE_hasContractTrue.Name = "rbPartE_hasContractTrue";
+			this.rbPartE_hasContractTrue.Size = new System.Drawing.Size(324, 47);
+			this.rbPartE_hasContractTrue.TabIndex = 48;
+			this.rbPartE_hasContractTrue.TabStop = true;
+			this.rbPartE_hasContractTrue.Text = "27.1 Договор (контракт) на поставку товаров, работ, услуг\r\n";
+			this.rbPartE_hasContractTrue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.rbPartE_hasContractTrue.UseVisualStyleBackColor = true;
 			// 
-			// radioButton2
+			// rbPartE_hasContractFalse
 			// 
-			this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-			this.radioButton2.AutoSize = true;
-			this.tableLayoutPanel1.SetColumnSpan(this.radioButton2, 2);
-			this.radioButton2.Location = new System.Drawing.Point(282, 112);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(355, 47);
-			this.radioButton2.TabIndex = 49;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "27.2 Без договора (контракта) на поставку товаров, работ, услуг";
-			this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.radioButton2.UseVisualStyleBackColor = true;
+			this.rbPartE_hasContractFalse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.rbPartE_hasContractFalse.AutoSize = true;
+			this.tableLayoutPanel1.SetColumnSpan(this.rbPartE_hasContractFalse, 2);
+			this.rbPartE_hasContractFalse.Location = new System.Drawing.Point(282, 112);
+			this.rbPartE_hasContractFalse.Name = "rbPartE_hasContractFalse";
+			this.rbPartE_hasContractFalse.Size = new System.Drawing.Size(355, 47);
+			this.rbPartE_hasContractFalse.TabIndex = 49;
+			this.rbPartE_hasContractFalse.TabStop = true;
+			this.rbPartE_hasContractFalse.Text = "27.2 Без договора (контракта) на поставку товаров, работ, услуг";
+			this.rbPartE_hasContractFalse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.rbPartE_hasContractFalse.UseVisualStyleBackColor = true;
 			// 
-			// label1
+			// l_PartE_destination
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(4, 541);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(452, 53);
-			this.label1.TabIndex = 50;
-			this.label1.Text = "31. Пункт назначения";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_destination.AutoSize = true;
+			this.l_PartE_destination.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_destination.Location = new System.Drawing.Point(4, 541);
+			this.l_PartE_destination.Name = "l_PartE_destination";
+			this.l_PartE_destination.Size = new System.Drawing.Size(452, 53);
+			this.l_PartE_destination.TabIndex = 50;
+			this.l_PartE_destination.Text = "31. Пункт назначения";
+			this.l_PartE_destination.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label2
+			// l_PartE_deliveryConditionCode
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(4, 595);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(452, 55);
-			this.label2.TabIndex = 51;
-			this.label2.Text = "31.1 Условия поставки";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartE_deliveryConditionCode.AutoSize = true;
+			this.l_PartE_deliveryConditionCode.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartE_deliveryConditionCode.Location = new System.Drawing.Point(4, 595);
+			this.l_PartE_deliveryConditionCode.Name = "l_PartE_deliveryConditionCode";
+			this.l_PartE_deliveryConditionCode.Size = new System.Drawing.Size(452, 55);
+			this.l_PartE_deliveryConditionCode.TabIndex = 51;
+			this.l_PartE_deliveryConditionCode.Text = "31.1 Условия поставки";
+			this.l_PartE_deliveryConditionCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox2
+			// tbPartE_destination
 			// 
-			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox2.Location = new System.Drawing.Point(463, 557);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(453, 20);
-			this.textBox2.TabIndex = 52;
+			this.tbPartE_destination.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartE_destination.Location = new System.Drawing.Point(463, 557);
+			this.tbPartE_destination.Name = "tbPartE_destination";
+			this.tbPartE_destination.Size = new System.Drawing.Size(400, 20);
+			this.tbPartE_destination.TabIndex = 52;
 			// 
-			// textBox7
+			// tbPartE_deliveryConditionCode
 			// 
-			this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox7.Location = new System.Drawing.Point(463, 612);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(453, 20);
-			this.textBox7.TabIndex = 53;
+			this.tbPartE_deliveryConditionCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartE_deliveryConditionCode.Location = new System.Drawing.Point(463, 612);
+			this.tbPartE_deliveryConditionCode.Name = "tbPartE_deliveryConditionCode";
+			this.tbPartE_deliveryConditionCode.Size = new System.Drawing.Size(400, 20);
+			this.tbPartE_deliveryConditionCode.TabIndex = 53;
 			// 
-			// dateTimePicker1
+			// tbPartE_term
 			// 
-			this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.dateTimePicker1.Location = new System.Drawing.Point(463, 503);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(453, 20);
-			this.dateTimePicker1.TabIndex = 54;
+			this.tbPartE_term.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartE_term.Location = new System.Drawing.Point(463, 287);
+			this.tbPartE_term.Name = "tbPartE_term";
+			this.tbPartE_term.Size = new System.Drawing.Size(400, 20);
+			this.tbPartE_term.TabIndex = 41;
+			// 
+			// dtpPartE_warrantDate
+			// 
+			this.dtpPartE_warrantDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartE_warrantDate.Location = new System.Drawing.Point(463, 503);
+			this.dtpPartE_warrantDate.Name = "dtpPartE_warrantDate";
+			this.dtpPartE_warrantDate.Size = new System.Drawing.Size(200, 20);
+			this.dtpPartE_warrantDate.TabIndex = 54;
+			// 
+			// epPartE_contractNum
+			// 
+			this.epPartE_contractNum.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartE_contractNum.ContainerControl = this;
+			// 
+			// epPartE_contractDate
+			// 
+			this.epPartE_contractDate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartE_contractDate.ContainerControl = this;
+			// 
+			// epPartE_term
+			// 
+			this.epPartE_term.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartE_term.ContainerControl = this;
+			// 
+			// epPartE_transportTypeCode
+			// 
+			this.epPartE_transportTypeCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartE_transportTypeCode.ContainerControl = this;
+			// 
+			// epPartE_warrant
+			// 
+			this.epPartE_warrant.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartE_warrant.ContainerControl = this;
+			// 
+			// epPartE_destination
+			// 
+			this.epPartE_destination.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartE_destination.ContainerControl = this;
+			// 
+			// epPartE_deliveryConditionCode
+			// 
+			this.epPartE_deliveryConditionCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartE_deliveryConditionCode.ContainerControl = this;
 			// 
 			// panelESFpartE
 			// 
@@ -320,6 +360,13 @@
 			this.Size = new System.Drawing.Size(920, 651);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_contractNum)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_contractDate)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_term)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_transportTypeCode)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_warrant)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_destination)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartE_deliveryConditionCode)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -327,26 +374,32 @@
 		#endregion
 
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label l_PartE_contractNum;
+		private System.Windows.Forms.Label l_PartE_contractDate;
+		private System.Windows.Forms.Label l_PartE_term;
+		private System.Windows.Forms.Label l_PartE_transportTypeCode;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.TextBox textBox6;
-		private System.Windows.Forms.TextBox textBox5;
-		private System.Windows.Forms.TextBox textBox12;
+		private System.Windows.Forms.Label l_PartE_warrant;
+		private System.Windows.Forms.Label l_PartE_warrantDate;
+		private System.Windows.Forms.TextBox tbPartE_contractDate;
+		private System.Windows.Forms.TextBox tbPartE_contractNum;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.RadioButton radioButton2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.TextBox tbPartE_transportTypeCode;
+		private System.Windows.Forms.TextBox tbPartE_warrant;
+		private System.Windows.Forms.RadioButton rbPartE_hasContractTrue;
+		private System.Windows.Forms.RadioButton rbPartE_hasContractFalse;
+		private System.Windows.Forms.Label l_PartE_destination;
+		private System.Windows.Forms.Label l_PartE_deliveryConditionCode;
+		private System.Windows.Forms.TextBox tbPartE_destination;
+		private System.Windows.Forms.TextBox tbPartE_deliveryConditionCode;
+		private System.Windows.Forms.TextBox tbPartE_term;
+		private System.Windows.Forms.DateTimePicker dtpPartE_warrantDate;
+		private System.Windows.Forms.ErrorProvider epPartE_contractNum;
+		private System.Windows.Forms.ErrorProvider epPartE_contractDate;
+		private System.Windows.Forms.ErrorProvider epPartE_term;
+		private System.Windows.Forms.ErrorProvider epPartE_transportTypeCode;
+		private System.Windows.Forms.ErrorProvider epPartE_warrant;
+		private System.Windows.Forms.ErrorProvider epPartE_destination;
+		private System.Windows.Forms.ErrorProvider epPartE_deliveryConditionCode;
 	}
 }

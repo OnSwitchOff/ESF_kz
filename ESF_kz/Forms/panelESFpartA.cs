@@ -238,5 +238,10 @@ namespace ESF_kz.Forms
 		{
 
 		}
+
+		private void tbPartA_Num_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
