@@ -76,6 +76,18 @@
     <Compile Include="ENUMs\SellerType.cs" />
     <Compile Include="ENUMs\TruOriginCode.cs" />
     <Compile Include="ESF.cs" />
+    <Compile Include="Forms\AbstractUCESFpanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AbstractUCESFpanel.Designer.cs">
+      <DependentUpon>AbstractUCESFpanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AbstractUCESFpanelTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AbstractUCESFpanelTab.Designer.cs">
+      <DependentUpon>AbstractUCESFpanelTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ESF_form.cs">
       <SubType>Form</SubType>
     </Compile>

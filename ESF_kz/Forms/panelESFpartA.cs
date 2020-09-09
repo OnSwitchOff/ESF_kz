@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFpartA : UserControl
+	public partial class panelESFpartA : AbstractUCESFpanel
 	{
 		
 		private const string DOWN_TIME = "Простой системы";

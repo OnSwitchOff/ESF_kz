@@ -10,20 +10,46 @@ using System.Windows.Forms;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFpartB : UserControl
+	public partial class panelESFpartB :  AbstractUCESFpanel
 	{
 		public panelESFpartB()
 		{
 			InitializeComponent();
-			panelESFpartBtab PanelESFPartBtab = new panelESFpartBtab();
-			PanelESFPartBtab.Dock = DockStyle.Fill;
-			this.tabControl1.TabPages.Add("Seller");
-			this.tabControl1.TabPages[0].Controls.Add(PanelESFPartBtab);
+			CreateFirstTab("Seller");			
 		}
+
+		public panelESFpartBtab CreateTab(string title)
+		{
+			panelESFpartBtab PanelESFPartBtab = new panelESFpartBtab();
+			PanelESFPartBtab.setESFform(this.getESFform());
+			PanelESFPartBtab.Dock = DockStyle.Fill;
+			this.tabControl1.TabPages.Add(title);
+			this.tabControl1.TabPages[tabControl1.TabCount-1].Controls.Add(PanelESFPartBtab);
+			return PanelESFPartBtab;
+		}
+
+		public panelESFpartBtab CreateFirstTab(string title)
+		{
+			panelESFpartBtab PanelESFPartBtab = new panelESFpartBtab();
+			PanelESFPartBtab.setESFform(this.getESFform());
+			PanelESFPartBtab.Dock = DockStyle.Fill;
+			this.tabControl1.TabPages.Add(title);
+			this.tabControl1.TabPages[0].Controls.Add(PanelESFPartBtab);
+			return PanelESFPartBtab;
+		}
+
+		public void RemoveLastTab()
+		{
+
+		}
+
+
 
 		public TabControl getTabControll()
 		{
 			return this.tabControl1;
 		}
+
+
 	}
 }

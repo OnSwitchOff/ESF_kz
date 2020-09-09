@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFpartJ : UserControl
+	public partial class panelESFpartJ : AbstractUCESFpanel
 	{
 		public panelESFpartJ()
 		{

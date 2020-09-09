@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFpartBtab : UserControl
+	public partial class panelESFpartBtab : AbstractUCESFpanelTab
 	{
 		public panelESFpartBtab()
 		{
@@ -199,6 +199,11 @@ namespace ESF_kz.Forms
 			{
 				epPartB1_kbe.Clear();
 			}
+
+			/*if (chbxPartB_isPrincipal)
+			{
+
+			}*/
 		}
 
 		private void tbPartB1_iik_TextChanged(object sender, EventArgs e)
@@ -281,12 +286,24 @@ namespace ESF_kz.Forms
 
 		private void chbxPartB_isJointActivityParticipant_CheckedChanged(object sender, EventArgs e)
 		{
-			if(chbxPartB_isJointActivityParticipant.Checked)
+			TabControl tabControl = (TabControl)this.Parent.Parent;
+			if (chbxPartB_isJointActivityParticipant.Checked)
 			{
 				if(!isJointActivityParticipant(tbPartB_tin.Text))
 				{
 					chbxPartB_isJointActivityParticipant.Checked = false;
 				}
+				else
+				{					
+					tabControl.TabPages[0].Text = "Participant #1";
+					numUpDown_participantCounter.Enabled = true;	
+				}
+			}
+			else
+			{
+				tabControl.TabPages[0].Text = "Seller";
+				numUpDown_participantCounter.Value = 1;
+				numUpDown_participantCounter.Enabled = false;
 			}
 		}
 
@@ -302,19 +319,19 @@ namespace ESF_kz.Forms
 
 		private void numUpDown_participantCounter_ValueChanged(object sender, EventArgs e)
 		{
-			TabControl tabControl = (TabControl)this.Parent.Parent;
+			panelESFpartB PanelESFpartB = (panelESFpartB)this.Parent.Parent.Parent;
+			TabControl tabControl = PanelESFpartB.getTabControll(); 
 			if(tabControl.TabCount < numUpDown_participantCounter.Value)
 			{
 				int dif = (int)numUpDown_participantCounter.Value - tabControl.TabCount;
 				for (int i = 0; i < dif; i++)
 				{
-					panelESFpartBtab PanelESFPartBtab = new panelESFpartBtab();
-					PanelESFPartBtab.Dock = DockStyle.Fill;					
-					tabControl.TabPages.Add("Participant #" + (tabControl.TabCount+1));
-					tabControl.TabPages[tabControl.TabCount - 1].Controls.Add(PanelESFPartBtab);
+					panelESFpartBtab PanelESFPartBtab = PanelESFpartB.CreateTab("Participant #" + (tabControl.TabCount + 1));
 					PanelESFPartBtab.numUpDown_participantCounter.Visible = false;
 					PanelESFPartBtab.chbxPartB_isSharingAgreementParticipant.Enabled = false;
-					PanelESFPartBtab.chbxPartB_isSharingAgreementParticipant.Checked = true;
+					PanelESFPartBtab.chbxPartB_isSharingAgreementParticipant.Checked = chbxPartB_isSharingAgreementParticipant.Checked;
+					PanelESFPartBtab.chbxPartB_isJointActivityParticipant.Checked = chbxPartB_isJointActivityParticipant.Checked;
+					PanelESFPartBtab.chbxPartB_isJointActivityParticipant.Enabled = false;
 					PanelESFPartBtab.l_participantCounter.Visible = false;
 				}				
 			}
@@ -328,6 +345,7 @@ namespace ESF_kz.Forms
 				if(numUpDown_participantCounter.Value == 1)
 				{
 					chbxPartB_isSharingAgreementParticipant.Checked = false;
+					chbxPartB_isJointActivityParticipant.Checked = false;
 				}
 			}
 		}

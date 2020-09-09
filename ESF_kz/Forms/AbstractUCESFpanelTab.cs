@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace ESF_kz.Forms
 {
-	public partial class panelESFPartHtab : AbstractUCESFpanelTab
+	public partial class AbstractUCESFpanelTab : UserControl
 	{
-		public panelESFPartHtab()
+		public AbstractUCESFpanelTab()
 		{
 			InitializeComponent();
+		}
+
+		private ESF_form ESFForm { get; set; }
+
+		internal void setESFform(ESF_form eSF_form)
+		{
+			ESFForm = eSF_form;
+		}
+
+		internal ESF_form getESFform()
+		{
+			return ESFForm;
 		}
 	}
 }

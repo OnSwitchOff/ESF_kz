@@ -14,9 +14,24 @@ namespace ESF_kz
 {
 	public partial class ESF_form : Form
 	{
+
+		private void setESFformField(AbstractUCESFpanel esf_panel)
+		{
+			esf_panel.setESFform(this);
+		}
+
 		public ESF_form()
 		{
 			InitializeComponent();
+			setESFformFieldForPanels();			
+		}
+
+		private void setESFformFieldForPanels()
+		{
+			foreach (AbstractUCESFpanel item in this.splitContainer1.Panel2.Controls)
+			{
+				item.setESFform(this);
+			}
 		}
 
 		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
