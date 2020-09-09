@@ -16,5 +16,10 @@ namespace ESF_kz.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void numUpDown_participantCounter_ValueChanged(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }

@@ -569,6 +569,7 @@
 			this.numUpDown_participantCounter.Name = "numUpDown_participantCounter";
 			this.numUpDown_participantCounter.Size = new System.Drawing.Size(120, 20);
 			this.numUpDown_participantCounter.TabIndex = 47;
+			this.numUpDown_participantCounter.ValueChanged += new System.EventHandler(this.numUpDown_participantCounter_ValueChanged);
 			// 
 			// eptbPartC_tin
 			// 

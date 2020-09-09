@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,20 +40,8 @@ namespace ESF_kz
 		}
 
 		private void btnESFpartB_Click(object sender, EventArgs e)
-		{
-			panelESFpartBtab PannelESFPartBtab1 = new panelESFpartBtab();
-			panelESFpartBtab PannelESFPartBtab2 = new panelESFpartBtab();
-			PannelESFPartBtab1.Dock = DockStyle.Fill;
-			PannelESFPartBtab2.Dock = DockStyle.Fill;
-			if (this.PanelESFpartB.getTabControll().TabPages.Count < 2)
-			{
-				this.PanelESFpartB.getTabControll().TabPages.Add("taB 1");
-				this.PanelESFpartB.getTabControll().TabPages.Add("taB 2");
-			}
-			this.PanelESFpartB.getTabControll().TabPages[0].Controls.Add(PannelESFPartBtab1);
-			this.PanelESFpartB.getTabControll().TabPages[1].Controls.Add(PannelESFPartBtab2);
+		{			
 			this.PanelESFpartB.BringToFront();
-
 		}
 
 		private void btnESFpartC_Click(object sender, EventArgs e)
@@ -126,5 +115,6 @@ namespace ESF_kz
 		{
 			this.PanelESFpartL.BringToFront();
 		}
+
 	}
 }

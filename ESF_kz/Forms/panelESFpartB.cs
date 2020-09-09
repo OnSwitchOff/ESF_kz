@@ -15,6 +15,10 @@ namespace ESF_kz.Forms
 		public panelESFpartB()
 		{
 			InitializeComponent();
+			panelESFpartBtab PanelESFPartBtab = new panelESFpartBtab();
+			PanelESFPartBtab.Dock = DockStyle.Fill;
+			this.tabControl1.TabPages.Add("Seller");
+			this.tabControl1.TabPages[0].Controls.Add(PanelESFPartBtab);
 		}
 
 		public TabControl getTabControll()

@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.label1 = new System.Windows.Forms.Label();
 			this.l_PartB_tin = new System.Windows.Forms.Label();
+			this.l_PartB_structDepTin = new System.Windows.Forms.Label();
 			this.l_PartB_reorganizedTin = new System.Windows.Forms.Label();
 			this.l_PartB_name = new System.Windows.Forms.Label();
 			this.l_PartB_shareParticipation = new System.Windows.Forms.Label();
@@ -100,28 +100,28 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartB1_bank)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(4, 38);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(462, 36);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "6. ИИН/БИН";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.label1.Click += new System.EventHandler(this.label1_Click);
-			// 
 			// l_PartB_tin
 			// 
 			this.l_PartB_tin.AutoSize = true;
 			this.l_PartB_tin.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.l_PartB_tin.Location = new System.Drawing.Point(4, 75);
+			this.l_PartB_tin.Location = new System.Drawing.Point(4, 38);
 			this.l_PartB_tin.Name = "l_PartB_tin";
 			this.l_PartB_tin.Size = new System.Drawing.Size(462, 36);
-			this.l_PartB_tin.TabIndex = 1;
-			this.l_PartB_tin.Text = "6.0 БИН структурного подразделения юридического лица";
+			this.l_PartB_tin.TabIndex = 0;
+			this.l_PartB_tin.Text = "6. ИИН/БИН";
 			this.l_PartB_tin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.l_PartB_tin.Click += new System.EventHandler(this.label1_Click);
+			// 
+			// l_PartB_structDepTin
+			// 
+			this.l_PartB_structDepTin.AutoSize = true;
+			this.l_PartB_structDepTin.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartB_structDepTin.Location = new System.Drawing.Point(4, 75);
+			this.l_PartB_structDepTin.Name = "l_PartB_structDepTin";
+			this.l_PartB_structDepTin.Size = new System.Drawing.Size(462, 36);
+			this.l_PartB_structDepTin.TabIndex = 1;
+			this.l_PartB_structDepTin.Text = "6.0 БИН структурного подразделения юридического лица";
+			this.l_PartB_structDepTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// l_PartB_reorganizedTin
 			// 
@@ -236,7 +236,7 @@
 			// tbPartB_tin
 			// 
 			this.tbPartB_tin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartB_tin.Location = new System.Drawing.Point(473, 83);
+			this.tbPartB_tin.Location = new System.Drawing.Point(473, 46);
 			this.tbPartB_tin.Name = "tbPartB_tin";
 			this.tbPartB_tin.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB_tin.TabIndex = 14;
@@ -284,8 +284,8 @@
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.l_PartB_tin, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartB_tin, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartB_structDepTin, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartB_reorganizedTin, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartB_name, 0, 4);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartB_shareParticipation, 0, 5);
@@ -296,7 +296,6 @@
 			this.tableLayoutPanel1.Controls.Add(this.l_PartB_isBranchNonResident, 0, 10);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartB_SellerType, 0, 11);
 			this.tableLayoutPanel1.Controls.Add(this.l_participantCounter, 0, 12);
-			this.tableLayoutPanel1.Controls.Add(this.tbPartB_tin, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartB_certificateSeries, 1, 8);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartB_certificateNum, 1, 9);
 			this.tableLayoutPanel1.Controls.Add(this.chbxPartB_isBranchNonResident, 1, 10);
@@ -318,6 +317,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.tbPartB_name, 1, 4);
 			this.tableLayoutPanel1.Controls.Add(this.label19, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.numUpDown_participantCounter, 1, 12);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartB_tin, 1, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -357,6 +357,7 @@
 			// tbPartB_shareParticipation
 			// 
 			this.tbPartB_shareParticipation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartB_shareParticipation.Enabled = false;
 			this.tbPartB_shareParticipation.Location = new System.Drawing.Point(473, 194);
 			this.tbPartB_shareParticipation.Name = "tbPartB_shareParticipation";
 			this.tbPartB_shareParticipation.Size = new System.Drawing.Size(400, 20);
@@ -410,6 +411,7 @@
 			this.chbxPartB_isCommitent.TabIndex = 0;
 			this.chbxPartB_isCommitent.Text = "комитент ";
 			this.chbxPartB_isCommitent.UseVisualStyleBackColor = true;
+			this.chbxPartB_isCommitent.CheckedChanged += new System.EventHandler(this.chbxPartB_isCommitent_CheckedChanged);
 			// 
 			// chbxPartB_isLessor
 			// 
@@ -432,17 +434,20 @@
 			this.chbxPartB_isBroker.TabIndex = 3;
 			this.chbxPartB_isBroker.Text = "комиссионер";
 			this.chbxPartB_isBroker.UseVisualStyleBackColor = true;
+			this.chbxPartB_isBroker.CheckedChanged += new System.EventHandler(this.chbxPartB_isBroker_CheckedChanged);
 			// 
 			// chbxPartB_isJointActivityParticipant
 			// 
 			this.chbxPartB_isJointActivityParticipant.AutoSize = true;
 			this.chbxPartB_isJointActivityParticipant.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartB_isJointActivityParticipant.Enabled = false;
 			this.chbxPartB_isJointActivityParticipant.Location = new System.Drawing.Point(157, 34);
 			this.chbxPartB_isJointActivityParticipant.Name = "chbxPartB_isJointActivityParticipant";
 			this.chbxPartB_isJointActivityParticipant.Size = new System.Drawing.Size(148, 25);
 			this.chbxPartB_isJointActivityParticipant.TabIndex = 4;
 			this.chbxPartB_isJointActivityParticipant.Text = "участник СРП";
 			this.chbxPartB_isJointActivityParticipant.UseVisualStyleBackColor = true;
+			this.chbxPartB_isJointActivityParticipant.CheckedChanged += new System.EventHandler(this.chbxPartB_isJointActivityParticipant_CheckedChanged);
 			// 
 			// chbxPartB_isForwarder
 			// 
@@ -489,6 +494,7 @@
 			this.chbxPartB_isSharingAgreementParticipant.TabIndex = 7;
 			this.chbxPartB_isSharingAgreementParticipant.Text = "участник договора о совместной деятельности";
 			this.chbxPartB_isSharingAgreementParticipant.UseVisualStyleBackColor = true;
+			this.chbxPartB_isSharingAgreementParticipant.CheckedChanged += new System.EventHandler(this.chbxPartB_isSharingAgreementParticipant_CheckedChanged);
 			// 
 			// chbxPartB_isPrincipal
 			// 
@@ -500,6 +506,7 @@
 			this.chbxPartB_isPrincipal.TabIndex = 8;
 			this.chbxPartB_isPrincipal.Text = "доверитель";
 			this.chbxPartB_isPrincipal.UseVisualStyleBackColor = true;
+			this.chbxPartB_isPrincipal.CheckedChanged += new System.EventHandler(this.chbxPartB_isPrincipal_CheckedChanged);
 			// 
 			// label14
 			// 
@@ -628,10 +635,22 @@
 			// numUpDown_participantCounter
 			// 
 			this.numUpDown_participantCounter.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.numUpDown_participantCounter.Enabled = false;
 			this.numUpDown_participantCounter.Location = new System.Drawing.Point(473, 548);
+			this.numUpDown_participantCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.numUpDown_participantCounter.Name = "numUpDown_participantCounter";
 			this.numUpDown_participantCounter.Size = new System.Drawing.Size(120, 20);
 			this.numUpDown_participantCounter.TabIndex = 46;
+			this.numUpDown_participantCounter.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.numUpDown_participantCounter.ValueChanged += new System.EventHandler(this.numUpDown_participantCounter_ValueChanged);
 			// 
 			// epPartB_tin
 			// 
@@ -717,8 +736,8 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label l_PartB_tin;
+		private System.Windows.Forms.Label l_PartB_structDepTin;
 		private System.Windows.Forms.Label l_PartB_reorganizedTin;
 		private System.Windows.Forms.Label l_PartB_name;
 		private System.Windows.Forms.Label l_PartB_shareParticipation;
