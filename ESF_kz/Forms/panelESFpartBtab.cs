@@ -189,7 +189,7 @@ namespace ESF_kz.Forms
 
 		private void tbPartB1_kbe_TextChanged(object sender, EventArgs e)
 		{
-			Regex regex = new Regex(@"^\d{0,2}$");
+			/*Regex regex = new Regex(@"^\d{0,2}$");
 			bool flag = regex.IsMatch(tbPartB1_kbe.Text);
 			if (!flag)
 			{
@@ -198,12 +198,18 @@ namespace ESF_kz.Forms
 			else
 			{
 				epPartB1_kbe.Clear();
-			}
-
-			/*if (chbxPartB_isPrincipal)
-			{
-
 			}*/
+			ESF_form  esfform= (ESF_form)this.TopLevelControl;
+			panelESFpartC partC = esfform.getPannel<panelESFpartC>();
+			panelESFpartCtab partCtab = partC.getTab();
+			if (partCtab.isPublicOffice())
+			{
+				epPartB1_kbe.SetError(tbPartB1_kbe, "a proverka to proshla");
+			}
+			else
+			{
+				epPartB1_kbe.Clear();
+			}
 		}
 
 		private void tbPartB1_iik_TextChanged(object sender, EventArgs e)

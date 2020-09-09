@@ -31,6 +31,7 @@ namespace ESF_kz
 			foreach (AbstractUCESFpanel item in this.splitContainer1.Panel2.Controls)
 			{
 				item.setESFform(this);
+				
 			}
 		}
 
@@ -129,6 +130,20 @@ namespace ESF_kz
 		private void btnESFpartL_Click(object sender, EventArgs e)
 		{
 			this.PanelESFpartL.BringToFront();
+		}
+
+
+		public T getPannel<T>()
+		{
+			T result = default(T);
+			foreach (var item in this.splitContainer1.Panel2.Controls)
+			{
+				Type first = item.GetType();
+				Type second = typeof(T);
+				if (first.Name == second.Name)
+					result = (T)item;
+			}
+			return result;
 		}
 
 	}

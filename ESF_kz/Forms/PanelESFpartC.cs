@@ -20,5 +20,9 @@ namespace ESF_kz.Forms
 		{
 			return this.tabControl1;
 		}
+		public panelESFpartCtab getTab()
+		{
+			return (panelESFpartCtab)(this.tabControl1.TabPages[0].Controls[0]);
+		}
 	}
 }

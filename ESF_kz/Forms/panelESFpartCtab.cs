@@ -21,5 +21,10 @@ namespace ESF_kz.Forms
 		{
 			
 		}
+
+		public bool isPublicOffice()
+		{
+			return this.checkBox3.Checked;
+		}
 	}
 }
