@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -6,9 +7,17 @@ namespace ESF_kz.Forms
 {
 	public partial class panelESFpartBtab : AbstractUCESFpanelTab
 	{
+		private Dictionary<TextBox, bool> tbPartB1_isCorrect = new Dictionary<TextBox,bool>();
+
 		public panelESFpartBtab()
 		{
 			InitializeComponent();
+
+			tbPartB1_isCorrect.Add(tbPartB1_kbe, false);
+			tbPartB1_isCorrect.Add(tbPartB1_iik, false);
+			tbPartB1_isCorrect.Add(tbPartB1_bik, false);
+			tbPartB1_isCorrect.Add(tbPartB1_bank, false);
+
 		}
 
 		private void label1_Click(object sender, EventArgs e)
@@ -189,69 +198,102 @@ namespace ESF_kz.Forms
 
 		private void tbPartB1_kbe_TextChanged(object sender, EventArgs e)
 		{
-			/*Regex regex = new Regex(@"^\d{0,2}$");
-			bool flag = regex.IsMatch(tbPartB1_kbe.Text);
-			if (!flag)
+			tbPartB1_isCorrect[tbPartB1_kbe] = false;
+			tbPartB1_validation();
+		}
+
+		private void tbPartB1_validation()
+		{
+			bool isEmpty_kbe = tbPartB1_kbe.Text == "";
+			bool isEmpty_iik = tbPartB1_iik.Text == "";
+			bool isEmpty_bik = tbPartB1_bik.Text == "";
+			bool isEmpty_bank = tbPartB1_bank.Text == "";
+			bool isEmptyTemp = true;
+			bool isSomeNotEmpty = !isEmpty_iik || !isEmpty_bik || !isEmpty_bank || !isEmpty_kbe;
+			Regex regex=null;
+			ErrorProvider tempEP = null;
+			string message = "";
+
+			Dictionary<TextBox, bool> temp = new Dictionary<TextBox, bool>();
+			foreach (KeyValuePair<TextBox, bool> item in tbPartB1_isCorrect)
 			{
-				epPartB1_kbe.SetError(tbPartB1_kbe, "Номер");
+				temp.Add(item.Key,item.Value);
 			}
-			else
+			foreach (KeyValuePair<TextBox,bool> item in temp)
 			{
-				epPartB1_kbe.Clear();
-			}*/
-			ESF_form  esfform= (ESF_form)this.TopLevelControl;
-			panelESFpartC partC = esfform.getPannel<panelESFpartC>();
-			panelESFpartCtab partCtab = partC.getTab();
-			if (partCtab.isPublicOffice())
-			{
-				epPartB1_kbe.SetError(tbPartB1_kbe, "a proverka to proshla");
-			}
-			else
-			{
-				epPartB1_kbe.Clear();
+				if (item.Value)
+				{
+					continue;
+				}
+				switch (item.Key.Name)
+				{
+					case "tbPartB1_kbe":
+						regex = new Regex(@"^\d{0,2}$");
+						tempEP = epPartB1_kbe;
+						isEmptyTemp = tbPartB1_kbe.Text == "";
+						message = "Neverniy format ili otsutstvuet";
+						break;
+					case "tbPartB1_iik":
+						regex = new Regex(@"^.{20}$");
+						tempEP = epPartB1_iik;
+						isEmptyTemp = tbPartB1_iik.Text == "";
+						message = "Neverniy format ili otsutstvuet";
+						break;
+					case "tbPartB1_bik":
+						regex = new Regex(@"^.{0,8}$");
+						tempEP = epPartB1_bik;
+						isEmptyTemp = tbPartB1_bik.Text == "";
+						message = "Neverniy format ili otsutstvuet";
+						break;
+					case "tbPartB1_bank":
+						regex = new Regex(@"^.{1,200}$");
+						tempEP = epPartB1_bank;
+						isEmptyTemp = tbPartB1_bank.Text == "";
+						message = "Neverniy format ili otsutstvuet";
+						break;
+					default:
+						break;
+				}
+				if (regex!=null && tempEP!=null)
+				{
+					ESF_form esfform = (ESF_form)this.TopLevelControl;
+					panelESFpartC partC = esfform.getPannel<panelESFpartC>();
+					panelESFpartCtab partCtab = partC.getTab();
+					if (partCtab.isPublicOffice() || isSomeNotEmpty)
+					{
+						bool flag = regex.IsMatch(item.Key.Text);
+						if (!flag || isEmptyTemp)
+						{
+							tempEP.SetError(item.Key, message);
+							tbPartB1_isCorrect[item.Key] = false;
+						}
+						else
+						{
+							tempEP.Clear();
+							tbPartB1_isCorrect[item.Key] = true;
+						}
+					}						
+				}				
 			}
 		}
 
 		private void tbPartB1_iik_TextChanged(object sender, EventArgs e)
 		{
-			Regex regex = new Regex(@"^.{20}$");
-			bool flag = regex.IsMatch(tbPartB1_iik.Text);
-			if (!flag)
-			{
-				epPartB1_iik.SetError(tbPartB1_iik, "Номер");
-			}
-			else
-			{
-				epPartB1_iik.Clear();
-			}
+			tbPartB1_isCorrect[tbPartB1_iik] = false;
+			tbPartB1_validation();
 		}
 
 		private void tbPartB1_bik_TextChanged(object sender, EventArgs e)
 		{
-			Regex regex = new Regex(@"^.{0,8}$");
-			bool flag = regex.IsMatch(tbPartB1_bik.Text);
-			if (!flag)
-			{
-				epPartB1_bik.SetError(tbPartB1_bik, "Номер");
-			}
-			else
-			{
-				epPartB1_bik.Clear();
-			}
+
+			tbPartB1_isCorrect[tbPartB1_bik] = false;
+			tbPartB1_validation();
 		}
 
 		private void tbPartB1_bank_TextChanged(object sender, EventArgs e)
 		{
-			Regex regex = new Regex(@"^.{1,200}$");
-			bool flag = regex.IsMatch(tbPartB1_bank.Text);
-			if (!flag)
-			{
-				epPartB1_bank.SetError(tbPartB1_bank, "Номер");
-			}
-			else
-			{
-				epPartB1_bank.Clear();
-			}
+			tbPartB1_isCorrect[tbPartB1_bank] = false;
+			tbPartB1_validation();
 		}
 
 		private void chbxPartB_isSharingAgreementParticipant_CheckedChanged(object sender, EventArgs e)

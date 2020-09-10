@@ -30,8 +30,8 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.l_PartC_tin = new System.Windows.Forms.Label();
+			this.l_PartC_structTin = new System.Windows.Forms.Label();
 			this.l_PartC_reorganizedTin = new System.Windows.Forms.Label();
 			this.l_PartC_name = new System.Windows.Forms.Label();
 			this.l_PartC_shareParticipation = new System.Windows.Forms.Label();
@@ -45,16 +45,16 @@
 			this.tbPartC_shareParticipation = new System.Windows.Forms.TextBox();
 			this.label13 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.checkBox5 = new System.Windows.Forms.CheckBox();
-			this.checkBox8 = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.checkBox4 = new System.Windows.Forms.CheckBox();
-			this.checkBox6 = new System.Windows.Forms.CheckBox();
-			this.checkBox7 = new System.Windows.Forms.CheckBox();
-			this.checkBox9 = new System.Windows.Forms.CheckBox();
-			this.checkBox10 = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isCommitent = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isBroker = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isLessee = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isJointActivityParticipant = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isPublicOffice = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isNonResident = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isSharingAgreementParticipant = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isPrincipal = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isRetail = new System.Windows.Forms.CheckBox();
+			this.chbxPartC_isIndividual = new System.Windows.Forms.CheckBox();
 			this.l_PartC1_iik = new System.Windows.Forms.Label();
 			this.l_PartC1_productCode = new System.Windows.Forms.Label();
 			this.l_PartC1_payPurpose = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.tbPartC_tin = new System.Windows.Forms.TextBox();
 			this.numUpDown_participantCounter = new System.Windows.Forms.NumericUpDown();
-			this.eptbPartC_tin = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartC_tin = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_reorganizedTin = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_name = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_address = new System.Windows.Forms.ErrorProvider(this.components);
@@ -82,7 +82,7 @@
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numUpDown_participantCounter)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.eptbPartC_tin)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_tin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_reorganizedTin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_name)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_address)).BeginInit();
@@ -100,8 +100,8 @@
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.l_PartC_tin, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartC_tin, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartC_structTin, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartC_reorganizedTin, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartC_name, 0, 4);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartC_shareParticipation, 0, 5);
@@ -127,8 +127,8 @@
 			this.tableLayoutPanel1.Controls.Add(this.tbPartC_reorganizedTin, 1, 3);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartC_name, 1, 4);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.tbPartC_tin, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.numUpDown_participantCounter, 1, 10);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartC_tin, 1, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -152,27 +152,27 @@
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(921, 574);
 			this.tableLayoutPanel1.TabIndex = 2;
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(4, 30);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(453, 28);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "16. ИИН/БИН";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
 			// l_PartC_tin
 			// 
 			this.l_PartC_tin.AutoSize = true;
 			this.l_PartC_tin.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.l_PartC_tin.Location = new System.Drawing.Point(4, 59);
+			this.l_PartC_tin.Location = new System.Drawing.Point(4, 30);
 			this.l_PartC_tin.Name = "l_PartC_tin";
 			this.l_PartC_tin.Size = new System.Drawing.Size(453, 28);
-			this.l_PartC_tin.TabIndex = 1;
-			this.l_PartC_tin.Text = "16.0 БИН структурного подразделения юридического лица";
+			this.l_PartC_tin.TabIndex = 0;
+			this.l_PartC_tin.Text = "16. ИИН/БИН";
 			this.l_PartC_tin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// l_PartC_structTin
+			// 
+			this.l_PartC_structTin.AutoSize = true;
+			this.l_PartC_structTin.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PartC_structTin.Location = new System.Drawing.Point(4, 59);
+			this.l_PartC_structTin.Name = "l_PartC_structTin";
+			this.l_PartC_structTin.Size = new System.Drawing.Size(453, 28);
+			this.l_PartC_structTin.TabIndex = 1;
+			this.l_PartC_structTin.Text = "16.0 БИН структурного подразделения юридического лица";
+			this.l_PartC_structTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// l_PartC_reorganizedTin
 			// 
@@ -305,16 +305,16 @@
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.tableLayoutPanel2.Controls.Add(this.checkBox1, 0, 0);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox5, 1, 0);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox8, 2, 0);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox2, 0, 1);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox3, 0, 2);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox4, 2, 2);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox6, 0, 3);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox7, 0, 4);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox9, 1, 4);
-			this.tableLayoutPanel2.Controls.Add(this.checkBox10, 2, 4);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isCommitent, 0, 0);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isBroker, 1, 0);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isLessee, 2, 0);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isJointActivityParticipant, 0, 1);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isPublicOffice, 0, 2);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isNonResident, 2, 2);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isSharingAgreementParticipant, 0, 3);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isPrincipal, 0, 4);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isRetail, 1, 4);
+			this.tableLayoutPanel2.Controls.Add(this.chbxPartC_isIndividual, 2, 4);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel2.Location = new System.Drawing.Point(464, 265);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -327,118 +327,118 @@
 			this.tableLayoutPanel2.Size = new System.Drawing.Size(453, 117);
 			this.tableLayoutPanel2.TabIndex = 31;
 			// 
-			// checkBox1
+			// chbxPartC_isCommitent
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox1.Location = new System.Drawing.Point(3, 3);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(145, 17);
-			this.checkBox1.TabIndex = 0;
-			this.checkBox1.Text = "комитент ";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.chbxPartC_isCommitent.AutoSize = true;
+			this.chbxPartC_isCommitent.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isCommitent.Location = new System.Drawing.Point(3, 3);
+			this.chbxPartC_isCommitent.Name = "chbxPartC_isCommitent";
+			this.chbxPartC_isCommitent.Size = new System.Drawing.Size(145, 17);
+			this.chbxPartC_isCommitent.TabIndex = 0;
+			this.chbxPartC_isCommitent.Text = "комитент ";
+			this.chbxPartC_isCommitent.UseVisualStyleBackColor = true;
 			// 
-			// checkBox5
+			// chbxPartC_isBroker
 			// 
-			this.checkBox5.AutoSize = true;
-			this.checkBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox5.Location = new System.Drawing.Point(154, 3);
-			this.checkBox5.Name = "checkBox5";
-			this.checkBox5.Size = new System.Drawing.Size(145, 17);
-			this.checkBox5.TabIndex = 3;
-			this.checkBox5.Text = "комиссионер";
-			this.checkBox5.UseVisualStyleBackColor = true;
+			this.chbxPartC_isBroker.AutoSize = true;
+			this.chbxPartC_isBroker.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isBroker.Location = new System.Drawing.Point(154, 3);
+			this.chbxPartC_isBroker.Name = "chbxPartC_isBroker";
+			this.chbxPartC_isBroker.Size = new System.Drawing.Size(145, 17);
+			this.chbxPartC_isBroker.TabIndex = 3;
+			this.chbxPartC_isBroker.Text = "комиссионер";
+			this.chbxPartC_isBroker.UseVisualStyleBackColor = true;
 			// 
-			// checkBox8
+			// chbxPartC_isLessee
 			// 
-			this.checkBox8.AutoSize = true;
-			this.checkBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox8.Location = new System.Drawing.Point(305, 3);
-			this.checkBox8.Name = "checkBox8";
-			this.checkBox8.Size = new System.Drawing.Size(145, 17);
-			this.checkBox8.TabIndex = 6;
-			this.checkBox8.Text = "лизингополучатель";
-			this.checkBox8.UseVisualStyleBackColor = true;
+			this.chbxPartC_isLessee.AutoSize = true;
+			this.chbxPartC_isLessee.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isLessee.Location = new System.Drawing.Point(305, 3);
+			this.chbxPartC_isLessee.Name = "chbxPartC_isLessee";
+			this.chbxPartC_isLessee.Size = new System.Drawing.Size(145, 17);
+			this.chbxPartC_isLessee.TabIndex = 6;
+			this.chbxPartC_isLessee.Text = "лизингополучатель";
+			this.chbxPartC_isLessee.UseVisualStyleBackColor = true;
 			// 
-			// checkBox2
+			// chbxPartC_isJointActivityParticipant
 			// 
-			this.checkBox2.AutoSize = true;
-			this.tableLayoutPanel2.SetColumnSpan(this.checkBox2, 2);
-			this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox2.Location = new System.Drawing.Point(3, 26);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(296, 17);
-			this.checkBox2.TabIndex = 7;
-			this.checkBox2.Text = "участник договора о совместной деятельности";
-			this.checkBox2.UseVisualStyleBackColor = true;
+			this.chbxPartC_isJointActivityParticipant.AutoSize = true;
+			this.tableLayoutPanel2.SetColumnSpan(this.chbxPartC_isJointActivityParticipant, 2);
+			this.chbxPartC_isJointActivityParticipant.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isJointActivityParticipant.Location = new System.Drawing.Point(3, 26);
+			this.chbxPartC_isJointActivityParticipant.Name = "chbxPartC_isJointActivityParticipant";
+			this.chbxPartC_isJointActivityParticipant.Size = new System.Drawing.Size(296, 17);
+			this.chbxPartC_isJointActivityParticipant.TabIndex = 7;
+			this.chbxPartC_isJointActivityParticipant.Text = "участник договора о совместной деятельности";
+			this.chbxPartC_isJointActivityParticipant.UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// chbxPartC_isPublicOffice
 			// 
-			this.checkBox3.AutoSize = true;
-			this.tableLayoutPanel2.SetColumnSpan(this.checkBox3, 2);
-			this.checkBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox3.Location = new System.Drawing.Point(3, 49);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(296, 17);
-			this.checkBox3.TabIndex = 8;
-			this.checkBox3.Text = "государственное учреждение";
-			this.checkBox3.UseVisualStyleBackColor = true;
+			this.chbxPartC_isPublicOffice.AutoSize = true;
+			this.tableLayoutPanel2.SetColumnSpan(this.chbxPartC_isPublicOffice, 2);
+			this.chbxPartC_isPublicOffice.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isPublicOffice.Location = new System.Drawing.Point(3, 49);
+			this.chbxPartC_isPublicOffice.Name = "chbxPartC_isPublicOffice";
+			this.chbxPartC_isPublicOffice.Size = new System.Drawing.Size(296, 17);
+			this.chbxPartC_isPublicOffice.TabIndex = 8;
+			this.chbxPartC_isPublicOffice.Text = "государственное учреждение";
+			this.chbxPartC_isPublicOffice.UseVisualStyleBackColor = true;
 			// 
-			// checkBox4
+			// chbxPartC_isNonResident
 			// 
-			this.checkBox4.AutoSize = true;
-			this.checkBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox4.Location = new System.Drawing.Point(305, 49);
-			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.Size = new System.Drawing.Size(145, 17);
-			this.checkBox4.TabIndex = 10;
-			this.checkBox4.Text = "нерезидент";
-			this.checkBox4.UseVisualStyleBackColor = true;
+			this.chbxPartC_isNonResident.AutoSize = true;
+			this.chbxPartC_isNonResident.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isNonResident.Location = new System.Drawing.Point(305, 49);
+			this.chbxPartC_isNonResident.Name = "chbxPartC_isNonResident";
+			this.chbxPartC_isNonResident.Size = new System.Drawing.Size(145, 17);
+			this.chbxPartC_isNonResident.TabIndex = 10;
+			this.chbxPartC_isNonResident.Text = "нерезидент";
+			this.chbxPartC_isNonResident.UseVisualStyleBackColor = true;
 			// 
-			// checkBox6
+			// chbxPartC_isSharingAgreementParticipant
 			// 
-			this.checkBox6.AutoSize = true;
-			this.tableLayoutPanel2.SetColumnSpan(this.checkBox6, 3);
-			this.checkBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox6.Location = new System.Drawing.Point(3, 72);
-			this.checkBox6.Name = "checkBox6";
-			this.checkBox6.Size = new System.Drawing.Size(447, 17);
-			this.checkBox6.TabIndex = 11;
-			this.checkBox6.Text = "участник СРП или сделки, заключенной в рамках СРП";
-			this.checkBox6.UseVisualStyleBackColor = true;
+			this.chbxPartC_isSharingAgreementParticipant.AutoSize = true;
+			this.tableLayoutPanel2.SetColumnSpan(this.chbxPartC_isSharingAgreementParticipant, 3);
+			this.chbxPartC_isSharingAgreementParticipant.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isSharingAgreementParticipant.Location = new System.Drawing.Point(3, 72);
+			this.chbxPartC_isSharingAgreementParticipant.Name = "chbxPartC_isSharingAgreementParticipant";
+			this.chbxPartC_isSharingAgreementParticipant.Size = new System.Drawing.Size(447, 17);
+			this.chbxPartC_isSharingAgreementParticipant.TabIndex = 11;
+			this.chbxPartC_isSharingAgreementParticipant.Text = "участник СРП или сделки, заключенной в рамках СРП";
+			this.chbxPartC_isSharingAgreementParticipant.UseVisualStyleBackColor = true;
 			// 
-			// checkBox7
+			// chbxPartC_isPrincipal
 			// 
-			this.checkBox7.AutoSize = true;
-			this.checkBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox7.Location = new System.Drawing.Point(3, 95);
-			this.checkBox7.Name = "checkBox7";
-			this.checkBox7.Size = new System.Drawing.Size(145, 19);
-			this.checkBox7.TabIndex = 12;
-			this.checkBox7.Text = "доверитель";
-			this.checkBox7.UseVisualStyleBackColor = true;
+			this.chbxPartC_isPrincipal.AutoSize = true;
+			this.chbxPartC_isPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isPrincipal.Location = new System.Drawing.Point(3, 95);
+			this.chbxPartC_isPrincipal.Name = "chbxPartC_isPrincipal";
+			this.chbxPartC_isPrincipal.Size = new System.Drawing.Size(145, 19);
+			this.chbxPartC_isPrincipal.TabIndex = 12;
+			this.chbxPartC_isPrincipal.Text = "доверитель";
+			this.chbxPartC_isPrincipal.UseVisualStyleBackColor = true;
 			// 
-			// checkBox9
+			// chbxPartC_isRetail
 			// 
-			this.checkBox9.AutoSize = true;
-			this.checkBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox9.Location = new System.Drawing.Point(154, 95);
-			this.checkBox9.Name = "checkBox9";
-			this.checkBox9.Size = new System.Drawing.Size(145, 19);
-			this.checkBox9.TabIndex = 13;
-			this.checkBox9.Text = "Розничная реализация";
-			this.checkBox9.UseVisualStyleBackColor = true;
+			this.chbxPartC_isRetail.AutoSize = true;
+			this.chbxPartC_isRetail.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isRetail.Location = new System.Drawing.Point(154, 95);
+			this.chbxPartC_isRetail.Name = "chbxPartC_isRetail";
+			this.chbxPartC_isRetail.Size = new System.Drawing.Size(145, 19);
+			this.chbxPartC_isRetail.TabIndex = 13;
+			this.chbxPartC_isRetail.Text = "Розничная реализация";
+			this.chbxPartC_isRetail.UseVisualStyleBackColor = true;
 			// 
-			// checkBox10
+			// chbxPartC_isIndividual
 			// 
-			this.checkBox10.AutoSize = true;
-			this.checkBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox10.Location = new System.Drawing.Point(305, 95);
-			this.checkBox10.Name = "checkBox10";
-			this.checkBox10.Size = new System.Drawing.Size(145, 19);
-			this.checkBox10.TabIndex = 14;
-			this.checkBox10.Text = "Физические лицо";
-			this.checkBox10.UseVisualStyleBackColor = true;
+			this.chbxPartC_isIndividual.AutoSize = true;
+			this.chbxPartC_isIndividual.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isIndividual.Location = new System.Drawing.Point(305, 95);
+			this.chbxPartC_isIndividual.Name = "chbxPartC_isIndividual";
+			this.chbxPartC_isIndividual.Size = new System.Drawing.Size(145, 19);
+			this.chbxPartC_isIndividual.TabIndex = 14;
+			this.chbxPartC_isIndividual.Text = "Физические лицо";
+			this.chbxPartC_isIndividual.UseVisualStyleBackColor = true;
 			// 
 			// l_PartC1_iik
 			// 
@@ -557,10 +557,11 @@
 			// tbPartC_tin
 			// 
 			this.tbPartC_tin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartC_tin.Location = new System.Drawing.Point(464, 63);
+			this.tbPartC_tin.Location = new System.Drawing.Point(464, 34);
 			this.tbPartC_tin.Name = "tbPartC_tin";
 			this.tbPartC_tin.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC_tin.TabIndex = 46;
+			this.tbPartC_tin.TextChanged += new System.EventHandler(this.tbPartC_tin_TextChanged);
 			// 
 			// numUpDown_participantCounter
 			// 
@@ -571,10 +572,10 @@
 			this.numUpDown_participantCounter.TabIndex = 47;
 			this.numUpDown_participantCounter.ValueChanged += new System.EventHandler(this.numUpDown_participantCounter_ValueChanged);
 			// 
-			// eptbPartC_tin
+			// epPartC_tin
 			// 
-			this.eptbPartC_tin.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-			this.eptbPartC_tin.ContainerControl = this;
+			this.epPartC_tin.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartC_tin.ContainerControl = this;
 			// 
 			// epPartC_reorganizedTin
 			// 
@@ -633,7 +634,7 @@
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.tableLayoutPanel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numUpDown_participantCounter)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.eptbPartC_tin)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_tin)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_reorganizedTin)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_name)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_address)).EndInit();
@@ -650,8 +651,8 @@
 		#endregion
 
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label l_PartC_tin;
+		private System.Windows.Forms.Label l_PartC_structTin;
 		private System.Windows.Forms.Label l_PartC_reorganizedTin;
 		private System.Windows.Forms.Label l_PartC_name;
 		private System.Windows.Forms.Label l_PartC_shareParticipation;
@@ -665,16 +666,16 @@
 		private System.Windows.Forms.TextBox tbPartC_shareParticipation;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-		private System.Windows.Forms.CheckBox checkBox1;
-		private System.Windows.Forms.CheckBox checkBox5;
-		private System.Windows.Forms.CheckBox checkBox8;
-		private System.Windows.Forms.CheckBox checkBox2;
-		private System.Windows.Forms.CheckBox checkBox3;
-		private System.Windows.Forms.CheckBox checkBox4;
-		private System.Windows.Forms.CheckBox checkBox6;
-		private System.Windows.Forms.CheckBox checkBox7;
-		private System.Windows.Forms.CheckBox checkBox9;
-		private System.Windows.Forms.CheckBox checkBox10;
+		private System.Windows.Forms.CheckBox chbxPartC_isCommitent;
+		private System.Windows.Forms.CheckBox chbxPartC_isBroker;
+		private System.Windows.Forms.CheckBox chbxPartC_isLessee;
+		private System.Windows.Forms.CheckBox chbxPartC_isJointActivityParticipant;
+		private System.Windows.Forms.CheckBox chbxPartC_isPublicOffice;
+		private System.Windows.Forms.CheckBox chbxPartC_isNonResident;
+		private System.Windows.Forms.CheckBox chbxPartC_isSharingAgreementParticipant;
+		private System.Windows.Forms.CheckBox chbxPartC_isPrincipal;
+		private System.Windows.Forms.CheckBox chbxPartC_isRetail;
+		private System.Windows.Forms.CheckBox chbxPartC_isIndividual;
 		private System.Windows.Forms.Label l_PartC1_iik;
 		private System.Windows.Forms.Label l_PartC1_productCode;
 		private System.Windows.Forms.Label l_PartC1_payPurpose;
@@ -689,7 +690,7 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox tbPartC_tin;
 		private System.Windows.Forms.NumericUpDown numUpDown_participantCounter;
-		private System.Windows.Forms.ErrorProvider eptbPartC_tin;
+		private System.Windows.Forms.ErrorProvider epPartC_tin;
 		private System.Windows.Forms.ErrorProvider epPartC_reorganizedTin;
 		private System.Windows.Forms.ErrorProvider epPartC_name;
 		private System.Windows.Forms.ErrorProvider epPartC_address;
