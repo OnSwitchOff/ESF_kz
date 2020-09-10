@@ -141,5 +141,112 @@ namespace ESF_kz.Forms
 		{
 			return true;
 		}
+
+		private void tbPartC_name_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC_name_Validation();
+		}
+
+		private void tbPartC_name_Validation()
+		{
+			Regex regex = new Regex(@"^.{3,450}$");
+			bool flag = regex.IsMatch(tbPartC_name.Text);
+			string message = "";
+
+			if (!flag)
+			{
+				message = "Наименование получателя отсутствует";
+				epPartC_reorganizedTin.SetError(tbPartC_reorganizedTin, message);
+			}
+			else
+			{
+				epPartC_reorganizedTin.Clear();				
+			}
+			
+		}
+
+		private void tbPartC_shareParticipation_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC_shareParticipation_Validation();
+		}
+
+		private void tbPartC_shareParticipation_Validation()
+		{
+
+			Regex regex = new Regex(@"^[0][.]\d{0,5}[1-9]$");
+			bool flag = regex.IsMatch(tbPartC_shareParticipation.Text);
+			if (!flag)
+			{
+				epPartC_shareParticipation.SetError(tbPartC_shareParticipation, "Укажите долю участия в формате десятичной дроби < 1");
+			}
+			else
+			{
+				epPartC_shareParticipation.Clear();
+			}
+			
+		}
+
+		private void chbxPartC_isJointActivityParticipant_CheckedChanged(object sender, EventArgs e)
+		{
+			TabControl tabControl = (TabControl)this.Parent.Parent;
+			if (chbxPartC_isJointActivityParticipant.Checked)
+			{
+				tabControl.TabPages[0].Text = "Customer-Participant #1";
+				tbPartC_shareParticipation.Enabled = true;
+				numUpDown_participantCounter.Enabled = true;
+
+			}
+			else
+			{
+				tabControl.TabPages[0].Text = "Customer";
+				tbPartC_shareParticipation.Enabled = false;
+				tbPartC_shareParticipation.Text = "";
+				numUpDown_participantCounter.Value = 1;
+				numUpDown_participantCounter.Enabled = false;
+			}
+		}
+
+		private void chbxPartC_isSharingAgreementParticipant_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void tbPartc_countryCode_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC_countryCode_Validation();
+		}
+
+		private void tbPartC_countryCode_Validation()
+		{
+			Regex regex = new Regex(@"^.{0,2}$");
+			bool flag = regex.IsMatch(tbPartC_countryCode.Text);
+			if (!flag)
+			{
+				epPartC_countryCode.SetError(tbPartC_countryCode, "neverniy format adressa");
+			}
+			else
+			{
+				epPartC_countryCode.Clear();
+			}
+		}
+
+		private void tbPartC_address_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC_address_Validation();
+		}
+
+		private void tbPartC_address_Validation()
+		{
+			Regex regex = new Regex(@"^.{3,450}$");
+			bool flag = regex.IsMatch(tbPartC_address.Text);
+			if (!flag)
+			{
+				epPartC_address.SetError(tbPartC_address, "neverniy format adressa");
+			}
+			else
+			{
+				epPartC_address.Clear();
+			}
+		}
 	}
 }

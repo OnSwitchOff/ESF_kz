@@ -301,7 +301,7 @@ namespace ESF_kz.Forms
 			TabControl tabControl = (TabControl)this.Parent.Parent;
 			if (chbxPartB_isSharingAgreementParticipant.Checked)
 			{
-				tabControl.TabPages[0].Text = "Participant #1";
+				tabControl.TabPages[0].Text = "Seller-Participant #1";
 				tbPartB_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
 
@@ -374,7 +374,7 @@ namespace ESF_kz.Forms
 				int dif = (int)numUpDown_participantCounter.Value - tabControl.TabCount;
 				for (int i = 0; i < dif; i++)
 				{
-					panelESFpartBtab PanelESFPartBtab = PanelESFpartB.CreateTab("Participant #" + (tabControl.TabCount + 1));
+					panelESFpartBtab PanelESFPartBtab = PanelESFpartB.CreateTab("Seller-Participant #" + (tabControl.TabCount + 1));
 					PanelESFPartBtab.numUpDown_participantCounter.Visible = false;
 					PanelESFPartBtab.chbxPartB_isSharingAgreementParticipant.Enabled = false;
 					PanelESFPartBtab.chbxPartB_isSharingAgreementParticipant.Checked = chbxPartB_isSharingAgreementParticipant.Checked;

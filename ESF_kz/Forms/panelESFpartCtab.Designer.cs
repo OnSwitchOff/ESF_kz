@@ -63,7 +63,7 @@
 			this.tbPartC1_payPurpose = new System.Windows.Forms.TextBox();
 			this.tbPartC1_bik = new System.Windows.Forms.TextBox();
 			this.tbPartC1_iik = new System.Windows.Forms.TextBox();
-			this.tbPartc_countryCode = new System.Windows.Forms.TextBox();
+			this.tbPartC_countryCode = new System.Windows.Forms.TextBox();
 			this.tbPartC_reorganizedTin = new System.Windows.Forms.TextBox();
 			this.tbPartC_name = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
 			this.epPartC_reorganizedTin = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_name = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_address = new System.Windows.Forms.ErrorProvider(this.components);
-			this.epPartc_countryCode = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartC_countryCode = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_shareParticipation = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC1_iik = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC1_productCode = new System.Windows.Forms.ErrorProvider(this.components);
@@ -86,7 +86,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_reorganizedTin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_name)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_address)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.epPartc_countryCode)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_countryCode)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_shareParticipation)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_iik)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_productCode)).BeginInit();
@@ -123,7 +123,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.tbPartC1_payPurpose, 1, 14);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartC1_bik, 1, 15);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartC1_iik, 1, 12);
-			this.tableLayoutPanel1.Controls.Add(this.tbPartc_countryCode, 1, 7);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartC_countryCode, 1, 7);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartC_reorganizedTin, 1, 3);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartC_name, 1, 4);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
@@ -277,14 +277,17 @@
 			this.tbPartC_address.Name = "tbPartC_address";
 			this.tbPartC_address.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC_address.TabIndex = 27;
+			this.tbPartC_address.TextChanged += new System.EventHandler(this.tbPartC_address_TextChanged);
 			// 
 			// tbPartC_shareParticipation
 			// 
 			this.tbPartC_shareParticipation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartC_shareParticipation.Enabled = false;
 			this.tbPartC_shareParticipation.Location = new System.Drawing.Point(464, 150);
 			this.tbPartC_shareParticipation.Name = "tbPartC_shareParticipation";
 			this.tbPartC_shareParticipation.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC_shareParticipation.TabIndex = 28;
+			this.tbPartC_shareParticipation.TextChanged += new System.EventHandler(this.tbPartC_shareParticipation_TextChanged);
 			// 
 			// label13
 			// 
@@ -371,6 +374,7 @@
 			this.chbxPartC_isJointActivityParticipant.TabIndex = 7;
 			this.chbxPartC_isJointActivityParticipant.Text = "участник договора о совместной деятельности";
 			this.chbxPartC_isJointActivityParticipant.UseVisualStyleBackColor = true;
+			this.chbxPartC_isJointActivityParticipant.CheckedChanged += new System.EventHandler(this.chbxPartC_isJointActivityParticipant_CheckedChanged);
 			// 
 			// chbxPartC_isPublicOffice
 			// 
@@ -406,6 +410,7 @@
 			this.chbxPartC_isSharingAgreementParticipant.TabIndex = 11;
 			this.chbxPartC_isSharingAgreementParticipant.Text = "участник СРП или сделки, заключенной в рамках СРП";
 			this.chbxPartC_isSharingAgreementParticipant.UseVisualStyleBackColor = true;
+			this.chbxPartC_isSharingAgreementParticipant.CheckedChanged += new System.EventHandler(this.chbxPartC_isSharingAgreementParticipant_CheckedChanged);
 			// 
 			// chbxPartC_isPrincipal
 			// 
@@ -517,13 +522,14 @@
 			this.tbPartC1_iik.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC1_iik.TabIndex = 32;
 			// 
-			// tbPartc_countryCode
+			// tbPartC_countryCode
 			// 
-			this.tbPartc_countryCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartc_countryCode.Location = new System.Drawing.Point(464, 208);
-			this.tbPartc_countryCode.Name = "tbPartc_countryCode";
-			this.tbPartc_countryCode.Size = new System.Drawing.Size(400, 20);
-			this.tbPartc_countryCode.TabIndex = 42;
+			this.tbPartC_countryCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartC_countryCode.Location = new System.Drawing.Point(464, 208);
+			this.tbPartC_countryCode.Name = "tbPartC_countryCode";
+			this.tbPartC_countryCode.Size = new System.Drawing.Size(400, 20);
+			this.tbPartC_countryCode.TabIndex = 42;
+			this.tbPartC_countryCode.TextChanged += new System.EventHandler(this.tbPartc_countryCode_TextChanged);
 			// 
 			// tbPartC_reorganizedTin
 			// 
@@ -541,6 +547,7 @@
 			this.tbPartC_name.Name = "tbPartC_name";
 			this.tbPartC_name.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC_name.TabIndex = 44;
+			this.tbPartC_name.TextChanged += new System.EventHandler(this.tbPartC_name_TextChanged);
 			// 
 			// label9
 			// 
@@ -558,10 +565,21 @@
 			// numUpDown_participantCounter
 			// 
 			this.numUpDown_participantCounter.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.numUpDown_participantCounter.Enabled = false;
 			this.numUpDown_participantCounter.Location = new System.Drawing.Point(464, 390);
+			this.numUpDown_participantCounter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.numUpDown_participantCounter.Name = "numUpDown_participantCounter";
 			this.numUpDown_participantCounter.Size = new System.Drawing.Size(120, 20);
 			this.numUpDown_participantCounter.TabIndex = 47;
+			this.numUpDown_participantCounter.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.numUpDown_participantCounter.ValueChanged += new System.EventHandler(this.numUpDown_participantCounter_ValueChanged);
 			// 
 			// tbPartC_tin
@@ -594,10 +612,10 @@
 			this.epPartC_address.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
 			this.epPartC_address.ContainerControl = this;
 			// 
-			// epPartc_countryCode
+			// epPartC_countryCode
 			// 
-			this.epPartc_countryCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-			this.epPartc_countryCode.ContainerControl = this;
+			this.epPartC_countryCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+			this.epPartC_countryCode.ContainerControl = this;
 			// 
 			// epPartC_shareParticipation
 			// 
@@ -640,7 +658,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_reorganizedTin)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_name)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_address)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.epPartc_countryCode)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_countryCode)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC_shareParticipation)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_iik)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_productCode)).EndInit();
@@ -686,7 +704,7 @@
 		private System.Windows.Forms.TextBox tbPartC1_payPurpose;
 		private System.Windows.Forms.TextBox tbPartC1_bik;
 		private System.Windows.Forms.TextBox tbPartC1_iik;
-		private System.Windows.Forms.TextBox tbPartc_countryCode;
+		private System.Windows.Forms.TextBox tbPartC_countryCode;
 		private System.Windows.Forms.TextBox tbPartC_reorganizedTin;
 		private System.Windows.Forms.TextBox tbPartC_name;
 		private System.Windows.Forms.Label label9;
@@ -696,7 +714,7 @@
 		private System.Windows.Forms.ErrorProvider epPartC_reorganizedTin;
 		private System.Windows.Forms.ErrorProvider epPartC_name;
 		private System.Windows.Forms.ErrorProvider epPartC_address;
-		private System.Windows.Forms.ErrorProvider epPartc_countryCode;
+		private System.Windows.Forms.ErrorProvider epPartC_countryCode;
 		private System.Windows.Forms.ErrorProvider epPartC_shareParticipation;
 		private System.Windows.Forms.ErrorProvider epPartC1_iik;
 		private System.Windows.Forms.ErrorProvider epPartC1_productCode;
