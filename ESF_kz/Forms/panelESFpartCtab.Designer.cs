@@ -67,8 +67,8 @@
 			this.tbPartC_reorganizedTin = new System.Windows.Forms.TextBox();
 			this.tbPartC_name = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.tbPartC_tin = new System.Windows.Forms.TextBox();
 			this.numUpDown_participantCounter = new System.Windows.Forms.NumericUpDown();
+			this.tbPartC_tin = new System.Windows.Forms.TextBox();
 			this.epPartC_tin = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_reorganizedTin = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC_name = new System.Windows.Forms.ErrorProvider(this.components);
@@ -532,6 +532,7 @@
 			this.tbPartC_reorganizedTin.Name = "tbPartC_reorganizedTin";
 			this.tbPartC_reorganizedTin.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC_reorganizedTin.TabIndex = 43;
+			this.tbPartC_reorganizedTin.TextChanged += new System.EventHandler(this.tbPartC_reorganizedTin_TextChanged);
 			// 
 			// tbPartC_name
 			// 
@@ -554,15 +555,6 @@
 			this.label9.Text = "Раздел С. Реквизиты получателя";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// tbPartC_tin
-			// 
-			this.tbPartC_tin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartC_tin.Location = new System.Drawing.Point(464, 34);
-			this.tbPartC_tin.Name = "tbPartC_tin";
-			this.tbPartC_tin.Size = new System.Drawing.Size(400, 20);
-			this.tbPartC_tin.TabIndex = 46;
-			this.tbPartC_tin.TextChanged += new System.EventHandler(this.tbPartC_tin_TextChanged);
-			// 
 			// numUpDown_participantCounter
 			// 
 			this.numUpDown_participantCounter.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -571,6 +563,16 @@
 			this.numUpDown_participantCounter.Size = new System.Drawing.Size(120, 20);
 			this.numUpDown_participantCounter.TabIndex = 47;
 			this.numUpDown_participantCounter.ValueChanged += new System.EventHandler(this.numUpDown_participantCounter_ValueChanged);
+			// 
+			// tbPartC_tin
+			// 
+			this.tbPartC_tin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartC_tin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbPartC_tin.Location = new System.Drawing.Point(464, 34);
+			this.tbPartC_tin.Name = "tbPartC_tin";
+			this.tbPartC_tin.Size = new System.Drawing.Size(400, 20);
+			this.tbPartC_tin.TabIndex = 46;
+			this.tbPartC_tin.TextChanged += new System.EventHandler(this.tbPartC_tin_TextChanged);
 			// 
 			// epPartC_tin
 			// 

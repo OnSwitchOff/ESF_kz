@@ -15,7 +15,38 @@ namespace ESF_kz.Forms
 		public panelESFpartC()
 		{
 			InitializeComponent();
+			CreateFirstTab("Customer");
 		}
+
+
+		public panelESFpartCtab CreateTab(string title)
+		{
+			panelESFpartCtab PanelESFPartCtab = new panelESFpartCtab();
+			PanelESFPartCtab.setESFform(this.getESFform());
+			PanelESFPartCtab.Dock = DockStyle.Fill;
+			this.tabControl1.TabPages.Add(title);
+			this.tabControl1.TabPages[tabControl1.TabCount - 1].Controls.Add(PanelESFPartCtab);
+			return PanelESFPartCtab;
+		}
+
+		public panelESFpartCtab CreateFirstTab(string title)
+		{
+			panelESFpartCtab PanelESFPartCtab = new panelESFpartCtab();
+			PanelESFPartCtab.setESFform(this.getESFform());
+			PanelESFPartCtab.Dock = DockStyle.Fill;
+			this.tabControl1.TabPages.Add(title);
+			this.tabControl1.TabPages[0].Controls.Add(PanelESFPartCtab);
+			return PanelESFPartCtab;
+		}
+
+		public void RemoveLastTab()
+		{
+
+		}
+
+
+
+
 		public TabControl getTabControll()
 		{
 			return this.tabControl1;

@@ -62,17 +62,6 @@ namespace ESF_kz
 
 		private void btnESFpartC_Click(object sender, EventArgs e)
 		{
-			panelESFpartCtab PannelESFPartCtab1 = new panelESFpartCtab();
-			panelESFpartCtab PannelESFPartCtab2 = new panelESFpartCtab();
-			PannelESFPartCtab1.Dock = DockStyle.Fill;
-			PannelESFPartCtab2.Dock = DockStyle.Fill;
-			if (this.PanelESFpartC.getTabControll().TabPages.Count < 2)
-			{
-				this.PanelESFpartC.getTabControll().TabPages.Add("taB 1");
-				this.PanelESFpartC.getTabControll().TabPages.Add("taB 2");
-			}
-			this.PanelESFpartC.getTabControll().TabPages[0].Controls.Add(PannelESFPartCtab1);
-			this.PanelESFpartC.getTabControll().TabPages[1].Controls.Add(PannelESFPartCtab2);
 			this.PanelESFpartC.BringToFront();
 		}
 
