@@ -192,6 +192,7 @@
 			this.tbPartJ_customerAgentTin.Name = "tbPartJ_customerAgentTin";
 			this.tbPartJ_customerAgentTin.Size = new System.Drawing.Size(400, 20);
 			this.tbPartJ_customerAgentTin.TabIndex = 50;
+			this.tbPartJ_customerAgentTin.TextChanged += new System.EventHandler(this.tbPartJ_customerAgentTin_TextChanged);
 			// 
 			// tbPartJ_customerAgentName
 			// 

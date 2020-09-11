@@ -304,7 +304,7 @@ namespace ESF_kz.Forms
 				tabControl.TabPages[0].Text = "Seller-Participant #1";
 				tbPartB_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
-
+				numUpDown_participantCounter.Value = 2;
 			}
 			else
 			{
@@ -343,8 +343,9 @@ namespace ESF_kz.Forms
 				}
 				else
 				{					
-					tabControl.TabPages[0].Text = "Participant #1";
-					numUpDown_participantCounter.Enabled = true;	
+					tabControl.TabPages[0].Text = "Seller-Participant #1";
+					numUpDown_participantCounter.Enabled = true;
+					numUpDown_participantCounter.Value = 2;
 				}
 			}
 			else

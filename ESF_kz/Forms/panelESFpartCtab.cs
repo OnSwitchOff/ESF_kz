@@ -20,7 +20,36 @@ namespace ESF_kz.Forms
 
 		private void numUpDown_participantCounter_ValueChanged(object sender, EventArgs e)
 		{
-			
+
+			panelESFpartC PanelESFpartC = (panelESFpartC)this.Parent.Parent.Parent;
+			TabControl tabControl = PanelESFpartC.getTabControll();
+			if (tabControl.TabCount < numUpDown_participantCounter.Value)
+			{
+				int dif = (int)numUpDown_participantCounter.Value - tabControl.TabCount;
+				for (int i = 0; i < dif; i++)
+				{
+					panelESFpartCtab PanelESFPartCtab = PanelESFpartC.CreateTab("Customer-Participant #" + (tabControl.TabCount + 1));
+					PanelESFPartCtab.numUpDown_participantCounter.Visible = false;
+					PanelESFPartCtab.chbxPartC_isSharingAgreementParticipant.Enabled = false;
+					PanelESFPartCtab.chbxPartC_isSharingAgreementParticipant.Checked = chbxPartC_isSharingAgreementParticipant.Checked;
+					PanelESFPartCtab.chbxPartC_isJointActivityParticipant.Checked = chbxPartC_isJointActivityParticipant.Checked;
+					PanelESFPartCtab.chbxPartC_isJointActivityParticipant.Enabled = false;
+					PanelESFPartCtab.l_participantCounter.Visible = false;
+				}
+			}
+			else
+			{
+				int dif = tabControl.TabCount - (int)numUpDown_participantCounter.Value;
+				for (int i = 0; i < dif; i++)
+				{
+					tabControl.TabPages.Remove(tabControl.TabPages[tabControl.TabCount - 1]);
+				}
+				if (numUpDown_participantCounter.Value == 1)
+				{
+					chbxPartC_isSharingAgreementParticipant.Checked = false;
+					chbxPartC_isJointActivityParticipant.Checked = false;
+				}
+			}
 		}
 
 		public bool isPublicOffice()
@@ -40,8 +69,8 @@ namespace ESF_kz.Forms
 			bool isRetail = chbxPartC_isRetail.Checked;
 			bool isEmpty = tbPartC_tin.Text == "";
 			string message = "";
-
-			if(isNonResident)
+			chbxPartC_isSharingAgreementParticipant.Enabled = false;
+			if (isNonResident)
 			{
 				regex = new Regex(@"^\d{0-50}$");
 				message = "Неверный формат";
@@ -79,11 +108,17 @@ namespace ESF_kz.Forms
 					else
 					{
 						epPartC_tin.Clear();
+						chbxPartC_isSharingAgreementParticipant.Enabled = true;
 					}
 				}
 
 			}
 
+		}
+
+		internal void chbxPartC_isPrincipal_setState(bool flag)
+		{
+			chbxPartC_isPrincipal.Checked = flag;
 		}
 
 		//проверка на наличие ИИН/БИН в БД
@@ -194,7 +229,7 @@ namespace ESF_kz.Forms
 				tabControl.TabPages[0].Text = "Customer-Participant #1";
 				tbPartC_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
-
+				numUpDown_participantCounter.Value = 2;
 			}
 			else
 			{
@@ -207,8 +242,38 @@ namespace ESF_kz.Forms
 		}
 
 		private void chbxPartC_isSharingAgreementParticipant_CheckedChanged(object sender, EventArgs e)
-		{
+		{			
+			if (chbxPartC_isSharingAgreementParticipant.Checked)
+			{
+				if (!checkForSharingAgreementParticipant(tbPartC_tin.Text))
+				{
+					chbxPartC_isSharingAgreementParticipant.Checked = false;
+				}
+			}
+			chbxPartC_isRetail_Validating();
 
+			TabControl tabControl = (TabControl)this.Parent.Parent;
+			if (chbxPartC_isSharingAgreementParticipant.Checked)
+			{
+				tabControl.TabPages[0].Text = "Customer-Participant #1";
+				tbPartC_shareParticipation.Enabled = true;
+				numUpDown_participantCounter.Enabled = true;
+				numUpDown_participantCounter.Value = 2;
+
+			}
+			else
+			{
+				tabControl.TabPages[0].Text = "Customer";
+				tbPartC_shareParticipation.Enabled = false;
+				tbPartC_shareParticipation.Text = "";
+				numUpDown_participantCounter.Value = 1;
+				numUpDown_participantCounter.Enabled = false;
+			}
+		}
+
+		private bool checkForSharingAgreementParticipant(string tin)
+		{
+			return true;
 		}
 
 		private void tbPartc_countryCode_TextChanged(object sender, EventArgs e)
@@ -247,6 +312,79 @@ namespace ESF_kz.Forms
 			{
 				epPartC_address.Clear();
 			}
+		}
+
+		private void tbPartC_trailer_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC_trailer_Validation();
+		}
+
+		private void tbPartC_trailer_Validation()
+		{
+			Regex regex = new Regex(@"^.{0,255}$");
+			bool flag = regex.IsMatch(tbPartC_trailer.Text);
+			if(!flag)
+			{
+				epPartC_trailer.SetError(tbPartC_trailer, "Neverniy format");
+			}
+			else
+			{
+				epPartC_trailer.Clear();
+			}
+		}
+
+		private void chbxPartC_isCommitent_CheckedChanged(object sender, EventArgs e)
+		{
+			chbxPartC_isRetail_Validating();
+			if (chbxPartC_isCommitent.Checked)
+			{
+				chbxPartC_isBroker.Checked = false;
+			}
+		}
+
+		private void chbxPartC_isBroker_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chbxPartC_isBroker.Checked)
+			{
+				chbxPartC_isCommitent.Checked = false;
+			}
+		}
+
+		private void chbxPartC_isPrincipal_CheckedChanged(object sender, EventArgs e)
+		{
+			chbxPartC_isRetail_Validating();
+		}
+
+		private void chbxPartC_isRetail_CheckedChanged(object sender, EventArgs e)
+		{
+			chbxPartC_isRetail_Validating();	
+		}
+
+		private void chbxPartC_isRetail_Validating()
+		{
+			if (!hasPermission() && (chbxPartC_isCommitent.Checked || chbxPartC_isPrincipal.Checked || chbxPartC_isLessee.Checked || chbxPartC_isPublicOffice.Checked || chbxPartC_isSharingAgreementParticipant.Checked))
+			{
+				epPartC_CustomerType.SetError(l_PartC_CustomerType, "В категории получателя при выборе категории I дополнительно нельзя выбрать категории A, C, E, G, H.");
+			}
+			else
+			{
+				epPartC_CustomerType.Clear();
+			}
+		}
+
+		private bool hasPermission()
+		{
+			return true;
+		}
+
+		private void chbxPartC_isLessee_CheckedChanged(object sender, EventArgs e)
+		{
+			chbxPartC_isRetail_Validating();
+		}
+
+		private void chbxPartC_isPublicOffice_CheckedChanged(object sender, EventArgs e)
+		{
+			chbxPartC_isRetail_Validating();
 		}
 	}
 }

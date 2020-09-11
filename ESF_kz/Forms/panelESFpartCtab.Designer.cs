@@ -79,6 +79,8 @@
 			this.epPartC1_productCode = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC1_payPurpose = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartC1_bik = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartC_trailer = new System.Windows.Forms.ErrorProvider(this.components);
+			this.epPartC_CustomerType = new System.Windows.Forms.ErrorProvider(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numUpDown_participantCounter)).BeginInit();
@@ -92,6 +94,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_productCode)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_payPurpose)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_bik)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_trailer)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_CustomerType)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -242,11 +246,11 @@
 			// 
 			// l_PartC_CustomerType
 			// 
+			this.l_PartC_CustomerType.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.l_PartC_CustomerType.AutoSize = true;
-			this.l_PartC_CustomerType.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.l_PartC_CustomerType.Location = new System.Drawing.Point(4, 262);
+			this.l_PartC_CustomerType.Location = new System.Drawing.Point(4, 317);
 			this.l_PartC_CustomerType.Name = "l_PartC_CustomerType";
-			this.l_PartC_CustomerType.Size = new System.Drawing.Size(453, 123);
+			this.l_PartC_CustomerType.Size = new System.Drawing.Size(140, 13);
 			this.l_PartC_CustomerType.TabIndex = 11;
 			this.l_PartC_CustomerType.Text = "20. категория получателя:";
 			this.l_PartC_CustomerType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,6 +273,7 @@
 			this.tbPartC_trailer.Name = "tbPartC_trailer";
 			this.tbPartC_trailer.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC_trailer.TabIndex = 20;
+			this.tbPartC_trailer.TextChanged += new System.EventHandler(this.tbPartC_trailer_TextChanged);
 			// 
 			// tbPartC_address
 			// 
@@ -340,6 +345,7 @@
 			this.chbxPartC_isCommitent.TabIndex = 0;
 			this.chbxPartC_isCommitent.Text = "комитент ";
 			this.chbxPartC_isCommitent.UseVisualStyleBackColor = true;
+			this.chbxPartC_isCommitent.CheckedChanged += new System.EventHandler(this.chbxPartC_isCommitent_CheckedChanged);
 			// 
 			// chbxPartC_isBroker
 			// 
@@ -351,6 +357,7 @@
 			this.chbxPartC_isBroker.TabIndex = 3;
 			this.chbxPartC_isBroker.Text = "комиссионер";
 			this.chbxPartC_isBroker.UseVisualStyleBackColor = true;
+			this.chbxPartC_isBroker.CheckedChanged += new System.EventHandler(this.chbxPartC_isBroker_CheckedChanged);
 			// 
 			// chbxPartC_isLessee
 			// 
@@ -362,6 +369,7 @@
 			this.chbxPartC_isLessee.TabIndex = 6;
 			this.chbxPartC_isLessee.Text = "лизингополучатель";
 			this.chbxPartC_isLessee.UseVisualStyleBackColor = true;
+			this.chbxPartC_isLessee.CheckedChanged += new System.EventHandler(this.chbxPartC_isLessee_CheckedChanged);
 			// 
 			// chbxPartC_isJointActivityParticipant
 			// 
@@ -387,6 +395,7 @@
 			this.chbxPartC_isPublicOffice.TabIndex = 8;
 			this.chbxPartC_isPublicOffice.Text = "государственное учреждение";
 			this.chbxPartC_isPublicOffice.UseVisualStyleBackColor = true;
+			this.chbxPartC_isPublicOffice.CheckedChanged += new System.EventHandler(this.chbxPartC_isPublicOffice_CheckedChanged);
 			// 
 			// chbxPartC_isNonResident
 			// 
@@ -404,6 +413,7 @@
 			this.chbxPartC_isSharingAgreementParticipant.AutoSize = true;
 			this.tableLayoutPanel2.SetColumnSpan(this.chbxPartC_isSharingAgreementParticipant, 3);
 			this.chbxPartC_isSharingAgreementParticipant.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chbxPartC_isSharingAgreementParticipant.Enabled = false;
 			this.chbxPartC_isSharingAgreementParticipant.Location = new System.Drawing.Point(3, 72);
 			this.chbxPartC_isSharingAgreementParticipant.Name = "chbxPartC_isSharingAgreementParticipant";
 			this.chbxPartC_isSharingAgreementParticipant.Size = new System.Drawing.Size(447, 17);
@@ -422,6 +432,7 @@
 			this.chbxPartC_isPrincipal.TabIndex = 12;
 			this.chbxPartC_isPrincipal.Text = "доверитель";
 			this.chbxPartC_isPrincipal.UseVisualStyleBackColor = true;
+			this.chbxPartC_isPrincipal.CheckedChanged += new System.EventHandler(this.chbxPartC_isPrincipal_CheckedChanged);
 			// 
 			// chbxPartC_isRetail
 			// 
@@ -433,6 +444,7 @@
 			this.chbxPartC_isRetail.TabIndex = 13;
 			this.chbxPartC_isRetail.Text = "Розничная реализация";
 			this.chbxPartC_isRetail.UseVisualStyleBackColor = true;
+			this.chbxPartC_isRetail.CheckedChanged += new System.EventHandler(this.chbxPartC_isRetail_CheckedChanged);
 			// 
 			// chbxPartC_isIndividual
 			// 
@@ -642,6 +654,14 @@
 			this.epPartC1_bik.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
 			this.epPartC1_bik.ContainerControl = this;
 			// 
+			// epPartC_trailer
+			// 
+			this.epPartC_trailer.ContainerControl = this;
+			// 
+			// epPartC_CustomerType
+			// 
+			this.epPartC_CustomerType.ContainerControl = this;
+			// 
 			// panelESFpartCtab
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,6 +684,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_productCode)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_payPurpose)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartC1_bik)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_trailer)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.epPartC_CustomerType)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -720,5 +742,7 @@
 		private System.Windows.Forms.ErrorProvider epPartC1_productCode;
 		private System.Windows.Forms.ErrorProvider epPartC1_payPurpose;
 		private System.Windows.Forms.ErrorProvider epPartC1_bik;
+		private System.Windows.Forms.ErrorProvider epPartC_trailer;
+		private System.Windows.Forms.ErrorProvider epPartC_CustomerType;
 	}
 }

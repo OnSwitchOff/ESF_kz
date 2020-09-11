@@ -568,10 +568,10 @@
 			// tbPartB1_kbe
 			// 
 			this.tbPartB1_kbe.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartB1_kbe.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.tbPartB1_kbe.Location = new System.Drawing.Point(484, 676);
+			this.tbPartB1_kbe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.tbPartB1_kbe.Location = new System.Drawing.Point(484, 680);
 			this.tbPartB1_kbe.Name = "tbPartB1_kbe";
-			this.tbPartB1_kbe.Size = new System.Drawing.Size(400, 13);
+			this.tbPartB1_kbe.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB1_kbe.TabIndex = 38;
 			this.tbPartB1_kbe.TextChanged += new System.EventHandler(this.tbPartB1_kbe_TextChanged);
 			// 
