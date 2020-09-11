@@ -213,6 +213,7 @@
 			this.tbPartD_consignorTin.Name = "tbPartD_consignorTin";
 			this.tbPartD_consignorTin.Size = new System.Drawing.Size(400, 20);
 			this.tbPartD_consignorTin.TabIndex = 14;
+			this.tbPartD_consignorTin.TextChanged += new System.EventHandler(this.tbPartD_consignorTin_TextChanged);
 			// 
 			// tbPartD_consignorAddress
 			// 
@@ -221,14 +222,19 @@
 			this.tbPartD_consignorAddress.Name = "tbPartD_consignorAddress";
 			this.tbPartD_consignorAddress.Size = new System.Drawing.Size(400, 20);
 			this.tbPartD_consignorAddress.TabIndex = 27;
+			this.tbPartD_consignorAddress.TextChanged += new System.EventHandler(this.tbPartD_consignorAddress_TextChanged);
 			// 
 			// tbPartD_consigneeCountryCode
 			// 
 			this.tbPartD_consigneeCountryCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartD_consigneeCountryCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.tbPartD_consigneeCountryCode.Enabled = false;
 			this.tbPartD_consigneeCountryCode.Location = new System.Drawing.Point(440, 515);
 			this.tbPartD_consigneeCountryCode.Name = "tbPartD_consigneeCountryCode";
 			this.tbPartD_consigneeCountryCode.Size = new System.Drawing.Size(400, 20);
 			this.tbPartD_consigneeCountryCode.TabIndex = 41;
+			this.tbPartD_consigneeCountryCode.Text = "KZ";
+			this.tbPartD_consigneeCountryCode.TextChanged += new System.EventHandler(this.tbPartD_consigneeCountryCode_TextChanged);
 			// 
 			// tbPartD_consigneeName
 			// 
@@ -237,6 +243,7 @@
 			this.tbPartD_consigneeName.Name = "tbPartD_consigneeName";
 			this.tbPartD_consigneeName.Size = new System.Drawing.Size(400, 20);
 			this.tbPartD_consigneeName.TabIndex = 42;
+			this.tbPartD_consigneeName.TextChanged += new System.EventHandler(this.tbPartD_consigneeName_TextChanged);
 			// 
 			// tbPartD_consignorName
 			// 
@@ -245,6 +252,7 @@
 			this.tbPartD_consignorName.Name = "tbPartD_consignorName";
 			this.tbPartD_consignorName.Size = new System.Drawing.Size(400, 20);
 			this.tbPartD_consignorName.TabIndex = 43;
+			this.tbPartD_consignorName.TextChanged += new System.EventHandler(this.tbPartD_consignorName_TextChanged);
 			// 
 			// label9
 			// 
@@ -266,6 +274,7 @@
 			this.tbPartD_consigneeTin.Name = "tbPartD_consigneeTin";
 			this.tbPartD_consigneeTin.Size = new System.Drawing.Size(400, 20);
 			this.tbPartD_consigneeTin.TabIndex = 46;
+			this.tbPartD_consigneeTin.TextChanged += new System.EventHandler(this.tbPartD_consigneeTin_TextChanged);
 			// 
 			// tbPartD_consigneeAddress
 			// 
@@ -274,6 +283,7 @@
 			this.tbPartD_consigneeAddress.Name = "tbPartD_consigneeAddress";
 			this.tbPartD_consigneeAddress.Size = new System.Drawing.Size(400, 20);
 			this.tbPartD_consigneeAddress.TabIndex = 47;
+			this.tbPartD_consigneeAddress.TextChanged += new System.EventHandler(this.tbPartD_consigneeAddress_TextChanged);
 			// 
 			// epPartD_consignorTin
 			// 

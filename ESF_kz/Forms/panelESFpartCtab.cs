@@ -13,6 +13,7 @@ namespace ESF_kz.Forms
 {
 	public partial class panelESFpartCtab : AbstractUCESFpanelTab
 	{
+		private const string NATIONAL_BANK_BIN = "941240001151";
 		public panelESFpartCtab()
 		{
 			InitializeComponent();
@@ -385,6 +386,86 @@ namespace ESF_kz.Forms
 		private void chbxPartC_isPublicOffice_CheckedChanged(object sender, EventArgs e)
 		{
 			chbxPartC_isRetail_Validating();
+			if(chbxPartC_isPublicOffice.Checked)
+			{
+				tbPartC1_iik.Enabled = true;
+				tbPartC1_productCode.Enabled = true;
+				tbPartC1_payPurpose.Enabled = true;
+				tbPartC1_bik.Text = "KKMFKZ2A";
+			}
+			else
+			{
+				tbPartC1_iik.Enabled = false;
+				tbPartC1_productCode.Enabled = false;
+				tbPartC1_payPurpose.Enabled = false;
+				tbPartC1_bik.Text = "";
+			}
+			
+		}
+
+		private void tbPartC1_iik_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC1_iik_Validation();
+		}
+
+		private void tbPartC1_iik_Validation()
+		{
+			Regex regex = new Regex(@"^.{0,20}$");
+			bool flag = regex.IsMatch(tbPartC1_iik.Text);
+			
+			if(!flag)
+			{
+				epPartC1_iik.SetError(tbPartC1_iik, "neverniy format");
+			}
+			{
+				epPartC1_iik.Clear();
+			}
+		}
+
+		private void tbPartC1_productCode_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC1_productCode_Validation();
+		}
+
+		private void tbPartC1_productCode_Validation()
+		{
+			Regex regex = new Regex(@"^\d{0,10}");
+			bool flag = regex.IsMatch(tbPartC1_productCode.Text);
+
+			if (!flag)
+			{
+				epPartC1_productCode.SetError(tbPartC1_productCode, "Neverniy format");
+
+			}
+			else
+			{
+				epPartC1_productCode.Clear();
+			}
+		}
+
+		private void tbPartC1_payPurpose_TextChanged(object sender, EventArgs e)
+		{
+			tbPartC1_payPurpose_Validation();
+		}
+
+		private void tbPartC1_payPurpose_Validation()
+		{
+			/*string temp = tbPartC1_payPurpose.Text.Trim();
+			Regex regex = new Regex(@"['\t']|['\n']|[':']{1}");
+			temp = regex.Replace(temp," ");
+			tbPartC1_payPurpose.Text = temp;*/
+
+			Regex regex = new Regex(@".{1,240}");
+
+			bool flag = regex.IsMatch(tbPartC1_payPurpose.Text);
+			if (!flag)
+			{
+				epPartC1_payPurpose.SetError(tbPartC1_payPurpose, "otsutstvuet ili neverniy format");
+			}
+			else
+			{
+				epPartC1_payPurpose.Clear();
+			}
 		}
 	}
 }

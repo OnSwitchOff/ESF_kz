@@ -204,6 +204,7 @@
 			this.tbPartE_contractNum.Name = "tbPartE_contractNum";
 			this.tbPartE_contractNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartE_contractNum.TabIndex = 43;
+			this.tbPartE_contractNum.TextChanged += new System.EventHandler(this.tbPartE_contractNum_TextChanged);
 			// 
 			// label9
 			// 
@@ -225,6 +226,7 @@
 			this.tbPartE_transportTypeCode.Name = "tbPartE_transportTypeCode";
 			this.tbPartE_transportTypeCode.Size = new System.Drawing.Size(400, 20);
 			this.tbPartE_transportTypeCode.TabIndex = 46;
+			this.tbPartE_transportTypeCode.TextChanged += new System.EventHandler(this.tbPartE_transportTypeCode_TextChanged);
 			// 
 			// tbPartE_warrant
 			// 
@@ -233,11 +235,13 @@
 			this.tbPartE_warrant.Name = "tbPartE_warrant";
 			this.tbPartE_warrant.Size = new System.Drawing.Size(400, 20);
 			this.tbPartE_warrant.TabIndex = 47;
+			this.tbPartE_warrant.TextChanged += new System.EventHandler(this.tbPartE_warrant_TextChanged);
 			// 
 			// rbPartE_hasContractTrue
 			// 
 			this.rbPartE_hasContractTrue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.rbPartE_hasContractTrue.AutoSize = true;
+			this.rbPartE_hasContractTrue.Checked = true;
 			this.tableLayoutPanel1.SetColumnSpan(this.rbPartE_hasContractTrue, 2);
 			this.rbPartE_hasContractTrue.Location = new System.Drawing.Point(298, 58);
 			this.rbPartE_hasContractTrue.Name = "rbPartE_hasContractTrue";
@@ -247,6 +251,7 @@
 			this.rbPartE_hasContractTrue.Text = "27.1 Договор (контракт) на поставку товаров, работ, услуг\r\n";
 			this.rbPartE_hasContractTrue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rbPartE_hasContractTrue.UseVisualStyleBackColor = true;
+			this.rbPartE_hasContractTrue.CheckedChanged += new System.EventHandler(this.rbPartE_hasContractTrue_CheckedChanged);
 			// 
 			// rbPartE_hasContractFalse
 			// 
@@ -257,10 +262,10 @@
 			this.rbPartE_hasContractFalse.Name = "rbPartE_hasContractFalse";
 			this.rbPartE_hasContractFalse.Size = new System.Drawing.Size(355, 47);
 			this.rbPartE_hasContractFalse.TabIndex = 49;
-			this.rbPartE_hasContractFalse.TabStop = true;
 			this.rbPartE_hasContractFalse.Text = "27.2 Без договора (контракта) на поставку товаров, работ, услуг";
 			this.rbPartE_hasContractFalse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rbPartE_hasContractFalse.UseVisualStyleBackColor = true;
+			this.rbPartE_hasContractFalse.CheckedChanged += new System.EventHandler(this.rbPartE_hasContractFalse_CheckedChanged);
 			// 
 			// l_PartE_destination
 			// 
@@ -291,6 +296,7 @@
 			this.tbPartE_destination.Name = "tbPartE_destination";
 			this.tbPartE_destination.Size = new System.Drawing.Size(400, 20);
 			this.tbPartE_destination.TabIndex = 52;
+			this.tbPartE_destination.TextChanged += new System.EventHandler(this.tbPartE_destination_TextChanged);
 			// 
 			// tbPartE_deliveryConditionCode
 			// 
@@ -299,6 +305,7 @@
 			this.tbPartE_deliveryConditionCode.Name = "tbPartE_deliveryConditionCode";
 			this.tbPartE_deliveryConditionCode.Size = new System.Drawing.Size(400, 20);
 			this.tbPartE_deliveryConditionCode.TabIndex = 53;
+			this.tbPartE_deliveryConditionCode.TextChanged += new System.EventHandler(this.tbPartE_deliveryConditionCode_TextChanged);
 			// 
 			// tbPartE_term
 			// 
@@ -307,6 +314,7 @@
 			this.tbPartE_term.Name = "tbPartE_term";
 			this.tbPartE_term.Size = new System.Drawing.Size(400, 20);
 			this.tbPartE_term.TabIndex = 41;
+			this.tbPartE_term.TextChanged += new System.EventHandler(this.tbPartE_term_TextChanged);
 			// 
 			// dtpPartE_warrantDate
 			// 

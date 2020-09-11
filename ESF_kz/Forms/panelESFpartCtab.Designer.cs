@@ -504,35 +504,41 @@
 			// tbPartC1_productCode
 			// 
 			this.tbPartC1_productCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartC1_productCode.Enabled = false;
 			this.tbPartC1_productCode.Location = new System.Drawing.Point(464, 477);
 			this.tbPartC1_productCode.Name = "tbPartC1_productCode";
 			this.tbPartC1_productCode.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC1_productCode.TabIndex = 38;
+			this.tbPartC1_productCode.TextChanged += new System.EventHandler(this.tbPartC1_productCode_TextChanged);
 			// 
 			// tbPartC1_payPurpose
 			// 
 			this.tbPartC1_payPurpose.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartC1_payPurpose.Enabled = false;
 			this.tbPartC1_payPurpose.Location = new System.Drawing.Point(464, 506);
 			this.tbPartC1_payPurpose.Name = "tbPartC1_payPurpose";
 			this.tbPartC1_payPurpose.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC1_payPurpose.TabIndex = 39;
+			this.tbPartC1_payPurpose.TextChanged += new System.EventHandler(this.tbPartC1_payPurpose_TextChanged);
 			// 
 			// tbPartC1_bik
 			// 
 			this.tbPartC1_bik.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartC1_bik.Enabled = false;
 			this.tbPartC1_bik.Location = new System.Drawing.Point(464, 542);
 			this.tbPartC1_bik.Name = "tbPartC1_bik";
 			this.tbPartC1_bik.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC1_bik.TabIndex = 40;
-			this.tbPartC1_bik.Text = "KKMFKZ2A";
 			// 
 			// tbPartC1_iik
 			// 
 			this.tbPartC1_iik.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartC1_iik.Enabled = false;
 			this.tbPartC1_iik.Location = new System.Drawing.Point(464, 448);
 			this.tbPartC1_iik.Name = "tbPartC1_iik";
 			this.tbPartC1_iik.Size = new System.Drawing.Size(400, 20);
 			this.tbPartC1_iik.TabIndex = 32;
+			this.tbPartC1_iik.TextChanged += new System.EventHandler(this.tbPartC1_iik_TextChanged);
 			// 
 			// tbPartC_countryCode
 			// 

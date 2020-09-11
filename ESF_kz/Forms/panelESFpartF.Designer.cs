@@ -111,6 +111,7 @@
 			this.tbPartF_deliveryDocNum.Name = "tbPartF_deliveryDocNum";
 			this.tbPartF_deliveryDocNum.Size = new System.Drawing.Size(350, 20);
 			this.tbPartF_deliveryDocNum.TabIndex = 14;
+			this.tbPartF_deliveryDocNum.TextChanged += new System.EventHandler(this.tbPartF_deliveryDocNum_TextChanged);
 			// 
 			// label9
 			// 
