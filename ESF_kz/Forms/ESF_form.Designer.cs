@@ -46,6 +46,8 @@ namespace ESF_kz
 			this.btnESFpartC = new System.Windows.Forms.Button();
 			this.btnESFpartA = new System.Windows.Forms.Button();
 			this.btnESFpartB = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
 			this.PanelESFpartA = new ESF_kz.Forms.panelESFpartA();
 			this.PanelESFpartB = new ESF_kz.Forms.panelESFpartB();
 			this.PanelESFpartC = new ESF_kz.Forms.panelESFpartC();
@@ -58,8 +60,6 @@ namespace ESF_kz
 			this.PanelESFpartJ = new ESF_kz.Forms.panelESFpartJ();
 			this.PanelESFpartK = new ESF_kz.Forms.panelESFpartK();
 			this.PanelESFpartL = new ESF_kz.Forms.panelESFpartL();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -190,6 +190,7 @@ namespace ESF_kz
 			// btnESFpartI
 			// 
 			this.btnESFpartI.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnESFpartI.Enabled = false;
 			this.btnESFpartI.Location = new System.Drawing.Point(3, 387);
 			this.btnESFpartI.Name = "btnESFpartI";
 			this.btnESFpartI.Size = new System.Drawing.Size(250, 42);
@@ -294,6 +295,25 @@ namespace ESF_kz
 			this.btnESFpartB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnESFpartB.UseVisualStyleBackColor = true;
 			this.btnESFpartB.Click += new System.EventHandler(this.btnESFpartB_Click);
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(3, 3);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1067, 58);
+			this.panel1.TabIndex = 6;
+			// 
+			// label1
+			// 
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Location = new System.Drawing.Point(0, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(1067, 58);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "ЭЛЕКТРОННЫЙ СЧЕТ ФАКТУРА";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// PanelESFpartA
 			// 
@@ -432,25 +452,6 @@ namespace ESF_kz
 			this.PanelESFpartL.Padding = new System.Windows.Forms.Padding(10);
 			this.PanelESFpartL.Size = new System.Drawing.Size(807, 578);
 			this.PanelESFpartL.TabIndex = 11;
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(3, 3);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1067, 58);
-			this.panel1.TabIndex = 6;
-			// 
-			// label1
-			// 
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(1067, 58);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "ЭЛЕКТРОННЫЙ СЧЕТ ФАКТУРА";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// ESF_form
 			// 

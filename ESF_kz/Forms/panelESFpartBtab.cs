@@ -354,6 +354,8 @@ namespace ESF_kz.Forms
 				numUpDown_participantCounter.Value = 1;
 				numUpDown_participantCounter.Enabled = false;
 			}
+
+			((ESF_form)this.TopLevelControl).SetEnableBtnESFpartI(chbxPartB_isPrincipal.Checked || chbxPartB_isJointActivityParticipant.Checked);
 		}
 
 		private bool isJointActivityParticipant(string bin)
@@ -363,7 +365,7 @@ namespace ESF_kz.Forms
 
 		private void chbxPartB_isPrincipal_CheckedChanged(object sender, EventArgs e)
 		{
-
+			((ESF_form)this.TopLevelControl).SetEnableBtnESFpartI(chbxPartB_isPrincipal.Checked || chbxPartB_isJointActivityParticipant.Checked);
 		}
 
 		private void numUpDown_participantCounter_ValueChanged(object sender, EventArgs e)

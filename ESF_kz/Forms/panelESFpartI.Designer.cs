@@ -127,6 +127,7 @@
 			this.tbPartI_sellerAgentDocNum.Name = "tbPartI_sellerAgentDocNum";
 			this.tbPartI_sellerAgentDocNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartI_sellerAgentDocNum.TabIndex = 14;
+			this.tbPartI_sellerAgentDocNum.TextChanged += new System.EventHandler(this.tbPartI_sellerAgentDocNum_TextChanged);
 			// 
 			// label9
 			// 
@@ -200,6 +201,7 @@
 			this.tbPartI_sellerAgentName.Name = "tbPartI_sellerAgentName";
 			this.tbPartI_sellerAgentName.Size = new System.Drawing.Size(400, 20);
 			this.tbPartI_sellerAgentName.TabIndex = 51;
+			this.tbPartI_sellerAgentName.TextChanged += new System.EventHandler(this.tbPartI_sellerAgentName_TextChanged);
 			// 
 			// tbPartI_sellerAgentAddress
 			// 
@@ -208,6 +210,7 @@
 			this.tbPartI_sellerAgentAddress.Name = "tbPartI_sellerAgentAddress";
 			this.tbPartI_sellerAgentAddress.Size = new System.Drawing.Size(400, 20);
 			this.tbPartI_sellerAgentAddress.TabIndex = 52;
+			this.tbPartI_sellerAgentAddress.TextChanged += new System.EventHandler(this.tbPartI_sellerAgentAddress_TextChanged);
 			// 
 			// epPartI_sellerAgentTin
 			// 

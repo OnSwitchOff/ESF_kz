@@ -135,5 +135,9 @@ namespace ESF_kz
 			return result;
 		}
 
+		internal void SetEnableBtnESFpartI(bool state)
+		{
+			btnESFpartI.Enabled = state;
+		}
 	}
 }
