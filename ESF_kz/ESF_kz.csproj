@@ -74,8 +74,13 @@
     <Compile Include="ENUMs\NdsRateType.cs" />
     <Compile Include="ENUMs\PaperReasonType.cs" />
     <Compile Include="ENUMs\SellerType.cs" />
+    <Compile Include="ENUMs\mySessionStatus.cs" />
     <Compile Include="ENUMs\TruOriginCode.cs" />
     <Compile Include="ESF.cs" />
+    <Compile Include="Facades\ConfigManagerFacade.cs" />
+    <Compile Include="Facades\InvoiceServiceOperationsFacade.cs" />
+    <Compile Include="Facades\SessionDataManagerFacade.cs" />
+    <Compile Include="Facades\SessionServiceOperationsFacade.cs" />
     <Compile Include="Forms\AbstractUCESFpanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -476,8 +481,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Facades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

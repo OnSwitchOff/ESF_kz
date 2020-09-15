@@ -321,7 +321,6 @@ namespace ESF_kz
 				InvoiceSummaryResponse invoiceSummaryResponse;
 				invoiceSummaryResponse = invoiceService.confirmInvoiceById(invoiceByIdRequest1);
 				#endregion
-
 				
 				#region QueryInvoiceErrorById InvoiceService
 
@@ -341,9 +340,7 @@ namespace ESF_kz
 
 				QueryInvoiceHistoryByIdResponse queryInvoiceHistoryByIdResponse;
 				queryInvoiceHistoryByIdResponse = invoiceService.queryInvoiceHistoryById(queryInvoiceHistoryByIdRequest);
-				#endregion
-				
-				
+				#endregion	
 
 				#region signIdList LocalService
 
