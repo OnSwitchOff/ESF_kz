@@ -118,6 +118,23 @@ namespace ESF_kz
 				SessionService.currentUserProfilesResponse CurrentUserProfilesResponse;
 				CurrentUserProfilesResponse = sessionService.currentUserProfiles(CurrentUserProfilesRequest);
 
+				#region enterpriseValidation InvoiceService
+
+				EnterpriseValidationRequest enterpriseValidationRequest = new EnterpriseValidationRequest();
+				enterpriseValidationRequest.sessionId = sessionId;
+
+				EnterpriseKey enterpriseKey = new EnterpriseKey();
+				string sellerTin = "760816300415";
+				enterpriseKey.tin = sellerTin;
+				enterpriseKey.certificateNum = "1399478";
+				enterpriseKey.certificateSeries = "13788";
+				EnterpriseKey[] enterpriseKeyList = { enterpriseKey };
+				enterpriseValidationRequest.enterpriseKeyList=enterpriseKeyList;
+
+				EnterpriseValidationResponse enterpriseValidationResponse;
+				enterpriseValidationResponse = invoiceService.enterpriseValidation(enterpriseValidationRequest);
+				#endregion
+
 				#region GenerateInvoiceSignature LocalService
 				SignatureRequest signatureRequest = new SignatureRequest();
 				signatureRequest.version = "InvoiceV2";
@@ -244,8 +261,6 @@ namespace ESF_kz
 				listSignatureRequest.certificatePath = sellerSignCertPath;
 				listSignatureRequest.certificatePin = sellerSignCertPin;
 
-
-
 				LocalService.InvoiceIdWithReason invoiceIdWithReason1 = new LocalService.InvoiceIdWithReason();
 				invoiceIdWithReason1.id = invoiceId;
 				invoiceIdWithReason1.reason = "reason";
@@ -256,7 +271,7 @@ namespace ESF_kz
 				listSignatureResponse = localService.signIdWithReasonList(listSignatureRequest);
 				string listSignature = listSignatureResponse.signature;
 				#endregion
-
+				
 				#region RevokeInvoiceById InvoiceService
 
 				InvoiceByIdWithReasonRequest invoiceByIdWithReasonRequest = new InvoiceByIdWithReasonRequest();
@@ -271,10 +286,86 @@ namespace ESF_kz
 
 				TryChangeStatusResponse tryChangeStatusResponse;
 				tryChangeStatusResponse = invoiceService.revokeInvoiceById(invoiceByIdWithReasonRequest);
+				#endregion
+				
+				#region declineInvoiceById InvoiceService
 
+				InvoiceByIdWithReasonRequest invoiceByIdWithReasonRequest1 = new InvoiceByIdWithReasonRequest();
+				invoiceByIdWithReasonRequest1.sessionId = sessionId;
+				invoiceByIdWithReasonRequest1.signature = listSignature;
+				invoiceByIdWithReasonRequest1.x509Certificate = sellerSignCertificate;
+				invoiceByIdWithReasonRequest1.idWithReasonList = invoiceIdWithReasonsList;
+
+				TryChangeStatusResponse tryChangeStatusResponse1;
+				tryChangeStatusResponse1 = invoiceService.declineInvoiceById(invoiceByIdWithReasonRequest1);
 				#endregion
 
+				#region unrevokeInvoiceById InvoiceService
 
+				InvoiceByIdWithReasonRequest invoiceByIdWithReasonRequest2 = new InvoiceByIdWithReasonRequest();
+				invoiceByIdWithReasonRequest2.sessionId = sessionId;
+				invoiceByIdWithReasonRequest2.signature = listSignature;
+				invoiceByIdWithReasonRequest2.x509Certificate = sellerSignCertificate;
+				invoiceByIdWithReasonRequest2.idWithReasonList = invoiceIdWithReasonsList;
+
+				TryChangeStatusResponse tryChangeStatusResponse2;
+				tryChangeStatusResponse2 = invoiceService.unrevokeInvoiceById(invoiceByIdWithReasonRequest2);
+				#endregion
+
+				#region confirmInvoiceById InvoiceService
+
+				InvoiceByIdRequest invoiceByIdRequest1 = new InvoiceByIdRequest();
+				invoiceByIdRequest1.sessionId = sessionId;
+				invoiceByIdRequest1.idList = idList;
+
+				InvoiceSummaryResponse invoiceSummaryResponse;
+				invoiceSummaryResponse = invoiceService.confirmInvoiceById(invoiceByIdRequest1);
+				#endregion
+
+				
+				#region QueryInvoiceErrorById InvoiceService
+
+				InvoiceErrorByIdRequest invoiceErrorByIdRequest = new InvoiceErrorByIdRequest();
+				invoiceErrorByIdRequest.sessionId = sessionId;
+				invoiceErrorByIdRequest.idList = idList;
+
+				InvoiceErrorByIdResponse invoiceErrorByIdResponse;
+				invoiceErrorByIdResponse = invoiceService.queryInvoiceErrorById(invoiceErrorByIdRequest);
+				#endregion
+
+				#region queryInvoiceHistoryById InvoiceService
+
+				QueryInvoiceHistoryByIdRequest queryInvoiceHistoryByIdRequest = new QueryInvoiceHistoryByIdRequest();
+				queryInvoiceHistoryByIdRequest.idList = idList;
+				queryInvoiceHistoryByIdRequest.sessionId = sessionId;
+
+				QueryInvoiceHistoryByIdResponse queryInvoiceHistoryByIdResponse;
+				queryInvoiceHistoryByIdResponse = invoiceService.queryInvoiceHistoryById(queryInvoiceHistoryByIdRequest);
+				#endregion
+				
+				
+
+				#region signIdList LocalService
+
+				ListSignatureRequest listSignatureRequest1 = new ListSignatureRequest();
+				listSignatureRequest1.certificatePath = sellerSignCertPath;
+				listSignatureRequest1.certificatePin = "Aa123456";
+				listSignatureRequest1.ids = idList;
+
+				ListSignatureResponse listSignatureResponse1 = localService.signIdList(listSignatureRequest1);
+				string signature2 = listSignatureResponse1.signature;
+				#endregion
+
+				#region DeleteInvoiceById InvoiceService
+				DeleteInvoiceByIdRequest deleteInvoiceByIdRequest = new DeleteInvoiceByIdRequest();
+				deleteInvoiceByIdRequest.idList = idList;
+				deleteInvoiceByIdRequest.sessionId = sessionId;
+				deleteInvoiceByIdRequest.signature = signature2;
+				deleteInvoiceByIdRequest.x509Certificate = sellerSignCertificate;
+
+				DeleteInvoiceByIdResponse deleteInvoiceByIdResponse;
+				deleteInvoiceByIdResponse = invoiceService.deleteInvoiceById(deleteInvoiceByIdRequest);
+				#endregion
 
 				SessionService.closeSessionRequest CloseSessionRequest = new closeSessionRequest();
 				CloseSessionRequest.sessionId = sessionId;
