@@ -81,19 +81,36 @@ namespace ESF_kz
 
 		static public bool CloseSessionByCredentials()
 		{
+			closeSessionByCredentialsRequest CloseSessionByCredentialsRequest = new closeSessionByCredentialsRequest();
+			CloseSessionByCredentialsRequest.tin = getServiceClient().ClientCredentials.UserName.UserName;
+			CloseSessionByCredentialsRequest.x509Certificate = SessionDataManagerFacade.getX509AuthCertificate();
+
+			closeSessionResponse CloseSessionByCredentialsResponse;
+			try
+			{
+				CloseSessionByCredentialsResponse = getServiceClient().closeSessionByCredentials(CloseSessionByCredentialsRequest);
+				SessionDataManagerFacade.clearSessionData();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}						
+		}
+
+		static public bool CloseSession()
+		{
 			switch (CurrentSessionStatus())
 			{
 				case mySessionStatus.NO_CONNECTION:
 					return false;
 				case mySessionStatus.OK:
-					closeSessionByCredentialsRequest CloseSessionByCredentialsRequest = new closeSessionByCredentialsRequest();
-					CloseSessionByCredentialsRequest.tin = getServiceClient().ClientCredentials.UserName.UserName;
-					CloseSessionByCredentialsRequest.x509Certificate = SessionDataManagerFacade.getX509AuthCertificate();
-
-					closeSessionResponse CloseSessionByCredentialsResponse;
+					closeSessionRequest CloseSessionRequest = new closeSessionRequest();
+					CloseSessionRequest.sessionId = SessionDataManagerFacade.getSessionId();
+					closeSessionResponse CloseSessionResponse;
 					try
 					{
-						CloseSessionByCredentialsResponse = getServiceClient().closeSessionByCredentials(CloseSessionByCredentialsRequest);
+						CloseSessionResponse = getServiceClient().closeSession(CloseSessionRequest);
 						SessionDataManagerFacade.clearSessionData();
 						return true;
 					}
@@ -107,7 +124,7 @@ namespace ESF_kz
 					return true;
 				default:
 					return false;
-			}				
+			}
 		}
 
 		private static mySessionStatus CurrentSessionStatus()

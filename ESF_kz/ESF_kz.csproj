@@ -79,8 +79,10 @@
     <Compile Include="ESF.cs" />
     <Compile Include="Facades\ConfigManagerFacade.cs" />
     <Compile Include="Facades\InvoiceServiceOperationsFacade.cs" />
+    <Compile Include="Facades\LocalServiceOperationFacade.cs" />
     <Compile Include="Facades\SessionDataManagerFacade.cs" />
     <Compile Include="Facades\SessionServiceOperationsFacade.cs" />
+    <Compile Include="Facades\UploadInvoiceServiceOperationFacade.cs" />
     <Compile Include="Forms\AbstractUCESFpanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

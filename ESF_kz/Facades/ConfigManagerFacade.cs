@@ -33,6 +33,11 @@ namespace ESF_kz
 			return false;
 		}
 
+		internal static string getESFVersion()
+		{
+			return "InvoiceV2";
+		}
+
 		internal static long getInvoiceService_MaxBufferPoolSize()
 		{
 			return 20000000;
