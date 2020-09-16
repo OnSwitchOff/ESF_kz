@@ -56,5 +56,253 @@ namespace ESF_kz
 			return true;
 		}
 
+		static public bool QueryInvoiceById()
+		{
+			InvoiceByIdRequest invoiceByIdRequest = new InvoiceByIdRequest();
+			invoiceByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();			
+			invoiceByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList(); 
+
+			QueryInvoiceResponse queryInvoiceResponse;
+			try
+			{
+				queryInvoiceResponse = getServiceClient().queryInvoiceById(invoiceByIdRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool QueryInvoiceSummaryById()
+		{
+			InvoiceByIdRequest invoiceSummaryByIdRequest = new InvoiceByIdRequest();
+			invoiceSummaryByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			invoiceSummaryByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList();
+
+			InvoiceSummaryResponse queryInvoiceSummaryResponse;
+			try
+			{
+				queryInvoiceSummaryResponse = getServiceClient().queryInvoiceSummaryById(invoiceSummaryByIdRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool QueryInvoiceByKey()
+		{
+			InvoiceByKeyRequest invoiceByKeyRequest = new InvoiceByKeyRequest();
+			invoiceByKeyRequest.sessionId = SessionDataManagerFacade.getSessionId(); 
+			invoiceByKeyRequest.invoiceKeyList = SessionDataManagerFacade.getinvoiceKeyList();
+			invoiceByKeyRequest.direction = SessionDataManagerFacade.getDirection();
+
+			QueryInvoiceResponse queryInvoiceByKeyResponse;
+			try
+			{
+				queryInvoiceByKeyResponse = getServiceClient().queryInvoiceByKey(invoiceByKeyRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool QueryUpdates()
+		{
+			QueryInvoiceUpdateRequest queryInvoiceUpdateRequest = new QueryInvoiceUpdateRequest();
+			queryInvoiceUpdateRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			queryInvoiceUpdateRequest.lastEventDate = SessionDataManagerFacade.getlastEventDate();
+			queryInvoiceUpdateRequest.lastInvoiceId = SessionDataManagerFacade.getlastInvoiceId();
+			queryInvoiceUpdateRequest.direction = SessionDataManagerFacade.getDirection();
+			queryInvoiceUpdateRequest.limit = SessionDataManagerFacade.getlimit();
+			queryInvoiceUpdateRequest.fullInfoOnStatusChange = SessionDataManagerFacade.getfullInfoOnStatusChange();
+
+			QueryInvoiceUpdateResponse queryInvoiceUpdateResponse;
+			try
+			{
+				queryInvoiceUpdateResponse = getServiceClient().queryUpdates(queryInvoiceUpdateRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool queryInvoiceSummaryByKey()
+		{
+			InvoiceByKeyRequest invoiceSummaryByKeyRequest = new InvoiceByKeyRequest();
+			invoiceSummaryByKeyRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			invoiceSummaryByKeyRequest.invoiceKeyList = SessionDataManagerFacade.getinvoiceKeyList();
+			invoiceSummaryByKeyRequest.direction = SessionDataManagerFacade.getDirection();
+
+			InvoiceSummaryResponse invoiceSummaryByKeyResponse;
+			try
+			{
+				invoiceSummaryByKeyResponse = getServiceClient().queryInvoiceSummaryByKey(invoiceSummaryByKeyRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool QueryInvoice()
+		{
+			QueryInvoiceRequest queryInvoiceRequest = new QueryInvoiceRequest();
+			queryInvoiceRequest.sessionId = SessionDataManagerFacade.getSessionId();			
+			queryInvoiceRequest.criteria = SessionDataManagerFacade.getQueryInvoiceCriteria();
+
+			QueryInvoiceResponse queryInvoiceResponse1;
+			try
+			{
+				queryInvoiceResponse1 = getServiceClient().queryInvoice(queryInvoiceRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return true;
+			}			
+		}
+
+		static public bool RevokeInvoiceById()
+		{
+			InvoiceByIdWithReasonRequest invoiceByIdWithReasonRequest = new InvoiceByIdWithReasonRequest();
+			invoiceByIdWithReasonRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			invoiceByIdWithReasonRequest.signature = SessionDataManagerFacade.getInvoiceSignatureIdWithReason();
+			invoiceByIdWithReasonRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
+			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>(); 
+
+			TryChangeStatusResponse tryChangeStatusResponse;
+			try
+			{
+				tryChangeStatusResponse = getServiceClient().revokeInvoiceById(invoiceByIdWithReasonRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool declineInvoiceById()
+		{
+			InvoiceByIdWithReasonRequest invoiceByIdWithReasonRequest = new InvoiceByIdWithReasonRequest();
+			invoiceByIdWithReasonRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			invoiceByIdWithReasonRequest.signature = SessionDataManagerFacade.getInvoiceSignatureIdWithReason();
+			invoiceByIdWithReasonRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
+			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>();
+
+			TryChangeStatusResponse tryChangeStatusResponse;
+			try
+			{
+				tryChangeStatusResponse = getServiceClient().declineInvoiceById(invoiceByIdWithReasonRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool unrevokeInvoiceById()
+		{
+			InvoiceByIdWithReasonRequest invoiceByIdWithReasonRequest = new InvoiceByIdWithReasonRequest();
+			invoiceByIdWithReasonRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			invoiceByIdWithReasonRequest.signature = SessionDataManagerFacade.getInvoiceSignatureIdWithReason();
+			invoiceByIdWithReasonRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
+			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>();
+
+			TryChangeStatusResponse tryChangeStatusResponse;
+			try
+			{
+				tryChangeStatusResponse = getServiceClient().unrevokeInvoiceById(invoiceByIdWithReasonRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool confirmInvoiceById()
+		{
+			InvoiceByIdRequest invoiceByIdRequest = new InvoiceByIdRequest();
+			invoiceByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			invoiceByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList();
+
+			InvoiceSummaryResponse invoiceSummaryResponse;
+			try
+			{
+				invoiceSummaryResponse = getServiceClient().confirmInvoiceById(invoiceByIdRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool QueryInvoiceErrorById()
+		{
+			InvoiceErrorByIdRequest invoiceErrorByIdRequest = new InvoiceErrorByIdRequest();
+			invoiceErrorByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			invoiceErrorByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList();
+
+			InvoiceErrorByIdResponse invoiceErrorByIdResponse;
+			try
+			{
+				invoiceErrorByIdResponse = getServiceClient().queryInvoiceErrorById(invoiceErrorByIdRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static public bool queryInvoiceHistoryById()
+		{
+			QueryInvoiceHistoryByIdRequest queryInvoiceHistoryByIdRequest = new QueryInvoiceHistoryByIdRequest();
+			queryInvoiceHistoryByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList();
+			queryInvoiceHistoryByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();
+
+			QueryInvoiceHistoryByIdResponse queryInvoiceHistoryByIdResponse;
+			try
+			{
+				queryInvoiceHistoryByIdResponse = getServiceClient().queryInvoiceHistoryById(queryInvoiceHistoryByIdRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+
+		static public bool DeleteInvoiceById()
+		{
+			DeleteInvoiceByIdRequest deleteInvoiceByIdRequest = new DeleteInvoiceByIdRequest();
+			deleteInvoiceByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList();
+			deleteInvoiceByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();
+			deleteInvoiceByIdRequest.signature = SessionDataManagerFacade.getInvoiceSignatureId();
+			deleteInvoiceByIdRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
+
+			DeleteInvoiceByIdResponse deleteInvoiceByIdResponse;
+			try
+			{
+				deleteInvoiceByIdResponse = getServiceClient().deleteInvoiceById(deleteInvoiceByIdRequest);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
 	}
 }

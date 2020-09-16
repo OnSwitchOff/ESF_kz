@@ -36,8 +36,46 @@ namespace ESF_kz
 			catch (Exception)
 			{
 				return false;
+			}			
+		}
+
+		static public bool GenerateIdWithReasonListSignature()
+		{
+			ListWithReasonSignatureRequest listSignatureRequest = new ListWithReasonSignatureRequest();
+			listSignatureRequest.certificatePath = SessionDataManagerFacade.getSignCertificatePath();
+			listSignatureRequest.certificatePin = SessionDataManagerFacade.getSignCertificatePin();
+			listSignatureRequest.idsWithReasons = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>();
+
+			ListSignatureResponse listSignatureResponse;
+			try
+			{
+				listSignatureResponse = getServiceClient().signIdWithReasonList(listSignatureRequest);
+				return SessionDataManagerFacade.setInvoiceSignatureIdWithReason(listSignatureResponse);
 			}
-			
+			catch (Exception)
+			{
+				return false;
+			}	
+		}
+
+		static public bool GenerateIdListSignature()
+		{
+			ListSignatureRequest listSignatureRequest = new ListSignatureRequest();
+			listSignatureRequest.certificatePath = SessionDataManagerFacade.getSignCertificatePath();
+			listSignatureRequest.certificatePin = SessionDataManagerFacade.getSignCertificatePin();
+			listSignatureRequest.ids = SessionDataManagerFacade.getInvoiceIdList();
+
+
+			ListSignatureResponse listSignatureResponse;
+			try
+			{
+				listSignatureResponse = getServiceClient().signIdList(listSignatureRequest);
+				return SessionDataManagerFacade.setInvoiceSignatureId(listSignatureResponse);
+			}
+			catch (Exception)
+			{
+				return false;
+			}	
 		}
 	}
 
