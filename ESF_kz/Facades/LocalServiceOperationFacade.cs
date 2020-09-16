@@ -44,8 +44,8 @@ namespace ESF_kz
 			ListWithReasonSignatureRequest listSignatureRequest = new ListWithReasonSignatureRequest();
 			listSignatureRequest.certificatePath = SessionDataManagerFacade.getSignCertificatePath();
 			listSignatureRequest.certificatePin = SessionDataManagerFacade.getSignCertificatePin();
-			listSignatureRequest.idsWithReasons = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>();
-
+			listSignatureRequest.idsWithReasons = SessionDataManagerFacade.getInvoiceIdWithReasonsList_LocalService();
+						
 			ListSignatureResponse listSignatureResponse;
 			try
 			{

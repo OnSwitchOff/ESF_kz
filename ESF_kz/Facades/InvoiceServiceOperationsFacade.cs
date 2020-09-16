@@ -51,9 +51,27 @@ namespace ESF_kz
 			enterpriseValidationRequest.enterpriseKeyList = enterpriseKeyList;
 
 			EnterpriseValidationResponse enterpriseValidationResponse;
-			enterpriseValidationResponse = getServiceClient().enterpriseValidation(enterpriseValidationRequest);
-
-			return true;
+			try
+			{
+				enterpriseValidationResponse = getServiceClient().enterpriseValidation(enterpriseValidationRequest);
+				switch (enterpriseValidationResponse.resultList[0].resultType)
+				{
+					case EnterpriseValidationResultType.SUCCESS:
+						return true;
+					case EnterpriseValidationResultType.TIN_ABSENT:						
+					case EnterpriseValidationResultType.CERTIFICATE_SERIES_OR_CERTIFICATE_NUM_ABSENT:
+					case EnterpriseValidationResultType.BIK_ABSENT:
+					case EnterpriseValidationResultType.BANK_NOT_FOUND:
+					case EnterpriseValidationResultType.IIK_ABSENT:
+					default:
+						return false;
+				}
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+			
 		}
 
 		static public bool QueryInvoiceById()
@@ -133,7 +151,7 @@ namespace ESF_kz
 			}			
 		}
 
-		static public bool queryInvoiceSummaryByKey()
+		static public bool QueryInvoiceSummaryByKey()
 		{
 			InvoiceByKeyRequest invoiceSummaryByKeyRequest = new InvoiceByKeyRequest();
 			invoiceSummaryByKeyRequest.sessionId = SessionDataManagerFacade.getSessionId();
@@ -176,7 +194,7 @@ namespace ESF_kz
 			invoiceByIdWithReasonRequest.sessionId = SessionDataManagerFacade.getSessionId();
 			invoiceByIdWithReasonRequest.signature = SessionDataManagerFacade.getInvoiceSignatureIdWithReason();
 			invoiceByIdWithReasonRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
-			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>(); 
+			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList_InvoiceService(); 
 
 			TryChangeStatusResponse tryChangeStatusResponse;
 			try
@@ -196,7 +214,7 @@ namespace ESF_kz
 			invoiceByIdWithReasonRequest.sessionId = SessionDataManagerFacade.getSessionId();
 			invoiceByIdWithReasonRequest.signature = SessionDataManagerFacade.getInvoiceSignatureIdWithReason();
 			invoiceByIdWithReasonRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
-			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>();
+			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList_InvoiceService();
 
 			TryChangeStatusResponse tryChangeStatusResponse;
 			try
@@ -216,7 +234,7 @@ namespace ESF_kz
 			invoiceByIdWithReasonRequest.sessionId = SessionDataManagerFacade.getSessionId();
 			invoiceByIdWithReasonRequest.signature = SessionDataManagerFacade.getInvoiceSignatureIdWithReason();
 			invoiceByIdWithReasonRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
-			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList<InvoiceIdWithReason>();
+			invoiceByIdWithReasonRequest.idWithReasonList = SessionDataManagerFacade.getInvoiceIdWithReasonsList_InvoiceService();
 
 			TryChangeStatusResponse tryChangeStatusResponse;
 			try

@@ -1,4 +1,5 @@
 ﻿using ESF_kz.LocalService;
+using ESF_kz.SessionService;
 using ESF_kz.UploadInvoiceService;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace ESF_kz
 		private static long invoiceId;
 		private static string invoiceDate;
 		private static string invoiceNum;
+		private static User currentUser;
+		private static profileInfo[] profileInfoList;
 
 		internal static string getSessionId()
 		{
@@ -62,27 +65,22 @@ namespace ESF_kz
 			return true;
 		}
 
-		internal static T[] getInvoiceIdWithReasonsList<T>() where T : class, new()
+		internal static LocalService.InvoiceIdWithReason[] getInvoiceIdWithReasonsList_LocalService()
 		{
-			if (typeof(T) == typeof(LocalService.InvoiceIdWithReason))
-			{
-				var invoiceIdWithReason = new LocalService.InvoiceIdWithReason();
-				invoiceIdWithReason.id = getInvoiceId();
-				invoiceIdWithReason.reason = "reason";
+			LocalService.InvoiceIdWithReason invoiceIdWithReason = new LocalService.InvoiceIdWithReason();
+			invoiceIdWithReason.id = getInvoiceId();
+			invoiceIdWithReason.reason = "reason";
+			LocalService.InvoiceIdWithReason[] invoiceIdWithReasonsList = { invoiceIdWithReason };
+			return invoiceIdWithReasonsList;					
+		}
 
-				object[] invoiceIdWithReasonsList = { invoiceIdWithReason };
-				return invoiceIdWithReasonsList as T[];
-			}
-			else if (typeof(T) == typeof(InvoiceService.InvoiceIdWithReason))
-			{
-				var invoiceIdWithReason = new InvoiceService.InvoiceIdWithReason();
-				invoiceIdWithReason.id = getInvoiceId();
-				invoiceIdWithReason.reason = "reason";
-
-				object[] invoiceIdWithReasonsList = { invoiceIdWithReason };
-				return invoiceIdWithReasonsList as T[];
-			}
-			return null;			
+		internal static InvoiceService.InvoiceIdWithReason[] getInvoiceIdWithReasonsList_InvoiceService()
+		{
+			InvoiceService.InvoiceIdWithReason invoiceIdWithReason = new InvoiceService.InvoiceIdWithReason();
+			invoiceIdWithReason.id = getInvoiceId();
+			invoiceIdWithReason.reason = "reason";
+			InvoiceService.InvoiceIdWithReason[] invoiceIdWithReasonsList = { invoiceIdWithReason };
+			return invoiceIdWithReasonsList;
 		}
 
 		internal static InvoiceService.InvoiceDirection getDirection()
@@ -94,6 +92,8 @@ namespace ESF_kz
 
 		internal static InvoiceService.InvoiceKey[] getinvoiceKeyList()
 		{
+			setInvoiceDate(DateTime.Now);
+			setInvoiceNum("7348253030453186403");
 			InvoiceService.InvoiceKey invoiceKey = new InvoiceService.InvoiceKey();
 			invoiceKey.date = getInvoiceDate();
 			invoiceKey.num = getInvoiceNum();
@@ -119,7 +119,7 @@ namespace ESF_kz
 
 		internal static bool setInvoiceDate(DateTime date)
 		{
-			invoiceDate = String.Format("{0}.{1}.{2}",date.Year,date.Month,date.Day);
+			invoiceDate = String.Format("{0}.{1}.{2}",date.Day,date.Month,date.Year);
 			return true;
 		}
 
@@ -248,22 +248,32 @@ namespace ESF_kz
 
 		private static void clearSessionId()
 		{
-			SessionDataManagerFacade.sessionId = "";
+			SessionDataManagerFacade.sessionId = null;
 		}
 
 		internal static bool isEmptySessionId()
 		{
-			return SessionDataManagerFacade.sessionId == "";
+			return SessionDataManagerFacade.sessionId == null;
 		}
 
-		internal static void setCurrentUserProfilesData()
+		internal static void setCurrentUserProfilesData(profileInfo[] list)
 		{
-			//todo
+			profileInfoList = list;
 		}
 
-		internal static void setCurrentUserData()
+		internal static void setCurrentUserData(User user)
 		{
-			//todo
+			currentUser = user;
+		}
+
+		internal static profileInfo[] getCurrentUserProfilesData()
+		{
+			return profileInfoList;
+		}
+
+		internal static User getCurrentUserData()
+		{
+			return currentUser;
 		}
 
 		private static void clearCurrentUserProfilesData()

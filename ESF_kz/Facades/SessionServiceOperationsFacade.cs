@@ -44,12 +44,14 @@ namespace ESF_kz
 				SessionServiceClient sessionService = new SessionServiceClient(customBinding, endpointAdress);
 				sessionService.ClientCredentials.UserName.UserName = SessionDataManagerFacade.getUserName();
 				sessionService.ClientCredentials.UserName.Password = SessionDataManagerFacade.getPassword();
+				serviceClient = sessionService;
 			}
 
 			return serviceClient;
 		}
 
-		static public bool CreateSession()
+
+		static public bool StartSession()
 		{
 			switch (CurrentSessionStatus())
 			{
@@ -58,25 +60,32 @@ namespace ESF_kz
 				case mySessionStatus.OK:
 					return true;
 				case mySessionStatus.NOT_FOUND:
+					CloseSessionByCredentials();
+					return CreateSession();
 				case mySessionStatus.CLOSED:
-					createSessionRequest CreateSessionRequest = new createSessionRequest();
-					CreateSessionRequest.tin = getServiceClient().ClientCredentials.UserName.UserName;
-					CreateSessionRequest.x509Certificate = SessionDataManagerFacade.getX509AuthCertificate();
-
-					createSessionResponse CreateSessionResponse;
-					try
-					{
-						CreateSessionResponse = getServiceClient().createSession(CreateSessionRequest);
-						SessionDataManagerFacade.setSessionId(CreateSessionResponse.sessionId);
-						return getCurrentUser() && getCurrentUserProfile();
-					}
-					catch (Exception)
-					{
-						return false;
-					}
+					return CreateSession();
 				default:
 					return false;
-			}				
+			}
+		}
+		static public bool CreateSession()
+		{
+			createSessionRequest CreateSessionRequest = new createSessionRequest();
+			CreateSessionRequest.tin = getServiceClient().ClientCredentials.UserName.UserName;
+			CreateSessionRequest.x509Certificate = SessionDataManagerFacade.getX509AuthCertificate();
+
+			createSessionResponse CreateSessionResponse;
+			try
+			{
+				CreateSessionResponse = getServiceClient().createSession(CreateSessionRequest);
+				SessionDataManagerFacade.setSessionId(CreateSessionResponse.sessionId);
+				return getCurrentUser() && getCurrentUserProfile();
+			}
+			catch (Exception)
+			{
+				CloseSessionByCredentials();
+				return false;
+			}
 		}
 
 		static public bool CloseSessionByCredentials()
@@ -167,7 +176,7 @@ namespace ESF_kz
 					try
 					{
 						CurrentUserResponse = getServiceClient().currentUser(CurrentUserRequest);
-						SessionDataManagerFacade.setCurrentUserData();
+						SessionDataManagerFacade.setCurrentUserData(CurrentUserResponse.user);
 						return true;
 					}
 					catch (Exception)
@@ -194,7 +203,7 @@ namespace ESF_kz
 					try
 					{
 						CurrentUserProfilesResponse = getServiceClient().currentUserProfiles(CurrentUserProfilesRequest);
-						SessionDataManagerFacade.setCurrentUserProfilesData();
+						SessionDataManagerFacade.setCurrentUserProfilesData(CurrentUserProfilesResponse.profileInfoList);
 						return true;
 					}
 					catch (Exception)
