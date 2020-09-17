@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ESF_kz
 {
-	public abstract class AbstractCustomer
+	static class FormManagerFacade
 	{
-
 	}
 }

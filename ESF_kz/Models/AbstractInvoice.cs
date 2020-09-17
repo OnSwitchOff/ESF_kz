@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Базовая информация об ЭСФ для всех версий ЭСФ в системе
-	abstract class AbstractInvoice
+	public abstract class AbstractInvoice
 	{
 		//Дата выписки ЭСФ (A 2)
 		DateTime date;

@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
@@ -166,13 +168,169 @@ namespace ESF_kz
 
 		private static string getInvoiceBodyString()
 		{
-			string invoiceBodyPath = @"C:\Users\viktor.kassov\source\repos\ESF_kz\ESF_kz\bin\Debug\InvoiceBodyTestExample.txt";
+			/*string invoiceBodyPath = @"C:\Users\viktor.kassov\source\repos\ESF_kz\ESF_kz\bin\Debug\InvoiceBodyTestExample.xml";
 			string invoiceBodyString = "";
 			using (StreamReader sr = new StreamReader(invoiceBodyPath))
 			{
 				invoiceBodyString = sr.ReadToEnd();
+			}*/
+
+			invoiceContainerV2 inContainerV2 = new invoiceContainerV2();		
+
+			InvoiceV2 invoiceV2 = new InvoiceV2();
+			invoiceV2.addInf = "addInf";
+				ConsigneeV2 consigneeV2 = new ConsigneeV2();
+				consigneeV2.address = "Consegnee Adress";
+				consigneeV2.countryCode = "KZ";
+				consigneeV2.name = "Consegnee Name";
+				consigneeV2.tin = "COnsegnee Tin";
+			invoiceV2.consignee = consigneeV2;
+				Consignor consignor = new Consignor();
+				consignor.address = "Consegnor Address";
+				consignor.name = "Consignor Name";
+				consignor.tin = "Consignor Tin";
+			invoiceV2.consignor = consignor;
+			invoiceV2.customerAgentAddress = "customerAgentAddress";
+			invoiceV2.customerAgentDocDate = DateTime.Now;
+			invoiceV2.customerAgentDocNum = "customerAgentDocNum";
+			invoiceV2.customerAgentName = "customerAgentName";
+			invoiceV2.customerAgentTin = "customerAgentTin";
+				ParticipantV2 customerParticipant1 = new ParticipantV2();
+				customerParticipant1.tin = "Participant #1 tin";
+				customerParticipant1.reorganizedTin = "Participant #1 reorganized Tin";
+					ProductShare productShare1 = new ProductShare();
+					productShare1.additional = "additional";
+					productShare1.exciseAmount = 100;
+					productShare1.ndsAmount = 20;
+					productShare1.priceWithoutTax = 120;
+					productShare1.priceWithTax = 120;
+					productShare1.productNumber = 1;
+					productShare1.quantity = 5;
+					productShare1.turnoverSize = 600;
+					List<ProductShare> productShares = new List<ProductShare>();
+					productShares.Add(productShare1);
+				customerParticipant1.productShares = productShares;
+				List<ParticipantV2> customerParticipantsList = new List<ParticipantV2>();
+				customerParticipantsList.Add(customerParticipant1);
+			invoiceV2.customerParticipants = customerParticipantsList;
+				CustomerV2 customerV2 = new CustomerV2();
+				customerV2.address = "CUstomer Address";
+				customerV2.branchTin = "Customer branchTiN";
+				customerV2.countryCode = "KZ";
+				customerV2.name = "customerName";
+				customerV2.reorganizedTin = "customerreorgtin";
+				customerV2.shareParticipation = 0.22f;
+					CustomerType customerType = CustomerType.BROKER;
+					CustomerType customerType1 = CustomerType.JOINT_ACTIVITY_PARTICIPANT;
+					List<CustomerType> statuses = new List<CustomerType>();
+					statuses.Add(customerType);
+					statuses.Add(customerType1);
+				customerV2.statuses = statuses;
+				customerV2.trailer = "custtrailer";
+				List<CustomerV2> customerV2s = new List<CustomerV2>();
+				customerV2s.Add(customerV2);
+			invoiceV2.customers = customerV2s;
+			invoiceV2.datePaper = DateTime.Now;
+			invoiceV2.deliveryDocDate = DateTime.Now;
+			invoiceV2.deliveryDocNum = "DeliveryDocNum";
+				DeliveryTermV2 deliveryTermV2 = new DeliveryTermV2();
+				deliveryTermV2.contractDate = DateTime.Now;
+				deliveryTermV2.contractNum = "ContractNum";
+				deliveryTermV2.deliveryConditionCode = "deliveryConditionCode";
+				deliveryTermV2.destination = "destination";
+				deliveryTermV2.hasContract = true;
+				deliveryTermV2.term = "term";
+				deliveryTermV2.transportTypeCode = "transportTypeCode";
+				deliveryTermV2.warrant = "wRRnt";
+				deliveryTermV2.warrantDate = DateTime.Now;
+			invoiceV2.deliveryTerm = deliveryTermV2;
+
+				ProductSetV2 productSetV2 = new ProductSetV2();
+				productSetV2.currencyCode = "currentCode";
+				productSetV2.currencyRate = 0.25f;
+				productSetV2.ndsRateType = NdsRateType.WITHOUT_NDS_NOT_KZ;
+					ProductV2 product = new ProductV2();
+					product.additional = "additional";
+					product.catalogTruId = "catalogTruId";
+					product.description = "description";
+					product.exciseAmount = 10;
+					product.exciseRate = 0.10f;
+					product.kpvedCode = "kpvedcode";
+					product.ndsAmount = 10.2f;
+					product.ndsRate = 1;
+					product.priceWithoutTax = 10;
+					product.priceWithTax = 20.3f;
+					product.productDeclaration = "declration";
+					product.productNumberInDeclaration = "numInDec";
+					product.tnvedName = "tnvedName";
+					product.truOriginCode = TruOriginCode.three;
+					product.turnoverSize = 40.36f;
+					product.unitCode = "unitcode";
+					product.unitNomenclature = "unitNomen";
+					product.unitPrice = 20.3f;
+					List<ProductV2> productV2s = new List<ProductV2>();
+					productV2s.Add(product);
+				productSetV2.products = productV2s;
+				productSetV2.totalExciseAmount = 100;
+				productSetV2.totalNdsAmount = 100;
+				productSetV2.totalPriceWithoutTax = 100;
+				productSetV2.totalPriceWithTax = 200;
+				productSetV2.totalTurnoverSize = 200;
+			invoiceV2.productSet = productSetV2;
+				PublicOffice publicOffice = new PublicOffice();
+				publicOffice.bik = "bik";
+				publicOffice.iik = "iik";
+				publicOffice.payPurpose = "paypurp";
+				publicOffice.productCode = "productCOde";
+			invoiceV2.publicOffice = publicOffice;
+			invoiceV2.reasonPaper = PaperReasonType.MISSING_REQUIREMENT;
+			invoiceV2.sellerAgentAddress = "sellerAgentAddress";
+			invoiceV2.sellerAgentDocDate = DateTime.Now;
+			invoiceV2.sellerAgentDocNum = "sellerAgentDocNum";
+			invoiceV2.sellerAgentName = "sellerAgentName";
+			invoiceV2.sellerAgentTin = "sellerAgentTin";
+				
+			invoiceV2.sellerParticipants = customerParticipantsList;
+				SellerV2 sellerV2 = new SellerV2();
+				sellerV2.address = "sellerAddress";
+				sellerV2.bank = "sellerBank";
+				sellerV2.bik = "sellerBik";
+				sellerV2.branchTin = "branchTin";
+				sellerV2.certificateNum = "sellerCertNum";
+				sellerV2.certificateSeries = "sellerCertSeries";
+				sellerV2.iik = "iik";
+				sellerV2.isBranchNonResident = true;
+				sellerV2.kbe = "kbe";
+				sellerV2.name = "sellerName";
+				sellerV2.reorganizedTin = "reorgTin";
+				sellerV2.shareParticipation = 0.25f;
+					SellerType sellerType = SellerType.JOINT_ACTIVITY_PARTICIPANT;
+					List<SellerType> sellerTypes = new List<SellerType>();
+					sellerTypes.Add(sellerType);
+				sellerV2.statuses = sellerTypes;
+				sellerV2.tin = "tin";
+				sellerV2.trailer = "trailer";
+				List<SellerV2> sellerV2s = new List<SellerV2>();
+				sellerV2s.Add(sellerV2);
+			invoiceV2.sellers = sellerV2s;
+
+			InvoiceV2[] invoiceV2s = { invoiceV2 };
+			inContainerV2.invoiceSet = invoiceV2s;
+
+			string str = "";
+			XmlSerializer xmlSerializer = new XmlSerializer(typeof(invoiceContainerV2));
+			using (XmlWriter xmlWriter = XmlWriter.Create("testW.xml"))
+			{				
+				xmlSerializer.Serialize(xmlWriter, inContainerV2);
 			}
-			return invoiceBodyString;
+			using (FileStream fs = new FileStream("testW.xml", FileMode.OpenOrCreate))
+			{
+				byte[] array = new byte[fs.Length];
+				fs.Read(array, 0, array.Length);
+				str = System.Text.Encoding.Default.GetString(array);
+			}
+
+			return str;
 		}
 
 		internal static string getX509SignCertificate()

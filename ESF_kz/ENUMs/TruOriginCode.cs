@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ESF_kz
 {
-	enum TruOriginCode
+	[Serializable]
+	public enum TruOriginCode
 	{
 		one,
 		two,

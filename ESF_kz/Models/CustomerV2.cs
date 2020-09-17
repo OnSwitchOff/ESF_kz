@@ -7,34 +7,37 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Реквищиты получателя (C)
-	class CustomerV2:AbstractCustomer
+	[Serializable]
+	public class CustomerV2:AbstractCustomer
 	{
 		//Адрес(C 18)+
-		string address;
+		public string address;
 
 		//БИН филиала, выписавшего ЭСФ за голову
-		string branchTin;
+		public string branchTin;
 
 		//Код страны получателя. Обязательно заполняется если установлен статус CustomerType.NONRESIDENT и SellerType.EXPORTER (C 18.1)+
-		string countryCode;
+		public string countryCode;
 
 		//Наименование получателя (C 17)+
-		string name;
+		public string name;
 
 		//БИН реорганизованного лица (C 16.1)-
-		string reorganizedTin;
+		public string reorganizedTin;
 
 		//Доля участия (С 17.1)
 		//fractionDigits value="6", totalDigits value="18"
-		float shareParticipation;
+		public float shareParticipation;
 
 		//Категории получателя (С 20)+
-		List<CustomerType> statuses;
+		public List<CustomerType> statuses;
 
 		//ИИН/БИН. Может отсутствовать если установлен статус CustomerType.NONRESIDENT (C 16)+
-		string tin;
+		public string tin;
 
 		//Дополнительные сведения(C 19)+
-		string trailer;
+		public string trailer;
+
+		public CustomerV2() { }
 	}
 }

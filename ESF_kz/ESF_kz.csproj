@@ -78,6 +78,8 @@
     <Compile Include="ENUMs\TruOriginCode.cs" />
     <Compile Include="ESF.cs" />
     <Compile Include="Facades\ConfigManagerFacade.cs" />
+    <Compile Include="Facades\FormManagerFacade.cs" />
+    <Compile Include="Facades\InvoiceManagerFacade.cs" />
     <Compile Include="Facades\InvoiceServiceOperationsFacade.cs" />
     <Compile Include="Facades\LocalServiceOperationFacade.cs" />
     <Compile Include="Facades\SessionDataManagerFacade.cs" />
@@ -197,6 +199,7 @@
     <Compile Include="Forms\panelESFpartK.Designer.cs">
       <DependentUpon>panelESFpartK.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceXMLParser.cs" />
     <Compile Include="Models\AbstractCustomer.cs" />
     <Compile Include="Models\AbstractInvoice.cs" />
     <Compile Include="Models\AbstractProduct.cs" />
@@ -208,6 +211,7 @@
     <Compile Include="Models\CustomerV2.cs" />
     <Compile Include="Models\DeliveryTermV1.cs" />
     <Compile Include="Models\DeliveryTermV2.cs" />
+    <Compile Include="Models\invoiceContainer.cs" />
     <Compile Include="Models\InvoiceV1.cs" />
     <Compile Include="Models\InvoiceV2.cs" />
     <Compile Include="Models\ParticipantV1.cs" />

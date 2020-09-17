@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Причина выписки на бумажном носителе (2.1)
-	enum PaperReasonType
+	[Serializable]
+	public enum PaperReasonType
 	{
 		DOWN_TIME,//Простой системы
 		MISSING_REQUIREMENT,//Отсутствовало требование по выписке ЭСФ

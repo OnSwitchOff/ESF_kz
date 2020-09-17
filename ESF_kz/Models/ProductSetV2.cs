@@ -7,39 +7,42 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Данные по товарам, работам, услугам(G)
-	class ProductSetV2
+	[Serializable]
+	public class ProductSetV2
 	{
 		//Код валюты (G 33.1)
-		string currencyCode;
+		public string currencyCode;
 
 		//Курс валюты(G 33.2)
 		//fractionDigits value="6", totalDigits value="18"
-		float currencyRate;
+		public float currencyRate;
 
 		//Тип НДС ('Без НДС – не РК')-
-		NdsRateType ndsRateType;
+		public NdsRateType ndsRateType;
 
 		//Список ТРУ+
-		List<ProductV2> products;
+		public List<ProductV2> products;
 
 		//Итоговая Акциз-Сумма (G 10)+
 		//fractionDigits value="2", totalDigits value="17"
-		float totalExciseAmount;
+		public float totalExciseAmount;
 
 		//Итоговая НДС-Сумма (G 13)+
 		//fractionDigits value="2", totalDigits value="17"
-		float totalNdsAmount;
+		public float totalNdsAmount;
 
 		//Итоговая стоимость ТРУ с учетом НДС (G 14)+
 		//fractionDigits value="2", totalDigits value="17"
-		float totalPriceWithTax;
+		public float totalPriceWithTax;
 
 		//Итоговая стоимость ТРУ без учета НДС (G 8)+
 		//fractionDigits value="2", totalDigits value="17"
-		float totalPriceWithoutTax;
+		public float totalPriceWithoutTax;
 
 		//Итоговый размер оборота по реализации (G 11)+
 		//fractionDigits value="2", totalDigits value="17"
-		float totalTurnoverSize;
+		public float totalTurnoverSize;
+
+		public ProductSetV2() { }
 	}
 }

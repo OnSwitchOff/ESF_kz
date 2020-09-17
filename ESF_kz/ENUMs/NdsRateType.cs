@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Тип НДС
-	enum NdsRateType
+	[Serializable]
+	public enum NdsRateType
 	{
 		WITHOUT_NDS_NOT_KZ//Без НДС – не РК
 	}

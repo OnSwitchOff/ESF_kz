@@ -7,72 +7,75 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Товар (работа, услуга)
-	class ProductV2 : AbstractProduct
+	[Serializable]
+	public class ProductV2 : AbstractProduct
 	{
 		//Дополнительные данные (G 18)
-		string additional;
+		public string additional;
 
 		//Идентификатор товара, работ, услуг (G 17)-
-		string catalogTruId;
+		public string catalogTruId;
 
 		//Наименование ТРУ (G 3)
-		string description;
+		public string description;
 
 		//Акциз-Сумма (G 10)
 		//fractionDigits value="2", totalDigits value="17"
-		float exciseAmount;
+		public float exciseAmount;
 
 		//Акциз-Ставка (G 9)
 		//fractionDigits value="2",minInclusive value="0",totalDigits value="14"
-		float exciseRate;
+		public float exciseRate;
 
 		//Классификатор продукции по видам экономической деятельности-
-		string kpvedCode;
+		public string kpvedCode;
 
 		//НДС-Сумма(G 13)
 		//fractionDigits value="2", totalDigits value="17"
-		float ndsAmount;
+		public float ndsAmount;
 
 		//НДС-Ставка (G 12)
-		int ndsRate;
+		public int ndsRate;
 
 		//Стоимость ТРУ с учетом НДС (G 14)
 		//fractionDigits value = "2", totalDigits value="17
-		float priceWithTax;
+		public float priceWithTax;
 
 		//Стоимость ТРУ без косвенных налогов (G 8)
 		//fractionDigits value = "2", totalDigits value="17
-		float priceWithoutTax;
+		public float priceWithoutTax;
 
 		//Декларации на товары, заявления в рамках ТС, СТ-1 или СТ-KZ(G 15)-
-		string productDeclaration;
+		public string productDeclaration;
 
 		//Номер товарной позиции из заявления в рамках ТС или Декларации на товары (G 16)-
-		string productNumberInDeclaration;
+		public string productNumberInDeclaration;
 
 		//Кол-во (объем) (G 6)
 		//fractionDigits value="6", totalDigits value="18"
-		float quantity;
+		public float quantity;
 
 		//Наименование товаров по классификатору ТН ВЭД ЕАЭС(G 3/1)-
-		string tnvedName;
+		public string tnvedName;
 
 		//Признак происхождения ТРУ (G 2)-
-		TruOriginCode truOriginCode;
+		public TruOriginCode truOriginCode;
 
 		//Размер оборота по реализации (облагаемый/необлагаемый оборот) (G 11)
 		//fractionDigits value = "2", totalDigits value="17
-		float turnoverSize;
+		public float turnoverSize;
 
 		//Код товара(ТНВД ЕАЭС) (G 4)
 		//pattern value="[0-9]{1,10}
-		string unitCode;
+		public string unitCode;
 
 		//Ед.изм(G 5)
-		string unitNomenclature;
+		public string unitNomenclature;
 
 		//Цена (тариф) за единицу ТРУ без косвенных налогов (G 7)
 		//fractionDigits value="6", totalDigits value="18"
-		float unitPrice;
+		public float unitPrice;
+
+		public ProductV2() { }
 	}
 }

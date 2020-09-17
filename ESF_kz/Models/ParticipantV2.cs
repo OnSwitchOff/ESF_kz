@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//УСД (H)
-	class ParticipantV2
+	[Serializable]
+	public class ParticipantV2
 	{
 		//Информация по товарам (работам, услугам)+
-		List<ProductShare> productShares;
+		public List<ProductShare> productShares;
 
 		//БИН реорганизованного лица (H 34.2)-
-		string reorganizedTin;
+		public string reorganizedTin;
 
 		//ИИН/БИН участника совместной деятельности (H 34.1)+
-		string tin;
+		public string tin;
+
+		public ParticipantV2() { }
 	}
 }

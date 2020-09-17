@@ -46,8 +46,6 @@ namespace ESF_kz
 			this.btnESFpartC = new System.Windows.Forms.Button();
 			this.btnESFpartA = new System.Windows.Forms.Button();
 			this.btnESFpartB = new System.Windows.Forms.Button();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.PanelESFpartA = new ESF_kz.Forms.panelESFpartA();
 			this.PanelESFpartB = new ESF_kz.Forms.panelESFpartB();
 			this.PanelESFpartC = new ESF_kz.Forms.panelESFpartC();
@@ -60,6 +58,16 @@ namespace ESF_kz
 			this.PanelESFpartJ = new ESF_kz.Forms.panelESFpartJ();
 			this.PanelESFpartK = new ESF_kz.Forms.panelESFpartK();
 			this.PanelESFpartL = new ESF_kz.Forms.panelESFpartL();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.sendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -67,6 +75,7 @@ namespace ESF_kz
 			this.splitContainer1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -296,25 +305,6 @@ namespace ESF_kz
 			this.btnESFpartB.UseVisualStyleBackColor = true;
 			this.btnESFpartB.Click += new System.EventHandler(this.btnESFpartB_Click);
 			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(3, 3);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1067, 58);
-			this.panel1.TabIndex = 6;
-			// 
-			// label1
-			// 
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(1067, 58);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "ЭЛЕКТРОННЫЙ СЧЕТ ФАКТУРА";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// PanelESFpartA
 			// 
 			this.PanelESFpartA.AutoSize = true;
@@ -453,12 +443,84 @@ namespace ESF_kz
 			this.PanelESFpartL.Size = new System.Drawing.Size(807, 578);
 			this.PanelESFpartL.TabIndex = 11;
 			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Controls.Add(this.menuStrip1);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(3, 3);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1067, 58);
+			this.panel1.TabIndex = 6;
+			// 
+			// label1
+			// 
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Location = new System.Drawing.Point(0, 24);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(1067, 34);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "ЭЛЕКТРОННЫЙ СЧЕТ ФАКТУРА";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.invoiceToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
+			this.menuStrip1.TabIndex = 1;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// invoiceToolStripMenuItem
+			// 
+			this.invoiceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.loadToolStripMenuItem,
+            this.sendToolStripMenuItem,
+            this.saveAsToolStripMenuItem});
+			this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
+			this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+			this.invoiceToolStripMenuItem.Text = "invoice";
+			// 
+			// openToolStripMenuItem
+			// 
+			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.openToolStripMenuItem.Text = "open";
+			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+			// 
+			// loadToolStripMenuItem
+			// 
+			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+			this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.loadToolStripMenuItem.Text = "load";
+			// 
+			// sendToolStripMenuItem
+			// 
+			this.sendToolStripMenuItem.Name = "sendToolStripMenuItem";
+			this.sendToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.sendToolStripMenuItem.Text = "send";
+			// 
+			// saveAsToolStripMenuItem
+			// 
+			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.saveAsToolStripMenuItem.Text = "save as";
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			this.openFileDialog1.Filter = "Xml files (*.xml)|*.xml";
+			// 
 			// ESF_form
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1073, 648);
 			this.Controls.Add(this.tableLayoutPanel1);
+			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "ESF_form";
 			this.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.Text = "ESF_form";
@@ -470,6 +532,9 @@ namespace ESF_kz
 			this.splitContainer1.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -504,5 +569,13 @@ namespace ESF_kz
 		private panelESFpartJ PanelESFpartJ;
 		private panelESFpartK PanelESFpartK;
 		private panelESFpartL PanelESFpartL;
+		private MenuStrip menuStrip1;
+		private ToolStripMenuItem invoiceToolStripMenuItem;
+		private ToolStripMenuItem openToolStripMenuItem;
+		private ToolStripMenuItem loadToolStripMenuItem;
+		private ToolStripMenuItem sendToolStripMenuItem;
+		private ToolStripMenuItem saveAsToolStripMenuItem;
+		private OpenFileDialog openFileDialog1;
+		private SaveFileDialog saveFileDialog1;
 	}
 }

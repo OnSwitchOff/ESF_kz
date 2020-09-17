@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Реквизиты грузоотправителя(D 25)
-	class Consignor
+	[Serializable]
+	public class Consignor
 	{
 		//Адрес(D 25.3)
-		string address;
+		public string address;
 
 		//Наименование (D 25.2)
-		string name;
+		public string name;
 
 		//ИИН/БИН (D 25.1)
-		string tin;
+		public string tin;
+
+		public Consignor() { }
 	}
 }

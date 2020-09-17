@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ESF_kz
 {
-	class AbstractProductShare
+	public class AbstractProductShare
 	{
+		
 	}
 }

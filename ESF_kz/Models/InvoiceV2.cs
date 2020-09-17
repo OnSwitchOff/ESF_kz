@@ -3,82 +3,86 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
 	//ЭСФ
-	class InvoiceV2 :AbstractInvoice
+	[Serializable]
+	public class InvoiceV2 :AbstractInvoice
 	{
 		//Дополнительные сведения (K 43
-		string addInf;
+		public string addInf;
 
 		//Реквизиты грузополучателя (D 24)
-		ConsigneeV2 consignee;
+		public ConsigneeV2 consignee;
 
 		//Реквизиты грузоотправителя (D 23)
-		Consignor consignor;
+		public Consignor consignor;
 
 		//Реквизиты поверенного (оператора) покупателя. Адрес места нахождения (J 41)-
-		string customerAgentAddress;
+		public string customerAgentAddress;
 
 		//Документ-Дата (J 42.2)-
-		DateTime customerAgentDocDate;
+		public DateTime customerAgentDocDate;
 
 		//Документ-Номер (J 42.1)-
-		string customerAgentDocNum;
+		public string customerAgentDocNum;
 
 		//Реквизиты поверенного(оператора) покупателя.Поверенный(J 40)-
-		string customerAgentName;
+		public string customerAgentName;
 
 		//Реквизиты поверенного (оператора) покупателя. БИН (J 39)-
-		string customerAgentTin;
+		public string customerAgentTin;
 
 		//Получатели (УСД) (H)
-		List<ParticipantV2> customerParticipants;
+		public List<ParticipantV2> customerParticipants;
 
 		//Получатели (C)
-		List<CustomerV2> customers;
+		public List<CustomerV2> customers;
 
 		//Дата выписки на бумажном носителе (2.1)-
-		DateTime datePaper;
+		public DateTime datePaper;
 
 		//Дата документа, подтверждающего поставку товаров (работ, услуг) (F 32.2)-
-		DateTime deliveryDocDate;
+		public DateTime deliveryDocDate;
 
 		//Номер документа, подтверждающего поставку товаров (работ, услуг) (F 32.1)-
-		string deliveryDocNum;
+		public string deliveryDocNum;
 
 		//Условия поставки (E)
-		DeliveryTermV2 deliveryTerm;
+		public DeliveryTermV2 deliveryTerm;
 
 		//Товары(работы, услуги) (G)
-	    ProductSetV2 productSet;
+		public ProductSetV2 productSet;
 
 		//Реквизиты государственного учреждения (F)
-		PublicOffice publicOffice;
+		public PublicOffice publicOffice;
 
 		//Причина выписки на бумажном носителе (2.1)-
-		PaperReasonType reasonPaper;
+		public PaperReasonType reasonPaper;
 
 		//Адрес места нахождения(I 37)-
-		string sellerAgentAddress;
+		public string sellerAgentAddress;
 
 		//Документ-Дата (I 38.2)-
-		DateTime sellerAgentDocDate;
+		public DateTime sellerAgentDocDate;
 
 		//Документ-Номер (I 38.1)-
-		string sellerAgentDocNum;
+		public string sellerAgentDocNum;
 
 		//Поверенный (I 36)-
-		string sellerAgentName;
+		public string sellerAgentName;
 
 		//БИН (I 35)-
-		string sellerAgentTin;
+		public string sellerAgentTin;
 
 		//Поставщики(УСД) (H)
-		List<ParticipantV2> sellerParticipants;
+		public List<ParticipantV2> sellerParticipants;
 
 		//Поставщики (B)
-		List<SellerV2> sellers;
+		public List<SellerV2> sellers;
+
+		public InvoiceV2() { }
 	}
 }

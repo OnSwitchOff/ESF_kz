@@ -139,5 +139,19 @@ namespace ESF_kz
 		{
 			btnESFpartI.Enabled = state;
 		}
+
+		private void openToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+				return;
+			// получаем выбранный файл
+			string filename = openFileDialog1.FileName;
+			// читаем файл в строку
+			string fileText = System.IO.File.ReadAllText(filename);
+			//SessionDataManagerFacade.ParseInvoiceXML();
+			//FormManagerFacade.fillInvoiceForm();
+
+			MessageBox.Show("Файл открыт");
+		}
 	}
 }

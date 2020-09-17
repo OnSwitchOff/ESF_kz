@@ -7,54 +7,57 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Реквизиты поставщика (B)
-	class SellerV2:AbstractCustomer
+	[Serializable]
+	public class SellerV2:AbstractCustomer
 	{
 		//Адрес (B 8)+
-		string address;
+		public string address;
 
 		//Наименование банка(B1 15)+
-		string bank;
+		public string bank;
 
 		//БИК (B1 14)+
 		//pattern value="[0-9A-Z]{8}"
-		string bik;
+		public string bik;
 
 		//БИН филиала, выписавшего ЭСФ за голову-
-		string branchTin;
+		public string branchTin;
 
 		//Номер cвидетельства НДС (B 9.2)+
-		string certificateNum;
+		public string certificateNum;
 
 		//Серия cвидетельства НДС+
-		string certificateSeries;
+		public string certificateSeries;
 
 		//Расчетный счет (B1 13)+
 		//pattern value="[0-9A-Z]{20}
-		string iik;
+		public string iik;
 
 		//Cтруктурное подразделение юридического лица-нерезидента (B 9.3)-
-		bool isBranchNonResident;
+		public bool isBranchNonResident;
 
 		//КБе (B1 12)+
-		string kbe;
+		public string kbe;
 
 		//Наименование поставщика (B 7)+
-		string name;
+		public string name;
 
 		//БИН реорганизованного лица (B 6.1)-
-		string reorganizedTin;
+		public string reorganizedTin;
 
 		//Доля участия (B 7.1)-
 		//fractionDigits value="6", totalDigits value="18"
-		float shareParticipation;
+		public float shareParticipation;
 
 		//Категориu поставщика (B 10)+
-		List<SellerType> statuses;
+		public List<SellerType> statuses;
 
 		//ИИН/БИН (B 6)+
-		string tin;
+		public string tin;
 
 		//Дополнительные сведения(B 11)+
-		string trailer;
+		public string trailer;
+
+		public SellerV2() { }
 	}
 }

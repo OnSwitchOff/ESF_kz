@@ -9,9 +9,11 @@ using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Security;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
@@ -391,10 +393,34 @@ namespace ESF_kz
 				flag = LocalServiceOperationFacade.GenerateIdListSignature();
 				flag = InvoiceServiceOperationsFacade.DeleteInvoiceById();
 				flag = SessionServiceOperationsFacade.CloseSession();
-			}		
-				
-			
-			//Application.Run(new ESF_form());
+			}
+
+			/*invoiceContainerV2 invoiceCont = new invoiceContainerV2();
+			InvoiceV2 inv1 = new InvoiceV2();
+			InvoiceV2 inv2 = new InvoiceV2();
+			InvoiceV2[] inList = { inv1, inv2 };
+			invoiceCont.invoiceSet = inList;
+
+			XmlSerializer xmlSerializer = new XmlSerializer(typeof(invoiceContainerV2));
+			XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+			ns.Add("esf", "esf");
+			ns.Add("v2", "v2.esf");
+			XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
+			xmlWriterSettings.Encoding = Encoding.UTF8;
+
+			using (XmlWriter xmlWriter = XmlWriter.Create("testW.xml",xmlWriterSettings))
+			{
+				xmlWriter.WriteProcessingInstruction("xml", "version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"");
+				xmlSerializer.Serialize(xmlWriter, invoiceCont,ns);
+			}
+
+
+			using (FileStream fs = new FileStream("TestInvoiceContainer.xml", FileMode.Open))
+			{
+				invoiceCont = (invoiceContainerV2)xmlSerializer.Deserialize(fs);
+			}*/
+
+			Application.Run(new ESF_form());
 			
 		}
 	}

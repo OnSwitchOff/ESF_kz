@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Тип поставщика (B 10)
-	enum SellerType
+	[Serializable]
+	public enum SellerType
 	{
 		COMMITTENT,//Комитент
 		BROKER,//Комиссионер

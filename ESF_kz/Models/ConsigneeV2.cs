@@ -7,18 +7,21 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Реквизиты грузополучателя (D 26)
-	class ConsigneeV2
+	[Serializable]
+	public class ConsigneeV2
 	{
 		//Адрес (D 26.3)+
-		string address;
+		public string address;
 
 		//Код страны(D 26.4)-
-		string countryCode;
+		public string countryCode;
 
 		//Наименование (D 26.2)+
-		string name;
+		public string name;
 
 		//ИИН/БИН (D 26.1)+
-		string tin;
+		public string tin;
+
+		public ConsigneeV2() { }
 	}
 }

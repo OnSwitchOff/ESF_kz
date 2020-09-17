@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Тип получателя (C 22)
-	enum CustomerType
+	[Serializable]
+	public enum CustomerType
 	{
 		COMMITTENT,//Комитент
 		BROKER,//Комиссионер
