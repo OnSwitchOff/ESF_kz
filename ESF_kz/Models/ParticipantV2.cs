@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
@@ -11,6 +12,7 @@ namespace ESF_kz
 	public class ParticipantV2
 	{
 		//Информация по товарам (работам, услугам)+
+		[XmlArrayItem(ElementName = "share")]
 		public List<ProductShare> productShares;
 
 		//БИН реорганизованного лица (H 34.2)-

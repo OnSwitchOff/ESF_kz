@@ -175,9 +175,20 @@ namespace ESF_kz
 				invoiceBodyString = sr.ReadToEnd();
 			}*/
 
-			invoiceContainerV2 inContainerV2 = new invoiceContainerV2();		
+			invoiceContainerV2 inContainerV2 = new invoiceContainerV2();	
+			
 
 			InvoiceV2 invoiceV2 = new InvoiceV2();
+			invoiceV2.invoiceType = InvoiceType.ORDINARY_INVOICE;
+			invoiceV2.date = DateTime.Now;
+			invoiceV2.num = "invoice num";
+			invoiceV2.operatorFullname = "Kassov Viktor";
+				RelatedInvoice relatedInvoice = new RelatedInvoice();
+				relatedInvoice.date = DateTime.Now;
+				relatedInvoice.num = "relatedInv num";
+				relatedInvoice.registrationNumber = "registrat NUmber";
+			invoiceV2.relatedInvoice = relatedInvoice;
+			invoiceV2.turnoverDate = DateTime.Now;
 			invoiceV2.addInf = "addInf";
 				ConsigneeV2 consigneeV2 = new ConsigneeV2();
 				consigneeV2.address = "Consegnee Adress";
@@ -222,11 +233,12 @@ namespace ESF_kz
 				customerV2.shareParticipation = 0.22f;
 					CustomerType customerType = CustomerType.BROKER;
 					CustomerType customerType1 = CustomerType.JOINT_ACTIVITY_PARTICIPANT;
-					List<CustomerType> statuses = new List<CustomerType>();
+					List<CustomerType> statuses = new List<CustomerType>();			
 					statuses.Add(customerType);
 					statuses.Add(customerType1);
 				customerV2.statuses = statuses;
-				customerV2.trailer = "custtrailer";
+				customerV2.tin = "customerTin";
+				customerV2.trailer = "custtrailer";				
 				List<CustomerV2> customerV2s = new List<CustomerV2>();
 				customerV2s.Add(customerV2);
 			invoiceV2.customers = customerV2s;
@@ -319,15 +331,17 @@ namespace ESF_kz
 
 			string str = "";
 			XmlSerializer xmlSerializer = new XmlSerializer(typeof(invoiceContainerV2));
-			using (XmlWriter xmlWriter = XmlWriter.Create("testW.xml"))
-			{				
-				xmlSerializer.Serialize(xmlWriter, inContainerV2);
-			}
+
 			using (FileStream fs = new FileStream("testW.xml", FileMode.OpenOrCreate))
-			{
-				byte[] array = new byte[fs.Length];
-				fs.Read(array, 0, array.Length);
-				str = System.Text.Encoding.Default.GetString(array);
+			using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+			{				
+				xmlSerializer.Serialize(sw, inContainerV2);
+			}
+
+			using (FileStream fs = new FileStream("testW.xml", FileMode.OpenOrCreate))
+			using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
+			{	
+				str = sr.ReadToEnd();
 			}
 
 			return str;

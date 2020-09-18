@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Тип ЭСФ
-	enum InvoiceType
+	public	enum InvoiceType
 	{
 		ORDINARY_INVOICE,//Основной ЭСФ
 		FIXED_INVOICE,//Исправленный ЭСФ (A 4)

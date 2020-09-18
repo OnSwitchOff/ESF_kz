@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
@@ -30,6 +31,7 @@ namespace ESF_kz
 		public float shareParticipation;
 
 		//Категории получателя (С 20)+
+		[XmlArrayItem(ElementName = "status")]
 		public List<CustomerType> statuses;
 
 		//ИИН/БИН. Может отсутствовать если установлен статус CustomerType.NONRESIDENT (C 16)+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
@@ -21,6 +22,7 @@ namespace ESF_kz
 		public NdsRateType ndsRateType;
 
 		//Список ТРУ+
+		[XmlArrayItem(ElementName = "product")]
 		public List<ProductV2> products;
 
 		//Итоговая Акциз-Сумма (G 10)+

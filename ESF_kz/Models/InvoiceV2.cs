@@ -11,13 +11,20 @@ namespace ESF_kz
 	[Serializable]
 	public class InvoiceV2 :AbstractInvoice
 	{
+		/*public DateTime date;
+		public InvoiceType invoiceType;
+		public string num;*/
+
+		
 		//Дополнительные сведения (K 43
 		public string addInf;
 
 		//Реквизиты грузополучателя (D 24)
+		[XmlElement(ElementName = "consignee")]
 		public ConsigneeV2 consignee;
 
 		//Реквизиты грузоотправителя (D 23)
+		[XmlElement(ElementName = "consignor")]
 		public Consignor consignor;
 
 		//Реквизиты поверенного (оператора) покупателя. Адрес места нахождения (J 41)-
@@ -36,9 +43,11 @@ namespace ESF_kz
 		public string customerAgentTin;
 
 		//Получатели (УСД) (H)
+		[XmlArrayItem(ElementName = "participant")]
 		public List<ParticipantV2> customerParticipants;
 
 		//Получатели (C)
+		[XmlArrayItem(ElementName = "customer")]
 		public List<CustomerV2> customers;
 
 		//Дата выписки на бумажном носителе (2.1)-
@@ -78,9 +87,11 @@ namespace ESF_kz
 		public string sellerAgentTin;
 
 		//Поставщики(УСД) (H)
+		[XmlArrayItem(ElementName = "participant")]
 		public List<ParticipantV2> sellerParticipants;
 
 		//Поставщики (B)
+		[XmlArrayItem(ElementName = "seller")]
 		public List<SellerV2> sellers;
 
 		public InvoiceV2() { }

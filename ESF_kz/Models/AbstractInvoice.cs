@@ -10,23 +10,23 @@ namespace ESF_kz
 	public abstract class AbstractInvoice
 	{
 		//Дата выписки ЭСФ (A 2)
-		DateTime date;
+		public DateTime date;
 
 		//Тип ЭСФ
-		InvoiceType invoiceType;
+		public InvoiceType invoiceType;
 
 		//Исходящий номер ЭСФ в бухгалтерии отправителя
 		//pattern value="[0-9]{1,30}
-		string num;
+		public string num;
 
 		//ФИО оператора отправившего ЭСФ
 		//{0,200}
-		string operatorFullname;
+		public string operatorFullname;
 
 		//Служит для связки исправленного/дополнительного ЭСФ с основным
-		RelatedInvoice relatedInvoice;
+		public RelatedInvoice relatedInvoice;
 
 		//Дата совершения оборота (A 3)
-		DateTime turnoverDate;
+		public DateTime turnoverDate;
 	}
 }

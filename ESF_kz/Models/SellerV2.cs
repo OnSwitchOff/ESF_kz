@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
@@ -50,6 +51,7 @@ namespace ESF_kz
 		public float shareParticipation;
 
 		//Категориu поставщика (B 10)+
+		[XmlArrayItem(ElementName = "status")]
 		public List<SellerType> statuses;
 
 		//ИИН/БИН (B 6)+
