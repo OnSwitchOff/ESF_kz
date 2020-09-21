@@ -13,7 +13,7 @@ namespace ESF_kz.Forms
 {
 	public partial class panelESFpartA : AbstractUCESFpanel
 	{
-		
+
 		private const string DOWN_TIME = "Простой системы";
 		private const string UNLAWFUL_REMOVAL_REGISTRATIONE = "Блокирование доступа к Системе";
 		private const string MISSING_REQUIREMENT = "Отсутствовало требование по выписке ЭСФ";
@@ -22,17 +22,137 @@ namespace ESF_kz.Forms
 		{
 			InitializeComponent();
 			//Проверка -1.1 Номер учетной системы-
-			tbAccSysNum_Validating(this.tbPartA_AccSysNum,null);
+			tbAccSysNum_Validating(this.tbPartA_AccSysNum, null);
 			//Иницализация -2. Дата выписки- текущей датой
 			this.dtpPartA_Date.Value = DateTime.Now;
 
 
 			//Добавление делегата проверки -1.1 Номер учетной системы-
-			this.tbPartA_AccSysNum.Validating += tbAccSysNum_Validating;			
+			this.tbPartA_AccSysNum.Validating += tbAccSysNum_Validating;
 			//Добавление делегата проверки -Причина выписки на бумажном носителе-
 			this.combxPartA_PaperESFReason.Validating += CombxPartA_PaperESFReason_Validating;
 			//Добавление делегата проверки -2.1 Дата выписки на бумажном носителе-
 			this.dtpPartA_PaperESFDate.Validating += DtpPartA_PaperESFDate_Validating;
+		}
+
+		internal string getAddedESFNum()
+		{
+			return tbPartA_AddedESFAccSysNum.Text;
+		}
+
+		internal bool setAddedESFNum(string num)
+		{
+			try
+			{
+				tbPartA_AddedESFAccSysNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getAddedESFRegistrationNum()
+		{
+			return tbPartA_AddedESFNum.Text;
+		}
+
+		internal bool setAddedESFRegistrationNum(string num)
+		{
+			try
+			{
+				tbPartA_AddedESFNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCorrectedESFRegistrationNum()
+		{
+			return tbPartA_CorrectedESFNum.Text;
+		}
+
+		internal bool setCorrectedESFRegistrationNum(string num)
+		{
+			try
+			{
+				tbPartA_CorrectedESFNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+
+
+		internal string getCorrectedESFNum()
+		{
+			return tbPartA_CorrectedESFAccSysNum.Text;
+		}
+
+		internal bool setCorrectedESFNum(string num)
+		{
+			try
+			{
+				tbPartA_CorrectedESFAccSysNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal DateTime getAddedESFDate()
+		{
+			return dtpPartA_AddedESFDate.Value;
+		}
+
+		internal bool setAddedESFDate(DateTime dateTime)
+		{
+			try
+			{
+				dtpPartA_AddedESFDate.Value = dateTime;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal DateTime getCorrectedESFDate()
+		{
+			return dtpPartA_CorrectedESFDate.Value;
+		}
+
+		internal bool setCorrectedESFDate(DateTime dateTime)
+		{
+			try
+			{
+				dtpPartA_CorrectedESFDate.Value = dateTime;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		internal bool isCorrectedESF()
+		{
+			return chbxPartA_isCorrectedESF.Checked;
+		}
+
+		internal bool isAddedESF()
+		{
+			return chbxPartA_isAddedESF.Checked;
 		}
 
 

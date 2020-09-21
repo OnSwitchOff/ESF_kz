@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESF_kz.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,26 @@ namespace ESF_kz
 {
 	static class FormManagerFacade
 	{
+		static private ESF_form invoiceForm;
+
+		static internal bool setInvoiceForm(ESF_form form)
+		{
+			try
+			{
+				invoiceForm = form;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}			
+		}
+
+		static internal ESF_form getInvoiceForm()
+		{
+			return invoiceForm;
+		}
+
 		internal static string getOperatorFullname()
 		{
 			throw new NotImplementedException();
@@ -15,57 +36,84 @@ namespace ESF_kz
 
 		internal static DateTime getRelatedInvoiceDate()
 		{
-			throw new NotImplementedException();
+			panelESFpartA panelA = invoiceForm.getPannel<panelESFpartA>();
+			if (panelA.isCorrectedESF())
+			{
+				return panelA.getCorrectedESFDate();
+			}
+			else if (panelA.isAddedESF())
+			{
+				return panelA.getAddedESFDate();
+			}
+			return new DateTime(1990,9,24);
 		}
 
 		internal static string getRelatedInvoiceNum()
 		{
-			throw new NotImplementedException();
+			panelESFpartA panelA = invoiceForm.getPannel<panelESFpartA>();
+			if (panelA.isCorrectedESF())
+			{
+				return panelA.getCorrectedESFNum();
+			}
+			else if (panelA.isAddedESF())
+			{
+				return panelA.getAddedESFNum();
+			}
+			return null;
 		}
 
 		internal static string getRelatedInvoiceRegistrationNum()
 		{
-			throw new NotImplementedException();
+			panelESFpartA panelA = invoiceForm.getPannel<panelESFpartA>();
+			if (panelA.isCorrectedESF())
+			{
+				return panelA.getCorrectedESFRegistrationNum();
+			}
+			else if (panelA.isAddedESF())
+			{
+				return panelA.getAddedESFRegistrationNum();
+			}
+			return null;
 		}
 
 		internal static string getInvoiceAddInf()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartK>().getInvoiceAddInf();
 		}
 
 		internal static string getConsigneeAddress()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartD>().getConsigneeAddress();
 		}
 
-		internal static string getConsigneeCountryCOde()
+		internal static string getConsigneeCountryCode()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartD>().getConsigneeCountryCode();
 		}
 
 		internal static string getConsigneeName()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartD>().getConsigneeName();
 		}
 
 		internal static string getConsigneeTin()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartD>().getConsigneeTin();
 		}
 
 		internal static string getConsignorAddress()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartD>().getConsignorAddress();
 		}
 
 		internal static string getConsignorName()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartD>().getConsignorName();
 		}
 
 		internal static string getConsignorTin()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartD>().getConsignorTin();
 		}
 
 		internal static string getCustomerAgentAddress()

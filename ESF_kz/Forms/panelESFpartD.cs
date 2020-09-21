@@ -76,6 +76,132 @@ namespace ESF_kz.Forms
 			}
 		}
 
+		internal string getConsigneeAddress()
+		{
+			return tbPartD_consigneeAddress.Text;
+		}
+
+		internal bool setConsigneeAddress(string address)
+		{
+			try
+			{
+				tbPartD_consigneeAddress.Text = address;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getConsigneeName()
+		{
+			return tbPartD_consigneeName.Text;
+		}
+
+		internal bool setConsigneeName(string name)
+		{
+			try
+			{
+				tbPartD_consigneeName.Text = name;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getConsignorAddress()
+		{
+			return tbPartD_consignorAddress.Text;
+		}
+
+		internal string getConsignorName()
+		{
+			return tbPartD_consignorName.Text;
+		}
+
+		internal bool setConsignorName(string name)
+		{
+			try
+			{
+				tbPartD_consignorName.Text = name;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getConsignorTin()
+		{
+			return tbPartD_consignorTin.Text;
+		}
+
+		internal bool setConsignorTin(string tin)
+		{
+			try
+			{
+				tbPartD_consignorTin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal bool setConsignorAddress(string address)
+		{
+			try
+			{
+				tbPartD_consignorAddress.Text = address;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getConsigneeTin()
+		{
+			return tbPartD_consigneeTin.Text;
+		}
+
+		internal bool setConsigneeTin(string tin)
+		{
+			try
+			{
+				tbPartD_consigneeTin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getConsigneeCountryCode()
+		{
+			return tbPartD_consigneeCountryCode.Text;
+		}
+
+		internal bool setConsigneeCountryCode(string code)
+		{
+			try
+			{
+				tbPartD_consigneeCountryCode.Text = code;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
 		private void tbPartD_consignorAddress_TextChanged(object sender, EventArgs e)
 		{
 			tbPartD_consignorAddress_Validation(); 

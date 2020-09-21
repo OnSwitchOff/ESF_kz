@@ -31,7 +31,7 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.tbAddInf = new System.Windows.Forms.TextBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -43,7 +43,7 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.tbAddInf, 1, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -78,14 +78,14 @@
 			this.label1.TabIndex = 46;
 			this.label1.Text = "43. Дополнительные сведения";
 			// 
-			// textBox1
+			// tbAddInf
 			// 
-			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox1.Location = new System.Drawing.Point(183, 61);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(710, 505);
-			this.textBox1.TabIndex = 47;
+			this.tbAddInf.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tbAddInf.Location = new System.Drawing.Point(183, 61);
+			this.tbAddInf.Multiline = true;
+			this.tbAddInf.Name = "tbAddInf";
+			this.tbAddInf.Size = new System.Drawing.Size(710, 505);
+			this.tbAddInf.TabIndex = 47;
 			// 
 			// panelESFpartK
 			// 
@@ -105,6 +105,6 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox tbAddInf;
 	}
 }

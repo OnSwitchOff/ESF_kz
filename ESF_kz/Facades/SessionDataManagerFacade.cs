@@ -984,7 +984,7 @@ namespace ESF_kz
 		{
 			ConsigneeV2 consigneeV2 = new ConsigneeV2();
 			consigneeV2.address = getConsigneeAddress();//"Consegnee Adress";
-			consigneeV2.countryCode = getConsigneeCountryCOde();//"KZ";
+			consigneeV2.countryCode = getConsigneeCountryCode();//"KZ";
 			consigneeV2.name = getConsigneeName();// "Consegnee Name";
 			consigneeV2.tin = getConsigneeTin();// "COnsegnee Tin";
 			return consigneeV2;
@@ -1000,9 +1000,9 @@ namespace ESF_kz
 			return FormManagerFacade.getConsigneeName();
 		}
 
-		private static string getConsigneeCountryCOde()
+		private static string getConsigneeCountryCode()
 		{
-			return FormManagerFacade.getConsigneeCountryCOde();
+			return FormManagerFacade.getConsigneeCountryCode();
 		}
 
 		private static string getConsigneeAddress()

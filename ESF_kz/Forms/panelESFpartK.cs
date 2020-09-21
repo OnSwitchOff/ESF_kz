@@ -16,5 +16,23 @@ namespace ESF_kz.Forms
 		{
 			InitializeComponent();
 		}
+
+		internal string getInvoiceAddInf()
+		{
+			return tbAddInf.Text;
+		}
+
+		internal bool setInvoiceAddInf(string addinf)
+		{
+			try
+			{
+				tbAddInf.Text = addinf;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 	}
 }
