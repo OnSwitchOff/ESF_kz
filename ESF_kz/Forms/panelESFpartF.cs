@@ -36,5 +36,41 @@ namespace ESF_kz.Forms
 				epPartF_deliveryDocNum.Clear();
 			}
 		}
+
+		internal DateTime getInvoiceDeliveryDocDate()
+		{
+			return dtpPartF_deliveryDocDate.Value;
+		}
+
+		internal bool setInvoiceDeliveryDocDate(DateTime date)
+		{
+			try
+			{
+				dtpPartF_deliveryDocDate.Value = date;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getInvoiceDeliveryDocNum()
+		{
+			return tbPartF_deliveryDocNum.Text;
+		}
+
+		internal bool setInvoiceDeliveryDocNum(string num)
+		{
+			try
+			{
+				tbPartF_deliveryDocNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 	}
 }

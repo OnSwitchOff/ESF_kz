@@ -319,6 +319,23 @@ namespace ESF_kz.Forms
 		}
 
 
+		internal DateTime getInvoiceDatePaper()
+		{
+			return dtpPartA_PaperESFDate.Value;
+		}
+
+		internal bool setInvoiceDatePaper(DateTime date)
+		{
+			try
+			{
+				dtpPartA_PaperESFDate.Value = date;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 
 		private void ClearCorrectedESFData()
 		{

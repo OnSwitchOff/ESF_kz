@@ -22,7 +22,7 @@ namespace ESF_kz.Forms
 		{
 			rbPartE_hasContractFalse.Checked = !rbPartE_hasContractTrue.Checked;
 			tbPartE_contractNum.Enabled = rbPartE_hasContractTrue.Checked;
-			tbPartE_contractDate.Enabled = rbPartE_hasContractTrue.Checked;
+			dtpPartE_contractDate.Enabled = rbPartE_hasContractTrue.Checked;
 		}
 
 		private void rbPartE_hasContractFalse_CheckedChanged(object sender, EventArgs e)
@@ -118,6 +118,167 @@ namespace ESF_kz.Forms
 			else
 			{
 				epPartE_destination.Clear();
+			}
+		}
+
+		internal DateTime getDeliveryTermContractDate()
+		{
+			return dtpPartE_contractDate.Enabled ? dtpPartE_contractDate.Value : new DateTime(1990,09,24);
+		}
+
+		internal bool setDeliveryTermContractDate(DateTime date)
+		{
+			try
+			{
+				dtpPartE_contractDate.Value = date;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getDeliveryTermContractNum()
+		{
+			return tbPartE_contractNum.Text;
+		}
+		internal bool setDeliveryTermContractNum(string num)
+		{
+			try
+			{
+				tbPartE_contractNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getDeliveryTermConditiomCode()
+		{
+			return tbPartE_deliveryConditionCode.Text;
+		}
+
+		internal bool setDeliveryTermConditiomCode(string code)
+		{
+			try
+			{
+				tbPartE_deliveryConditionCode.Text= code;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getDeliveryTermDestination()
+		{
+			return tbPartE_destination.Text;
+		}
+
+		internal bool setDeliveryTermDestination(string destination)
+		{
+			try
+			{
+				tbPartE_destination.Text = destination;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal bool getDeliveryTermHasContract()
+		{
+			return rbPartE_hasContractTrue.Checked;
+		}
+
+		internal bool setDeliveryTermHasContract(bool hasContract)
+		{
+			try
+			{
+				rbPartE_hasContractTrue.Checked = hasContract;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;		
+			}
+		}
+
+		internal string getDeliveryTermTerm()
+		{
+			return tbPartE_term.Text;
+		}
+
+		internal bool setDeliveryTermTerm(string term)
+		{
+			try
+			{
+				tbPartE_term.Text = term;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getDeliveryTermTransportTypeCode()
+		{
+			return tbPartE_transportTypeCode.Text;
+		}
+
+		internal bool setDeliveryTermTransportTypeCode(string code)
+		{
+			try
+			{
+				tbPartE_transportTypeCode.Text = code;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getDeliveryTermWarrant()
+		{
+			return tbPartE_warrant.Text;
+		}
+
+		internal bool setDeliveryTermWarrant(string warrant)
+		{
+			try
+			{
+				tbPartE_warrant.Text = warrant;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal DateTime getDeliveryTermWarrantDate()
+		{
+			return dtpPartE_warrantDate.Value;
+		}
+
+		internal bool setDeliveryTermWarrantDate(DateTime date)
+		{
+			try
+			{
+				dtpPartE_warrantDate.Value = date;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
 			}
 		}
 	}

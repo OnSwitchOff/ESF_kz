@@ -407,6 +407,7 @@
 			this.chbxPartC_isNonResident.TabIndex = 10;
 			this.chbxPartC_isNonResident.Text = "нерезидент";
 			this.chbxPartC_isNonResident.UseVisualStyleBackColor = true;
+			this.chbxPartC_isNonResident.CheckedChanged += new System.EventHandler(this.chbxPartC_isNonResident_CheckedChanged);
 			// 
 			// chbxPartC_isSharingAgreementParticipant
 			// 
@@ -456,6 +457,7 @@
 			this.chbxPartC_isIndividual.TabIndex = 14;
 			this.chbxPartC_isIndividual.Text = "Физические лицо";
 			this.chbxPartC_isIndividual.UseVisualStyleBackColor = true;
+			this.chbxPartC_isIndividual.CheckedChanged += new System.EventHandler(this.chbxPartC_isIndividual_CheckedChanged);
 			// 
 			// l_PartC1_iik
 			// 

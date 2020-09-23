@@ -87,8 +87,8 @@ namespace ESF_kz
 
 		private void btnESFpartH_Click(object sender, EventArgs e)
 		{
-			panelESFPartHtab PannelESFPartHtab1 = new panelESFPartHtab();
-			panelESFPartHtab PannelESFPartHtab2 = new panelESFPartHtab();
+			panelESFpartHtab PannelESFPartHtab1 = new panelESFpartHtab();
+			panelESFpartHtab PannelESFPartHtab2 = new panelESFpartHtab();
 			PannelESFPartHtab1.Dock = DockStyle.Fill;
 			PannelESFPartHtab2.Dock = DockStyle.Fill;
 			if (this.PanelESFpartH.getTabControll().TabPages.Count < 2)

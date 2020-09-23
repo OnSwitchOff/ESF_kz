@@ -1,6 +1,6 @@
 ﻿namespace ESF_kz.Forms
 {
-	partial class panelESFPartHtab
+	partial class panelESFpartHtab
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -37,23 +37,23 @@
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.typeTRN = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nameTRN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.fullnameTRN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TNVED = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.measure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pricePerOne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.priceWithoutTax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.exciseRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.exciseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.turnoverSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ndsRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ndsAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.priceWithTax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.productDeclaration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.productNumberInDeclaration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.catalogTruId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.additional = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.label3 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -142,23 +142,23 @@
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rowNumber,
             this.typeTRN,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17});
+            this.nameTRN,
+            this.fullnameTRN,
+            this.TNVED,
+            this.measure,
+            this.quantity,
+            this.pricePerOne,
+            this.priceWithoutTax,
+            this.exciseRate,
+            this.exciseAmount,
+            this.turnoverSize,
+            this.ndsRate,
+            this.ndsAmount,
+            this.priceWithTax,
+            this.productDeclaration,
+            this.productNumberInDeclaration,
+            this.catalogTruId,
+            this.additional});
 			this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(4, 132);
@@ -184,124 +184,124 @@
             "5"});
 			this.typeTRN.Name = "typeTRN";
 			// 
-			// Column1
+			// nameTRN
 			// 
-			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column1.FillWeight = 300F;
-			this.Column1.HeaderText = "Наимено вание товаров, работ и услуг";
-			this.Column1.Name = "Column1";
+			this.nameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.nameTRN.FillWeight = 300F;
+			this.nameTRN.HeaderText = "Наименование товаров, работ и услуг";
+			this.nameTRN.Name = "nameTRN";
 			// 
-			// Column2
+			// fullnameTRN
 			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column2.FillWeight = 400F;
-			this.Column2.HeaderText = "Наименование товаров в соответс твии с Деклара цией на товары или заявлени я о вв" +
-    "озе товаров и уплате косвенн ых налогов";
-			this.Column2.Name = "Column2";
+			this.fullnameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.fullnameTRN.FillWeight = 400F;
+			this.fullnameTRN.HeaderText = "Наименование товаров в соответствии с Декларацией на товары или заявления о ввозе" +
+    " товаров и уплате косвенных налогов";
+			this.fullnameTRN.Name = "fullnameTRN";
 			// 
-			// Column3
+			// TNVED
 			// 
-			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column3.FillWeight = 200F;
-			this.Column3.HeaderText = "Код товара (ТНВЭД ЕАЭС)";
-			this.Column3.Name = "Column3";
+			this.TNVED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.TNVED.FillWeight = 200F;
+			this.TNVED.HeaderText = "Код товара (ТНВЭД ЕАЭС)";
+			this.TNVED.Name = "TNVED";
 			// 
-			// Column4
+			// measure
 			// 
-			this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column4.HeaderText = "Единица измерения";
-			this.Column4.Name = "Column4";
+			this.measure.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.measure.HeaderText = "Единица измерения";
+			this.measure.Name = "measure";
 			// 
-			// Column5
+			// quantity
 			// 
-			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column5.FillWeight = 150F;
-			this.Column5.HeaderText = "Количество (объем)";
-			this.Column5.Name = "Column5";
+			this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.quantity.FillWeight = 150F;
+			this.quantity.HeaderText = "Количество (объем)";
+			this.quantity.Name = "quantity";
 			// 
-			// Column6
+			// pricePerOne
 			// 
-			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column6.FillWeight = 150F;
-			this.Column6.HeaderText = "Цена (тариф) за единицу товара, работы, услуг и без косвенных налогов";
-			this.Column6.Name = "Column6";
+			this.pricePerOne.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.pricePerOne.FillWeight = 150F;
+			this.pricePerOne.HeaderText = "Цена (тариф) за единицу товара, работы, услуг и без косвенных налогов";
+			this.pricePerOne.Name = "pricePerOne";
 			// 
-			// Column7
+			// priceWithoutTax
 			// 
-			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column7.FillWeight = 150F;
-			this.Column7.HeaderText = "Стоимость товаров, работ, услуг без косвенных налогов";
-			this.Column7.Name = "Column7";
+			this.priceWithoutTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.priceWithoutTax.FillWeight = 150F;
+			this.priceWithoutTax.HeaderText = "Стоимость товаров, работ, услуг без косвенных налогов";
+			this.priceWithoutTax.Name = "priceWithoutTax";
 			// 
-			// Column8
+			// exciseRate
 			// 
-			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column8.HeaderText = "Акциз ставка";
-			this.Column8.Name = "Column8";
+			this.exciseRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.exciseRate.HeaderText = "Акциз ставка";
+			this.exciseRate.Name = "exciseRate";
 			// 
-			// Column9
+			// exciseAmount
 			// 
-			this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column9.FillWeight = 150F;
-			this.Column9.HeaderText = "Акциз сумма";
-			this.Column9.Name = "Column9";
+			this.exciseAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.exciseAmount.FillWeight = 150F;
+			this.exciseAmount.HeaderText = "Акциз сумма";
+			this.exciseAmount.Name = "exciseAmount";
 			// 
-			// Column10
+			// turnoverSize
 			// 
-			this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column10.FillWeight = 150F;
-			this.Column10.HeaderText = "Размер оборота по реализации(облагаемый/необлагаемый оборот)";
-			this.Column10.Name = "Column10";
+			this.turnoverSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.turnoverSize.FillWeight = 150F;
+			this.turnoverSize.HeaderText = "Размер оборота по реализации(облагаемый/необлагаемый оборот)";
+			this.turnoverSize.Name = "turnoverSize";
 			// 
-			// Column11
+			// ndsRate
 			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column11.HeaderText = "НДС ставка";
-			this.Column11.Name = "Column11";
+			this.ndsRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ndsRate.HeaderText = "НДС ставка";
+			this.ndsRate.Name = "ndsRate";
 			// 
-			// Column12
+			// ndsAmount
 			// 
-			this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column12.FillWeight = 150F;
-			this.Column12.HeaderText = "НДС сумма";
-			this.Column12.Name = "Column12";
+			this.ndsAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ndsAmount.FillWeight = 150F;
+			this.ndsAmount.HeaderText = "НДС сумма";
+			this.ndsAmount.Name = "ndsAmount";
 			// 
-			// Column13
+			// priceWithTax
 			// 
-			this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column13.FillWeight = 150F;
-			this.Column13.HeaderText = "Стоимость товаров, работ, услуг с учетом косвенных налогов";
-			this.Column13.Name = "Column13";
+			this.priceWithTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.priceWithTax.FillWeight = 150F;
+			this.priceWithTax.HeaderText = "Стоимость товаров, работ, услуг с учетом косвенных налогов";
+			this.priceWithTax.Name = "priceWithTax";
 			// 
-			// Column14
+			// productDeclaration
 			// 
-			this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column14.FillWeight = 150F;
-			this.Column14.HeaderText = "№ Декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-" +
+			this.productDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productDeclaration.FillWeight = 150F;
+			this.productDeclaration.HeaderText = "№ Декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-" +
     "1 или СТ-KZ";
-			this.Column14.Name = "Column14";
+			this.productDeclaration.Name = "productDeclaration";
 			// 
-			// Column15
+			// productNumberInDeclaration
 			// 
-			this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column15.FillWeight = 150F;
-			this.Column15.HeaderText = "Номер товарной позиции из Декларации на товары или заявления о ввозе товаров и уп" +
+			this.productNumberInDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productNumberInDeclaration.FillWeight = 150F;
+			this.productNumberInDeclaration.HeaderText = "Номер товарной позиции из Декларации на товары или заявления о ввозе товаров и уп" +
     "лате косвенных налогов";
-			this.Column15.Name = "Column15";
+			this.productNumberInDeclaration.Name = "productNumberInDeclaration";
 			// 
-			// Column16
+			// catalogTruId
 			// 
-			this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column16.FillWeight = 150F;
-			this.Column16.HeaderText = "Идентификатор товара, работы, услуг";
-			this.Column16.Name = "Column16";
+			this.catalogTruId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.catalogTruId.FillWeight = 150F;
+			this.catalogTruId.HeaderText = "Идентификатор товара, работы, услуг";
+			this.catalogTruId.Name = "catalogTruId";
 			// 
-			// Column17
+			// additional
 			// 
-			this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column17.FillWeight = 200F;
-			this.Column17.HeaderText = "Дополнительные данные";
-			this.Column17.Name = "Column17";
+			this.additional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.additional.FillWeight = 200F;
+			this.additional.HeaderText = "Дополнительные данные";
+			this.additional.Name = "additional";
 			// 
 			// label3
 			// 
@@ -312,12 +312,12 @@
 			this.label3.TabIndex = 48;
 			this.label3.Text = "Всего по счету:";
 			// 
-			// pannelESFPartHtab
+			// panelESFpartHtab
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.tableLayoutPanel1);
-			this.Name = "pannelESFPartHtab";
+			this.Name = "panelESFpartHtab";
 			this.Size = new System.Drawing.Size(928, 645);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
@@ -355,5 +355,22 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nameTRN;
+		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameTRN;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TNVED;
+		private System.Windows.Forms.DataGridViewTextBoxColumn measure;
+		private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+		private System.Windows.Forms.DataGridViewTextBoxColumn pricePerOne;
+		private System.Windows.Forms.DataGridViewTextBoxColumn priceWithoutTax;
+		private System.Windows.Forms.DataGridViewTextBoxColumn exciseRate;
+		private System.Windows.Forms.DataGridViewTextBoxColumn exciseAmount;
+		private System.Windows.Forms.DataGridViewTextBoxColumn turnoverSize;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ndsRate;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ndsAmount;
+		private System.Windows.Forms.DataGridViewTextBoxColumn priceWithTax;
+		private System.Windows.Forms.DataGridViewTextBoxColumn productDeclaration;
+		private System.Windows.Forms.DataGridViewTextBoxColumn productNumberInDeclaration;
+		private System.Windows.Forms.DataGridViewTextBoxColumn catalogTruId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn additional;
 	}
 }

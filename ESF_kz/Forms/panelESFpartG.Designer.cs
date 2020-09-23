@@ -29,31 +29,31 @@
 		private void InitializeComponent()
 		{
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.typeTRN = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.tbPartG_currencyRate = new System.Windows.Forms.TextBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.tbPartG_currencyCode = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,73 +68,22 @@
 			this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartG_currencyRate, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartG_currencyCode, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 5;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00005F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.999997F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.999997F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.999998F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.999998F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.99995F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999994F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999996F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(952, 792);
 			this.tableLayoutPanel1.TabIndex = 5;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(4, 120);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(468, 39);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "32.2 курс валюты";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// textBox2
-			// 
-			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox2.Location = new System.Drawing.Point(479, 129);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(469, 20);
-			this.textBox2.TabIndex = 14;
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.tableLayoutPanel1.SetColumnSpan(this.label9, 2);
-			this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.Location = new System.Drawing.Point(4, 1);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(944, 78);
-			this.label9.TabIndex = 45;
-			this.label9.Text = "Раздел G. Данные по товарам, работам, услугам";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label1
-			// 
-			this.label1.AutoEllipsis = true;
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(4, 80);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(468, 39);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "33.1 код валюты";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// textBox1
-			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(479, 89);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(469, 20);
-			this.textBox1.TabIndex = 46;
 			// 
 			// dataGridView1
 			// 
@@ -142,30 +91,29 @@
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rowNumber,
             this.typeTRN,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17});
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18});
 			this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(4, 163);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(944, 544);
-			this.dataGridView1.TabIndex = 48;
-			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+			this.dataGridView1.TabIndex = 51;
 			// 
 			// rowNumber
 			// 
@@ -185,124 +133,176 @@
             "5"});
 			this.typeTRN.Name = "typeTRN";
 			// 
-			// Column1
+			// dataGridViewTextBoxColumn2
 			// 
-			this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column1.FillWeight = 300F;
-			this.Column1.HeaderText = "Наимено вание товаров, работ и услуг";
-			this.Column1.Name = "Column1";
+			this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn2.FillWeight = 300F;
+			this.dataGridViewTextBoxColumn2.HeaderText = "Наименование товаров, работ и услуг";
+			this.dataGridViewTextBoxColumn2.Name = "nameTRN";
 			// 
-			// Column2
+			// dataGridViewTextBoxColumn3
 			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column2.FillWeight = 400F;
-			this.Column2.HeaderText = "Наименование товаров в соответс твии с Деклара цией на товары или заявлени я о вв" +
-    "озе товаров и уплате косвенн ых налогов";
-			this.Column2.Name = "Column2";
+			this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn3.FillWeight = 400F;
+			this.dataGridViewTextBoxColumn3.HeaderText = "Наименование товаров в соответствии с Декларацией на товары или заявления о ввозе" +
+    " товаров и уплате косвенных налогов";
+			this.dataGridViewTextBoxColumn3.Name = "fullnameTRN";
 			// 
-			// Column3
+			// dataGridViewTextBoxColumn4
 			// 
-			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column3.FillWeight = 200F;
-			this.Column3.HeaderText = "Код товара (ТНВЭД ЕАЭС)";
-			this.Column3.Name = "Column3";
+			this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn4.FillWeight = 200F;
+			this.dataGridViewTextBoxColumn4.HeaderText = "Код товара (ТНВЭД ЕАЭС)";
+			this.dataGridViewTextBoxColumn4.Name = "TNVED";
 			// 
-			// Column4
+			// dataGridViewTextBoxColumn5
 			// 
-			this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column4.HeaderText = "Единица измерения";
-			this.Column4.Name = "Column4";
+			this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn5.HeaderText = "Единица измерения";
+			this.dataGridViewTextBoxColumn5.Name = "measure";
 			// 
-			// Column5
+			// dataGridViewTextBoxColumn6
 			// 
-			this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column5.FillWeight = 150F;
-			this.Column5.HeaderText = "Количество (объем)";
-			this.Column5.Name = "Column5";
+			this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn6.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn6.HeaderText = "Количество (объем)";
+			this.dataGridViewTextBoxColumn6.Name = "quantity";
 			// 
-			// Column6
+			// dataGridViewTextBoxColumn7
 			// 
-			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column6.FillWeight = 150F;
-			this.Column6.HeaderText = "Цена (тариф) за единицу товара, работы, услуг и без косвенных налогов";
-			this.Column6.Name = "Column6";
+			this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn7.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn7.HeaderText = "Цена (тариф) за единицу товара, работы, услуг и без косвенных налогов";
+			this.dataGridViewTextBoxColumn7.Name = "pricePerOne";
 			// 
-			// Column7
+			// dataGridViewTextBoxColumn8
 			// 
-			this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column7.FillWeight = 150F;
-			this.Column7.HeaderText = "Стоимость товаров, работ, услуг без косвенных налогов";
-			this.Column7.Name = "Column7";
+			this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn8.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn8.HeaderText = "Стоимость товаров, работ, услуг без косвенных налогов";
+			this.dataGridViewTextBoxColumn8.Name = "priceWithoutTax";
 			// 
-			// Column8
+			// dataGridViewTextBoxColumn9
 			// 
-			this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column8.HeaderText = "Акциз ставка";
-			this.Column8.Name = "Column8";
+			this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn9.HeaderText = "Акциз ставка";
+			this.dataGridViewTextBoxColumn9.Name = "exciseRate";
 			// 
-			// Column9
+			// dataGridViewTextBoxColumn10
 			// 
-			this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column9.FillWeight = 150F;
-			this.Column9.HeaderText = "Акциз сумма";
-			this.Column9.Name = "Column9";
+			this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn10.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn10.HeaderText = "Акциз сумма";
+			this.dataGridViewTextBoxColumn10.Name = "exciseAmount";
 			// 
-			// Column10
+			// dataGridViewTextBoxColumn11
 			// 
-			this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column10.FillWeight = 150F;
-			this.Column10.HeaderText = "Размер оборота по реализации(облагаемый/необлагаемый оборот)";
-			this.Column10.Name = "Column10";
+			this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn11.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn11.HeaderText = "Размер оборота по реализации(облагаемый/необлагаемый оборот)";
+			this.dataGridViewTextBoxColumn11.Name = "turnoverSize";
 			// 
-			// Column11
+			// dataGridViewTextBoxColumn12
 			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column11.HeaderText = "НДС ставка";
-			this.Column11.Name = "Column11";
+			this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn12.HeaderText = "НДС ставка";
+			this.dataGridViewTextBoxColumn12.Name = "ndsRate";
 			// 
-			// Column12
+			// dataGridViewTextBoxColumn13
 			// 
-			this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column12.FillWeight = 150F;
-			this.Column12.HeaderText = "НДС сумма";
-			this.Column12.Name = "Column12";
+			this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn13.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn13.HeaderText = "НДС сумма";
+			this.dataGridViewTextBoxColumn13.Name = "ndsAmount";
 			// 
-			// Column13
+			// dataGridViewTextBoxColumn14
 			// 
-			this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column13.FillWeight = 150F;
-			this.Column13.HeaderText = "Стоимость товаров, работ, услуг с учетом косвенных налогов";
-			this.Column13.Name = "Column13";
+			this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn14.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn14.HeaderText = "Стоимость товаров, работ, услуг с учетом косвенных налогов";
+			this.dataGridViewTextBoxColumn14.Name = "priceWithTax";
 			// 
-			// Column14
+			// dataGridViewTextBoxColumn15
 			// 
-			this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column14.FillWeight = 150F;
-			this.Column14.HeaderText = "№ Декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-" +
+			this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn15.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn15.HeaderText = "№ Декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-" +
     "1 или СТ-KZ";
-			this.Column14.Name = "Column14";
+			this.dataGridViewTextBoxColumn15.Name = "productDeclaration";
 			// 
-			// Column15
+			// dataGridViewTextBoxColumn16
 			// 
-			this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column15.FillWeight = 150F;
-			this.Column15.HeaderText = "Номер товарной позиции из Декларации на товары или заявления о ввозе товаров и уп" +
+			this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn16.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn16.HeaderText = "Номер товарной позиции из Декларации на товары или заявления о ввозе товаров и уп" +
     "лате косвенных налогов";
-			this.Column15.Name = "Column15";
+			this.dataGridViewTextBoxColumn16.Name = "productNumberInDeclaration";
 			// 
-			// Column16
+			// dataGridViewTextBoxColumn17
 			// 
-			this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column16.FillWeight = 150F;
-			this.Column16.HeaderText = "Идентификатор товара, работы, услуг";
-			this.Column16.Name = "Column16";
+			this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn17.FillWeight = 150F;
+			this.dataGridViewTextBoxColumn17.HeaderText = "Идентификатор товара, работы, услуг";
+			this.dataGridViewTextBoxColumn17.Name = "catalogTruId";
 			// 
-			// Column17
+			// dataGridViewTextBoxColumn18
 			// 
-			this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column17.FillWeight = 200F;
-			this.Column17.HeaderText = "Дополнительные данные";
-			this.Column17.Name = "Column17";
+			this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.dataGridViewTextBoxColumn18.FillWeight = 200F;
+			this.dataGridViewTextBoxColumn18.HeaderText = "Дополнительные данные";
+			this.dataGridViewTextBoxColumn18.Name = "additional";
+			// 
+			// label1
+			// 
+			this.label1.AutoEllipsis = true;
+			this.label1.AutoSize = true;
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Location = new System.Drawing.Point(4, 80);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(468, 39);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "33.1 код валюты";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label2.Location = new System.Drawing.Point(4, 120);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(468, 39);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "32.2 курс валюты";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbPartG_currencyRate
+			// 
+			this.tbPartG_currencyRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartG_currencyRate.Location = new System.Drawing.Point(479, 129);
+			this.tbPartG_currencyRate.Name = "tbPartG_currencyRate";
+			this.tbPartG_currencyRate.Size = new System.Drawing.Size(469, 20);
+			this.tbPartG_currencyRate.TabIndex = 14;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.tableLayoutPanel1.SetColumnSpan(this.label9, 2);
+			this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.Location = new System.Drawing.Point(4, 1);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(944, 78);
+			this.label9.TabIndex = 45;
+			this.label9.Text = "Раздел G. Данные по товарам, работам, услугам";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// tbPartG_currencyCode
+			// 
+			this.tbPartG_currencyCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartG_currencyCode.Location = new System.Drawing.Point(479, 89);
+			this.tbPartG_currencyCode.Name = "tbPartG_currencyCode";
+			this.tbPartG_currencyCode.Size = new System.Drawing.Size(469, 20);
+			this.tbPartG_currencyCode.TabIndex = 46;
 			// 
 			// label3
 			// 
@@ -332,29 +332,29 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox tbPartG_currencyRate;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox tbPartG_currencyCode;
+		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
 		private System.Windows.Forms.DataGridViewComboBoxColumn typeTRN;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
 	}
 }

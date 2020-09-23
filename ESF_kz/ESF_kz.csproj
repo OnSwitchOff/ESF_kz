@@ -187,11 +187,11 @@
     <Compile Include="Forms\panelESFpartL.Designer.cs">
       <DependentUpon>panelESFpartL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\panelESFPartHtab.cs">
+    <Compile Include="Forms\panelESFpartHtab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\panelESFPartHtab.Designer.cs">
-      <DependentUpon>panelESFPartHtab.cs</DependentUpon>
+    <Compile Include="Forms\panelESFpartHtab.Designer.cs">
+      <DependentUpon>panelESFpartHtab.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\panelESFpartK.cs">
       <SubType>UserControl</SubType>
@@ -269,8 +269,8 @@
     <EmbeddedResource Include="Forms\panelESFpartJ.resx">
       <DependentUpon>panelESFpartJ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\panelESFPartHtab.resx">
-      <DependentUpon>panelESFPartHtab.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\panelESFpartHtab.resx">
+      <DependentUpon>panelESFpartHtab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\panelESFpartK.resx">
       <DependentUpon>panelESFpartK.cs</DependentUpon>

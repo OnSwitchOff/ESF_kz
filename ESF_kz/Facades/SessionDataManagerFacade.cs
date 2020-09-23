@@ -537,117 +537,117 @@ namespace ESF_kz
 			for (int productNum = 0; productNum < productsCount; productNum++)
 			{
 				ProductV2 product = new ProductV2();
-				product.additional = getProductAdditional();//"additional";
-				product.catalogTruId = getProductCatalogTruId();//"catalogTruId";
-				product.description = getProductDescription();//"description";
-				product.exciseAmount = getProductExciseAmount();// 10;
-				product.exciseRate = getProductExciseRate();// 0.10f;
-				product.kpvedCode = getProductKpvedCode();// "kpvedcode";
-				product.ndsAmount = getProductNDSAmount();// 10.2f;
-				product.ndsRate = getProductNDSRAte();// 1;
-				product.priceWithoutTax = getProductPriceWithoutTax();// 10;
-				product.priceWithTax = getProductPriceWithTax();// 20.3f;
-				product.productDeclaration = getProductDeclaration();// "declration";
-				product.productNumberInDeclaration = getProductNumberInDexlaration();// "numInDec";
-				product.tnvedName = getProductTnvedName();// "tnvedName";
-				product.truOriginCode = getProductTruOriginCode();// TruOriginCode.three;
-				product.turnoverSize = getProductTurnoverSize(); //40.36f;
-				product.unitCode = getProductUnitCode();// "unitcode";
-				product.unitNomenclature = getProductUnitNominclature();// "unitNomen";
-				product.unitPrice = getProductUnitPrice();// 20.3f;			
+				product.additional = getProductAdditional(productNum);//"additional";
+				product.catalogTruId = getProductCatalogTruId(productNum);//"catalogTruId";
+				product.description = getProductDescription(productNum);//"description";
+				product.exciseAmount = getProductExciseAmount(productNum);// 10;
+				product.exciseRate = getProductExciseRate(productNum);// 0.10f;
+				product.kpvedCode = getProductKpvedCode(productNum);// "kpvedcode";
+				product.ndsAmount = getProductNDSAmount(productNum);// 10.2f;
+				product.ndsRate = getProductNDSRAte(productNum);// 1;
+				product.priceWithoutTax = getProductPriceWithoutTax(productNum);// 10;
+				product.priceWithTax = getProductPriceWithTax(productNum);// 20.3f;
+				product.productDeclaration = getProductDeclaration(productNum);// "declration";
+				product.productNumberInDeclaration = getProductNumberInDexlaration(productNum);// "numInDec";
+				product.tnvedName = getProductTnvedName(productNum);// "tnvedName";
+				product.truOriginCode = getProductTruOriginCode(productNum);// TruOriginCode.three;
+				product.turnoverSize = getProductTurnoverSize(productNum); //40.36f;
+				product.unitCode = getProductUnitCode(productNum);// "unitcode";
+				product.unitNomenclature = getProductUnitNominclature(productNum);// "unitNomen";
+				product.unitPrice = getProductUnitPrice(productNum);// 20.3f;			
 				productV2s.Add(product);
 			}
 			return productV2s;
 		}
 
-		private static float getProductUnitPrice()
+		private static float getProductUnitPrice(int productNum)
 		{
-			return FormManagerFacade.getProductUnitPrice();
+			return FormManagerFacade.getProductUnitPrice(productNum);
 		}
 
-		private static string getProductUnitNominclature()
+		private static string getProductUnitNominclature(int productNum)
 		{
-			return FormManagerFacade.getProductUnitNominclature();
+			return FormManagerFacade.getProductUnitNominclature(productNum);
 		}
 
-		private static string getProductUnitCode()
+		private static string getProductUnitCode(int productNum)
 		{
-			return FormManagerFacade.getProductUnitCode();
+			return FormManagerFacade.getProductUnitCode(productNum);
 		}
 
-		private static float getProductTurnoverSize()
+		private static float getProductTurnoverSize(int productNum)
 		{
-			return FormManagerFacade.getProductTurnoverSize();
+			return FormManagerFacade.getProductTurnoverSize(productNum);
 		}
 
-		private static TruOriginCode getProductTruOriginCode()
+		private static TruOriginCode getProductTruOriginCode(int productNum)
 		{
-			return FormManagerFacade.getProductTruOriginCode();
+			return FormManagerFacade.getProductTruOriginCode(productNum);
 		}
 
-		private static string getProductTnvedName()
+		private static string getProductTnvedName(int productNum)
 		{
-			return FormManagerFacade.getProductTnvedName();
+			return FormManagerFacade.getProductTnvedName(productNum);
 		}
 
-		private static string getProductNumberInDexlaration()
+		private static string getProductNumberInDexlaration(int productNum)
 		{
-			return FormManagerFacade.getProductNumberInDexlaration();
+			return FormManagerFacade.getProductNumberInDexlaration(productNum);
 		}
 
-		private static float getProductPriceWithTax()
+		private static float getProductPriceWithTax(int productNum)
 		{
-			return FormManagerFacade.getProductPriceWithTax();
+			return FormManagerFacade.getProductPriceWithTax(productNum);
 		}
 
-		private static string getProductDeclaration()
+		private static string getProductDeclaration(int productNum)
 		{
-			return FormManagerFacade.getProductDeclaration();
+			return FormManagerFacade.getProductDeclaration(productNum);
 		}
 
-		private static float getProductPriceWithoutTax()
+		private static float getProductPriceWithoutTax(int productNum)
 		{
-			return FormManagerFacade.getProductPriceWithoutTax();
+			return FormManagerFacade.getProductPriceWithoutTax(productNum);
 		}
 
-		private static int getProductNDSRAte()
+		private static int getProductNDSRAte(int productNum)
 		{
-			return FormManagerFacade.getProductNDSRAte();
+			return FormManagerFacade.getProductNDSRAte(productNum);
 		}
 
-		private static float getProductNDSAmount()
+		private static float getProductNDSAmount(int productNum)
 		{
-			return FormManagerFacade.getProductNDSAmount();
+			return FormManagerFacade.getProductNDSAmount(productNum);
 		}
 
-		private static string getProductKpvedCode()
+		private static string getProductKpvedCode(int productNum)
 		{
-			return FormManagerFacade.getProductKpvedCode();
+			return FormManagerFacade.getProductKpvedCode(productNum);
 		}
 
-		private static float getProductExciseRate()
+		private static float getProductExciseRate(int productNum)
 		{
-			return FormManagerFacade.getProductExciseRate();
+			return FormManagerFacade.getProductExciseRate(productNum);
 		}
 
-		private static float getProductExciseAmount()
+		private static float getProductExciseAmount(int productNum)
 		{
-			return FormManagerFacade.getProductExciseAmount();
+			return FormManagerFacade.getProductExciseAmount(productNum);
 		}
 
-		private static string getProductDescription()
+		private static string getProductDescription(int productNum)
 		{
-			return FormManagerFacade.getProductDescription();
+			return FormManagerFacade.getProductDescription(productNum);
 		}
 
-		private static string getProductCatalogTruId()
+		private static string getProductCatalogTruId(int productNum)
 		{
-			return FormManagerFacade.getProductCatalogTruId();
+			return FormManagerFacade.getProductCatalogTruId(productNum);
 		}
 
-		private static string getProductAdditional()
+		private static string getProductAdditional(int productNum)
 		{
-			return FormManagerFacade.getProductAdditional();
+			return FormManagerFacade.getProductAdditional(productNum);
 		}
 
 		private static int getProductsCount()

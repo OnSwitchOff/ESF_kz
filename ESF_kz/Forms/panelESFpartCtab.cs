@@ -14,6 +14,13 @@ namespace ESF_kz.Forms
 	public partial class panelESFpartCtab : AbstractUCESFpanelTab
 	{
 		private const string NATIONAL_BANK_BIN = "941240001151";
+		private List<CustomerType> statusList;
+
+		internal List<CustomerType>  getStatusList()
+		{
+			return statusList;
+		}
+
 		public panelESFpartCtab()
 		{
 			InitializeComponent();
@@ -50,6 +57,24 @@ namespace ESF_kz.Forms
 					chbxPartC_isSharingAgreementParticipant.Checked = false;
 					chbxPartC_isJointActivityParticipant.Checked = false;
 				}
+			}
+		}
+
+		internal int getCustomerParticipantsCount()
+		{
+			return (int)numUpDown_participantCounter.Value;
+		}
+
+		internal bool setCustomerParticipantsCount(int count)
+		{
+			try
+			{
+				numUpDown_participantCounter.Value = count;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
 			}
 		}
 
@@ -115,6 +140,42 @@ namespace ESF_kz.Forms
 
 			}
 
+		}
+
+		internal string getCustomerParticipantsTin()
+		{
+			return tbPartC_tin.Text;
+		}
+
+		internal bool setCustomerParticipantTin(string tin)
+		{
+			try
+			{
+				tbPartC_tin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerParticipantsReorgTin()
+		{
+			return tbPartC_reorganizedTin.Text;
+		}
+
+		internal bool setCustomerParticipantsReorgTin(string reorgTin)
+		{
+			try
+			{
+				tbPartC_reorganizedTin.Text = reorgTin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 
 		internal void chbxPartC_isPrincipal_setState(bool flag)
@@ -197,8 +258,143 @@ namespace ESF_kz.Forms
 			else
 			{
 				epPartC_reorganizedTin.Clear();				
+			}			
+		}
+
+		internal string getCustomerCountryCode()
+		{
+			return tbPartC_countryCode.Text;
+		}
+
+		internal bool setCustomerCountryCode(string code)
+		{
+			try
+			{
+				tbPartC_countryCode.Text = code;
+				return true;
 			}
-			
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerName()
+		{
+			return tbPartC_name.Text;
+		}
+
+		internal string getCustomerReorgTin()
+		{
+			return tbPartC_reorganizedTin.Text;
+		}
+
+		internal bool setCustomerRoergTin(string tin)
+		{
+			try
+			{
+				tbPartC_reorganizedTin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal float getCustomerShareParticipation()
+		{
+			return float.Parse(tbPartC_shareParticipation.Text);
+		}
+
+		internal int getCustomerStatusesCount()
+		{
+			return statusList.Count;
+		}
+
+		internal CustomerType getCustomerStatusById( int statusId)
+		{
+			return statusList[statusId];
+		}
+
+		internal bool setCustomerShareParticipation(float sharePart)
+		{
+			try
+			{
+				tbPartC_shareParticipation.Text = sharePart.ToString();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerTrailer()
+		{
+			return tbPartC_trailer.Text;
+		}
+
+		internal bool setCustomerTrailer(string trailer)
+		{
+			try
+			{
+				tbPartC_trailer.Text = trailer;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal bool setCustomerName(string name)
+		{
+			try
+			{
+				tbPartC_name.Text = name;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerAddress()
+		{
+			return tbPartC_address.Text;
+		}
+
+		internal bool setCustomerAddress(string address)
+		{
+			try
+			{
+				tbPartC_address.Text = address;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerTin()
+		{
+			return tbPartC_tin.Text;
+		}
+
+		internal bool setCustomerTin(string tin)
+		{
+			try
+			{
+				tbPartC_tin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 
 		private void tbPartC_shareParticipation_TextChanged(object sender, EventArgs e)
@@ -231,6 +427,7 @@ namespace ESF_kz.Forms
 				tbPartC_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
 				numUpDown_participantCounter.Value = 2;
+				statusList.Add(CustomerType.JOINT_ACTIVITY_PARTICIPANT);
 			}
 			else
 			{
@@ -239,6 +436,7 @@ namespace ESF_kz.Forms
 				tbPartC_shareParticipation.Text = "";
 				numUpDown_participantCounter.Value = 1;
 				numUpDown_participantCounter.Enabled = false;
+				statusList.Remove(CustomerType.JOINT_ACTIVITY_PARTICIPANT);
 			}
 		}
 
@@ -246,10 +444,15 @@ namespace ESF_kz.Forms
 		{			
 			if (chbxPartC_isSharingAgreementParticipant.Checked)
 			{
+				statusList.Add(CustomerType.SHARING_AGREEMENT_PARTICIPANT);
 				if (!checkForSharingAgreementParticipant(tbPartC_tin.Text))
 				{
 					chbxPartC_isSharingAgreementParticipant.Checked = false;
 				}
+			}
+			else
+			{
+				statusList.Remove(CustomerType.SHARING_AGREEMENT_PARTICIPANT);
 			}
 			chbxPartC_isRetail_Validating();
 
@@ -340,7 +543,14 @@ namespace ESF_kz.Forms
 			if (chbxPartC_isCommitent.Checked)
 			{
 				chbxPartC_isBroker.Checked = false;
+				statusList.Add(CustomerType.COMMITTENT);
+				statusList.Remove(CustomerType.BROKER);
 			}
+			else
+			{
+				statusList.Remove(CustomerType.COMMITTENT);
+			}
+			
 		}
 
 		private void chbxPartC_isBroker_CheckedChanged(object sender, EventArgs e)
@@ -348,16 +558,39 @@ namespace ESF_kz.Forms
 			if (chbxPartC_isBroker.Checked)
 			{
 				chbxPartC_isCommitent.Checked = false;
+				statusList.Add(CustomerType.BROKER);
+				statusList.Remove(CustomerType.COMMITTENT);
 			}
+			else
+			{
+				statusList.Remove(CustomerType.BROKER);
+			}
+			
 		}
 
 		private void chbxPartC_isPrincipal_CheckedChanged(object sender, EventArgs e)
 		{
+			if (chbxPartC_isPrincipal.Checked)
+			{
+				statusList.Add(CustomerType.PRINCIPAL);
+			}
+			else
+			{
+				statusList.Remove(CustomerType.PRINCIPAL);
+			}
 			chbxPartC_isRetail_Validating();
 		}
 
 		private void chbxPartC_isRetail_CheckedChanged(object sender, EventArgs e)
 		{
+			if (chbxPartC_isRetail.Checked)
+			{
+				statusList.Add(CustomerType.RETAIL);
+			}
+			else
+			{
+				statusList.Remove(CustomerType.RETAIL);
+			}
 			chbxPartC_isRetail_Validating();	
 		}
 
@@ -381,6 +614,15 @@ namespace ESF_kz.Forms
 		private void chbxPartC_isLessee_CheckedChanged(object sender, EventArgs e)
 		{
 			chbxPartC_isRetail_Validating();
+			if (chbxPartC_isLessee.Checked)
+			{
+				statusList.Add(CustomerType.LESSEE);
+			}
+			else
+			{
+				statusList.Remove(CustomerType.LESSEE);
+			}
+			
 		}
 
 		private void chbxPartC_isPublicOffice_CheckedChanged(object sender, EventArgs e)
@@ -392,6 +634,7 @@ namespace ESF_kz.Forms
 				tbPartC1_productCode.Enabled = true;
 				tbPartC1_payPurpose.Enabled = true;
 				tbPartC1_bik.Text = "KKMFKZ2A";
+				statusList.Add(CustomerType.PUBLIC_OFFICE);
 			}
 			else
 			{
@@ -399,6 +642,7 @@ namespace ESF_kz.Forms
 				tbPartC1_productCode.Enabled = false;
 				tbPartC1_payPurpose.Enabled = false;
 				tbPartC1_bik.Text = "";
+				statusList.Remove(CustomerType.PUBLIC_OFFICE);
 			}
 			
 		}
@@ -465,6 +709,30 @@ namespace ESF_kz.Forms
 			else
 			{
 				epPartC1_payPurpose.Clear();
+			}
+		}
+
+		private void chbxPartC_isNonResident_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chbxPartC_isNonResident.Checked)
+			{
+				statusList.Add(CustomerType.NONRESIDENT);
+			}
+			else
+			{
+				statusList.Remove(CustomerType.NONRESIDENT);
+			}			
+		}
+
+		private void chbxPartC_isIndividual_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chbxPartC_isIndividual.Checked)
+			{
+				statusList.Add(CustomerType.INDIVIDUAL);
+			}
+			else
+			{
+				statusList.Remove(CustomerType.INDIVIDUAL);
 			}
 		}
 	}

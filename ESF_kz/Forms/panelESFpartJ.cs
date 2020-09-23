@@ -44,5 +44,95 @@ namespace ESF_kz.Forms
 				panelCtab.chbxPartC_isPrincipal_setState(true);
 			}
 		}
+
+		internal string getCustomerAgentAddress()
+		{
+			return tbPartJ_customerAgentAddress.Text;
+		}
+
+		internal bool setCustomerAgentAddress(string address)
+		{
+			try
+			{
+				tbPartJ_customerAgentAddress.Text = address;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal DateTime getCustomerAgentDocDate()
+		{
+			return dtpPartJ_customerAgentDocDate.Value;
+		}
+
+		internal bool setCustomerAgentDocDate(DateTime date)
+		{
+			try
+			{
+				dtpPartJ_customerAgentDocDate.Value = date;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerAgentDocNum()
+		{
+			return tbPartJ_customerAgentDocNum.Text;
+		}
+
+		internal bool setCustomerAgentNum(string num)
+		{
+			try
+			{
+				tbPartJ_customerAgentDocNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerAgentName()
+		{
+			return tbPartJ_customerAgentName.Text;
+		}
+
+		internal bool setCustomerAgentName(string name)
+		{
+			try
+			{
+				tbPartJ_customerAgentName.Text = name;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getCustomerAgentTin()
+		{
+			return tbPartJ_customerAgentTin.Text;
+		}
+
+		internal bool setCustomerAgentTin(string tin)
+		{
+			try
+			{
+				tbPartJ_customerAgentTin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 	}
 }
