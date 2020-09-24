@@ -47,12 +47,12 @@ namespace ESF_kz.Forms
 			return dataGridView1;
 		}
 
-		internal string getCustomerProductShareAdditional(int productShareNumber)
+		internal string getProductShareAdditional(int productShareNumber)
 		{
 			return dataGridView1.Rows[productShareNumber].Cells[(int)column.additional].Value.ToString();
 		}
 
-		internal bool setCustomerProductShareAdditional(int productShareNumber, string additional)
+		internal bool setProductShareAdditional(int productShareNumber, string additional)
 		{
 			try
 			{
@@ -65,12 +65,12 @@ namespace ESF_kz.Forms
 			}			
 		}
 
-		internal float getCustomerProductShareExciseAmount(int productShareNumber)
+		internal float getProductShareExciseAmount(int productShareNumber)
 		{
 			return (float)dataGridView1.Rows[productShareNumber].Cells[(int)column.exciseAmount].Value;
 		}
 
-		internal bool setCustomerProductShareExciseAmount(int productShareNumber, float exciseAmount)
+		internal bool setProductShareExciseAmount(int productShareNumber, float exciseAmount)
 		{
 			try
 			{
@@ -84,12 +84,12 @@ namespace ESF_kz.Forms
 		
 		}
 
-		internal float getCustomerProductShareNDSAmount(int productShareNumber)
+		internal float getProductShareNDSAmount(int productShareNumber)
 		{
 			return (float)dataGridView1.Rows[productShareNumber].Cells[(int)column.ndsAmount].Value;
 		}
 
-		internal bool setCustomerProductShareNDSAmount(int productShareNumber, float ndsAmount)
+		internal bool setProductShareNDSAmount(int productShareNumber, float ndsAmount)
 		{
 			try
 			{
@@ -102,12 +102,12 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal float getCustomerProductSharePriceWithoutTax(int productShareNumber)
+		internal float getProductSharePriceWithoutTax(int productShareNumber)
 		{
 			return (float)dataGridView1.Rows[productShareNumber].Cells[(int)column.priceWithoutTax].Value;
 		}
 
-		internal bool setCustomerProductSharePriceWithoutTax(int productShareNumber, float priceWithoutTax)
+		internal bool setProductSharePriceWithoutTax(int productShareNumber, float priceWithoutTax)
 		{
 			try
 			{
@@ -120,12 +120,12 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal float getCustomerProductSharePriceWithTax(int productShareNumber)
+		internal float getProductSharePriceWithTax(int productShareNumber)
 		{
 			return (float)dataGridView1.Rows[productShareNumber].Cells[(int)column.priceWithTax].Value;
 		}
 
-		internal bool setCustomerProductSharePriceWithTax(int productShareNumber, float priceWithTax)
+		internal bool setProductSharePriceWithTax(int productShareNumber, float priceWithTax)
 		{
 			try
 			{
@@ -138,12 +138,12 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal int getProductShareProductNumber(int productShareNumber)
+		internal int getShareProductNumber(int productShareNumber)
 		{
 			return (int)dataGridView1.Rows[productShareNumber].Cells[(int)column.rowNumber].Value;
 		}
 
-		internal bool setProductShareProductNumber(int productShareNumber, int productNumber)
+		internal bool setShareProductNumber(int productShareNumber, int productNumber)
 		{
 			try
 			{
@@ -156,12 +156,12 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal float getCustomerProductShareQuantity(int productShareNumber)
+		internal float getProductShareQuantity(int productShareNumber)
 		{
 			return (float)dataGridView1.Rows[productShareNumber].Cells[(int)column.quantity].Value;
 		}
 
-		internal bool setCustomerProductShareQuantity(int productShareNumber, float qtty)
+		internal bool setProductShareQuantity(int productShareNumber, float qtty)
 		{
 			try
 			{
@@ -174,12 +174,12 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal float getCustomerProductShareTurnoverSize(int productShareNumber)
+		internal float getProductShareTurnoverSize(int productShareNumber)
 		{
 			return (float)dataGridView1.Rows[productShareNumber].Cells[(int)column.turnoverSize].Value;
 		}
 
-		internal bool setCustomerProductShareTurnoverSize(int productShareNumber, float turnoverSize)
+		internal bool setProductShareTurnoverSize(int productShareNumber, float turnoverSize)
 		{
 			try
 			{

@@ -331,7 +331,7 @@ namespace ESF_kz
 			List<ParticipantV2> sellerParticipantsList = new List<ParticipantV2>();
 			int count = getSellerParticipantsCount();
 
-			for (int i = 0; i < count; i++)
+			for (int i = 1; i <= count; i++)
 			{
 				sellerParticipantsList.Add(getSellerParticipant(i));
 			}
@@ -381,7 +381,7 @@ namespace ESF_kz
 
 		private static int getSellerProductShareProductNumber(int sellerNumber, int productSharNum)
 		{
-			return FormManagerFacade.getSellerProductShareQuantity(sellerNumber, productSharNum);
+			return FormManagerFacade.getSellerProductShareProductNumber(sellerNumber, productSharNum);
 		}
 
 		private static float getSellerProductSharePriceWithhTax(int sellerNumber, int productSharNum)
@@ -465,13 +465,13 @@ namespace ESF_kz
 			publicOffice.bik = SessionDataManagerFacade.getPublicOfficeBik(); //"bik";
 			publicOffice.iik = SessionDataManagerFacade.getPublicOfficeIik();// "iik";
 			publicOffice.payPurpose = SessionDataManagerFacade.getPublicOfficePayPurpose();// "paypurp";
-			publicOffice.productCode = SessionDataManagerFacade.getPublicOfficeProductCOde();// "productCOde";
+			publicOffice.productCode = SessionDataManagerFacade.getPublicOfficeProductCode();// "productCOde";
 			return publicOffice;
 		}
 
-		private static string getPublicOfficeProductCOde()
+		private static string getPublicOfficeProductCode()
 		{
-			return FormManagerFacade.getPublicOfficeProductCOde();
+			return FormManagerFacade.getPublicOfficeProductCode();
 		}
 
 		private static string getPublicOfficePayPurpose()
@@ -839,7 +839,7 @@ namespace ESF_kz
 			List<ParticipantV2> customerParticipantsList = new List<ParticipantV2>();
 			int count = getCustomerParticipantsCount();
 
-			for (int i = 0; i < count; i++)
+			for (int i = 1; i <= count; i++)
 			{
 				customerParticipantsList.Add(getCustomerParticipant(i));
 			}			
@@ -888,7 +888,7 @@ namespace ESF_kz
 
 		private static int getCustomerProductShareProductNumber(int participantNumber, int productShareNumber)
 		{
-			return FormManagerFacade.getProductShareProductNumber(participantNumber, productShareNumber);
+			return FormManagerFacade.getCustomerProductShareProductNumber(participantNumber, productShareNumber);
 		}
 
 		private static float getCustomerProductSharePriceWithhTax(int participantNumber, int productShareNumber)

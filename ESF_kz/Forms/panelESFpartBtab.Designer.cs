@@ -423,6 +423,7 @@
 			this.chbxPartB_isLessor.TabIndex = 1;
 			this.chbxPartB_isLessor.Text = "лизингодатель";
 			this.chbxPartB_isLessor.UseVisualStyleBackColor = true;
+			this.chbxPartB_isLessor.CheckedChanged += new System.EventHandler(this.chbxPartB_isLessor_CheckedChanged);
 			// 
 			// chbxPartB_isBroker
 			// 
@@ -459,6 +460,7 @@
 			this.chbxPartB_isForwarder.TabIndex = 6;
 			this.chbxPartB_isForwarder.Text = "экспедитор";
 			this.chbxPartB_isForwarder.UseVisualStyleBackColor = true;
+			this.chbxPartB_isForwarder.CheckedChanged += new System.EventHandler(this.chbxPartB_isForwarder_CheckedChanged);
 			// 
 			// chbxPartB_isExporter
 			// 
@@ -470,6 +472,7 @@
 			this.chbxPartB_isExporter.TabIndex = 2;
 			this.chbxPartB_isExporter.Text = "экспортер";
 			this.chbxPartB_isExporter.UseVisualStyleBackColor = true;
+			this.chbxPartB_isExporter.CheckedChanged += new System.EventHandler(this.chbxPartB_isExporter_CheckedChanged);
 			// 
 			// chbxPartB_isTransporter
 			// 
@@ -482,6 +485,7 @@
 			this.chbxPartB_isTransporter.TabIndex = 5;
 			this.chbxPartB_isTransporter.Text = "международный перевозчик";
 			this.chbxPartB_isTransporter.UseVisualStyleBackColor = true;
+			this.chbxPartB_isTransporter.CheckedChanged += new System.EventHandler(this.chbxPartB_isTransporter_CheckedChanged);
 			// 
 			// chbxPartB_isSharingAgreementParticipant
 			// 
@@ -569,7 +573,7 @@
 			// 
 			this.tbPartB1_kbe.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbPartB1_kbe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.tbPartB1_kbe.Location = new System.Drawing.Point(484, 680);
+			this.tbPartB1_kbe.Location = new System.Drawing.Point(484, 676);
 			this.tbPartB1_kbe.Name = "tbPartB1_kbe";
 			this.tbPartB1_kbe.Size = new System.Drawing.Size(400, 20);
 			this.tbPartB1_kbe.TabIndex = 38;

@@ -594,6 +594,78 @@ namespace ESF_kz.Forms
 			chbxPartC_isRetail_Validating();	
 		}
 
+		internal string getPublicOfficeBik()
+		{
+			return tbPartC1_bik.Text;
+		}
+
+		internal string getPublicOfficeIik()
+		{
+			return tbPartC1_iik.Text;
+		}
+
+		internal bool setPublicOfficeIik(string iik)
+		{
+			try
+			{
+				tbPartC1_iik.Text = iik;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getPublicOfficePayPurpose()
+		{
+			return tbPartC1_payPurpose.Text;
+		}
+
+		internal string getPublicOfficeProductCode()
+		{
+			return tbPartC1_productCode.Text;
+		}
+
+		internal bool setPublicOfficeProductCode(string code)
+		{
+			try
+			{
+				tbPartC1_productCode.Text = code;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal bool setPublicOfficePayPurpose(string purpose)
+		{
+			try
+			{
+				tbPartC1_payPurpose.Text = purpose;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal bool setPublicOfficeBik(string bik)
+		{
+			try
+			{
+				tbPartC1_bik.Text = bik;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
 		private void chbxPartC_isRetail_Validating()
 		{
 			if (!hasPermission() && (chbxPartC_isCommitent.Checked || chbxPartC_isPrincipal.Checked || chbxPartC_isLessee.Checked || chbxPartC_isPublicOffice.Checked || chbxPartC_isSharingAgreementParticipant.Checked))

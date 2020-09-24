@@ -9,6 +9,13 @@ namespace ESF_kz.Forms
 	{
 		private Dictionary<TextBox, bool> tbPartB1_isCorrect = new Dictionary<TextBox,bool>();
 
+		private List<SellerType> statusList;
+
+		internal List<SellerType> getStatusList()
+		{
+			return statusList;
+		}
+
 		public panelESFpartBtab()
 		{
 			InitializeComponent();
@@ -18,6 +25,11 @@ namespace ESF_kz.Forms
 			tbPartB1_isCorrect.Add(tbPartB1_bik, false);
 			tbPartB1_isCorrect.Add(tbPartB1_bank, false);
 
+		}
+
+		internal SellerType getCustomerStatusById(int statusId)
+		{
+			return statusList[statusId];
 		}
 
 		private void label1_Click(object sender, EventArgs e)
@@ -75,6 +87,25 @@ namespace ESF_kz.Forms
 				chbxPartB_isJointActivityParticipant.Enabled = true;
 				epPartB_tin.Clear();
 			}
+		}
+
+		internal bool setSellerParticipantsCount(int num)
+		{
+			try
+			{
+				numUpDown_participantCounter.Value = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+			
+		}
+
+		internal int getSellerParticipantsCount()
+		{
+			return (int)numUpDown_participantCounter.Value;
 		}
 
 
@@ -301,6 +332,7 @@ namespace ESF_kz.Forms
 			TabControl tabControl = (TabControl)this.Parent.Parent;
 			if (chbxPartB_isSharingAgreementParticipant.Checked)
 			{
+				statusList.Add(SellerType.SHARING_AGREEMENT_PARTICIPANT);
 				tabControl.TabPages[0].Text = "Seller-Participant #1";
 				tbPartB_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
@@ -308,6 +340,7 @@ namespace ESF_kz.Forms
 			}
 			else
 			{
+				statusList.Remove(SellerType.SHARING_AGREEMENT_PARTICIPANT);
 				tabControl.TabPages[0].Text = "Seller";
 				tbPartB_shareParticipation.Enabled = false;
 				tbPartB_shareParticipation.Text = "";
@@ -321,6 +354,12 @@ namespace ESF_kz.Forms
 			if(chbxPartB_isCommitent.Checked)
 			{
 				chbxPartB_isBroker.Checked = false;
+				statusList.Add(SellerType.COMMITTENT);
+				statusList.Remove(SellerType.BROKER);
+			}
+			else
+			{
+				statusList.Remove(SellerType.COMMITTENT);
 			}
 		}
 
@@ -329,6 +368,12 @@ namespace ESF_kz.Forms
 			if(chbxPartB_isBroker.Checked)
 			{
 				chbxPartB_isCommitent.Checked = false;
+				statusList.Add(SellerType.BROKER);
+				statusList.Remove(SellerType.COMMITTENT);
+			}
+			else
+			{
+				statusList.Remove(SellerType.BROKER);
 			}
 		}
 
@@ -337,6 +382,7 @@ namespace ESF_kz.Forms
 			TabControl tabControl = (TabControl)this.Parent.Parent;
 			if (chbxPartB_isJointActivityParticipant.Checked)
 			{
+				statusList.Add(SellerType.JOINT_ACTIVITY_PARTICIPANT);
 				if(!isJointActivityParticipant(tbPartB_tin.Text))
 				{
 					chbxPartB_isJointActivityParticipant.Checked = false;
@@ -350,6 +396,7 @@ namespace ESF_kz.Forms
 			}
 			else
 			{
+				statusList.Remove(SellerType.JOINT_ACTIVITY_PARTICIPANT);
 				tabControl.TabPages[0].Text = "Seller";
 				numUpDown_participantCounter.Value = 1;
 				numUpDown_participantCounter.Enabled = false;
@@ -365,6 +412,14 @@ namespace ESF_kz.Forms
 
 		private void chbxPartB_isPrincipal_CheckedChanged(object sender, EventArgs e)
 		{
+			if (chbxPartB_isPrincipal.Checked)
+			{
+				statusList.Add(SellerType.PRINCIPAL);
+			}
+			else
+			{
+				statusList.Remove(SellerType.PRINCIPAL);
+			}
 			((ESF_form)this.TopLevelControl).SetEnableBtnESFpartI(chbxPartB_isPrincipal.Checked || chbxPartB_isJointActivityParticipant.Checked);
 		}
 
@@ -398,6 +453,327 @@ namespace ESF_kz.Forms
 					chbxPartB_isSharingAgreementParticipant.Checked = false;
 					chbxPartB_isJointActivityParticipant.Checked = false;
 				}
+			}
+		}
+
+		internal string getSellerParticipantTin()
+		{
+			return tbPartB_tin.Text;
+		}
+
+		internal bool setSellerParticipantTin(string tin)
+		{
+			try
+			{
+				tbPartB_tin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerParticipantReorgTin()
+		{
+			return tbPartB_reorganizedTin.Text;
+		}
+
+		internal bool setSellerParticipantReorgTin(string tin)
+		{
+			try
+			{
+				tbPartB_reorganizedTin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerTrailer()
+		{
+			return tbPartB_trailer.Text;
+		}
+
+		internal bool setSellerTrailer(string trailer)
+		{
+			try
+			{
+				tbPartB_trailer.Text = trailer;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerTin()
+		{
+			return tbPartB_tin.Text;
+		}
+
+		internal bool setSellerTin(string tin)
+		{
+			try
+			{
+				tbPartB_tin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerAddress()
+		{
+			return tbPartB_address.Text;
+		}
+
+		internal bool setSellerAddress(string address)
+		{
+			try
+			{
+				tbPartB_address.Text = address;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+			
+		}
+
+		internal string getSellerReorgTin()
+		{
+			return tbPartB_reorganizedTin.Text;
+		}
+
+		internal bool setSellerReorgTin(string tin)
+		{
+			try
+			{
+				tbPartB_reorganizedTin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal int getSellerStatusesCount()
+		{
+			return statusList.Count;
+		}
+
+		private void chbxPartB_isForwarder_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chbxPartB_isForwarder.Checked)
+			{
+				statusList.Add(SellerType.FORWARDER);
+			}
+			else
+			{
+				statusList.Remove(SellerType.FORWARDER);
+			}
+		}
+
+		private void chbxPartB_isLessor_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chbxPartB_isLessor.Checked)
+			{
+				statusList.Add(SellerType.LESSOR);
+			}
+			else
+			{
+				statusList.Remove(SellerType.LESSOR);
+			}
+		}
+
+		private void chbxPartB_isExporter_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chbxPartB_isExporter.Checked)
+			{
+				statusList.Add(SellerType.EXPORTER);
+			}
+			else
+			{
+				statusList.Remove(SellerType.EXPORTER);
+			}
+		}
+
+		private void chbxPartB_isTransporter_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chbxPartB_isTransporter.Checked)
+			{
+				statusList.Add(SellerType.TRANSPORTER);
+			}
+			else
+			{
+				statusList.Remove(SellerType.TRANSPORTER);
+			}
+		}
+
+		internal SellerType getSellerStatusById(int statusId)
+		{
+			return statusList[statusId];
+		}
+
+		internal string getSellerKbe()
+		{
+			return tbPartB1_kbe.Text;
+		}
+
+		internal bool setSellerKbe(string kbe)
+		{
+			try
+			{
+				tbPartB1_kbe.Text = kbe;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal bool getSellerIsBranchNonResiden()
+		{
+			return chbxPartB_isBranchNonResident.Checked;
+		}
+
+		internal bool setSellerIsBranchNonResiden(bool isChecked)
+		{
+			try
+			{
+				chbxPartB_isBranchNonResident.Checked = isChecked;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerName()
+		{
+			return tbPartB_name.Text;
+		}
+
+		internal bool setSellerName(string name)
+		{
+			try
+			{
+				tbPartB_name.Text = name;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerIik()
+		{
+			return tbPartB1_iik.Text;
+		}
+
+		internal bool setSellerIik(string iik)
+		{
+			try
+			{
+				tbPartB1_iik.Text = iik;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerCertificateNum()
+		{
+			return tbPartB_certificateNum.Text;
+		}
+
+		internal bool setSellerCertificateNum(string num)
+		{
+			try
+			{
+				tbPartB_certificateNum.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerCertificateSeries()
+		{
+			return tbPartB_certificateSeries.Text;
+		}
+
+		internal bool setSellerCertificateSeries(string series)
+		{
+			try
+			{
+				tbPartB_certificateSeries.Text = series;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerBranchTin()
+		{
+			return tbPartB_tin.Text;
+		}
+
+		internal bool setSellerBranchTin(string tin)
+		{
+			return setSellerTin(tin);
+		}
+
+		internal string getSellerBank()
+		{
+			return tbPartB1_bank.Text;
+		}
+
+		internal bool setSellerBank(string bank)
+		{
+			try
+			{
+				tbPartB1_bank.Text = bank;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getSellerBik()
+		{
+			return tbPartB1_bik.Text;
+		}
+
+		internal bool setSellerBik(string bik)
+		{
+			try
+			{
+				tbPartB1_bik.Text = bik;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
 			}
 		}
 	}

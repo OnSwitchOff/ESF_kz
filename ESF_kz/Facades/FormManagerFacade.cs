@@ -168,42 +168,47 @@ namespace ESF_kz
 
 		internal static string getCustomerProductShareAdditional(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getCustomerProductShareAdditional(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareAdditional(productShareNumber);
 		}
 
 		internal static float getCustomerProductShareExciseAmount(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getCustomerProductShareExciseAmount(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareExciseAmount(productShareNumber);
 		}
 
 		internal static float getCustomerProductShareNDSAmount(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getCustomerProductShareNDSAmount(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareNDSAmount(productShareNumber);
 		}
 
 		internal static float getCustomerProductSharePriceWithoutTax(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getCustomerProductSharePriceWithoutTax(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductSharePriceWithoutTax(productShareNumber);
 		}
 
 		internal static float getCustomerProductSharePriceWithhTax(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getCustomerProductSharePriceWithTax(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductSharePriceWithTax(productShareNumber);
 		}
 
-		internal static int getProductShareProductNumber(int participantNumber, int productShareNumber)
+		internal static int getCustomerProductShareProductNumber(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareProductNumber(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getShareProductNumber(productShareNumber);
+		}
+
+		internal static int getSellerProductShareProductNumber(int sellerNumber, int productSharNum)
+		{
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getShareProductNumber(productSharNum);
 		}
 
 		internal static float getCustomerProductShareQuantity(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getCustomerProductShareQuantity(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareQuantity(productShareNumber);
 		}
 
 		internal static float getCustomerProductShareTurnoverSize(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getCustomerProductShareTurnoverSize(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareTurnoverSize(productShareNumber);
 		}
 
 		internal static int getCustomersCount()
@@ -333,7 +338,7 @@ namespace ESF_kz
 
 		internal static NdsRateType getProductSetNdsRateType()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartG>().getProductSetNdsRateType();
 		}
 
 		internal static int getProductsCount()
@@ -434,54 +439,55 @@ namespace ESF_kz
 
 		internal static float getProductSetTotalExciseAmount()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartG>().getProductSetTotalExciseAmount();
 		}
 
 		internal static float getProductSetTotalNDSAmount()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartG>().getProductSetTotalNDSAmount();
 		}
 
 		internal static float getProductSetTotalPriceWithoutTax()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartG>().getProductSetTotalPriceWithoutTax();
 		}
 
 		internal static float getProductSetTotalPriceWithTax()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartG>().getProductSetTotalPriceWithTax();
 		}
 
 		internal static float getProductSetTotalTurnoverSize()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartG>().getProductSetTotalTurnoverSize();
 		}
 
 		internal static string getPublicOfficeBik()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartC>().getTab().getPublicOfficeBik();
 		}
 
 		internal static string getPublicOfficeIik()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartC>().getTab().getPublicOfficeIik();
 		}
 
 		internal static string getPublicOfficePayPurpose()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartC>().getTab().getPublicOfficePayPurpose();
 		}
 
-		internal static string getPublicOfficeProductCOde()
+		internal static string getPublicOfficeProductCode()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartC>().getTab().getPublicOfficeProductCode();
 		}
 
 		internal static PaperReasonType getReasonPaper()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartA>().getReasonPaper();
 		}
 
+		
 		internal static string getSellerCertificateSeries()
 		{
 			throw new NotImplementedException();
@@ -489,162 +495,162 @@ namespace ESF_kz
 
 		internal static string getInvoiceSellerAgentAddress()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartI>().getInvoiceSellerAgentAddress();
 		}
 
 		internal static DateTime getInvoiceSellerAgentDocDate()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartI>().getInvoiceSellerAgentDocDate();
 		}
 
 		internal static string getInvoiceSellerAgentDocNum()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartI>().getInvoiceSellerAgentDocNum();
 		}
 
 		internal static string getInvoiceSellerAgentName()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartI>().getInvoiceSellerAgentName();
 		}
 
 		internal static string getInvoiceSellerAgentTin()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartI>().getInvoiceSellerAgentTin();
 		}
 
 		internal static int getSellerParticipantsCount()
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getSellerParticipantsCount();
 		}
 
 		internal static string getSellerParticipantTin(int number)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(number).getSellerParticipantTin();
 		}
 
 		internal static string getSellerParticipantReorgTin(int number)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(number).getSellerParticipantReorgTin();
 		}
 
 		internal static int getShareBySellerParticipantCount(int number)
 		{
-			throw new NotImplementedException();
+			return getSellerParticipantsCount();
 		}
 
 		internal static string getSellerProductShareAdditional(int sellerNumber, int productSharNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareAdditional(productSharNum);
 		}
 
 		internal static float getSellerProductShareExciseAmount(int sellerNumber, int productSharNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareExciseAmount(productSharNum);
 		}
 
 		internal static float getSellerProductShareNDSAmount(int sellerNumber, int productSharNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareNDSAmount(productSharNum);
 		}
 
 		internal static float getSellerProductSharePriceWithoutTax(int sellerNumber, int productSharNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductSharePriceWithoutTax(productSharNum);
 		}
 
 		internal static float getSellerProductSharePriceWithhTax(int sellerNumber, int productSharNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductSharePriceWithTax(productSharNum);
 		}
 
-		internal static int getSellerProductShareQuantity(int sellerNumber, int productSharNum)
+		internal static float getSellerProductShareQuantity(int sellerNumber, int productSharNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareQuantity(productSharNum);
 		}
 
 		internal static float getSellerProductShareTurnoverSize(int sellerNumber, int productSharNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareTurnoverSize(productSharNum);
 		}
 
 		internal static string getSellerTrailer(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerTrailer();
 		}
 
 		internal static string getSellerTin(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerTin();
 		}
 
 		internal static int getSellersCount()
 		{
-			throw new NotImplementedException();
+			return getSellerParticipantsCount();
 		}
 
 		internal static string getSellerAddress(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerAddress();
 		}
 
 		internal static string getSellerReorgTin(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerReorgTin();
 		}
 
 		internal static int getSellerStatusesCount(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerStatusesCount();
 		}
 
 		internal static SellerType getSellerStatusById(int sellerNum, int statusId)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerStatusById(statusId);
 		}
 
 		internal static string getSellerKbe(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerKbe();
 		}
 
 		internal static bool getSellerIsBranchNonResident(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerIsBranchNonResiden();
 		}
 
 		internal static string getSellerName(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerName();
 		}
 
 		internal static string getSellerIik(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerIik();
 		}
 
 		internal static string getSellerCertificateNum(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerCertificateNum();
 		}
 
 		internal static string getSellerCertificateSeries(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerCertificateSeries();
 		}
 
 		internal static string getSellerBranchTin(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerBranchTin();
 		}
 
 		internal static string getSellerBank(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerBank();
 		}
 
 		internal static string getSellerBik(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerBik();
 		}
 	}
 }

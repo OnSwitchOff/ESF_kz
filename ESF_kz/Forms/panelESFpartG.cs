@@ -394,5 +394,113 @@ namespace ESF_kz.Forms
 				return false;
 			}
 		}
+
+		internal NdsRateType getProductSetNdsRateType()
+		{
+			return chbxPartG_withoutNDS.Checked ? NdsRateType.WITHOUT_NDS_NOT_KZ : NdsRateType.WITH_NDS;
+		}
+
+		internal bool setProductSetNdsRateType(NdsRateType ndsRateType)
+		{
+			try
+			{
+				chbxPartG_withoutNDS.Checked = ndsRateType == NdsRateType.WITHOUT_NDS_NOT_KZ;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal float getProductSetTotalExciseAmount()
+		{
+			return float.Parse(tbPartG_totalExciseAmount.Text);
+		}
+
+		internal bool setProductSetTotalExciseAmount(float amount)
+		{
+			try
+			{
+				tbPartG_totalExciseAmount.Text = amount.ToString();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal float getProductSetTotalNDSAmount()
+		{
+			return float.Parse(tbPartG_totalNdsAmount.Text);
+		}
+
+		internal bool setProductSetTotalNDSAmount(float amount)
+		{
+			try
+			{
+				tbPartG_totalNdsAmount.Text = amount.ToString();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal float getProductSetTotalPriceWithoutTax()
+		{
+			return float.Parse(tbPartG_totalPriceWithoutTax.Text);
+		}
+
+		internal bool setProductSetTotalPriceWithoutTax(float amount)
+		{
+			try
+			{
+				tbPartG_totalPriceWithoutTax.Text = amount.ToString();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal float getProductSetTotalPriceWithTax()
+		{
+			return float.Parse(tbPartG_totalPriceWithoutTax.Text);
+		}
+
+		internal bool setProductSetTotalPriceWithTax(float amount)
+		{
+			try
+			{
+				tbPartG_totalPriceWithTax.Text = amount.ToString();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal float getProductSetTotalTurnoverSize()
+		{
+			return float.Parse(tbPartG_totalTurnoverSize.Text);
+		}
+
+		internal bool setProductSetTotalTurnoverSize(float amount)
+		{
+			try
+			{
+				tbPartG_totalTurnoverSize.Text = amount.ToString();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 	}
 }

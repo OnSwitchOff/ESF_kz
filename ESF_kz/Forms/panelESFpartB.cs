@@ -50,6 +50,33 @@ namespace ESF_kz.Forms
 			return this.tabControl1;
 		}
 
+		public panelESFpartBtab getTab()
+		{
+			return (panelESFpartBtab)(this.tabControl1.TabPages[0].Controls[0]);
+		}
 
+		public panelESFpartBtab getTab(int num)
+		{
+			return (panelESFpartBtab)(this.tabControl1.TabPages[num - 1].Controls[0]);
+		}
+
+
+		internal bool setCustomerParticipantsCount(int num)
+		{
+			try
+			{
+				getTab().setSellerParticipantsCount(num);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal int getSellerParticipantsCount()
+		{
+			return getTab().getSellerParticipantsCount();
+		}
 	}
 }

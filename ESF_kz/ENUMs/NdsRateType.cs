@@ -10,6 +10,7 @@ namespace ESF_kz
 	[Serializable]
 	public enum NdsRateType
 	{
+		WITH_NDS,
 		WITHOUT_NDS_NOT_KZ//Без НДС – не РК
 	}
 }

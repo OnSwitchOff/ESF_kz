@@ -74,5 +74,95 @@ namespace ESF_kz.Forms
 				epPartI_sellerAgentDocNum.Clear();
 			}
 		}
+
+		internal string getInvoiceSellerAgentAddress()
+		{
+			return tbPartI_sellerAgentAddress.Text;
+		}
+
+		internal bool setInvoiceSellerAgentAddress(string address)
+		{
+			try
+			{
+				tbPartI_sellerAgentAddress.Text = address;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal DateTime getInvoiceSellerAgentDocDate()
+		{
+			return dtpPartI_sellerAgentDocDate.Value;
+		}
+
+		internal bool setInvoiceSellerAgentDocDate(DateTime dateTime)
+		{
+			try
+			{
+				dtpPartI_sellerAgentDocDate.Value = dateTime;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getInvoiceSellerAgentDocNum()
+		{
+			return tbPartI_sellerAgentDocNum.Text;
+		}
+
+		internal bool setInvoiceSellerAgentDocNum(string num)
+		{
+			try
+			{
+				tbPartI_sellerAgentDocNum.Text = num;
+				return true; 
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getInvoiceSellerAgentName()
+		{
+			return tbPartI_sellerAgentName.Text;
+		}
+
+		internal bool setInvoiceSellerAgentName(string name)
+		{
+			try
+			{
+				tbPartI_sellerAgentName.Text = name;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal string getInvoiceSellerAgentTin()
+		{
+			return tbPartI_sellerAgentTin.Text;
+		}
+
+		internal bool setInvoiceSellerAgentTin(string tin)
+		{
+			try
+			{
+				tbPartI_sellerAgentTin.Text = tin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 	}
 }

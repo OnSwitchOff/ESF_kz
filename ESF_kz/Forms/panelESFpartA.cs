@@ -380,5 +380,23 @@ namespace ESF_kz.Forms
 		{
 
 		}
+
+		internal PaperReasonType getReasonPaper()
+		{
+			return (PaperReasonType)combxPartA_PaperESFReason.SelectedItem;
+		}
+
+		internal bool setReasonPaper(PaperReasonType reason)
+		{
+			try
+			{
+				combxPartA_PaperESFReason.SelectedItem = reason;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 	}
 }
