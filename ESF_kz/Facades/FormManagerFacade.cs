@@ -31,7 +31,7 @@ namespace ESF_kz
 
 		internal static string getOperatorFullname()
 		{
-			throw new NotImplementedException();
+			return "Kassov VIktor";
 		}
 
 		internal static DateTime getRelatedInvoiceDate()

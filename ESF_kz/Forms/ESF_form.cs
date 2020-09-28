@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace ESF_kz
 {
@@ -23,7 +24,8 @@ namespace ESF_kz
 		public ESF_form()
 		{
 			InitializeComponent();
-			setESFformFieldForPanels();			
+			setESFformFieldForPanels();
+			FormManagerFacade.setInvoiceForm(this);
 		}
 
 		private void setESFformFieldForPanels()
@@ -147,8 +149,10 @@ namespace ESF_kz
 			// получаем выбранный файл
 			string filename = openFileDialog1.FileName;
 			// читаем файл в строку
-			string fileText = System.IO.File.ReadAllText(filename);
-			//SessionDataManagerFacade.ParseInvoiceXML();
+			//string fileText = System.IO.File.ReadAllText(filename);
+			XmlDocument xDoc = new XmlDocument();
+			xDoc.Load(filename);
+			SessionDataManagerFacade.ParseInvoiceXML(xDoc);
 			//FormManagerFacade.fillInvoiceForm();
 
 			MessageBox.Show("Файл открыт");

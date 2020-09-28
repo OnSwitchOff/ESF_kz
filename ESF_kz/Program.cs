@@ -375,7 +375,7 @@ namespace ESF_kz
 			}*/
 
 
-			bool flag = false;
+			/*bool flag = false;
 			if (SessionServiceOperationsFacade.StartSession())
 			{
 				flag = InvoiceServiceOperationsFacade.EnterpriseValidation();
@@ -393,7 +393,7 @@ namespace ESF_kz
 				flag = LocalServiceOperationFacade.GenerateIdListSignature();
 				flag = InvoiceServiceOperationsFacade.DeleteInvoiceById();
 				flag = SessionServiceOperationsFacade.CloseSession();
-			}
+			}*/
 
 			/*invoiceContainerV2 invoiceCont = new invoiceContainerV2();
 			InvoiceV2 inv1 = new InvoiceV2();

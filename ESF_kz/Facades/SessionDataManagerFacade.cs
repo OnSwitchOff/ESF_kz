@@ -64,6 +64,624 @@ namespace ESF_kz
 			return idList;
 		}
 
+		internal static void ParseInvoiceXML(XmlDocument xDoc)
+		{
+			string[] tmp;
+			int day, month, year;
+
+			XmlElement xRoot = xDoc.DocumentElement;//invoiceContainer
+			invoiceContainerV2 invoiceContainer = new invoiceContainerV2();
+			XmlNode xInvoiceSet = xRoot.FirstChild;//invoiceSet
+			//get invoiceV2[]
+			foreach(XmlNode invoice in xInvoiceSet)
+			{
+				if(invoice.Name == "invoice")
+				{
+					InvoiceV2 invoiceV2 = new InvoiceV2();
+					foreach (XmlNode item in invoice)
+					{
+						if(item.Value != "")
+						{
+							switch (item.Name)
+							{
+								case "date":
+									tmp = item.Value.Split('.');
+									day = int.Parse(tmp[0]);
+									month = int.Parse(tmp[1]);
+									year = int.Parse(tmp[2]);
+									invoiceV2.date = new DateTime(year, month, day);
+									break;
+								case "invoiceType":
+									if (item.Value == InvoiceType.ORDINARY_INVOICE.ToString())
+										invoiceV2.invoiceType = InvoiceType.ORDINARY_INVOICE;
+									else if (item.Value == InvoiceType.ADDITIONAL_INVOICE.ToString())
+										invoiceV2.invoiceType = InvoiceType.ADDITIONAL_INVOICE;
+									else if (item.Value == InvoiceType.FIXED_INVOICE.ToString())
+										invoiceV2.invoiceType = InvoiceType.FIXED_INVOICE;
+									break;
+								case "num":
+									invoiceV2.num = item.Value;
+									break;
+								case "operatorFullname":
+									invoiceV2.operatorFullname = item.Value;
+									break;
+								case "relatedInvoice":
+									invoiceV2.relatedInvoice = new RelatedInvoice();
+									foreach (XmlNode subItem in item)
+									{
+										if (subItem.Value != "")
+										{
+											switch (subItem.Name)
+											{
+												case "date":
+													tmp = subItem.Value.Split('.');
+													day = int.Parse(tmp[0]);
+													month = int.Parse(tmp[1]);
+													year = int.Parse(tmp[2]);
+													invoiceV2.relatedInvoice.date = new DateTime(year, month, day);
+													break;
+												case "num":
+													invoiceV2.relatedInvoice.num = subItem.Value;
+													break;
+												case "registrationNumber":
+													invoiceV2.relatedInvoice.registrationNumber = subItem.Value;
+													break;
+												default:
+													break;
+											}
+										}										
+									}
+									break;
+								case "turnoverDate":
+									tmp = item.Value.Split('.');
+									day = int.Parse(tmp[0]);
+									month = int.Parse(tmp[1]);
+									year = int.Parse(tmp[2]);
+									invoiceV2.turnoverDate= new DateTime(year, month, day);
+									break;
+								case "addInf":
+									invoiceV2.addInf = item.Value;
+									break;
+								case "consignee":
+									invoiceV2.consignee = new ConsigneeV2();
+									foreach (XmlNode subItem in item)
+									{
+										if (subItem.Value != "")
+										{
+											switch (subItem.Name)
+											{
+												case "address":
+													invoiceV2.consignee.address = subItem.Value;
+													break;
+												case "countryCode":
+													invoiceV2.consignee.countryCode = subItem.Value;
+													break;
+												case "name":
+													invoiceV2.consignee.name = subItem.Value;
+													break;
+												case "tin":
+													invoiceV2.consignee.tin = subItem.Value;
+													break;
+												default:
+													break;
+											}
+										}
+									}
+									break;
+								case "consignor":
+									invoiceV2.consignor = new Consignor();
+									foreach (XmlNode subItem in item)
+									{
+										if (subItem.Value != "")
+										{
+											switch (subItem.Name)
+											{
+												case "address":
+													invoiceV2.consignor.address = subItem.Value;
+													break;
+												case "name":
+													invoiceV2.consignor.name = subItem.Value;
+													break;
+												case "tin":
+													invoiceV2.consignor.tin = subItem.Value;
+													break;
+												default:
+													break;
+											}
+										}
+									}
+									break;
+								case "customerAgentAddress":
+									invoiceV2.customerAgentAddress = item.Value;
+									break;
+								case "customerAgentDocDate":
+									tmp = item.Value.Split('.');
+									day = int.Parse(tmp[0]);
+									month = int.Parse(tmp[1]);
+									year = int.Parse(tmp[2]);
+									invoiceV2.customerAgentDocDate = new DateTime(year,month,day);
+									break;
+								case "customerAgentName":
+									invoiceV2.customerAgentName = item.Value;
+									break;
+								case "customerAgentTin":
+									invoiceV2.customerAgentTin = item.Value;
+									break;
+								case "customerParticipants":
+									invoiceV2.customerParticipants = new List<ParticipantV2>();
+									foreach (XmlNode participant in item)
+									{
+										ParticipantV2 customerParticipant = new ParticipantV2();
+										foreach(XmlNode node in participant)
+										{
+											switch (node.Name)
+											{
+												case "productShares":
+													customerParticipant.productShares = new List<ProductShare>();
+													foreach (XmlNode share in node)
+													{
+														ProductShare productShare = new ProductShare();														
+														foreach (XmlNode subnode in share)
+														{
+															switch (subnode.Name)
+															{
+																case "additional":
+																	productShare.additional = subnode.Value;
+																	break;
+																case "exciseAmount":
+																	productShare.exciseAmount = float.Parse(subnode.Value);
+																	break;
+																case "ndsAmount":
+																	productShare.ndsAmount = float.Parse(subnode.Value);
+																	break;
+																case "priceWithTax":
+																	productShare.priceWithTax = float.Parse(subnode.Value);
+																	break;
+																case "priceWithoutTax":
+																	productShare.priceWithoutTax = float.Parse(subnode.Value);
+																	break;
+																case "productNumber":
+																	productShare.productNumber = int.Parse(subnode.Value);
+																	break;
+																case "quantity":
+																	productShare.quantity = int.Parse(subnode.Value);
+																	break;
+																case "turnoverSize":
+																	productShare.turnoverSize = float.Parse(subnode.Value);
+																	break;
+																default:
+																	break;
+															}
+														}
+														customerParticipant.productShares.Add(productShare);
+													}
+													break;
+												case "reorganizedTin":
+													customerParticipant.reorganizedTin = node.Value;
+													break;
+												case "tin":
+													customerParticipant.tin = node.Value;
+													break;
+												default:
+													break;
+											}
+										}
+										invoiceV2.customerParticipants.Add(customerParticipant);
+									}
+									break;
+								case "customers":
+									invoiceV2.customers = new List<CustomerV2>();
+									foreach(XmlNode customer in item)
+									{
+										CustomerV2 customerV2 = new CustomerV2();
+										foreach (XmlNode node in customer)
+										{
+											if(node.Value != "")
+											{
+												switch (node.Name)
+												{
+													case "address":
+														customerV2.address = node.Value;
+														break;
+													case "branchTin":
+														customerV2.branchTin = node.Value;
+														break;
+													case "countryCode":
+														customerV2.countryCode = node.Value;
+														break;
+													case "name":
+														customerV2.name = node.Value;
+														break;
+													case "reorganizedTin":
+														customerV2.reorganizedTin = node.Value;
+														break;
+													case "shareParticipation":
+														customerV2.shareParticipation = float.Parse(node.Value);
+														break;
+													case "statuses":
+														customerV2.statuses = new List<CustomerType>();
+														foreach(XmlNode status in node)
+														{
+															CustomerType customerType = new CustomerType();
+															customerType = (CustomerType)Enum.Parse(typeof(CustomerType), status.Value);
+															customerV2.statuses.Add(customerType);
+														}
+														break;
+													case "tin":
+														customerV2.tin = node.Value;
+														break;
+													case "trailer":
+														customerV2.trailer = node.Value;
+														break;
+													default:
+														break;
+												}
+											}											
+										}
+										invoiceV2.customers.Add(customerV2);
+									}
+									break;
+								case "datePaper":
+									tmp = item.Value.Split('.');
+									day = int.Parse(tmp[0]);
+									month = int.Parse(tmp[1]);
+									year = int.Parse(tmp[2]);
+									invoiceV2.datePaper = new DateTime(year, month, day);
+									break;
+								case "deliveryDocDate":
+									tmp = item.Value.Split('.');
+									day = int.Parse(tmp[0]);
+									month = int.Parse(tmp[1]);
+									year = int.Parse(tmp[2]);
+									invoiceV2.deliveryDocDate = new DateTime(year, month, day);
+									break;
+								case "deliveryDocNum":
+									invoiceV2.deliveryDocNum = item.Value;
+									break;
+								case "deliveryTerm":
+									foreach (XmlNode node in item)
+									{
+										if (node.Value != "")
+										{
+											switch (node.Name)
+											{
+												case "contractDate":
+													tmp = node.Value.Split('.');
+													day = int.Parse(tmp[0]);
+													month = int.Parse(tmp[1]);
+													year = int.Parse(tmp[2]);
+													invoiceV2.deliveryTerm.contractDate = new DateTime(year, month, day);
+													break;
+												case "contractNum":
+													invoiceV2.deliveryTerm.contractNum = node.Value;
+													break;
+												case "deliveryConditionCode":
+													invoiceV2.deliveryTerm.deliveryConditionCode = node.Value;
+													break;
+												case "destination":
+													invoiceV2.deliveryTerm.destination = node.Value;
+													break;
+												case "hasContract":
+													invoiceV2.deliveryTerm.hasContract = bool.Parse(node.Value);
+													break;
+												case "term":
+													invoiceV2.deliveryTerm.term = node.Value;
+													break;
+												case "transportTypeCode":
+													invoiceV2.deliveryTerm.transportTypeCode = node.Value;
+													break;
+												case "warrant":
+													invoiceV2.deliveryTerm.warrant = node.Value;
+													break;
+												case "warrantDate":
+													tmp = node.Value.Split('.');
+													day = int.Parse(tmp[0]);
+													month = int.Parse(tmp[1]);
+													year = int.Parse(tmp[2]);
+													invoiceV2.deliveryTerm.warrantDate = new DateTime(year, month, day);
+													break;
+												default:
+													break;
+											}
+										}
+									}
+									break;
+								case "productSet":
+									foreach (XmlNode node in item)
+									{
+										if (node.Value !="")
+										{
+											switch (node.Name)
+											{
+												case "currencyCode":
+													invoiceV2.productSet.currencyCode = node.Value;
+													break;
+												case "currencyRate":
+													invoiceV2.productSet.currencyRate = float.Parse(node.Value);
+													break;
+												case "ndsRateType":
+													invoiceV2.productSet.ndsRateType = (NdsRateType)Enum.Parse(typeof(NdsRateType), node.Value);
+													break;
+												case "products":													
+													foreach (XmlNode product in node)
+													{
+														ProductV2 productV2 = new ProductV2();
+														foreach (XmlNode subnode in product)
+														{
+															switch (subnode.Name)
+															{
+																case "additional":
+																	productV2.additional = subnode.Value;
+																	break;
+																case "catalogTruId":
+																	productV2.catalogTruId = subnode.Value;
+																	break;
+																case "description":
+																	productV2.description = subnode.Value;
+																	break;
+																case "exciseAmount":
+																	productV2.exciseAmount = float.Parse(subnode.Value);
+																	break;
+																case "exciseRate":
+																	productV2.exciseRate= float.Parse(subnode.Value);
+																	break;
+																case "kpvedCode":
+																	productV2.kpvedCode = subnode.Value;
+																	break;
+																case "ndsAmount":
+																	productV2.ndsAmount = float.Parse(subnode.Value);
+																	break;
+																case "ndsRate":
+																	productV2.ndsRate = int.Parse(subnode.Value);
+																	break;
+																case "priceWithTax":
+																	productV2.priceWithTax= float.Parse(subnode.Value);
+																	break;
+																case "priceWithoutTax":
+																	productV2.priceWithoutTax = float.Parse(subnode.Value);
+																	break;
+																case "productDeclaration":
+																	productV2.productDeclaration = subnode.Value;
+																	break;
+																case "productNumberInDeclaration":
+																	productV2.productNumberInDeclaration = subnode.Value;
+																	break;
+																case "quantity":
+																	productV2.quantity = float.Parse(subnode.Value);
+																	break;
+																case "tnvedName":
+																	productV2.tnvedName = subnode.Value;
+																	break;
+																case "truOriginCode":
+																	productV2.truOriginCode = (TruOriginCode)Enum.Parse(typeof(TruOriginCode), subnode.Value);
+																	break;
+																case "turnoverSize":
+																	productV2.turnoverSize = float.Parse(subnode.Value);
+																	break;
+																case "unitCode":
+																	productV2.unitCode = subnode.Value;
+																	break;
+																case "unitNominclature":
+																	productV2.unitNomenclature = subnode.Value;
+																	break;
+																case "unitPrice":
+																	productV2.unitPrice = float.Parse(subnode.Value);
+																	break;
+																default:
+																	break;
+															}
+														}
+														invoiceV2.productSet.products.Add(productV2);
+													}
+													break;
+												case "totalExciseAmount":
+													invoiceV2.productSet.totalExciseAmount = float.Parse(node.Value);
+													break;
+												case "totalNdsAmount":
+													invoiceV2.productSet.totalNdsAmount = float.Parse(node.Value);
+													break;
+												case "totalPriceWithTax":
+													invoiceV2.productSet.totalPriceWithTax = float.Parse(node.Value);
+													break;
+												case "totalPriceWithoutTax":
+													invoiceV2.productSet.totalPriceWithoutTax = float.Parse(node.Value);
+													break;
+												case "totalTurnoverSize":
+													invoiceV2.productSet.totalTurnoverSize = float.Parse(node.Value);
+													break;
+												default:
+													break;
+											}
+										}
+									}
+									break;
+								case "publicOffice":
+									foreach (XmlNode node in item)
+									{
+										if (node.Value != "")
+										{
+											switch (node.Name)
+											{
+												case "bik":
+													invoiceV2.publicOffice.bik = node.Value;
+													break;
+												case "iik":
+													invoiceV2.publicOffice.iik = node.Value;
+													break;
+												case "payPurpose":
+													invoiceV2.publicOffice.payPurpose = node.Value;
+													break;
+												case "productCode":
+													invoiceV2.publicOffice.productCode = node.Value;
+													break;
+												default:
+													break;
+											}
+										}
+									}
+									break;
+								case "reasonPaper":
+									invoiceV2.reasonPaper = (PaperReasonType)Enum.Parse(typeof(PaperReasonType), item.Value);
+									break;
+								case "sellerAgentAddress":
+									invoiceV2.sellerAgentAddress = item.Value;
+									break;
+								case "sellerAgentDocDate":
+									tmp = item.Value.Split('.');
+									day = int.Parse(tmp[0]);
+									month = int.Parse(tmp[1]);
+									year = int.Parse(tmp[2]);
+									invoiceV2.sellerAgentDocDate = new DateTime(year, month, day);
+									break;
+								case "sellerAgentDocNum":
+									invoiceV2.sellerAgentDocNum = item.Value;
+									break;
+								case "sellerAgentName":
+									invoiceV2.sellerAgentName = item.Value;
+									break;
+								case "sellerAgentTin":
+									invoiceV2.sellerAgentTin = item.Value;
+									break;
+								case "sellerParticipants":
+									invoiceV2.sellerParticipants = new List<ParticipantV2>();
+									foreach (XmlNode participant in item)
+									{
+										ParticipantV2 sellerParticipant = new ParticipantV2();
+										foreach (XmlNode node in participant)
+										{
+											switch (node.Name)
+											{
+												case "productShares":
+													sellerParticipant.productShares = new List<ProductShare>();
+													foreach (XmlNode share in node)
+													{
+														ProductShare productShare = new ProductShare();
+														foreach (XmlNode subnode in share)
+														{
+															switch (subnode.Name)
+															{
+																case "additional":
+																	productShare.additional = subnode.Value;
+																	break;
+																case "exciseAmount":
+																	productShare.exciseAmount = float.Parse(subnode.Value);
+																	break;
+																case "ndsAmount":
+																	productShare.ndsAmount = float.Parse(subnode.Value);
+																	break;
+																case "priceWithTax":
+																	productShare.priceWithTax = float.Parse(subnode.Value);
+																	break;
+																case "priceWithoutTax":
+																	productShare.priceWithoutTax = float.Parse(subnode.Value);
+																	break;
+																case "productNumber":
+																	productShare.productNumber = int.Parse(subnode.Value);
+																	break;
+																case "quantity":
+																	productShare.quantity = int.Parse(subnode.Value);
+																	break;
+																case "turnoverSize":
+																	productShare.turnoverSize = float.Parse(subnode.Value);
+																	break;
+																default:
+																	break;
+															}
+														}
+														sellerParticipant.productShares.Add(productShare);
+													}
+													break;
+												case "reorganizedTin":
+													sellerParticipant.reorganizedTin = node.Value;
+													break;
+												case "tin":
+													sellerParticipant.tin = node.Value;
+													break;
+												default:
+													break;
+											}
+										}
+										invoiceV2.sellerParticipants.Add(sellerParticipant);
+									}
+									break;
+
+								case "sellers":
+
+									foreach (XmlNode seller in item)
+									{
+										SellerV2 sellerV2 = new SellerV2();
+										foreach (XmlNode subitem in seller)
+										{
+											if (subitem.Value != "")
+											{
+												switch (subitem.Name)
+												{
+													case "address":
+														sellerV2.address = subitem.Value;
+														break;
+													case "bank":
+														sellerV2.bank = subitem.Value;
+														break;
+													case "bik":
+														sellerV2.bik = subitem.Value;
+														break;
+													case "branchTin":
+														sellerV2.branchTin = subitem.Value;
+														break;
+													case "certificateNum":
+														sellerV2.certificateNum = subitem.Value;
+														break;
+													case "certificateSeries":
+														sellerV2.certificateSeries = subitem.Value;
+														break;
+													case "iik":
+														sellerV2.iik = subitem.Value;
+														break;
+													case "isBranchNonResident":
+														sellerV2.isBranchNonResident = bool.Parse(subitem.Value);
+														break;
+													case "kbe":
+														sellerV2.kbe = subitem.Value;
+														break;
+													case "name":
+														sellerV2.name = subitem.Value;
+														break;
+													case "reorganizedTin":
+														sellerV2.reorganizedTin = subitem.Value;
+														break;
+													case "shareParticipation":
+														sellerV2.shareParticipation = float.Parse(subitem.Value);
+														break;
+													case "statuses":
+														foreach (XmlNode status in subitem)
+														{
+															sellerV2.statuses.Add((SellerType)Enum.Parse(typeof(SellerType), status.Value));
+														}
+														break;
+													case "tin":
+														sellerV2.tin = subitem.Value;
+														break;
+													case "trailer":
+														sellerV2.trailer = subitem.Value;
+														break;
+													default:
+														break;
+												}
+											}
+										}
+										invoiceV2.sellers.Add(sellerV2);
+									}
+									break;
+								default:
+									break;
+							}
+						}						
+					}
+				}
+			}
+
+		}
+
 		private static long getInvoiceId()
 		{
 			return invoiceId;
