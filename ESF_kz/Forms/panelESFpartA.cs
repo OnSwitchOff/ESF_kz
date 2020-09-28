@@ -230,6 +230,44 @@ namespace ESF_kz.Forms
 			}
 		}
 
+		internal bool setInvoiceTurnoverDate(DateTime turnoverDate)
+		{
+			try
+			{
+				dtpPartA_TurnoverDate.Value = turnoverDate;
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		internal void setOperatorFullname(string operatorFullname)
+		{
+			throw new NotImplementedException();
+		}
+
+		internal bool setInvoiceType(InvoiceType invoiceType)
+		{
+			try
+			{
+				if (invoiceType==InvoiceType.ADDITIONAL_INVOICE)
+				{
+					chbxPartA_isAddedESF.Checked = true;
+				}
+				else if (invoiceType == InvoiceType.FIXED_INVOICE)
+				{
+					chbxPartA_isCorrectedESF.Checked = true;
+				}
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
 		//Делегат проверки -1.1 Номер учетной системы-
 		private void tbAccSysNum_Validating(object sender, CancelEventArgs e)
 		{
@@ -397,6 +435,37 @@ namespace ESF_kz.Forms
 			{
 				return false;
 			}
+		}
+
+		internal bool setInvoiceDate(DateTime date)
+		{
+			try
+			{
+				dtpPartA_Date.Value = date;
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		internal bool setInvoiceNum(string num)
+		{
+			try
+			{
+				tbPartA_Num.Text = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal DateTime getInvoiceTurnoverDate()
+		{
+			return dtpPartA_TurnoverDate.Value;
 		}
 	}
 }

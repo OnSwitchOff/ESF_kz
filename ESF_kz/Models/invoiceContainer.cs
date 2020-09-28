@@ -13,7 +13,7 @@ namespace ESF_kz
 	{
 		//[XmlArray("invoiceSet")]
 		[XmlArrayItem(ElementName ="invoice", Namespace = "v2.esf")]
-		public InvoiceV2[] invoiceSet;
+		public List<InvoiceV2> invoiceSet;
 
 		public invoiceContainerV2() { }
 	}

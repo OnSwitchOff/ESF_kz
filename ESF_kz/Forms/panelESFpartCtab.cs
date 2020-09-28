@@ -261,9 +261,66 @@ namespace ESF_kz.Forms
 			}			
 		}
 
+		internal bool setCustomerBranchTin(string branchTin)
+		{
+			return setCustomerTin(branchTin);
+		}
+
+
 		internal string getCustomerCountryCode()
 		{
 			return tbPartC_countryCode.Text;
+		}
+
+		internal bool setCustomerStatuses(List<CustomerType> statuses)
+		{
+			try
+			{
+				foreach (CustomerType status in statuses)
+				{
+					switch (status)
+					{
+						case CustomerType.COMMITTENT:
+							chbxPartC_isCommitent.Checked = true;
+							break;
+						case CustomerType.BROKER:
+							chbxPartC_isBroker.Checked = true;
+							break;
+						case CustomerType.LESSEE:
+							chbxPartC_isLessee.Checked = true;
+							break;
+						case CustomerType.JOINT_ACTIVITY_PARTICIPANT:
+							chbxPartC_isJointActivityParticipant.Checked = true;
+							break;
+						case CustomerType.PUBLIC_OFFICE:
+							chbxPartC_isPublicOffice.Checked = true;
+							break;
+						case CustomerType.NONRESIDENT:
+							chbxPartC_isNonResident.Checked = true;
+							break;
+						case CustomerType.SHARING_AGREEMENT_PARTICIPANT:
+							chbxPartC_isSharingAgreementParticipant.Checked = true;
+							break;
+						case CustomerType.PRINCIPAL:
+							chbxPartC_isPrincipal.Checked = true;
+							break;
+						case CustomerType.RETAIL:
+							chbxPartC_isRetail.Checked = true;
+							break;
+						case CustomerType.INDIVIDUAL:
+							chbxPartC_isIndividual.Checked = true;
+							break;						
+						default:
+							break;
+					}
+				}
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+
 		}
 
 		internal bool setCustomerCountryCode(string code)
@@ -383,6 +440,13 @@ namespace ESF_kz.Forms
 		{
 			return tbPartC_tin.Text;
 		}
+
+		internal string getCustomerBranchTin()
+		{
+			return getCustomerTin();
+		}
+
+
 
 		internal bool setCustomerTin(string tin)
 		{

@@ -44,6 +44,11 @@ namespace ESF_kz.Forms
 
 		}
 
+		public void RemoveAllTabs()
+		{
+			getTabControll().TabPages.Clear();
+		}
+
 
 
 

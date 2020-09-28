@@ -161,6 +161,82 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartC>().getTab(number).getCustomerParticipantsReorgTin();
 		}
 
+		internal static void fillInvoiceForm(invoiceContainerV2 ic)
+		{
+			if (ic.invoiceSet != null)
+			{
+				foreach (InvoiceV2 invoice in ic.invoiceSet)
+				{
+					panelESFpartA panelA = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartA>();
+					panelA.setInvoiceDate(invoice.date);
+					panelA.setInvoiceNum(invoice.num);
+
+					panelA.setInvoiceType(invoice.invoiceType);
+					if (invoice.invoiceType == InvoiceType.ADDITIONAL_INVOICE)
+					{
+						panelA.setAddedESFRegistrationNum(invoice.relatedInvoice.registrationNumber);
+						panelA.setAddedESFNum(invoice.relatedInvoice.num);
+						panelA.setAddedESFDate(invoice.relatedInvoice.date);
+					}
+					else if(invoice.invoiceType == InvoiceType.FIXED_INVOICE)
+					{
+						panelA.setCorrectedESFRegistrationNum(invoice.relatedInvoice.registrationNumber);
+						panelA.setCorrectedESFNum(invoice.relatedInvoice.num);
+						panelA.setCorrectedESFDate(invoice.relatedInvoice.date);
+					}
+
+					panelA.setOperatorFullname(invoice.operatorFullname);
+					panelA.setInvoiceTurnoverDate(invoice.turnoverDate);
+					panelA.setInvoiceDatePaper(invoice.datePaper);
+					panelA.setReasonPaper(invoice.reasonPaper);
+
+					panelESFpartB panelB = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartB>();
+					panelB.RemoveAllTabs();
+					int sellerCounter = 0;
+					foreach (SellerV2 seller in invoice.sellers)
+					{
+						sellerCounter++;
+						panelB.CreateTab("Seller #" + sellerCounter);
+						panelESFpartBtab bTab =  panelB.getTab(sellerCounter);
+						bTab.setSellerAddress(seller.address);
+						bTab.setSellerBank(seller.bank);
+						bTab.setSellerBik(seller.bik);
+						bTab.setSellerBranchTin(seller.branchTin);
+						bTab.setSellerCertificateNum(seller.certificateNum);
+						bTab.setSellerCertificateSeries(seller.certificateSeries);
+						bTab.setSellerIik(seller.iik);
+						bTab.setSellerIsBranchNonResiden(seller.isBranchNonResident);
+						bTab.setSellerKbe(seller.kbe);
+						bTab.setSellerName(seller.name);
+						bTab.setSellerReorgTin(seller.reorganizedTin);
+						bTab.setSellerShareParticipation(seller.shareParticipation);
+						bTab.setSellerStatuses(seller.statuses);
+						bTab.setSellerTin(seller.tin);
+						bTab.setSellerTrailer(seller.trailer);
+					}
+
+					panelESFpartC panelC = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartC>();
+					panelC.RemoveAllTabs();
+					int customerCounter = 0;
+					foreach (CustomerV2 customer in invoice.customers)
+					{
+						customerCounter++;
+						panelC.CreateTab("Customer #" + customerCounter);
+						panelESFpartCtab cTab = panelC.getTab(customerCounter);
+						cTab.setCustomerAddress(customer.address);
+						cTab.setCustomerBranchTin(customer.branchTin);
+						cTab.setCustomerCountryCode(customer.countryCode);
+						cTab.setCustomerName(customer.name);
+						cTab.setCustomerRoergTin(customer.reorganizedTin);
+						cTab.setCustomerShareParticipation(customer.shareParticipation);
+						cTab.setCustomerStatuses(customer.statuses);
+						cTab.setCustomerTin(customer.tin);
+						cTab.setCustomerTrailer(customer.trailer);
+					}
+				}
+			}
+		}
+
 		internal static int getShareByCustomerParticipantCount(int number)
 		{
 			return getCustomerParticipantsCount();
@@ -651,6 +727,16 @@ namespace ESF_kz
 		internal static string getSellerBik(int sellerNum)
 		{
 			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerBik();
+		}
+
+		internal static DateTime getInvoiceTurnoverDate()
+		{
+			return invoiceForm.getPannel<panelESFpartA>().getInvoiceTurnoverDate();
+		}
+
+		internal static float getSellerShareParticipation(int sellerNum)
+		{
+			return invoiceForm.getPannel<panelESFpartB>().getTab(sellerNum).getSellerShareParticipation();
 		}
 	}
 }

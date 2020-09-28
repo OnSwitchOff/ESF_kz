@@ -64,15 +64,16 @@ namespace ESF_kz
 			return idList;
 		}
 
-		internal static void ParseInvoiceXML(XmlDocument xDoc)
+		internal static invoiceContainerV2 ParseInvoiceXML(XmlDocument xDoc)
 		{
-			string[] tmp;
+			string[] tmp = new string[] { };
 			int day, month, year;
 
 			XmlElement xRoot = xDoc.DocumentElement;//invoiceContainer
 			invoiceContainerV2 invoiceContainer = new invoiceContainerV2();
+			invoiceContainer.invoiceSet = new List<InvoiceV2>();
 			XmlNode xInvoiceSet = xRoot.FirstChild;//invoiceSet
-			//get invoiceV2[]
+
 			foreach(XmlNode invoice in xInvoiceSet)
 			{
 				if(invoice.Name == "invoice")
@@ -80,51 +81,51 @@ namespace ESF_kz
 					InvoiceV2 invoiceV2 = new InvoiceV2();
 					foreach (XmlNode item in invoice)
 					{
-						if(item.Value != "")
+						if(item.InnerText != "")
 						{
 							switch (item.Name)
 							{
 								case "date":
-									tmp = item.Value.Split('.');
+									tmp = item.InnerText.Split('.');
 									day = int.Parse(tmp[0]);
 									month = int.Parse(tmp[1]);
 									year = int.Parse(tmp[2]);
 									invoiceV2.date = new DateTime(year, month, day);
 									break;
 								case "invoiceType":
-									if (item.Value == InvoiceType.ORDINARY_INVOICE.ToString())
+									if (item.InnerText == InvoiceType.ORDINARY_INVOICE.ToString())
 										invoiceV2.invoiceType = InvoiceType.ORDINARY_INVOICE;
-									else if (item.Value == InvoiceType.ADDITIONAL_INVOICE.ToString())
+									else if (item.InnerText == InvoiceType.ADDITIONAL_INVOICE.ToString())
 										invoiceV2.invoiceType = InvoiceType.ADDITIONAL_INVOICE;
-									else if (item.Value == InvoiceType.FIXED_INVOICE.ToString())
+									else if (item.InnerText == InvoiceType.FIXED_INVOICE.ToString())
 										invoiceV2.invoiceType = InvoiceType.FIXED_INVOICE;
 									break;
 								case "num":
-									invoiceV2.num = item.Value;
+									invoiceV2.num = item.InnerText;
 									break;
 								case "operatorFullname":
-									invoiceV2.operatorFullname = item.Value;
+									invoiceV2.operatorFullname = item.InnerText;
 									break;
 								case "relatedInvoice":
 									invoiceV2.relatedInvoice = new RelatedInvoice();
 									foreach (XmlNode subItem in item)
 									{
-										if (subItem.Value != "")
+										if (subItem.InnerText != "")
 										{
 											switch (subItem.Name)
 											{
 												case "date":
-													tmp = subItem.Value.Split('.');
+													tmp = subItem.InnerText.Split('.');
 													day = int.Parse(tmp[0]);
 													month = int.Parse(tmp[1]);
 													year = int.Parse(tmp[2]);
 													invoiceV2.relatedInvoice.date = new DateTime(year, month, day);
 													break;
 												case "num":
-													invoiceV2.relatedInvoice.num = subItem.Value;
+													invoiceV2.relatedInvoice.num = subItem.InnerText;
 													break;
 												case "registrationNumber":
-													invoiceV2.relatedInvoice.registrationNumber = subItem.Value;
+													invoiceV2.relatedInvoice.registrationNumber = subItem.InnerText;
 													break;
 												default:
 													break;
@@ -133,34 +134,34 @@ namespace ESF_kz
 									}
 									break;
 								case "turnoverDate":
-									tmp = item.Value.Split('.');
+									tmp = item.InnerText.Split('.');
 									day = int.Parse(tmp[0]);
 									month = int.Parse(tmp[1]);
 									year = int.Parse(tmp[2]);
 									invoiceV2.turnoverDate= new DateTime(year, month, day);
 									break;
 								case "addInf":
-									invoiceV2.addInf = item.Value;
+									invoiceV2.addInf = item.InnerText;
 									break;
 								case "consignee":
 									invoiceV2.consignee = new ConsigneeV2();
 									foreach (XmlNode subItem in item)
 									{
-										if (subItem.Value != "")
+										if (subItem.InnerText != "")
 										{
 											switch (subItem.Name)
 											{
 												case "address":
-													invoiceV2.consignee.address = subItem.Value;
+													invoiceV2.consignee.address = subItem.InnerText;
 													break;
 												case "countryCode":
-													invoiceV2.consignee.countryCode = subItem.Value;
+													invoiceV2.consignee.countryCode = subItem.InnerText;
 													break;
 												case "name":
-													invoiceV2.consignee.name = subItem.Value;
+													invoiceV2.consignee.name = subItem.InnerText;
 													break;
 												case "tin":
-													invoiceV2.consignee.tin = subItem.Value;
+													invoiceV2.consignee.tin = subItem.InnerText;
 													break;
 												default:
 													break;
@@ -172,18 +173,18 @@ namespace ESF_kz
 									invoiceV2.consignor = new Consignor();
 									foreach (XmlNode subItem in item)
 									{
-										if (subItem.Value != "")
+										if (subItem.InnerText != "")
 										{
 											switch (subItem.Name)
 											{
 												case "address":
-													invoiceV2.consignor.address = subItem.Value;
+													invoiceV2.consignor.address = subItem.InnerText;
 													break;
 												case "name":
-													invoiceV2.consignor.name = subItem.Value;
+													invoiceV2.consignor.name = subItem.InnerText;
 													break;
 												case "tin":
-													invoiceV2.consignor.tin = subItem.Value;
+													invoiceV2.consignor.tin = subItem.InnerText;
 													break;
 												default:
 													break;
@@ -192,20 +193,20 @@ namespace ESF_kz
 									}
 									break;
 								case "customerAgentAddress":
-									invoiceV2.customerAgentAddress = item.Value;
+									invoiceV2.customerAgentAddress = item.InnerText;
 									break;
 								case "customerAgentDocDate":
-									tmp = item.Value.Split('.');
+									tmp = item.InnerText.Split('.');
 									day = int.Parse(tmp[0]);
 									month = int.Parse(tmp[1]);
 									year = int.Parse(tmp[2]);
 									invoiceV2.customerAgentDocDate = new DateTime(year,month,day);
 									break;
 								case "customerAgentName":
-									invoiceV2.customerAgentName = item.Value;
+									invoiceV2.customerAgentName = item.InnerText;
 									break;
 								case "customerAgentTin":
-									invoiceV2.customerAgentTin = item.Value;
+									invoiceV2.customerAgentTin = item.InnerText;
 									break;
 								case "customerParticipants":
 									invoiceV2.customerParticipants = new List<ParticipantV2>();
@@ -226,28 +227,28 @@ namespace ESF_kz
 															switch (subnode.Name)
 															{
 																case "additional":
-																	productShare.additional = subnode.Value;
+																	productShare.additional = subnode.InnerText;
 																	break;
 																case "exciseAmount":
-																	productShare.exciseAmount = float.Parse(subnode.Value);
+																	productShare.exciseAmount = float.Parse(subnode.InnerText);
 																	break;
 																case "ndsAmount":
-																	productShare.ndsAmount = float.Parse(subnode.Value);
+																	productShare.ndsAmount = float.Parse(subnode.InnerText);
 																	break;
 																case "priceWithTax":
-																	productShare.priceWithTax = float.Parse(subnode.Value);
+																	productShare.priceWithTax = float.Parse(subnode.InnerText);
 																	break;
 																case "priceWithoutTax":
-																	productShare.priceWithoutTax = float.Parse(subnode.Value);
+																	productShare.priceWithoutTax = float.Parse(subnode.InnerText);
 																	break;
 																case "productNumber":
-																	productShare.productNumber = int.Parse(subnode.Value);
+																	productShare.productNumber = int.Parse(subnode.InnerText);
 																	break;
 																case "quantity":
-																	productShare.quantity = int.Parse(subnode.Value);
+																	productShare.quantity = int.Parse(subnode.InnerText);
 																	break;
 																case "turnoverSize":
-																	productShare.turnoverSize = float.Parse(subnode.Value);
+																	productShare.turnoverSize = float.Parse(subnode.InnerText);
 																	break;
 																default:
 																	break;
@@ -257,10 +258,10 @@ namespace ESF_kz
 													}
 													break;
 												case "reorganizedTin":
-													customerParticipant.reorganizedTin = node.Value;
+													customerParticipant.reorganizedTin = node.InnerText;
 													break;
 												case "tin":
-													customerParticipant.tin = node.Value;
+													customerParticipant.tin = node.InnerText;
 													break;
 												default:
 													break;
@@ -276,42 +277,42 @@ namespace ESF_kz
 										CustomerV2 customerV2 = new CustomerV2();
 										foreach (XmlNode node in customer)
 										{
-											if(node.Value != "")
+											if(node.InnerText != "")
 											{
 												switch (node.Name)
 												{
 													case "address":
-														customerV2.address = node.Value;
+														customerV2.address = node.InnerText;
 														break;
 													case "branchTin":
-														customerV2.branchTin = node.Value;
+														customerV2.branchTin = node.InnerText;
 														break;
 													case "countryCode":
-														customerV2.countryCode = node.Value;
+														customerV2.countryCode = node.InnerText;
 														break;
 													case "name":
-														customerV2.name = node.Value;
+														customerV2.name = node.InnerText;
 														break;
 													case "reorganizedTin":
-														customerV2.reorganizedTin = node.Value;
+														customerV2.reorganizedTin = node.InnerText;
 														break;
 													case "shareParticipation":
-														customerV2.shareParticipation = float.Parse(node.Value);
+														customerV2.shareParticipation = float.Parse(node.InnerText);
 														break;
 													case "statuses":
 														customerV2.statuses = new List<CustomerType>();
 														foreach(XmlNode status in node)
 														{
 															CustomerType customerType = new CustomerType();
-															customerType = (CustomerType)Enum.Parse(typeof(CustomerType), status.Value);
+															customerType = (CustomerType)Enum.Parse(typeof(CustomerType), status.InnerText);
 															customerV2.statuses.Add(customerType);
 														}
 														break;
 													case "tin":
-														customerV2.tin = node.Value;
+														customerV2.tin = node.InnerText;
 														break;
 													case "trailer":
-														customerV2.trailer = node.Value;
+														customerV2.trailer = node.InnerText;
 														break;
 													default:
 														break;
@@ -322,59 +323,60 @@ namespace ESF_kz
 									}
 									break;
 								case "datePaper":
-									tmp = item.Value.Split('.');
+									tmp = item.InnerText.Split('.');
 									day = int.Parse(tmp[0]);
 									month = int.Parse(tmp[1]);
 									year = int.Parse(tmp[2]);
 									invoiceV2.datePaper = new DateTime(year, month, day);
 									break;
 								case "deliveryDocDate":
-									tmp = item.Value.Split('.');
+									tmp = item.InnerText.Split('.');
 									day = int.Parse(tmp[0]);
 									month = int.Parse(tmp[1]);
 									year = int.Parse(tmp[2]);
 									invoiceV2.deliveryDocDate = new DateTime(year, month, day);
 									break;
 								case "deliveryDocNum":
-									invoiceV2.deliveryDocNum = item.Value;
+									invoiceV2.deliveryDocNum = item.InnerText;
 									break;
 								case "deliveryTerm":
+									invoiceV2.deliveryTerm = new DeliveryTermV2();
 									foreach (XmlNode node in item)
 									{
-										if (node.Value != "")
+										if (node.InnerText != "")
 										{
 											switch (node.Name)
 											{
 												case "contractDate":
-													tmp = node.Value.Split('.');
+													tmp = node.InnerText.Split('.');
 													day = int.Parse(tmp[0]);
 													month = int.Parse(tmp[1]);
 													year = int.Parse(tmp[2]);
 													invoiceV2.deliveryTerm.contractDate = new DateTime(year, month, day);
 													break;
 												case "contractNum":
-													invoiceV2.deliveryTerm.contractNum = node.Value;
+													invoiceV2.deliveryTerm.contractNum = node.InnerText;
 													break;
 												case "deliveryConditionCode":
-													invoiceV2.deliveryTerm.deliveryConditionCode = node.Value;
+													invoiceV2.deliveryTerm.deliveryConditionCode = node.InnerText;
 													break;
 												case "destination":
-													invoiceV2.deliveryTerm.destination = node.Value;
+													invoiceV2.deliveryTerm.destination = node.InnerText;
 													break;
 												case "hasContract":
-													invoiceV2.deliveryTerm.hasContract = bool.Parse(node.Value);
+													invoiceV2.deliveryTerm.hasContract = bool.Parse(node.InnerText);
 													break;
 												case "term":
-													invoiceV2.deliveryTerm.term = node.Value;
+													invoiceV2.deliveryTerm.term = node.InnerText;
 													break;
 												case "transportTypeCode":
-													invoiceV2.deliveryTerm.transportTypeCode = node.Value;
+													invoiceV2.deliveryTerm.transportTypeCode = node.InnerText;
 													break;
 												case "warrant":
-													invoiceV2.deliveryTerm.warrant = node.Value;
+													invoiceV2.deliveryTerm.warrant = node.InnerText;
 													break;
 												case "warrantDate":
-													tmp = node.Value.Split('.');
+													tmp = node.InnerText.Split('.');
 													day = int.Parse(tmp[0]);
 													month = int.Parse(tmp[1]);
 													year = int.Parse(tmp[2]);
@@ -387,22 +389,24 @@ namespace ESF_kz
 									}
 									break;
 								case "productSet":
+									invoiceV2.productSet = new ProductSetV2();
 									foreach (XmlNode node in item)
 									{
-										if (node.Value !="")
+										if (node.InnerText != "")
 										{
 											switch (node.Name)
 											{
 												case "currencyCode":
-													invoiceV2.productSet.currencyCode = node.Value;
+													invoiceV2.productSet.currencyCode = node.InnerText;
 													break;
 												case "currencyRate":
-													invoiceV2.productSet.currencyRate = float.Parse(node.Value);
+													invoiceV2.productSet.currencyRate = float.Parse(node.InnerText);
 													break;
 												case "ndsRateType":
-													invoiceV2.productSet.ndsRateType = (NdsRateType)Enum.Parse(typeof(NdsRateType), node.Value);
+													invoiceV2.productSet.ndsRateType = (NdsRateType)Enum.Parse(typeof(NdsRateType), node.InnerText);
 													break;
-												case "products":													
+												case "products":
+													invoiceV2.productSet.products = new List<ProductV2>();
 													foreach (XmlNode product in node)
 													{
 														ProductV2 productV2 = new ProductV2();
@@ -411,61 +415,61 @@ namespace ESF_kz
 															switch (subnode.Name)
 															{
 																case "additional":
-																	productV2.additional = subnode.Value;
+																	productV2.additional = subnode.InnerText;
 																	break;
 																case "catalogTruId":
-																	productV2.catalogTruId = subnode.Value;
+																	productV2.catalogTruId = subnode.InnerText;
 																	break;
 																case "description":
-																	productV2.description = subnode.Value;
+																	productV2.description = subnode.InnerText;
 																	break;
 																case "exciseAmount":
-																	productV2.exciseAmount = float.Parse(subnode.Value);
+																	productV2.exciseAmount = float.Parse(subnode.InnerText);
 																	break;
 																case "exciseRate":
-																	productV2.exciseRate= float.Parse(subnode.Value);
+																	productV2.exciseRate= float.Parse(subnode.InnerText);
 																	break;
 																case "kpvedCode":
-																	productV2.kpvedCode = subnode.Value;
+																	productV2.kpvedCode = subnode.InnerText;
 																	break;
 																case "ndsAmount":
-																	productV2.ndsAmount = float.Parse(subnode.Value);
+																	productV2.ndsAmount = float.Parse(subnode.InnerText);
 																	break;
 																case "ndsRate":
-																	productV2.ndsRate = int.Parse(subnode.Value);
+																	productV2.ndsRate = int.Parse(subnode.InnerText);
 																	break;
 																case "priceWithTax":
-																	productV2.priceWithTax= float.Parse(subnode.Value);
+																	productV2.priceWithTax= float.Parse(subnode.InnerText);
 																	break;
 																case "priceWithoutTax":
-																	productV2.priceWithoutTax = float.Parse(subnode.Value);
+																	productV2.priceWithoutTax = float.Parse(subnode.InnerText);
 																	break;
 																case "productDeclaration":
-																	productV2.productDeclaration = subnode.Value;
+																	productV2.productDeclaration = subnode.InnerText;
 																	break;
 																case "productNumberInDeclaration":
-																	productV2.productNumberInDeclaration = subnode.Value;
+																	productV2.productNumberInDeclaration = subnode.InnerText;
 																	break;
 																case "quantity":
-																	productV2.quantity = float.Parse(subnode.Value);
+																	productV2.quantity = float.Parse(subnode.InnerText);
 																	break;
 																case "tnvedName":
-																	productV2.tnvedName = subnode.Value;
+																	productV2.tnvedName = subnode.InnerText;
 																	break;
 																case "truOriginCode":
-																	productV2.truOriginCode = (TruOriginCode)Enum.Parse(typeof(TruOriginCode), subnode.Value);
+																	productV2.truOriginCode = (TruOriginCode)Enum.Parse(typeof(TruOriginCode), subnode.InnerText);
 																	break;
 																case "turnoverSize":
-																	productV2.turnoverSize = float.Parse(subnode.Value);
+																	productV2.turnoverSize = float.Parse(subnode.InnerText);
 																	break;
 																case "unitCode":
-																	productV2.unitCode = subnode.Value;
+																	productV2.unitCode = subnode.InnerText;
 																	break;
 																case "unitNominclature":
-																	productV2.unitNomenclature = subnode.Value;
+																	productV2.unitNomenclature = subnode.InnerText;
 																	break;
 																case "unitPrice":
-																	productV2.unitPrice = float.Parse(subnode.Value);
+																	productV2.unitPrice = float.Parse(subnode.InnerText);
 																	break;
 																default:
 																	break;
@@ -475,19 +479,19 @@ namespace ESF_kz
 													}
 													break;
 												case "totalExciseAmount":
-													invoiceV2.productSet.totalExciseAmount = float.Parse(node.Value);
+													invoiceV2.productSet.totalExciseAmount = float.Parse(node.InnerText);
 													break;
 												case "totalNdsAmount":
-													invoiceV2.productSet.totalNdsAmount = float.Parse(node.Value);
+													invoiceV2.productSet.totalNdsAmount = float.Parse(node.InnerText);
 													break;
 												case "totalPriceWithTax":
-													invoiceV2.productSet.totalPriceWithTax = float.Parse(node.Value);
+													invoiceV2.productSet.totalPriceWithTax = float.Parse(node.InnerText);
 													break;
 												case "totalPriceWithoutTax":
-													invoiceV2.productSet.totalPriceWithoutTax = float.Parse(node.Value);
+													invoiceV2.productSet.totalPriceWithoutTax = float.Parse(node.InnerText);
 													break;
 												case "totalTurnoverSize":
-													invoiceV2.productSet.totalTurnoverSize = float.Parse(node.Value);
+													invoiceV2.productSet.totalTurnoverSize = float.Parse(node.InnerText);
 													break;
 												default:
 													break;
@@ -496,23 +500,24 @@ namespace ESF_kz
 									}
 									break;
 								case "publicOffice":
+									invoiceV2.publicOffice = new PublicOffice();
 									foreach (XmlNode node in item)
 									{
-										if (node.Value != "")
+										if (node.InnerText != "")
 										{
 											switch (node.Name)
 											{
 												case "bik":
-													invoiceV2.publicOffice.bik = node.Value;
+													invoiceV2.publicOffice.bik = node.InnerText;
 													break;
 												case "iik":
-													invoiceV2.publicOffice.iik = node.Value;
+													invoiceV2.publicOffice.iik = node.InnerText;
 													break;
 												case "payPurpose":
-													invoiceV2.publicOffice.payPurpose = node.Value;
+													invoiceV2.publicOffice.payPurpose = node.InnerText;
 													break;
 												case "productCode":
-													invoiceV2.publicOffice.productCode = node.Value;
+													invoiceV2.publicOffice.productCode = node.InnerText;
 													break;
 												default:
 													break;
@@ -521,26 +526,26 @@ namespace ESF_kz
 									}
 									break;
 								case "reasonPaper":
-									invoiceV2.reasonPaper = (PaperReasonType)Enum.Parse(typeof(PaperReasonType), item.Value);
+									invoiceV2.reasonPaper = (PaperReasonType)Enum.Parse(typeof(PaperReasonType), item.InnerText);
 									break;
 								case "sellerAgentAddress":
-									invoiceV2.sellerAgentAddress = item.Value;
+									invoiceV2.sellerAgentAddress = item.InnerText;
 									break;
 								case "sellerAgentDocDate":
-									tmp = item.Value.Split('.');
+									tmp = item.InnerText.Split('.');
 									day = int.Parse(tmp[0]);
 									month = int.Parse(tmp[1]);
 									year = int.Parse(tmp[2]);
 									invoiceV2.sellerAgentDocDate = new DateTime(year, month, day);
 									break;
 								case "sellerAgentDocNum":
-									invoiceV2.sellerAgentDocNum = item.Value;
+									invoiceV2.sellerAgentDocNum = item.InnerText;
 									break;
 								case "sellerAgentName":
-									invoiceV2.sellerAgentName = item.Value;
+									invoiceV2.sellerAgentName = item.InnerText;
 									break;
 								case "sellerAgentTin":
-									invoiceV2.sellerAgentTin = item.Value;
+									invoiceV2.sellerAgentTin = item.InnerText;
 									break;
 								case "sellerParticipants":
 									invoiceV2.sellerParticipants = new List<ParticipantV2>();
@@ -561,28 +566,28 @@ namespace ESF_kz
 															switch (subnode.Name)
 															{
 																case "additional":
-																	productShare.additional = subnode.Value;
+																	productShare.additional = subnode.InnerText;
 																	break;
 																case "exciseAmount":
-																	productShare.exciseAmount = float.Parse(subnode.Value);
+																	productShare.exciseAmount = float.Parse(subnode.InnerText);
 																	break;
 																case "ndsAmount":
-																	productShare.ndsAmount = float.Parse(subnode.Value);
+																	productShare.ndsAmount = float.Parse(subnode.InnerText);
 																	break;
 																case "priceWithTax":
-																	productShare.priceWithTax = float.Parse(subnode.Value);
+																	productShare.priceWithTax = float.Parse(subnode.InnerText);
 																	break;
 																case "priceWithoutTax":
-																	productShare.priceWithoutTax = float.Parse(subnode.Value);
+																	productShare.priceWithoutTax = float.Parse(subnode.InnerText);
 																	break;
 																case "productNumber":
-																	productShare.productNumber = int.Parse(subnode.Value);
+																	productShare.productNumber = int.Parse(subnode.InnerText);
 																	break;
 																case "quantity":
-																	productShare.quantity = int.Parse(subnode.Value);
+																	productShare.quantity = int.Parse(subnode.InnerText);
 																	break;
 																case "turnoverSize":
-																	productShare.turnoverSize = float.Parse(subnode.Value);
+																	productShare.turnoverSize = float.Parse(subnode.InnerText);
 																	break;
 																default:
 																	break;
@@ -592,10 +597,10 @@ namespace ESF_kz
 													}
 													break;
 												case "reorganizedTin":
-													sellerParticipant.reorganizedTin = node.Value;
+													sellerParticipant.reorganizedTin = node.InnerText;
 													break;
 												case "tin":
-													sellerParticipant.tin = node.Value;
+													sellerParticipant.tin = node.InnerText;
 													break;
 												default:
 													break;
@@ -606,63 +611,64 @@ namespace ESF_kz
 									break;
 
 								case "sellers":
-
+									invoiceV2.sellers = new List<SellerV2>();
 									foreach (XmlNode seller in item)
 									{
 										SellerV2 sellerV2 = new SellerV2();
 										foreach (XmlNode subitem in seller)
 										{
-											if (subitem.Value != "")
+											if (subitem.InnerText != "")
 											{
 												switch (subitem.Name)
 												{
 													case "address":
-														sellerV2.address = subitem.Value;
+														sellerV2.address = subitem.InnerText;
 														break;
 													case "bank":
-														sellerV2.bank = subitem.Value;
+														sellerV2.bank = subitem.InnerText;
 														break;
 													case "bik":
-														sellerV2.bik = subitem.Value;
+														sellerV2.bik = subitem.InnerText;
 														break;
 													case "branchTin":
-														sellerV2.branchTin = subitem.Value;
+														sellerV2.branchTin = subitem.InnerText;
 														break;
 													case "certificateNum":
-														sellerV2.certificateNum = subitem.Value;
+														sellerV2.certificateNum = subitem.InnerText;
 														break;
 													case "certificateSeries":
-														sellerV2.certificateSeries = subitem.Value;
+														sellerV2.certificateSeries = subitem.InnerText;
 														break;
 													case "iik":
-														sellerV2.iik = subitem.Value;
+														sellerV2.iik = subitem.InnerText;
 														break;
 													case "isBranchNonResident":
-														sellerV2.isBranchNonResident = bool.Parse(subitem.Value);
+														sellerV2.isBranchNonResident = bool.Parse(subitem.InnerText);
 														break;
 													case "kbe":
-														sellerV2.kbe = subitem.Value;
+														sellerV2.kbe = subitem.InnerText;
 														break;
 													case "name":
-														sellerV2.name = subitem.Value;
+														sellerV2.name = subitem.InnerText;
 														break;
 													case "reorganizedTin":
-														sellerV2.reorganizedTin = subitem.Value;
+														sellerV2.reorganizedTin = subitem.InnerText;
 														break;
 													case "shareParticipation":
-														sellerV2.shareParticipation = float.Parse(subitem.Value);
+														sellerV2.shareParticipation = float.Parse(subitem.InnerText);
 														break;
 													case "statuses":
+														sellerV2.statuses = new List<SellerType>();
 														foreach (XmlNode status in subitem)
 														{
-															sellerV2.statuses.Add((SellerType)Enum.Parse(typeof(SellerType), status.Value));
+															sellerV2.statuses.Add((SellerType)Enum.Parse(typeof(SellerType), status.InnerText));
 														}
 														break;
 													case "tin":
-														sellerV2.tin = subitem.Value;
+														sellerV2.tin = subitem.InnerText;
 														break;
 													case "trailer":
-														sellerV2.trailer = subitem.Value;
+														sellerV2.trailer = subitem.InnerText;
 														break;
 													default:
 														break;
@@ -677,9 +683,10 @@ namespace ESF_kz
 							}
 						}						
 					}
+					invoiceContainer.invoiceSet.Add(invoiceV2);
 				}
 			}
-
+			return invoiceContainer;
 		}
 
 		private static long getInvoiceId()
@@ -881,7 +888,7 @@ namespace ESF_kz
 
 		private static float getSellerShareParticipation(int sellerNum)
 		{
-			throw new NotImplementedException();
+			return FormManagerFacade.getSellerShareParticipation(sellerNum);
 		}
 
 		private static string getSellerReorgTin(int sellerNum)
@@ -1635,7 +1642,7 @@ namespace ESF_kz
 
 		private static DateTime getInvoiceTurnoverDate()
 		{
-			return FormManagerFacade.getRelatedInvoiceDate();
+			return FormManagerFacade.getInvoiceTurnoverDate();
 		}
 
 		private static RelatedInvoice getRelatedInvoice()
@@ -1788,7 +1795,8 @@ namespace ESF_kz
 		internal static invoiceContainerV2 getInvoiceContainer()
 		{
 			invoiceContainerV2 inContainerV2 = new invoiceContainerV2();
-			InvoiceV2[] invoiceV2s = { getInvoice() };
+			List<InvoiceV2> invoiceV2s = new List<InvoiceV2>();
+			invoiceV2s.Add(getInvoice());
 			inContainerV2.invoiceSet = invoiceV2s;
 			return inContainerV2;
 		}

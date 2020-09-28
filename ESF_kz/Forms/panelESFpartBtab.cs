@@ -308,6 +308,54 @@ namespace ESF_kz.Forms
 			}
 		}
 
+		internal bool setSellerStatuses(List<SellerType> statuses)
+		{
+			try
+			{
+				foreach (SellerType status in statuses)
+				{
+					switch (status)
+					{
+						case SellerType.COMMITTENT:
+							chbxPartB_isCommitent.Checked = true;
+							break;
+						case SellerType.BROKER:
+							chbxPartB_isBroker.Checked = true;
+							break;
+						case SellerType.FORWARDER:
+							chbxPartB_isForwarder.Checked = true;
+							break;
+						case SellerType.LESSOR:
+							chbxPartB_isLessor.Checked = true;
+							break;
+						case SellerType.JOINT_ACTIVITY_PARTICIPANT:
+							chbxPartB_isJointActivityParticipant.Checked = true;
+							break;
+						case SellerType.SHARING_AGREEMENT_PARTICIPANT:
+							chbxPartB_isSharingAgreementParticipant.Checked = true;
+							break;
+						case SellerType.EXPORTER:
+							chbxPartB_isExporter.Checked = true;
+							break;
+						case SellerType.TRANSPORTER:
+							chbxPartB_isTransporter.Checked = true;
+							break;
+						case SellerType.PRINCIPAL:
+							chbxPartB_isPrincipal.Checked = true;
+							break;
+						default:
+							break;
+					}
+				}
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+			
+		}
+
 		private void tbPartB1_iik_TextChanged(object sender, EventArgs e)
 		{
 			tbPartB1_isCorrect[tbPartB1_iik] = false;
@@ -769,6 +817,24 @@ namespace ESF_kz.Forms
 			try
 			{
 				tbPartB1_bik.Text = bik;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal float getSellerShareParticipation()
+		{
+			return float.Parse(tbPartB_shareParticipation.Text);
+		}
+
+		internal bool setSellerShareParticipation(float part)
+		{
+			try
+			{
+				tbPartB_shareParticipation.Text = part.ToString();
 				return true;
 			}
 			catch (Exception)

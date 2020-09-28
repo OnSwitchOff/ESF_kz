@@ -152,8 +152,8 @@ namespace ESF_kz
 			//string fileText = System.IO.File.ReadAllText(filename);
 			XmlDocument xDoc = new XmlDocument();
 			xDoc.Load(filename);
-			SessionDataManagerFacade.ParseInvoiceXML(xDoc);
-			//FormManagerFacade.fillInvoiceForm();
+			invoiceContainerV2 ic = SessionDataManagerFacade.ParseInvoiceXML(xDoc);
+			FormManagerFacade.fillInvoiceForm(ic);
 
 			MessageBox.Show("Файл открыт");
 		}
