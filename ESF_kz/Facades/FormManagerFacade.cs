@@ -233,6 +233,26 @@ namespace ESF_kz
 						cTab.setCustomerTin(customer.tin);
 						cTab.setCustomerTrailer(customer.trailer);
 					}
+
+					panelESFpartD panelD = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartD>();
+					panelD.setConsigneeAddress(invoice.consignee.address);
+					panelD.setConsigneeCountryCode(invoice.consignee.countryCode);
+					panelD.setConsigneeName(invoice.consignee.name);
+					panelD.setConsigneeTin(invoice.consignee.tin);
+					panelD.setConsignorAddress(invoice.consignor.address);
+					panelD.setConsignorName(invoice.consignor.name);
+					panelD.setConsignorTin(invoice.consignor.tin);
+
+					panelESFpartE panelE = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartE>();
+					panelE.setDeliveryTermContractDate(invoice.deliveryTerm.contractDate);
+					panelE.setDeliveryTermContractNum(invoice.deliveryTerm.contractNum);
+					panelE.setDeliveryTermConditiomCode(invoice.deliveryTerm.deliveryConditionCode);
+					panelE.setDeliveryTermDestination(invoice.deliveryTerm.destination);
+					panelE.setDeliveryTermHasContract(invoice.deliveryTerm.hasContract);
+					panelE.setDeliveryTermTerm(invoice.deliveryTerm.term);
+					panelE.setDeliveryTermTransportTypeCode(invoice.deliveryTerm.transportTypeCode);
+					panelE.setDeliveryTermWarrant(invoice.deliveryTerm.warrant);
+					panelE.setDeliveryTermWarrantDate(invoice.deliveryTerm.warrantDate);
 				}
 			}
 		}
