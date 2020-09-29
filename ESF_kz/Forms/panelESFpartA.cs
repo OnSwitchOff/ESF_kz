@@ -245,7 +245,7 @@ namespace ESF_kz.Forms
 
 		internal void setOperatorFullname(string operatorFullname)
 		{
-			throw new NotImplementedException();
+			//throw new NotImplementedException();
 		}
 
 		internal bool setInvoiceType(InvoiceType invoiceType)
@@ -334,7 +334,8 @@ namespace ESF_kz.Forms
 
 		private void dtpPartA_TurnoverDate_ValueChanged(object sender, EventArgs e)
 		{
-
+			dtpPartA_TurnoverDate.MaxDate = DateTime.Now;
+			dtpPartA_TurnoverDate.MinDate = DateTime.Now.AddYears(-5);
 		}
 
 		private void chbxPartA_isCorrectedESF_CheckedChanged(object sender, EventArgs e)
@@ -428,7 +429,11 @@ namespace ESF_kz.Forms
 		{
 			try
 			{
-				combxPartA_PaperESFReason.SelectedItem = reason;
+				if (reason != null)
+				{
+					chbxPartA_isPaperESF.Checked = true;
+				}
+				combxPartA_PaperESFReason.SelectedItem = combxPartA_PaperESFReason.Items[(int)reason];
 				return true;
 			}
 			catch (Exception)

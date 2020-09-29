@@ -51,5 +51,10 @@ namespace ESF_kz.Forms
 		{
 			return (panelESFpartHtab)(this.tabControl1.TabPages[num - 1].Controls[0]);
 		}
+
+		internal void RemoveAllTabs()
+		{
+			getTabControll().TabPages.Clear();
+		}
 	}
 }

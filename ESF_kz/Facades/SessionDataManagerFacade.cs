@@ -202,6 +202,9 @@ namespace ESF_kz
 									year = int.Parse(tmp[2]);
 									invoiceV2.customerAgentDocDate = new DateTime(year,month,day);
 									break;
+								case "customerAgentDocNum":
+									invoiceV2.customerAgentDocNum = item.InnerText;
+									break;
 								case "customerAgentName":
 									invoiceV2.customerAgentName = item.InnerText;
 									break;
@@ -465,7 +468,7 @@ namespace ESF_kz
 																case "unitCode":
 																	productV2.unitCode = subnode.InnerText;
 																	break;
-																case "unitNominclature":
+																case "unitNomenclature":
 																	productV2.unitNomenclature = subnode.InnerText;
 																	break;
 																case "unitPrice":
@@ -1173,7 +1176,8 @@ namespace ESF_kz
 				product.priceWithoutTax = getProductPriceWithoutTax(productNum);// 10;
 				product.priceWithTax = getProductPriceWithTax(productNum);// 20.3f;
 				product.productDeclaration = getProductDeclaration(productNum);// "declration";
-				product.productNumberInDeclaration = getProductNumberInDexlaration(productNum);// "numInDec";
+				product.productNumberInDeclaration = getProductNumberInDeclaration(productNum);// "numInDec";
+				product.quantity = getProductQuantity(productNum);
 				product.tnvedName = getProductTnvedName(productNum);// "tnvedName";
 				product.truOriginCode = getProductTruOriginCode(productNum);// TruOriginCode.three;
 				product.turnoverSize = getProductTurnoverSize(productNum); //40.36f;
@@ -1183,6 +1187,11 @@ namespace ESF_kz
 				productV2s.Add(product);
 			}
 			return productV2s;
+		}
+
+		private static float getProductQuantity(int productNum)
+		{
+			return FormManagerFacade.getProductQuantity(productNum);
 		}
 
 		private static float getProductUnitPrice(int productNum)
@@ -1215,9 +1224,9 @@ namespace ESF_kz
 			return FormManagerFacade.getProductTnvedName(productNum);
 		}
 
-		private static string getProductNumberInDexlaration(int productNum)
+		private static string getProductNumberInDeclaration(int productNum)
 		{
-			return FormManagerFacade.getProductNumberInDexlaration(productNum);
+			return FormManagerFacade.getProductNumberInDeclaration(productNum);
 		}
 
 		private static float getProductPriceWithTax(int productNum)

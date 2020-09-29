@@ -9,7 +9,7 @@ namespace ESF_kz.Forms
 	{
 		private Dictionary<TextBox, bool> tbPartB1_isCorrect = new Dictionary<TextBox,bool>();
 
-		private List<SellerType> statusList;
+		private List<SellerType> statusList = new List<SellerType>();
 
 		internal List<SellerType> getStatusList()
 		{
@@ -781,12 +781,20 @@ namespace ESF_kz.Forms
 
 		internal string getSellerBranchTin()
 		{
-			return tbPartB_tin.Text;
+			return tbPartB_branchTin.Text;
 		}
 
-		internal bool setSellerBranchTin(string tin)
+		internal bool setSellerBranchTin(string branchTin)
 		{
-			return setSellerTin(tin);
+			try
+			{
+				tbPartB_branchTin.Text = branchTin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 
 		internal string getSellerBank()

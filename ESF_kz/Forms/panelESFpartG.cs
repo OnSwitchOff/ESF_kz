@@ -73,11 +73,11 @@ namespace ESF_kz.Forms
 			return float.Parse(tbPartG_currencyRate.Text);
 		}
 
-		internal bool setProductSetCurrencyRate(string rate)
+		internal bool setProductSetCurrencyRate(float rate)
 		{
 			try
 			{
-				tbPartG_currencyRate.Text = rate;
+				tbPartG_currencyRate.Text = rate.ToString();
 				return true;
 			}
 			catch (Exception)
@@ -98,14 +98,14 @@ namespace ESF_kz.Forms
 
 		internal string getProductAdditional(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.additional].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.additional].Value.ToString();
 		}
 
 		internal bool setProductAdditional(int productNum,string additional)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.additional].Value = additional;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.additional].Value = additional;
 				return true;
 			}
 			catch (Exception)
@@ -116,14 +116,14 @@ namespace ESF_kz.Forms
 
 		internal string getProductCatalogTruId(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.catalogTruId].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.catalogTruId].Value.ToString();
 		}
 
 		internal bool setProductCatalogTruId(int productNum, string TRUid)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.catalogTruId].Value = TRUid;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.catalogTruId].Value = TRUid;
 				return true;
 			}
 			catch (Exception)
@@ -134,7 +134,7 @@ namespace ESF_kz.Forms
 
 		internal string getProductDescription(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.nameTRN].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.nameTRN].Value.ToString();
 		}
 
 
@@ -142,7 +142,7 @@ namespace ESF_kz.Forms
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.nameTRN].Value = nameTRN;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.nameTRN].Value = nameTRN;
 				return true;
 			}
 			catch (Exception)
@@ -153,14 +153,14 @@ namespace ESF_kz.Forms
 
 		internal float getProductExciseAmount(int productNum)
 		{
-			return (float)GetDataGrid().Rows[productNum].Cells[(int)column.exciseAmount].Value;
+			return (float)GetDataGrid().Rows[productNum-1].Cells[(int)column.exciseAmount].Value;
 		}
 
 		internal bool setProductExciseAmount(int productNum, float exciseAmount)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.exciseAmount].Value = exciseAmount;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.exciseAmount].Value = exciseAmount;
 				return true;
 			}
 			catch (Exception)
@@ -171,7 +171,7 @@ namespace ESF_kz.Forms
 
 		internal float getProductExciseRate(int productNum)
 		{
-			return (float)GetDataGrid().Rows[productNum].Cells[(int)column.exciseRate].Value;
+			return (float)GetDataGrid().Rows[productNum-1].Cells[(int)column.exciseRate].Value;
 		}
 
 		internal string getProductKpvedCode(int productNum)
@@ -181,14 +181,14 @@ namespace ESF_kz.Forms
 
 		internal float getProductNDSAmount(int productNum)
 		{
-			return (float)GetDataGrid().Rows[productNum].Cells[(int)column.ndsAmount].Value;
+			return (float)GetDataGrid().Rows[productNum-1].Cells[(int)column.ndsAmount].Value;
 		}
 
 		internal bool setProductNDSAmount(int productNum, float ndsAmount)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.ndsAmount].Value = ndsAmount;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.ndsAmount].Value = ndsAmount;
 				return true;
 			}
 			catch (Exception)
@@ -199,14 +199,14 @@ namespace ESF_kz.Forms
 
 		internal int getProductNDSRate(int productNum)
 		{
-			return (int)GetDataGrid().Rows[productNum].Cells[(int)column.ndsRate].Value;
+			return (int)GetDataGrid().Rows[productNum-1].Cells[(int)column.ndsRate].Value;
 		}
 
 		internal bool setProductNDSRate(int productNum, int ndsRate)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.ndsAmount].Value = ndsRate;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.ndsRate].Value = ndsRate;
 				return true;
 			}
 			catch (Exception)
@@ -217,14 +217,14 @@ namespace ESF_kz.Forms
 
 		internal float getProductPriceWithoutTax(int productNum)
 		{
-			return (float)GetDataGrid().Rows[productNum].Cells[(int)column.priceWithoutTax].Value;
+			return (float)GetDataGrid().Rows[productNum-1].Cells[(int)column.priceWithoutTax].Value;
 		}
 
 		internal bool setProductPriceWithoutTax(int productNum, float priceWithoutTax)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.priceWithoutTax].Value = priceWithoutTax;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.priceWithoutTax].Value = priceWithoutTax;
 				return true;
 			}
 			catch (Exception)
@@ -235,14 +235,14 @@ namespace ESF_kz.Forms
 
 		internal string getProductDeclaration(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.productDeclaration].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.productDeclaration].Value.ToString();
 		}
 
 		internal bool setProductDeclaration(int productNum, string declaration)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.productDeclaration].Value = declaration;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.productDeclaration].Value = declaration;
 				return true;
 			}
 			catch (Exception)
@@ -253,14 +253,14 @@ namespace ESF_kz.Forms
 
 		internal float getProductPriceWithTax(int productNum)
 		{
-			return (float)GetDataGrid().Rows[productNum].Cells[(int)column.priceWithTax].Value;
+			return (float)GetDataGrid().Rows[productNum-1].Cells[(int)column.priceWithTax].Value;
 		}
 
 		internal bool setProductPriceWithTax(int productNum, float priceWithTax)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.priceWithTax].Value = priceWithTax;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.priceWithTax].Value = priceWithTax;
 				return true;
 			}
 			catch (Exception)
@@ -269,16 +269,16 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal string getProductNumberInDexlaration(int productNum)
+		internal string getProductNumberInDeclaration(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.productNumberInDeclaration].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.productNumberInDeclaration].Value.ToString();
 		}
 
-		internal bool setProductNumberInDexlaration(int productNum,string num)
+		internal bool setProductNumberInDeclaration(int productNum,string num)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.productNumberInDeclaration].Value = num;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.productNumberInDeclaration].Value = num;
 				return true;
 			}
 			catch (Exception)
@@ -289,14 +289,14 @@ namespace ESF_kz.Forms
 
 		internal string getProductTnvedName(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.fullnameTRN].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.fullnameTRN].Value.ToString();
 		}
 
 		internal bool setProductTnvedName(int productNum, string tnvedName)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.fullnameTRN].Value = tnvedName;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.fullnameTRN].Value = tnvedName;
 				return true;
 			}
 			catch (Exception)
@@ -307,14 +307,15 @@ namespace ESF_kz.Forms
 
 		internal TruOriginCode getProductTruOriginCode(int productNum)
 		{
-			return (TruOriginCode)GetDataGrid().Rows[productNum].Cells[(int)column.typeTRN].Value;
+			return (TruOriginCode)GetDataGrid().Rows[productNum-1].Cells[(int)column.typeTRN].Value;
 		}
 
 		internal bool setProductTruOriginCode(int productNum, TruOriginCode code)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.typeTRN].Value = code;
+				DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)GetDataGrid().Rows[productNum-1].Cells[(int)column.typeTRN];
+				comboBoxCell.Value = comboBoxCell.Items[(int)code];
 				return true;
 			}
 			catch (Exception)
@@ -325,14 +326,14 @@ namespace ESF_kz.Forms
 
 		internal float getProductTurnoverSize(int productNum)
 		{
-			return (float)GetDataGrid().Rows[productNum].Cells[(int)column.turnoverSize].Value;
+			return (float)GetDataGrid().Rows[productNum-1].Cells[(int)column.turnoverSize].Value;
 		}
 
 		internal bool setProductTurnoverSize(int productNum, float turnoverSize)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.turnoverSize].Value = turnoverSize;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.turnoverSize].Value = turnoverSize;
 				return true;
 			}
 			catch (Exception)
@@ -343,14 +344,14 @@ namespace ESF_kz.Forms
 
 		internal string getProductUnitCode(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.TNVED].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.TNVED].Value.ToString();
 		}
 
 		internal bool setProductUnitCode(int productNum, string tnved)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.TNVED].Value = tnved;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.TNVED].Value = tnved;
 				return true;
 			}
 			catch (Exception)
@@ -361,14 +362,14 @@ namespace ESF_kz.Forms
 
 		internal string getProductUnitNominclature(int productNum)
 		{
-			return GetDataGrid().Rows[productNum].Cells[(int)column.measure].Value.ToString();
+			return GetDataGrid().Rows[productNum-1].Cells[(int)column.measure].Value.ToString();
 		}
 
 		internal bool setProductUnitNominclature(int productNum, string measure)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.measure].Value = measure;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.measure].Value = measure;
 				return true;
 			}
 			catch (Exception)
@@ -379,14 +380,14 @@ namespace ESF_kz.Forms
 
 		internal float getProductUnitPrice(int productNum)
 		{
-			return (float)GetDataGrid().Rows[productNum].Cells[(int)column.pricePerOne].Value;
+			return (float)GetDataGrid().Rows[productNum-1].Cells[(int)column.pricePerOne].Value;
 		}
 
 		internal bool setProductUnitPrice(int productNum, float unitPrice)
 		{
 			try
 			{
-				GetDataGrid().Rows[productNum].Cells[(int)column.pricePerOne].Value =unitPrice;
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.pricePerOne].Value =unitPrice;
 				return true;
 			}
 			catch (Exception)
@@ -413,6 +414,24 @@ namespace ESF_kz.Forms
 			}
 		}
 
+		internal bool setProductNumber(int productNum, int num)
+		{
+			try
+			{
+				GetDataGrid().Rows[productNum - 1].Cells[(int)column.rowNumber].Value = num;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal int getProductNumber(int productNum)
+		{
+			return (int)GetDataGrid().Rows[productNum - 1].Cells[(int)column.rowNumber].Value;
+		}
+
 		internal float getProductSetTotalExciseAmount()
 		{
 			return float.Parse(tbPartG_totalExciseAmount.Text);
@@ -431,6 +450,19 @@ namespace ESF_kz.Forms
 			}
 		}
 
+		internal bool setProductExciseRate(int productNum, float exciseRate)
+		{
+			try
+			{
+				GetDataGrid().Rows[productNum-1].Cells[(int)column.exciseRate].Value = exciseRate;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
 		internal float getProductSetTotalNDSAmount()
 		{
 			return float.Parse(tbPartG_totalNdsAmount.Text);
@@ -441,6 +473,19 @@ namespace ESF_kz.Forms
 			try
 			{
 				tbPartG_totalNdsAmount.Text = amount.ToString();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal bool setProductQuantity(int productNum, float quantity)
+		{
+			try
+			{
+				GetDataGrid().Rows[productNum - 1].Cells[(int)column.quantity].Value = quantity;
 				return true;
 			}
 			catch (Exception)
@@ -502,5 +547,23 @@ namespace ESF_kz.Forms
 				return false;
 			}
 		}
+
+		internal float getProductQuantity(int productNum)
+		{
+			return (float)GetDataGrid().Rows[productNum - 1].Cells[(int)column.quantity].Value;
+		}
+
+		/*internal ProductV2 getProductByNumber(int productNumber)
+		{
+			ProductV2 product = new ProductV2();
+			foreach (DataGridViewRow row in GetDataGrid().Rows)
+			{
+				if ((int)row.Cells[(int)column.rowNumber].Value == productNumber)
+				{
+					product.additional = row.Cells[(int)column.additional].Value;
+				}
+			} 
+			
+		}*/
 	}
 }

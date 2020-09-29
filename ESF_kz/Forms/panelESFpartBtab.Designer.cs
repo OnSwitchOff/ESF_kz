@@ -84,6 +84,7 @@
 			this.epPartB1_iik = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartB1_bik = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartB1_bank = new System.Windows.Forms.ErrorProvider(this.components);
+			this.tbPartB_branchTin = new System.Windows.Forms.TextBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numUpDown_participantCounter)).BeginInit();
@@ -318,6 +319,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.label19, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.numUpDown_participantCounter, 1, 12);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartB_tin, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartB_branchTin, 1, 2);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -709,6 +711,14 @@
 			this.epPartB1_bank.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
 			this.epPartB1_bank.ContainerControl = this;
 			// 
+			// tbPartB_branchTin
+			// 
+			this.tbPartB_branchTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartB_branchTin.Location = new System.Drawing.Point(484, 85);
+			this.tbPartB_branchTin.Name = "tbPartB_branchTin";
+			this.tbPartB_branchTin.Size = new System.Drawing.Size(400, 20);
+			this.tbPartB_branchTin.TabIndex = 47;
+			// 
 			// panelESFpartBtab
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -794,5 +804,6 @@
 		private System.Windows.Forms.ErrorProvider epPartB1_iik;
 		private System.Windows.Forms.ErrorProvider epPartB1_bik;
 		private System.Windows.Forms.ErrorProvider epPartB1_bank;
+		private System.Windows.Forms.TextBox tbPartB_branchTin;
 	}
 }

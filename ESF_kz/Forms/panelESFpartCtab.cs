@@ -14,7 +14,7 @@ namespace ESF_kz.Forms
 	public partial class panelESFpartCtab : AbstractUCESFpanelTab
 	{
 		private const string NATIONAL_BANK_BIN = "941240001151";
-		private List<CustomerType> statusList;
+		private List<CustomerType> statusList = new List<CustomerType>();
 
 		internal List<CustomerType>  getStatusList()
 		{
@@ -263,7 +263,15 @@ namespace ESF_kz.Forms
 
 		internal bool setCustomerBranchTin(string branchTin)
 		{
-			return setCustomerTin(branchTin);
+			try
+			{
+				tbPartC_branchTin.Text = branchTin;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 
 
@@ -443,7 +451,7 @@ namespace ESF_kz.Forms
 
 		internal string getCustomerBranchTin()
 		{
-			return getCustomerTin();
+			return tbPartC_branchTin.Text;
 		}
 
 

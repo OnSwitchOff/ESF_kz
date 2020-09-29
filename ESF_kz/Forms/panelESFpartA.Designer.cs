@@ -319,7 +319,7 @@ namespace ESF_kz.Forms
 			// 
 			this.dtpPartA_TurnoverDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.dtpPartA_TurnoverDate.Location = new System.Drawing.Point(319, 305);
-			this.dtpPartA_TurnoverDate.MaxDate = new System.DateTime(2020, 9, 4, 14, 49, 4, 937);
+			this.dtpPartA_TurnoverDate.MaxDate = new System.DateTime(2099, 7, 16, 0, 0, 0, 0);
 			this.dtpPartA_TurnoverDate.MinDate = new System.DateTime(2015, 9, 4, 14, 49, 4, 937);
 			this.dtpPartA_TurnoverDate.Name = "dtpPartA_TurnoverDate";
 			this.dtpPartA_TurnoverDate.Size = new System.Drawing.Size(200, 20);

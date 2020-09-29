@@ -86,7 +86,7 @@ namespace ESF_kz.Forms
 			return tbPartJ_customerAgentDocNum.Text;
 		}
 
-		internal bool setCustomerAgentNum(string num)
+		internal bool setCustomerAgentDocNum(string num)
 		{
 			try
 			{

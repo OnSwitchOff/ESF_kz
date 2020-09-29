@@ -34,6 +34,19 @@
 			this.tbPartG_totalPriceWithoutTax = new System.Windows.Forms.TextBox();
 			this.tbPartG_totalNdsAmount = new System.Windows.Forms.TextBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.tbPartG_currencyRate = new System.Windows.Forms.TextBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.tbPartG_currencyCode = new System.Windows.Forms.TextBox();
+			this.l_PartG_totalNdsAmount = new System.Windows.Forms.Label();
+			this.l_PartG_totalPriceWithoutTax = new System.Windows.Forms.Label();
+			this.l_PartG_totalPriceWithTax = new System.Windows.Forms.Label();
+			this.l_PartG_totalTurnoverSize = new System.Windows.Forms.Label();
+			this.tbPartG_totalExciseAmount = new System.Windows.Forms.TextBox();
+			this.l_PartG_totalExciseAmount = new System.Windows.Forms.Label();
+			this.l_PartG_ndsRateType = new System.Windows.Forms.Label();
+			this.chbxPartG_withoutNDS = new System.Windows.Forms.CheckBox();
 			this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.typeTRN = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.nameTRN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,19 +66,6 @@
 			this.productNumberInDeclaration = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.catalogTruId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.additional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.tbPartG_currencyRate = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.tbPartG_currencyCode = new System.Windows.Forms.TextBox();
-			this.l_PartG_totalNdsAmount = new System.Windows.Forms.Label();
-			this.l_PartG_totalPriceWithoutTax = new System.Windows.Forms.Label();
-			this.l_PartG_totalPriceWithTax = new System.Windows.Forms.Label();
-			this.l_PartG_totalTurnoverSize = new System.Windows.Forms.Label();
-			this.tbPartG_totalExciseAmount = new System.Windows.Forms.TextBox();
-			this.l_PartG_totalExciseAmount = new System.Windows.Forms.Label();
-			this.l_PartG_ndsRateType = new System.Windows.Forms.Label();
-			this.chbxPartG_withoutNDS = new System.Windows.Forms.CheckBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -172,143 +172,6 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(944, 493);
 			this.dataGridView1.TabIndex = 51;
-			// 
-			// rowNumber
-			// 
-			this.rowNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.rowNumber.HeaderText = "№ п/п";
-			this.rowNumber.Name = "rowNumber";
-			// 
-			// typeTRN
-			// 
-			this.typeTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.typeTRN.HeaderText = "Признак происхождения товаров и услуг";
-			this.typeTRN.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-			this.typeTRN.Name = "typeTRN";
-			// 
-			// nameTRN
-			// 
-			this.nameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.nameTRN.FillWeight = 300F;
-			this.nameTRN.HeaderText = "Наименование товаров, работ и услуг";
-			this.nameTRN.Name = "nameTRN";
-			// 
-			// fullnameTRN
-			// 
-			this.fullnameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.fullnameTRN.FillWeight = 400F;
-			this.fullnameTRN.HeaderText = "Наименование товаров в соответствии с Декларацией на товары или заявления о ввозе" +
-    " товаров и уплате косвенных налогов";
-			this.fullnameTRN.Name = "fullnameTRN";
-			// 
-			// TNVED
-			// 
-			this.TNVED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.TNVED.FillWeight = 200F;
-			this.TNVED.HeaderText = "Код товара (ТНВЭД ЕАЭС)";
-			this.TNVED.Name = "TNVED";
-			// 
-			// measure
-			// 
-			this.measure.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.measure.HeaderText = "Единица измерения";
-			this.measure.Name = "measure";
-			// 
-			// quantity
-			// 
-			this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.quantity.FillWeight = 150F;
-			this.quantity.HeaderText = "Количество (объем)";
-			this.quantity.Name = "quantity";
-			// 
-			// pricePerOne
-			// 
-			this.pricePerOne.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.pricePerOne.FillWeight = 150F;
-			this.pricePerOne.HeaderText = "Цена (тариф) за единицу товара, работы, услуг и без косвенных налогов";
-			this.pricePerOne.Name = "pricePerOne";
-			// 
-			// priceWithoutTax
-			// 
-			this.priceWithoutTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.priceWithoutTax.FillWeight = 150F;
-			this.priceWithoutTax.HeaderText = "Стоимость товаров, работ, услуг без косвенных налогов";
-			this.priceWithoutTax.Name = "priceWithoutTax";
-			// 
-			// exciseRate
-			// 
-			this.exciseRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.exciseRate.HeaderText = "Акциз ставка";
-			this.exciseRate.Name = "exciseRate";
-			// 
-			// exciseAmount
-			// 
-			this.exciseAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.exciseAmount.FillWeight = 150F;
-			this.exciseAmount.HeaderText = "Акциз сумма";
-			this.exciseAmount.Name = "exciseAmount";
-			// 
-			// turnoverSize
-			// 
-			this.turnoverSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.turnoverSize.FillWeight = 150F;
-			this.turnoverSize.HeaderText = "Размер оборота по реализации(облагаемый/необлагаемый оборот)";
-			this.turnoverSize.Name = "turnoverSize";
-			// 
-			// ndsRate
-			// 
-			this.ndsRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.ndsRate.HeaderText = "НДС ставка";
-			this.ndsRate.Name = "ndsRate";
-			// 
-			// ndsAmount
-			// 
-			this.ndsAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.ndsAmount.FillWeight = 150F;
-			this.ndsAmount.HeaderText = "НДС сумма";
-			this.ndsAmount.Name = "ndsAmount";
-			// 
-			// priceWithTax
-			// 
-			this.priceWithTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.priceWithTax.FillWeight = 150F;
-			this.priceWithTax.HeaderText = "Стоимость товаров, работ, услуг с учетом косвенных налогов";
-			this.priceWithTax.Name = "priceWithTax";
-			// 
-			// productDeclaration
-			// 
-			this.productDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.productDeclaration.FillWeight = 150F;
-			this.productDeclaration.HeaderText = "№ Декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-" +
-    "1 или СТ-KZ";
-			this.productDeclaration.Name = "productDeclaration";
-			// 
-			// productNumberInDeclaration
-			// 
-			this.productNumberInDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.productNumberInDeclaration.FillWeight = 150F;
-			this.productNumberInDeclaration.HeaderText = "Номер товарной позиции из Декларации на товары или заявления о ввозе товаров и уп" +
-    "лате косвенных налогов";
-			this.productNumberInDeclaration.Name = "productNumberInDeclaration";
-			// 
-			// catalogTruId
-			// 
-			this.catalogTruId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.catalogTruId.FillWeight = 150F;
-			this.catalogTruId.HeaderText = "Идентификатор товара, работы, услуг";
-			this.catalogTruId.Name = "catalogTruId";
-			// 
-			// additional
-			// 
-			this.additional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.additional.FillWeight = 200F;
-			this.additional.HeaderText = "Дополнительные данные";
-			this.additional.Name = "additional";
 			// 
 			// label1
 			// 
@@ -441,6 +304,144 @@
 			this.chbxPartG_withoutNDS.Text = "Тип НДС (\'Без НДС – не РК\')";
 			this.chbxPartG_withoutNDS.UseVisualStyleBackColor = true;
 			// 
+			// rowNumber
+			// 
+			this.rowNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.rowNumber.HeaderText = "№ п/п";
+			this.rowNumber.Name = "rowNumber";
+			// 
+			// typeTRN
+			// 
+			this.typeTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.typeTRN.HeaderText = "Признак происхождения товаров и услуг";
+			this.typeTRN.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+			this.typeTRN.Name = "typeTRN";
+			// 
+			// nameTRN
+			// 
+			this.nameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.nameTRN.FillWeight = 300F;
+			this.nameTRN.HeaderText = "Наименование товаров, работ и услуг";
+			this.nameTRN.Name = "nameTRN";
+			// 
+			// fullnameTRN
+			// 
+			this.fullnameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.fullnameTRN.FillWeight = 400F;
+			this.fullnameTRN.HeaderText = "Наименование товаров в соответствии с Декларацией на товары или заявления о ввозе" +
+    " товаров и уплате косвенных налогов";
+			this.fullnameTRN.Name = "fullnameTRN";
+			// 
+			// TNVED
+			// 
+			this.TNVED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.TNVED.FillWeight = 200F;
+			this.TNVED.HeaderText = "Код товара (ТНВЭД ЕАЭС)";
+			this.TNVED.Name = "TNVED";
+			// 
+			// measure
+			// 
+			this.measure.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.measure.HeaderText = "Единица измерения";
+			this.measure.Name = "measure";
+			// 
+			// quantity
+			// 
+			this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.quantity.FillWeight = 150F;
+			this.quantity.HeaderText = "Количество (объем)";
+			this.quantity.Name = "quantity";
+			// 
+			// pricePerOne
+			// 
+			this.pricePerOne.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.pricePerOne.FillWeight = 150F;
+			this.pricePerOne.HeaderText = "Цена (тариф) за единицу товара, работы, услуг и без косвенных налогов";
+			this.pricePerOne.Name = "pricePerOne";
+			// 
+			// priceWithoutTax
+			// 
+			this.priceWithoutTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.priceWithoutTax.FillWeight = 150F;
+			this.priceWithoutTax.HeaderText = "Стоимость товаров, работ, услуг без косвенных налогов";
+			this.priceWithoutTax.Name = "priceWithoutTax";
+			// 
+			// exciseRate
+			// 
+			this.exciseRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.exciseRate.HeaderText = "Акциз ставка";
+			this.exciseRate.Name = "exciseRate";
+			// 
+			// exciseAmount
+			// 
+			this.exciseAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.exciseAmount.FillWeight = 150F;
+			this.exciseAmount.HeaderText = "Акциз сумма";
+			this.exciseAmount.Name = "exciseAmount";
+			// 
+			// turnoverSize
+			// 
+			this.turnoverSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.turnoverSize.FillWeight = 150F;
+			this.turnoverSize.HeaderText = "Размер оборота по реализации(облагаемый/необлагаемый оборот)";
+			this.turnoverSize.Name = "turnoverSize";
+			// 
+			// ndsRate
+			// 
+			this.ndsRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ndsRate.HeaderText = "НДС ставка";
+			this.ndsRate.Name = "ndsRate";
+			// 
+			// ndsAmount
+			// 
+			this.ndsAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ndsAmount.FillWeight = 150F;
+			this.ndsAmount.HeaderText = "НДС сумма";
+			this.ndsAmount.Name = "ndsAmount";
+			// 
+			// priceWithTax
+			// 
+			this.priceWithTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.priceWithTax.FillWeight = 150F;
+			this.priceWithTax.HeaderText = "Стоимость товаров, работ, услуг с учетом косвенных налогов";
+			this.priceWithTax.Name = "priceWithTax";
+			// 
+			// productDeclaration
+			// 
+			this.productDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productDeclaration.FillWeight = 150F;
+			this.productDeclaration.HeaderText = "№ Декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-" +
+    "1 или СТ-KZ";
+			this.productDeclaration.Name = "productDeclaration";
+			// 
+			// productNumberInDeclaration
+			// 
+			this.productNumberInDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productNumberInDeclaration.FillWeight = 150F;
+			this.productNumberInDeclaration.HeaderText = "Номер товарной позиции из Декларации на товары или заявления о ввозе товаров и уп" +
+    "лате косвенных налогов";
+			this.productNumberInDeclaration.Name = "productNumberInDeclaration";
+			// 
+			// catalogTruId
+			// 
+			this.catalogTruId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.catalogTruId.FillWeight = 150F;
+			this.catalogTruId.HeaderText = "Идентификатор товара, работы, услуг";
+			this.catalogTruId.Name = "catalogTruId";
+			// 
+			// additional
+			// 
+			this.additional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.additional.FillWeight = 200F;
+			this.additional.HeaderText = "Дополнительные данные";
+			this.additional.Name = "additional";
+			// 
 			// panelESFpartG
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,8 +465,6 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox tbPartG_currencyCode;
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
-		private System.Windows.Forms.DataGridViewComboBoxColumn typeTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -487,6 +486,16 @@
 		private System.Windows.Forms.TextBox tbPartG_totalPriceWithTax;
 		private System.Windows.Forms.TextBox tbPartG_totalPriceWithoutTax;
 		private System.Windows.Forms.TextBox tbPartG_totalNdsAmount;
+		private System.Windows.Forms.Label l_PartG_totalNdsAmount;
+		private System.Windows.Forms.Label l_PartG_totalPriceWithoutTax;
+		private System.Windows.Forms.Label l_PartG_totalPriceWithTax;
+		private System.Windows.Forms.Label l_PartG_totalTurnoverSize;
+		private System.Windows.Forms.TextBox tbPartG_totalExciseAmount;
+		private System.Windows.Forms.Label l_PartG_totalExciseAmount;
+		private System.Windows.Forms.Label l_PartG_ndsRateType;
+		private System.Windows.Forms.CheckBox chbxPartG_withoutNDS;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
+		private System.Windows.Forms.DataGridViewComboBoxColumn typeTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TNVED;
@@ -504,13 +513,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn productNumberInDeclaration;
 		private System.Windows.Forms.DataGridViewTextBoxColumn catalogTruId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn additional;
-		private System.Windows.Forms.Label l_PartG_totalNdsAmount;
-		private System.Windows.Forms.Label l_PartG_totalPriceWithoutTax;
-		private System.Windows.Forms.Label l_PartG_totalPriceWithTax;
-		private System.Windows.Forms.Label l_PartG_totalTurnoverSize;
-		private System.Windows.Forms.TextBox tbPartG_totalExciseAmount;
-		private System.Windows.Forms.Label l_PartG_totalExciseAmount;
-		private System.Windows.Forms.Label l_PartG_ndsRateType;
-		private System.Windows.Forms.CheckBox chbxPartG_withoutNDS;
 	}
 }

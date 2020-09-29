@@ -66,7 +66,7 @@ namespace ESF_kz.Forms
 		}
 
 
-		internal bool setCustomerParticipantsCount(int num)
+		internal bool setSellerParticipantsCount(int num)
 		{
 			try
 			{
