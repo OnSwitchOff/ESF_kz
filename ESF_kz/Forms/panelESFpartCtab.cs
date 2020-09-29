@@ -282,6 +282,10 @@ namespace ESF_kz.Forms
 
 		internal bool setCustomerStatuses(List<CustomerType> statuses)
 		{
+			if (statuses == null)
+			{
+				return false;
+			}
 			try
 			{
 				foreach (CustomerType status in statuses)

@@ -472,5 +472,10 @@ namespace ESF_kz.Forms
 		{
 			return dtpPartA_TurnoverDate.Value;
 		}
+
+		internal void clearReasonPaper()
+		{
+			combxPartA_PaperESFReason.SelectedItem = null;
+		}
 	}
 }

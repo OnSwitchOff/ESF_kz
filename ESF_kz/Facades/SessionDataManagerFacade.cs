@@ -76,7 +76,7 @@ namespace ESF_kz
 
 			foreach(XmlNode invoice in xInvoiceSet)
 			{
-				if(invoice.Name == "invoice")
+				if(invoice.Name == "v2:invoice")
 				{
 					InvoiceV2 invoiceV2 = new InvoiceV2();
 					foreach (XmlNode item in invoice)

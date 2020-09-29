@@ -157,5 +157,10 @@ namespace ESF_kz
 
 			MessageBox.Show("Файл открыт");
 		}
+
+		private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FormManagerFacade.clearAllTabs();
+		}
 	}
 }

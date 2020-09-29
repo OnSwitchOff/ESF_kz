@@ -68,6 +68,7 @@ namespace ESF_kz
 			this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -479,7 +480,8 @@ namespace ESF_kz
             this.openToolStripMenuItem,
             this.loadToolStripMenuItem,
             this.sendToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
+            this.saveAsToolStripMenuItem,
+            this.clearAllToolStripMenuItem});
 			this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
 			this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
 			this.invoiceToolStripMenuItem.Text = "invoice";
@@ -513,6 +515,13 @@ namespace ESF_kz
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			this.openFileDialog1.Filter = "Xml files (*.xml)|*.xml";
+			// 
+			// clearAllToolStripMenuItem
+			// 
+			this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
+			this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.clearAllToolStripMenuItem.Text = "clear All";
+			this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
 			// 
 			// ESF_form
 			// 
@@ -577,5 +586,6 @@ namespace ESF_kz
 		private ToolStripMenuItem saveAsToolStripMenuItem;
 		private OpenFileDialog openFileDialog1;
 		private SaveFileDialog saveFileDialog1;
+		private ToolStripMenuItem clearAllToolStripMenuItem;
 	}
 }

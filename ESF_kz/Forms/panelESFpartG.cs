@@ -553,6 +553,16 @@ namespace ESF_kz.Forms
 			return (float)GetDataGrid().Rows[productNum - 1].Cells[(int)column.quantity].Value;
 		}
 
+		internal void clearProductSetCurrencyRate()
+		{
+			tbPartG_currencyRate.Text = "";
+		}
+
+		internal void clearProductSetNdsRateType()
+		{
+			chbxPartG_withoutNDS.Checked = false;
+		}
+
 		/*internal ProductV2 getProductByNumber(int productNumber)
 		{
 			ProductV2 product = new ProductV2();

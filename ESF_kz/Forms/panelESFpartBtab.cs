@@ -310,6 +310,8 @@ namespace ESF_kz.Forms
 
 		internal bool setSellerStatuses(List<SellerType> statuses)
 		{
+			if (statuses == null)
+				return false;
 			try
 			{
 				foreach (SellerType status in statuses)

@@ -194,186 +194,218 @@ namespace ESF_kz
 					panelB.RemoveAllTabs();
 					panelB.CreateFirstTab("Seller");
 					int sellerCounter = 0;
-					foreach (SellerV2 seller in invoice.sellers)
+					if (invoice.sellers != null)
 					{
-						sellerCounter++;
-						panelB.setSellerParticipantsCount(sellerCounter);
-						panelESFpartBtab bTab =  panelB.getTab(sellerCounter);
-						bTab.setSellerAddress(seller.address);
-						bTab.setSellerBank(seller.bank);
-						bTab.setSellerBik(seller.bik);
-						bTab.setSellerBranchTin(seller.branchTin);
-						bTab.setSellerCertificateNum(seller.certificateNum);
-						bTab.setSellerCertificateSeries(seller.certificateSeries);
-						bTab.setSellerIik(seller.iik);
-						bTab.setSellerIsBranchNonResiden(seller.isBranchNonResident);
-						bTab.setSellerKbe(seller.kbe);
-						bTab.setSellerName(seller.name);
-						bTab.setSellerReorgTin(seller.reorganizedTin);
-						bTab.setSellerShareParticipation(seller.shareParticipation);
-						bTab.setSellerStatuses(seller.statuses);
-						bTab.setSellerTin(seller.tin);
-						bTab.setSellerTrailer(seller.trailer);
-					}
+						foreach (SellerV2 seller in invoice.sellers)
+						{
+							sellerCounter++;
+							panelB.setSellerParticipantsCount(sellerCounter);
+							panelESFpartBtab bTab = panelB.getTab(sellerCounter);
+							bTab.setSellerAddress(seller.address);
+							bTab.setSellerBank(seller.bank);
+							bTab.setSellerBik(seller.bik);
+							bTab.setSellerBranchTin(seller.branchTin);
+							bTab.setSellerCertificateNum(seller.certificateNum);
+							bTab.setSellerCertificateSeries(seller.certificateSeries);
+							bTab.setSellerIik(seller.iik);
+							bTab.setSellerIsBranchNonResiden(seller.isBranchNonResident);
+							bTab.setSellerKbe(seller.kbe);
+							bTab.setSellerName(seller.name);
+							bTab.setSellerReorgTin(seller.reorganizedTin);
+							bTab.setSellerShareParticipation(seller.shareParticipation);
+							bTab.setSellerStatuses(seller.statuses);
+							bTab.setSellerTin(seller.tin);
+							bTab.setSellerTrailer(seller.trailer);
+						}
+					}				
 					
 
 					panelESFpartC panelC = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartC>();
 					panelC.RemoveAllTabs();
 					panelC.CreateFirstTab("Customer");
 					int customerCounter = 0;
-					foreach (CustomerV2 customer in invoice.customers)
+					if (invoice.customers !=null)
 					{
-						customerCounter++;
-						panelC.setCustomerParticipantsCount(customerCounter);
-						panelESFpartCtab cTab = panelC.getTab(customerCounter);
-						cTab.setCustomerAddress(customer.address);
-						cTab.setCustomerBranchTin(customer.branchTin);
-						cTab.setCustomerCountryCode(customer.countryCode);
-						cTab.setCustomerName(customer.name);
-						cTab.setCustomerRoergTin(customer.reorganizedTin);
-						cTab.setCustomerShareParticipation(customer.shareParticipation);
-						cTab.setCustomerStatuses(customer.statuses);
-						cTab.setCustomerTin(customer.tin);
-						cTab.setCustomerTrailer(customer.trailer);
-						cTab.setPublicOfficeBik(invoice.publicOffice.bik);
-						cTab.setPublicOfficeIik(invoice.publicOffice.iik);
-						cTab.setPublicOfficePayPurpose(invoice.publicOffice.payPurpose);
-						cTab.setPublicOfficeProductCode(invoice.publicOffice.productCode);
+						foreach (CustomerV2 customer in invoice.customers)
+						{
+							customerCounter++;
+							panelC.setCustomerParticipantsCount(customerCounter);
+							panelESFpartCtab cTab = panelC.getTab(customerCounter);
+							cTab.setCustomerAddress(customer.address);
+							cTab.setCustomerBranchTin(customer.branchTin);
+							cTab.setCustomerCountryCode(customer.countryCode);
+							cTab.setCustomerName(customer.name);
+							cTab.setCustomerRoergTin(customer.reorganizedTin);
+							cTab.setCustomerShareParticipation(customer.shareParticipation);
+							cTab.setCustomerStatuses(customer.statuses);
+							cTab.setCustomerTin(customer.tin);
+							cTab.setCustomerTrailer(customer.trailer);
+							if (invoice.publicOffice != null)
+							{
+								cTab.setPublicOfficeBik(invoice.publicOffice.bik);
+								cTab.setPublicOfficeIik(invoice.publicOffice.iik);
+								cTab.setPublicOfficePayPurpose(invoice.publicOffice.payPurpose);
+								cTab.setPublicOfficeProductCode(invoice.publicOffice.productCode);
+							}
+						}
 					}
+					
 
 					panelESFpartD panelD = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartD>();
-					panelD.setConsigneeAddress(invoice.consignee.address);
-					panelD.setConsigneeCountryCode(invoice.consignee.countryCode);
-					panelD.setConsigneeName(invoice.consignee.name);
-					panelD.setConsigneeTin(invoice.consignee.tin);
-					panelD.setConsignorAddress(invoice.consignor.address);
-					panelD.setConsignorName(invoice.consignor.name);
-					panelD.setConsignorTin(invoice.consignor.tin);
+					if (invoice.consignee!=null)
+					{
+						panelD.setConsigneeAddress(invoice.consignee.address);
+						panelD.setConsigneeCountryCode(invoice.consignee.countryCode);
+						panelD.setConsigneeName(invoice.consignee.name);
+						panelD.setConsigneeTin(invoice.consignee.tin);
+					}
+					if (invoice.consignor != null) 
+					{
+						panelD.setConsignorAddress(invoice.consignor.address);
+						panelD.setConsignorName(invoice.consignor.name);
+						panelD.setConsignorTin(invoice.consignor.tin);
+					}
+					
 
 					panelESFpartE panelE = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartE>();
-					panelE.setDeliveryTermContractDate(invoice.deliveryTerm.contractDate);
-					panelE.setDeliveryTermContractNum(invoice.deliveryTerm.contractNum);
-					panelE.setDeliveryTermConditiomCode(invoice.deliveryTerm.deliveryConditionCode);
-					panelE.setDeliveryTermDestination(invoice.deliveryTerm.destination);
-					panelE.setDeliveryTermHasContract(invoice.deliveryTerm.hasContract);
-					panelE.setDeliveryTermTerm(invoice.deliveryTerm.term);
-					panelE.setDeliveryTermTransportTypeCode(invoice.deliveryTerm.transportTypeCode);
-					panelE.setDeliveryTermWarrant(invoice.deliveryTerm.warrant);
-					panelE.setDeliveryTermWarrantDate(invoice.deliveryTerm.warrantDate);
+					if (invoice.deliveryTerm != null)
+					{
+						panelE.setDeliveryTermContractDate(invoice.deliveryTerm.contractDate);
+						panelE.setDeliveryTermContractNum(invoice.deliveryTerm.contractNum);
+						panelE.setDeliveryTermConditiomCode(invoice.deliveryTerm.deliveryConditionCode);
+						panelE.setDeliveryTermDestination(invoice.deliveryTerm.destination);
+						panelE.setDeliveryTermHasContract(invoice.deliveryTerm.hasContract);
+						panelE.setDeliveryTermTerm(invoice.deliveryTerm.term);
+						panelE.setDeliveryTermTransportTypeCode(invoice.deliveryTerm.transportTypeCode);
+						panelE.setDeliveryTermWarrant(invoice.deliveryTerm.warrant);
+						panelE.setDeliveryTermWarrantDate(invoice.deliveryTerm.warrantDate);
+					}
+					
 
 					panelESFpartF panelF = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartF>();
 					panelF.setInvoiceDeliveryDocDate(invoice.deliveryDocDate);
 					panelF.setInvoiceDeliveryDocNum(invoice.deliveryDocNum);
 
 					panelESFpartG panelG = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartG>();
-					panelG.setProductSetCurrencyRate(invoice.productSet.currencyRate);
-					panelG.setProductSetCurrentCode(invoice.productSet.currencyCode);
-					panelG.setProductSetNdsRateType(invoice.productSet.ndsRateType);
-					int productCounter = 0;
-					foreach (ProductV2 product in invoice.productSet.products)
+					if (invoice.productSet !=null)
 					{
-						productCounter++;
-						panelG.GetDataGrid().Rows.Add();
-						panelG.setProductNumber(productCounter, productCounter);
-						panelG.setProductAdditional(productCounter, product.additional);
-						panelG.setProductCatalogTruId(productCounter, product.catalogTruId);
-						panelG.setProductDescription(productCounter, product.description);
-						panelG.setProductExciseAmount(productCounter, product.exciseAmount);
-						panelG.setProductExciseRate(productCounter, product.exciseRate);
-						//panelG.setProductKpvedCode(productCounter, product.kpvedCode);
-						panelG.setProductNDSAmount(productCounter, product.ndsAmount);
-						panelG.setProductNDSRate(productCounter, product.ndsRate);
-						panelG.setProductPriceWithTax(productCounter, product.priceWithTax);
-						panelG.setProductPriceWithoutTax(productCounter, product.priceWithoutTax);
-						panelG.setProductDeclaration(productCounter, product.productDeclaration);
-						panelG.setProductNumberInDeclaration(productCounter, product.productDeclaration);
-						panelG.setProductQuantity(productCounter, product.quantity);
-						panelG.setProductTnvedName(productCounter, product.tnvedName);
-						panelG.setProductTruOriginCode(productCounter, product.truOriginCode);
-						panelG.setProductTurnoverSize(productCounter, product.turnoverSize);
-						panelG.setProductUnitCode(productCounter, product.unitCode);
-						panelG.setProductUnitNominclature(productCounter, product.unitNomenclature);
-						panelG.setProductUnitPrice(productCounter, product.unitPrice);						
+						panelG.setProductSetCurrencyRate(invoice.productSet.currencyRate);
+						panelG.setProductSetCurrentCode(invoice.productSet.currencyCode);
+						panelG.setProductSetNdsRateType(invoice.productSet.ndsRateType);
+						int productCounter = 0;
+						foreach (ProductV2 product in invoice.productSet.products)
+						{
+							productCounter++;
+							panelG.GetDataGrid().Rows.Add();
+							panelG.setProductNumber(productCounter, productCounter);
+							panelG.setProductAdditional(productCounter, product.additional);
+							panelG.setProductCatalogTruId(productCounter, product.catalogTruId);
+							panelG.setProductDescription(productCounter, product.description);
+							panelG.setProductExciseAmount(productCounter, product.exciseAmount);
+							panelG.setProductExciseRate(productCounter, product.exciseRate);
+							//panelG.setProductKpvedCode(productCounter, product.kpvedCode);
+							panelG.setProductNDSAmount(productCounter, product.ndsAmount);
+							panelG.setProductNDSRate(productCounter, product.ndsRate);
+							panelG.setProductPriceWithTax(productCounter, product.priceWithTax);
+							panelG.setProductPriceWithoutTax(productCounter, product.priceWithoutTax);
+							panelG.setProductDeclaration(productCounter, product.productDeclaration);
+							panelG.setProductNumberInDeclaration(productCounter, product.productDeclaration);
+							panelG.setProductQuantity(productCounter, product.quantity);
+							panelG.setProductTnvedName(productCounter, product.tnvedName);
+							panelG.setProductTruOriginCode(productCounter, product.truOriginCode);
+							panelG.setProductTurnoverSize(productCounter, product.turnoverSize);
+							panelG.setProductUnitCode(productCounter, product.unitCode);
+							panelG.setProductUnitNominclature(productCounter, product.unitNomenclature);
+							panelG.setProductUnitPrice(productCounter, product.unitPrice);
+						}
+						panelG.setProductSetTotalExciseAmount(invoice.productSet.totalExciseAmount);
+						panelG.setProductSetTotalNDSAmount(invoice.productSet.totalNdsAmount);
+						panelG.setProductSetTotalPriceWithTax(invoice.productSet.totalPriceWithTax);
+						panelG.setProductSetTotalPriceWithoutTax(invoice.productSet.totalPriceWithoutTax);
+						panelG.setProductSetTotalTurnoverSize(invoice.productSet.totalTurnoverSize);
 					}
-					panelG.setProductSetTotalExciseAmount(invoice.productSet.totalExciseAmount);
-					panelG.setProductSetTotalNDSAmount(invoice.productSet.totalNdsAmount);
-					panelG.setProductSetTotalPriceWithTax(invoice.productSet.totalPriceWithTax);
-					panelG.setProductSetTotalPriceWithoutTax(invoice.productSet.totalPriceWithoutTax);
-					panelG.setProductSetTotalTurnoverSize(invoice.productSet.totalTurnoverSize);
+					
 
 					panelESFpartH panelH = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartH>();
 					panelH.RemoveAllTabs();
 					int ParticipantCounter = 0;
-					foreach (ParticipantV2 participant in invoice.sellerParticipants)
+					if (invoice.sellerParticipants !=null)
 					{
-						ParticipantCounter++;
-						panelH.CreateTab("(Seller)Participant  #" + ParticipantCounter);
-						panelESFpartHtab hTab = panelH.getTab(ParticipantCounter);
-						int shareCounter = 0;
-						foreach (ProductShare share in participant.productShares)
+						foreach (ParticipantV2 participant in invoice.sellerParticipants)
 						{
-							shareCounter++;
-							hTab.GetDataGrid().Rows.Add();
-							hTab.setProductShareAdditional(shareCounter, share.additional);
-							hTab.setProductShareExciseAmount(shareCounter, share.exciseAmount);
-							hTab.setProductShareNDSAmount(shareCounter, share.ndsAmount);
-							hTab.setProductSharePriceWithTax(shareCounter, share.priceWithTax);
-							hTab.setProductSharePriceWithoutTax(shareCounter, share.priceWithoutTax);
-							hTab.setShareProductNumber(shareCounter, share.productNumber);
-							hTab.setProductShareQuantity(shareCounter, share.quantity);
-							hTab.setProductShareTurnoverSize(shareCounter, share.turnoverSize);
+							ParticipantCounter++;
+							panelH.CreateTab("(Seller)Participant  #" + ParticipantCounter);
+							panelESFpartHtab hTab = panelH.getTab(ParticipantCounter);
+							int shareCounter = 0;
+							foreach (ProductShare share in participant.productShares)
+							{
+								shareCounter++;
+								hTab.GetDataGrid().Rows.Add();
+								hTab.setProductShareAdditional(shareCounter, share.additional);
+								hTab.setProductShareExciseAmount(shareCounter, share.exciseAmount);
+								hTab.setProductShareNDSAmount(shareCounter, share.ndsAmount);
+								hTab.setProductSharePriceWithTax(shareCounter, share.priceWithTax);
+								hTab.setProductSharePriceWithoutTax(shareCounter, share.priceWithoutTax);
+								hTab.setShareProductNumber(shareCounter, share.productNumber);
+								hTab.setProductShareQuantity(shareCounter, share.quantity);
+								hTab.setProductShareTurnoverSize(shareCounter, share.turnoverSize);
 
-							ProductV2 product = invoice.productSet.products[share.productNumber - 1];
-							hTab.setProductShareDescription(shareCounter, product.description);
-							hTab.setProductShareExciseRate(shareCounter, product.exciseRate);
-							hTab.setProductShareNdsRate(shareCounter, product.ndsRate);
-							hTab.setProductShareProductDeclaration(shareCounter, product.productDeclaration);
-							hTab.setProductShareProductNumberInDeclaration(shareCounter, product.productNumberInDeclaration);
-							hTab.setProductShareTnvedName(shareCounter, product.tnvedName);
-							hTab.setProductShareTruOriginCode(shareCounter, product.truOriginCode);
-							hTab.setProductShareUnitCode(shareCounter, product.unitCode);
-							hTab.setProductShareUnitNomenclature(shareCounter, product.unitNomenclature);
-							hTab.setProductShareUnitPrice(shareCounter, product.unitPrice);
-							hTab.setProductShareCatalogTruId(shareCounter, product.catalogTruId);
+								ProductV2 product = invoice.productSet.products[share.productNumber - 1];
+								hTab.setProductShareDescription(shareCounter, product.description);
+								hTab.setProductShareExciseRate(shareCounter, product.exciseRate);
+								hTab.setProductShareNdsRate(shareCounter, product.ndsRate);
+								hTab.setProductShareProductDeclaration(shareCounter, product.productDeclaration);
+								hTab.setProductShareProductNumberInDeclaration(shareCounter, product.productNumberInDeclaration);
+								hTab.setProductShareTnvedName(shareCounter, product.tnvedName);
+								hTab.setProductShareTruOriginCode(shareCounter, product.truOriginCode);
+								hTab.setProductShareUnitCode(shareCounter, product.unitCode);
+								hTab.setProductShareUnitNomenclature(shareCounter, product.unitNomenclature);
+								hTab.setProductShareUnitPrice(shareCounter, product.unitPrice);
+								hTab.setProductShareCatalogTruId(shareCounter, product.catalogTruId);
+							}
+							hTab.setParticipantTin(participant.tin);
+							hTab.setParticipantReorganizedTin(participant.reorganizedTin);
 						}
-						hTab.setParticipantTin(participant.tin);
-						hTab.setParticipantReorganizedTin(participant.reorganizedTin);
 					}
-					foreach (ParticipantV2 participant in invoice.customerParticipants)
+
+					if(invoice.customerParticipants!=null)
 					{
-						ParticipantCounter++;
-						panelH.CreateTab("(Customer)Participant  #" + ParticipantCounter);
-						panelESFpartHtab hTab = panelH.getTab(ParticipantCounter);
-						int shareCounter = 0;
-						foreach (ProductShare share in participant.productShares)
+						foreach (ParticipantV2 participant in invoice.customerParticipants)
 						{
-							shareCounter++;
-							hTab.GetDataGrid().Rows.Add();
-							hTab.setProductShareAdditional(shareCounter, share.additional);
-							hTab.setProductShareExciseAmount(shareCounter, share.exciseAmount);
-							hTab.setProductShareNDSAmount(shareCounter, share.ndsAmount);
-							hTab.setProductSharePriceWithTax(shareCounter, share.priceWithTax);
-							hTab.setProductSharePriceWithoutTax(shareCounter, share.priceWithoutTax);
-							hTab.setShareProductNumber(shareCounter, share.productNumber);
-							hTab.setProductShareQuantity(shareCounter, share.quantity);
-							hTab.setProductShareTurnoverSize(shareCounter, share.turnoverSize);
+							ParticipantCounter++;
+							panelH.CreateTab("(Customer)Participant  #" + ParticipantCounter);
+							panelESFpartHtab hTab = panelH.getTab(ParticipantCounter);
+							int shareCounter = 0;
+							foreach (ProductShare share in participant.productShares)
+							{
+								shareCounter++;
+								hTab.GetDataGrid().Rows.Add();
+								hTab.setProductShareAdditional(shareCounter, share.additional);
+								hTab.setProductShareExciseAmount(shareCounter, share.exciseAmount);
+								hTab.setProductShareNDSAmount(shareCounter, share.ndsAmount);
+								hTab.setProductSharePriceWithTax(shareCounter, share.priceWithTax);
+								hTab.setProductSharePriceWithoutTax(shareCounter, share.priceWithoutTax);
+								hTab.setShareProductNumber(shareCounter, share.productNumber);
+								hTab.setProductShareQuantity(shareCounter, share.quantity);
+								hTab.setProductShareTurnoverSize(shareCounter, share.turnoverSize);
 
-							ProductV2 product = invoice.productSet.products[share.productNumber-1];
-							hTab.setProductShareDescription(shareCounter, product.description);
-							hTab.setProductShareExciseRate(shareCounter, product.exciseRate);
-							hTab.setProductShareNdsRate(shareCounter, product.ndsRate);
-							hTab.setProductShareProductDeclaration(shareCounter, product.productDeclaration);
-							hTab.setProductShareProductNumberInDeclaration(shareCounter, product.productNumberInDeclaration);
-							hTab.setProductShareTnvedName(shareCounter, product.tnvedName);
-							hTab.setProductShareTruOriginCode(shareCounter, product.truOriginCode);
-							hTab.setProductShareUnitCode(shareCounter, product.unitCode);
-							hTab.setProductShareUnitNomenclature(shareCounter, product.unitNomenclature);
-							hTab.setProductShareUnitPrice(shareCounter, product.unitPrice);
-							hTab.setProductShareCatalogTruId(shareCounter, product.catalogTruId);
+								ProductV2 product = invoice.productSet.products[share.productNumber - 1];
+								hTab.setProductShareDescription(shareCounter, product.description);
+								hTab.setProductShareExciseRate(shareCounter, product.exciseRate);
+								hTab.setProductShareNdsRate(shareCounter, product.ndsRate);
+								hTab.setProductShareProductDeclaration(shareCounter, product.productDeclaration);
+								hTab.setProductShareProductNumberInDeclaration(shareCounter, product.productNumberInDeclaration);
+								hTab.setProductShareTnvedName(shareCounter, product.tnvedName);
+								hTab.setProductShareTruOriginCode(shareCounter, product.truOriginCode);
+								hTab.setProductShareUnitCode(shareCounter, product.unitCode);
+								hTab.setProductShareUnitNomenclature(shareCounter, product.unitNomenclature);
+								hTab.setProductShareUnitPrice(shareCounter, product.unitPrice);
+								hTab.setProductShareCatalogTruId(shareCounter, product.catalogTruId);
+							}
+							hTab.setParticipantTin(participant.tin);
+							hTab.setParticipantReorganizedTin(participant.reorganizedTin);
 						}
-						hTab.setParticipantTin(participant.tin);
-						hTab.setParticipantReorganizedTin(participant.reorganizedTin);
-					}
+					}		
 
 					panelESFpartI panelI = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartI>();
 					panelI.setInvoiceSellerAgentAddress(invoice.sellerAgentAddress);
@@ -904,6 +936,100 @@ namespace ESF_kz
 		internal static float getProductQuantity(int productNum)
 		{
 			return invoiceForm.getPannel<panelESFpartG>().getProductQuantity(productNum);
+		}
+
+
+		internal static bool clearAllTabs()
+		{
+			try
+			{						
+				panelESFpartA panelA = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartA>();
+				panelA.setInvoiceDate(DateTime.Now);
+				panelA.setInvoiceNum("");
+				panelA.setInvoiceType(InvoiceType.ORDINARY_INVOICE);
+				panelA.setAddedESFRegistrationNum("");
+				panelA.setAddedESFNum("");
+				panelA.setAddedESFDate(DateTime.Now);
+				panelA.setOperatorFullname("");
+				panelA.setInvoiceTurnoverDate(DateTime.Now);
+				panelA.setInvoiceDatePaper(DateTime.Now);
+				panelA.clearReasonPaper();
+
+				panelESFpartB panelB = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartB>();
+				panelB.RemoveAllTabs();
+				panelB.CreateFirstTab("Seller");	
+
+				panelESFpartC panelC = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartC>();
+				panelC.RemoveAllTabs();
+				panelC.CreateFirstTab("Customer");
+
+				panelESFpartD panelD = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartD>();
+				panelD.setConsigneeAddress("");
+				panelD.setConsigneeCountryCode("");
+				panelD.setConsigneeName("");
+				panelD.setConsigneeTin("");			
+
+				panelD.setConsignorAddress("");
+				panelD.setConsignorName("");
+				panelD.setConsignorTin("");
+
+				panelESFpartE panelE = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartE>();
+
+				panelE.setDeliveryTermContractDate(DateTime.Now);
+				panelE.setDeliveryTermContractNum("");
+				panelE.setDeliveryTermConditiomCode("");
+				panelE.setDeliveryTermDestination("");
+				panelE.setDeliveryTermHasContract(false);
+				panelE.setDeliveryTermTerm("");
+				panelE.setDeliveryTermTransportTypeCode("");
+				panelE.setDeliveryTermWarrant("");
+				panelE.setDeliveryTermWarrantDate(DateTime.Now);
+
+				panelESFpartF panelF = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartF>();
+				panelF.setInvoiceDeliveryDocDate(DateTime.Now);
+				panelF.setInvoiceDeliveryDocNum("");
+
+				panelESFpartG panelG = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartG>();
+				panelG.clearProductSetCurrencyRate();
+				panelG.setProductSetCurrentCode("");
+				panelG.clearProductSetNdsRateType();
+				panelG.GetDataGrid().Rows.Clear();						
+				panelG.setProductSetTotalExciseAmount(0);
+				panelG.setProductSetTotalNDSAmount(0);
+				panelG.setProductSetTotalPriceWithTax(0);
+				panelG.setProductSetTotalPriceWithoutTax(0);
+				panelG.setProductSetTotalTurnoverSize(0);				
+
+
+				panelESFpartH panelH = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartH>();
+				panelH.RemoveAllTabs();
+
+				panelESFpartI panelI = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartI>();
+				panelI.setInvoiceSellerAgentAddress("");
+				panelI.setInvoiceSellerAgentDocDate(DateTime.Now);
+				panelI.setInvoiceSellerAgentDocNum("");
+				panelI.setInvoiceSellerAgentName("");
+				panelI.setInvoiceSellerAgentTin("");
+
+				panelESFpartJ panelJ = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartJ>();
+				panelJ.setCustomerAgentAddress("");
+				panelJ.setCustomerAgentDocDate(DateTime.Now);
+				panelJ.setCustomerAgentDocNum("");
+				panelJ.setCustomerAgentName("");
+				panelJ.setCustomerAgentTin("");
+
+				panelESFpartK panelK = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartK>();
+				panelK.setInvoiceAddInf("");
+
+				panelESFpartL panelL = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartL>();
+
+				return true;
+
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 	}
 }
