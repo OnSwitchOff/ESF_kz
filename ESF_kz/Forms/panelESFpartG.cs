@@ -307,7 +307,8 @@ namespace ESF_kz.Forms
 
 		internal TruOriginCode getProductTruOriginCode(int productNum)
 		{
-			return (TruOriginCode)GetDataGrid().Rows[productNum-1].Cells[(int)column.typeTRN].Value;
+			int obj = int.Parse(GetDataGrid().Rows[productNum - 1].Cells[(int)column.typeTRN].Value.ToString())-1;
+			return (TruOriginCode)obj;
 		}
 
 		internal bool setProductTruOriginCode(int productNum, TruOriginCode code)

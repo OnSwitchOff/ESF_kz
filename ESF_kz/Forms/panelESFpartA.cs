@@ -422,7 +422,7 @@ namespace ESF_kz.Forms
 
 		internal PaperReasonType getReasonPaper()
 		{
-			return (PaperReasonType)combxPartA_PaperESFReason.SelectedItem;
+			return (PaperReasonType)combxPartA_PaperESFReason.SelectedIndex;
 		}
 
 		internal bool setReasonPaper(PaperReasonType reason)

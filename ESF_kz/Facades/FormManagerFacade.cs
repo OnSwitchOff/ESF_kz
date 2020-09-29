@@ -295,8 +295,8 @@ namespace ESF_kz
 						int productCounter = 0;
 						foreach (ProductV2 product in invoice.productSet.products)
 						{
-							productCounter++;
-							panelG.GetDataGrid().Rows.Add();
+							productCounter++;	
+							panelG.GetDataGrid().Rows.Add();															
 							panelG.setProductNumber(productCounter, productCounter);
 							panelG.setProductAdditional(productCounter, product.additional);
 							panelG.setProductCatalogTruId(productCounter, product.catalogTruId);
@@ -322,7 +322,7 @@ namespace ESF_kz
 						panelG.setProductSetTotalNDSAmount(invoice.productSet.totalNdsAmount);
 						panelG.setProductSetTotalPriceWithTax(invoice.productSet.totalPriceWithTax);
 						panelG.setProductSetTotalPriceWithoutTax(invoice.productSet.totalPriceWithoutTax);
-						panelG.setProductSetTotalTurnoverSize(invoice.productSet.totalTurnoverSize);
+						panelG.setProductSetTotalTurnoverSize(invoice.productSet.totalTurnoverSize);						
 					}
 					
 
@@ -340,7 +340,7 @@ namespace ESF_kz
 							foreach (ProductShare share in participant.productShares)
 							{
 								shareCounter++;
-								hTab.GetDataGrid().Rows.Add();
+								hTab.GetDataGrid().Rows.Add();							
 								hTab.setProductShareAdditional(shareCounter, share.additional);
 								hTab.setProductShareExciseAmount(shareCounter, share.exciseAmount);
 								hTab.setProductShareNDSAmount(shareCounter, share.ndsAmount);

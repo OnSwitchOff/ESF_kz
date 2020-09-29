@@ -162,5 +162,10 @@ namespace ESF_kz
 		{
 			FormManagerFacade.clearAllTabs();
 		}
+
+		private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SessionDataManagerFacade.getInvoiceBodyString();
+		}
 	}
 }

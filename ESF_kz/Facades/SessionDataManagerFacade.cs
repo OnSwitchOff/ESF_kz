@@ -803,7 +803,7 @@ namespace ESF_kz
 			return invoiceSignature;
 		}
 
-		private static string getInvoiceBodyString()
+		internal static string getInvoiceBodyString()
 		{
 			/*string invoiceBodyPath = @"C:\Users\viktor.kassov\source\repos\ESF_kz\ESF_kz\bin\Debug\InvoiceBodyTestExample.xml";
 			string invoiceBodyString = "";
@@ -980,7 +980,7 @@ namespace ESF_kz
 		{
 			List<ProductShare> productShares = new List<ProductShare>();
 			int tmpCount = FormManagerFacade.getShareBySellerParticipantCount(number);
-			for (int i = 0; i < tmpCount; i++)
+			for (int i = 1; i <= tmpCount; i++)
 			{
 				ProductShare productShare = new ProductShare();
 				productShare.additional = getSellerProductShareAdditional(number, i);//"additional";
@@ -1162,7 +1162,7 @@ namespace ESF_kz
 		{
 			List<ProductV2> productV2s = new List<ProductV2>();
 			int productsCount = getProductsCount();
-			for (int productNum = 0; productNum < productsCount; productNum++)
+			for (int productNum = 1; productNum <= productsCount; productNum++)
 			{
 				ProductV2 product = new ProductV2();
 				product.additional = getProductAdditional(productNum);//"additional";
@@ -1383,7 +1383,7 @@ namespace ESF_kz
 		{
 			List<CustomerV2> customerV2s = new List<CustomerV2>();
 			int tempCount = getCustomersCount();
-			for (int customerNumber = 0; customerNumber < tempCount; customerNumber++)
+			for (int customerNumber = 1; customerNumber <= tempCount; customerNumber++)
 			{
 				CustomerV2 customerV2 = new CustomerV2();
 				customerV2.address = getCustomerAddress(customerNumber);// "CUstomer Address";
@@ -1494,7 +1494,7 @@ namespace ESF_kz
 		{
 			List<ProductShare> productShares = new List<ProductShare>();
 			int tmpCount = FormManagerFacade.getShareByCustomerParticipantCount(number);
-			for (int i = 0; i < tmpCount; i++)
+			for (int i = 1; i <= tmpCount; i++)
 			{
 				ProductShare productShare = new ProductShare();
 				productShare.additional = getCustomerProductShareAdditional(number,i);//"additional";

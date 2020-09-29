@@ -49,7 +49,7 @@ namespace ESF_kz.Forms
 
 		internal string getProductShareAdditional(int productShareNumber)
 		{
-			return dataGridView1.Rows[productShareNumber].Cells[(int)column.additional].Value.ToString();
+			return dataGridView1.Rows[productShareNumber-1].Cells[(int)column.additional].Value.ToString();
 		}
 
 		internal bool setProductShareAdditional(int productShareNumber, string additional)

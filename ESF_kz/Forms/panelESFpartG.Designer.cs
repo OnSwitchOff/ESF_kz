@@ -34,19 +34,6 @@
 			this.tbPartG_totalPriceWithoutTax = new System.Windows.Forms.TextBox();
 			this.tbPartG_totalNdsAmount = new System.Windows.Forms.TextBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.tbPartG_currencyRate = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.tbPartG_currencyCode = new System.Windows.Forms.TextBox();
-			this.l_PartG_totalNdsAmount = new System.Windows.Forms.Label();
-			this.l_PartG_totalPriceWithoutTax = new System.Windows.Forms.Label();
-			this.l_PartG_totalPriceWithTax = new System.Windows.Forms.Label();
-			this.l_PartG_totalTurnoverSize = new System.Windows.Forms.Label();
-			this.tbPartG_totalExciseAmount = new System.Windows.Forms.TextBox();
-			this.l_PartG_totalExciseAmount = new System.Windows.Forms.Label();
-			this.l_PartG_ndsRateType = new System.Windows.Forms.Label();
-			this.chbxPartG_withoutNDS = new System.Windows.Forms.CheckBox();
 			this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.typeTRN = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.nameTRN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +53,19 @@
 			this.productNumberInDeclaration = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.catalogTruId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.additional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.tbPartG_currencyRate = new System.Windows.Forms.TextBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.tbPartG_currencyCode = new System.Windows.Forms.TextBox();
+			this.l_PartG_totalNdsAmount = new System.Windows.Forms.Label();
+			this.l_PartG_totalPriceWithoutTax = new System.Windows.Forms.Label();
+			this.l_PartG_totalPriceWithTax = new System.Windows.Forms.Label();
+			this.l_PartG_totalTurnoverSize = new System.Windows.Forms.Label();
+			this.tbPartG_totalExciseAmount = new System.Windows.Forms.TextBox();
+			this.l_PartG_totalExciseAmount = new System.Windows.Forms.Label();
+			this.l_PartG_ndsRateType = new System.Windows.Forms.Label();
+			this.chbxPartG_withoutNDS = new System.Windows.Forms.CheckBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -145,6 +145,7 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rowNumber,
@@ -172,137 +173,6 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(944, 493);
 			this.dataGridView1.TabIndex = 51;
-			// 
-			// label1
-			// 
-			this.label1.AutoEllipsis = true;
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(4, 43);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(468, 30);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "33.1 код валюты";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(4, 74);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(468, 30);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "32.2 курс валюты";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// tbPartG_currencyRate
-			// 
-			this.tbPartG_currencyRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.tbPartG_currencyRate.Location = new System.Drawing.Point(479, 79);
-			this.tbPartG_currencyRate.Name = "tbPartG_currencyRate";
-			this.tbPartG_currencyRate.Size = new System.Drawing.Size(469, 20);
-			this.tbPartG_currencyRate.TabIndex = 14;
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.tableLayoutPanel1.SetColumnSpan(this.label9, 2);
-			this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.Location = new System.Drawing.Point(4, 1);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(944, 41);
-			this.label9.TabIndex = 45;
-			this.label9.Text = "Раздел G. Данные по товарам, работам, услугам";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// tbPartG_currencyCode
-			// 
-			this.tbPartG_currencyCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.tbPartG_currencyCode.Location = new System.Drawing.Point(479, 48);
-			this.tbPartG_currencyCode.Name = "tbPartG_currencyCode";
-			this.tbPartG_currencyCode.Size = new System.Drawing.Size(469, 20);
-			this.tbPartG_currencyCode.TabIndex = 46;
-			// 
-			// l_PartG_totalNdsAmount
-			// 
-			this.l_PartG_totalNdsAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.l_PartG_totalNdsAmount.AutoSize = true;
-			this.l_PartG_totalNdsAmount.Location = new System.Drawing.Point(4, 674);
-			this.l_PartG_totalNdsAmount.Name = "l_PartG_totalNdsAmount";
-			this.l_PartG_totalNdsAmount.Size = new System.Drawing.Size(82, 13);
-			this.l_PartG_totalNdsAmount.TabIndex = 53;
-			this.l_PartG_totalNdsAmount.Text = "totalNdsAmount";
-			// 
-			// l_PartG_totalPriceWithoutTax
-			// 
-			this.l_PartG_totalPriceWithoutTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.l_PartG_totalPriceWithoutTax.AutoSize = true;
-			this.l_PartG_totalPriceWithoutTax.Location = new System.Drawing.Point(4, 704);
-			this.l_PartG_totalPriceWithoutTax.Name = "l_PartG_totalPriceWithoutTax";
-			this.l_PartG_totalPriceWithoutTax.Size = new System.Drawing.Size(106, 13);
-			this.l_PartG_totalPriceWithoutTax.TabIndex = 54;
-			this.l_PartG_totalPriceWithoutTax.Text = "totalPriceWithoutTax";
-			// 
-			// l_PartG_totalPriceWithTax
-			// 
-			this.l_PartG_totalPriceWithTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.l_PartG_totalPriceWithTax.AutoSize = true;
-			this.l_PartG_totalPriceWithTax.Location = new System.Drawing.Point(4, 734);
-			this.l_PartG_totalPriceWithTax.Name = "l_PartG_totalPriceWithTax";
-			this.l_PartG_totalPriceWithTax.Size = new System.Drawing.Size(91, 13);
-			this.l_PartG_totalPriceWithTax.TabIndex = 55;
-			this.l_PartG_totalPriceWithTax.Text = "totalPriceWithTax";
-			// 
-			// l_PartG_totalTurnoverSize
-			// 
-			this.l_PartG_totalTurnoverSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.l_PartG_totalTurnoverSize.AutoSize = true;
-			this.l_PartG_totalTurnoverSize.Location = new System.Drawing.Point(4, 767);
-			this.l_PartG_totalTurnoverSize.Name = "l_PartG_totalTurnoverSize";
-			this.l_PartG_totalTurnoverSize.Size = new System.Drawing.Size(90, 13);
-			this.l_PartG_totalTurnoverSize.TabIndex = 56;
-			this.l_PartG_totalTurnoverSize.Text = "totalTurnoverSize";
-			// 
-			// tbPartG_totalExciseAmount
-			// 
-			this.tbPartG_totalExciseAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartG_totalExciseAmount.Location = new System.Drawing.Point(479, 640);
-			this.tbPartG_totalExciseAmount.Name = "tbPartG_totalExciseAmount";
-			this.tbPartG_totalExciseAmount.Size = new System.Drawing.Size(300, 20);
-			this.tbPartG_totalExciseAmount.TabIndex = 57;
-			// 
-			// l_PartG_totalExciseAmount
-			// 
-			this.l_PartG_totalExciseAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.l_PartG_totalExciseAmount.AutoSize = true;
-			this.l_PartG_totalExciseAmount.Location = new System.Drawing.Point(4, 644);
-			this.l_PartG_totalExciseAmount.Name = "l_PartG_totalExciseAmount";
-			this.l_PartG_totalExciseAmount.Size = new System.Drawing.Size(94, 13);
-			this.l_PartG_totalExciseAmount.TabIndex = 52;
-			this.l_PartG_totalExciseAmount.Text = "totalExciseAmount";
-			// 
-			// l_PartG_ndsRateType
-			// 
-			this.l_PartG_ndsRateType.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.l_PartG_ndsRateType.AutoSize = true;
-			this.l_PartG_ndsRateType.Location = new System.Drawing.Point(4, 113);
-			this.l_PartG_ndsRateType.Name = "l_PartG_ndsRateType";
-			this.l_PartG_ndsRateType.Size = new System.Drawing.Size(71, 13);
-			this.l_PartG_ndsRateType.TabIndex = 62;
-			this.l_PartG_ndsRateType.Text = "ndsRateType";
-			// 
-			// chbxPartG_withoutNDS
-			// 
-			this.chbxPartG_withoutNDS.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.chbxPartG_withoutNDS.AutoSize = true;
-			this.chbxPartG_withoutNDS.Location = new System.Drawing.Point(479, 111);
-			this.chbxPartG_withoutNDS.Name = "chbxPartG_withoutNDS";
-			this.chbxPartG_withoutNDS.Size = new System.Drawing.Size(171, 17);
-			this.chbxPartG_withoutNDS.TabIndex = 63;
-			this.chbxPartG_withoutNDS.Text = "Тип НДС (\'Без НДС – не РК\')";
-			this.chbxPartG_withoutNDS.UseVisualStyleBackColor = true;
 			// 
 			// rowNumber
 			// 
@@ -441,6 +311,137 @@
 			this.additional.FillWeight = 200F;
 			this.additional.HeaderText = "Дополнительные данные";
 			this.additional.Name = "additional";
+			// 
+			// label1
+			// 
+			this.label1.AutoEllipsis = true;
+			this.label1.AutoSize = true;
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Location = new System.Drawing.Point(4, 43);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(468, 30);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "33.1 код валюты";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label2.Location = new System.Drawing.Point(4, 74);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(468, 30);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "32.2 курс валюты";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbPartG_currencyRate
+			// 
+			this.tbPartG_currencyRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartG_currencyRate.Location = new System.Drawing.Point(479, 79);
+			this.tbPartG_currencyRate.Name = "tbPartG_currencyRate";
+			this.tbPartG_currencyRate.Size = new System.Drawing.Size(469, 20);
+			this.tbPartG_currencyRate.TabIndex = 14;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.tableLayoutPanel1.SetColumnSpan(this.label9, 2);
+			this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.Location = new System.Drawing.Point(4, 1);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(944, 41);
+			this.label9.TabIndex = 45;
+			this.label9.Text = "Раздел G. Данные по товарам, работам, услугам";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// tbPartG_currencyCode
+			// 
+			this.tbPartG_currencyCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartG_currencyCode.Location = new System.Drawing.Point(479, 48);
+			this.tbPartG_currencyCode.Name = "tbPartG_currencyCode";
+			this.tbPartG_currencyCode.Size = new System.Drawing.Size(469, 20);
+			this.tbPartG_currencyCode.TabIndex = 46;
+			// 
+			// l_PartG_totalNdsAmount
+			// 
+			this.l_PartG_totalNdsAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_PartG_totalNdsAmount.AutoSize = true;
+			this.l_PartG_totalNdsAmount.Location = new System.Drawing.Point(4, 674);
+			this.l_PartG_totalNdsAmount.Name = "l_PartG_totalNdsAmount";
+			this.l_PartG_totalNdsAmount.Size = new System.Drawing.Size(82, 13);
+			this.l_PartG_totalNdsAmount.TabIndex = 53;
+			this.l_PartG_totalNdsAmount.Text = "totalNdsAmount";
+			// 
+			// l_PartG_totalPriceWithoutTax
+			// 
+			this.l_PartG_totalPriceWithoutTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_PartG_totalPriceWithoutTax.AutoSize = true;
+			this.l_PartG_totalPriceWithoutTax.Location = new System.Drawing.Point(4, 704);
+			this.l_PartG_totalPriceWithoutTax.Name = "l_PartG_totalPriceWithoutTax";
+			this.l_PartG_totalPriceWithoutTax.Size = new System.Drawing.Size(106, 13);
+			this.l_PartG_totalPriceWithoutTax.TabIndex = 54;
+			this.l_PartG_totalPriceWithoutTax.Text = "totalPriceWithoutTax";
+			// 
+			// l_PartG_totalPriceWithTax
+			// 
+			this.l_PartG_totalPriceWithTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_PartG_totalPriceWithTax.AutoSize = true;
+			this.l_PartG_totalPriceWithTax.Location = new System.Drawing.Point(4, 734);
+			this.l_PartG_totalPriceWithTax.Name = "l_PartG_totalPriceWithTax";
+			this.l_PartG_totalPriceWithTax.Size = new System.Drawing.Size(91, 13);
+			this.l_PartG_totalPriceWithTax.TabIndex = 55;
+			this.l_PartG_totalPriceWithTax.Text = "totalPriceWithTax";
+			// 
+			// l_PartG_totalTurnoverSize
+			// 
+			this.l_PartG_totalTurnoverSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_PartG_totalTurnoverSize.AutoSize = true;
+			this.l_PartG_totalTurnoverSize.Location = new System.Drawing.Point(4, 767);
+			this.l_PartG_totalTurnoverSize.Name = "l_PartG_totalTurnoverSize";
+			this.l_PartG_totalTurnoverSize.Size = new System.Drawing.Size(90, 13);
+			this.l_PartG_totalTurnoverSize.TabIndex = 56;
+			this.l_PartG_totalTurnoverSize.Text = "totalTurnoverSize";
+			// 
+			// tbPartG_totalExciseAmount
+			// 
+			this.tbPartG_totalExciseAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartG_totalExciseAmount.Location = new System.Drawing.Point(479, 640);
+			this.tbPartG_totalExciseAmount.Name = "tbPartG_totalExciseAmount";
+			this.tbPartG_totalExciseAmount.Size = new System.Drawing.Size(300, 20);
+			this.tbPartG_totalExciseAmount.TabIndex = 57;
+			// 
+			// l_PartG_totalExciseAmount
+			// 
+			this.l_PartG_totalExciseAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_PartG_totalExciseAmount.AutoSize = true;
+			this.l_PartG_totalExciseAmount.Location = new System.Drawing.Point(4, 644);
+			this.l_PartG_totalExciseAmount.Name = "l_PartG_totalExciseAmount";
+			this.l_PartG_totalExciseAmount.Size = new System.Drawing.Size(94, 13);
+			this.l_PartG_totalExciseAmount.TabIndex = 52;
+			this.l_PartG_totalExciseAmount.Text = "totalExciseAmount";
+			// 
+			// l_PartG_ndsRateType
+			// 
+			this.l_PartG_ndsRateType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_PartG_ndsRateType.AutoSize = true;
+			this.l_PartG_ndsRateType.Location = new System.Drawing.Point(4, 113);
+			this.l_PartG_ndsRateType.Name = "l_PartG_ndsRateType";
+			this.l_PartG_ndsRateType.Size = new System.Drawing.Size(71, 13);
+			this.l_PartG_ndsRateType.TabIndex = 62;
+			this.l_PartG_ndsRateType.Text = "ndsRateType";
+			// 
+			// chbxPartG_withoutNDS
+			// 
+			this.chbxPartG_withoutNDS.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.chbxPartG_withoutNDS.AutoSize = true;
+			this.chbxPartG_withoutNDS.Location = new System.Drawing.Point(479, 111);
+			this.chbxPartG_withoutNDS.Name = "chbxPartG_withoutNDS";
+			this.chbxPartG_withoutNDS.Size = new System.Drawing.Size(171, 17);
+			this.chbxPartG_withoutNDS.TabIndex = 63;
+			this.chbxPartG_withoutNDS.Text = "Тип НДС (\'Без НДС – не РК\')";
+			this.chbxPartG_withoutNDS.UseVisualStyleBackColor = true;
 			// 
 			// panelESFpartG
 			// 
