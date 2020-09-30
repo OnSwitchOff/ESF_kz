@@ -67,6 +67,8 @@ namespace ESF_kz.Forms
 			this.epPartA_PaperESFDate = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_PaperESFReason = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_TurnoverDate = new System.Windows.Forms.ErrorProvider(this.components);
+			this.l_PanelA_operatorFullname = new System.Windows.Forms.Label();
+			this.tbPartA_operatorFullname = new System.Windows.Forms.TextBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_Date)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_PaperESFDate)).BeginInit();
@@ -111,26 +113,29 @@ namespace ESF_kz.Forms
 			this.tableLayoutPanel1.Controls.Add(this.dtpPartA_PaperESFDate, 1, 6);
 			this.tableLayoutPanel1.Controls.Add(this.combxPartA_PaperESFReason, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.chbxPartA_isPaperESF, 1, 4);
+			this.tableLayoutPanel1.Controls.Add(this.l_PanelA_operatorFullname, 0, 16);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartA_operatorFullname, 1, 16);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 16;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250446F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.248571F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.247812F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.247812F));
+			this.tableLayoutPanel1.RowCount = 17;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882773F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.881009F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.880294F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.880294F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882354F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(948, 688);
 			this.tableLayoutPanel1.TabIndex = 0;
 			this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
@@ -139,9 +144,9 @@ namespace ESF_kz.Forms
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(4, 43);
+			this.label1.Location = new System.Drawing.Point(4, 41);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(308, 41);
+			this.label1.Size = new System.Drawing.Size(308, 39);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "1. Регистрационный номер";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,9 +155,9 @@ namespace ESF_kz.Forms
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(4, 85);
+			this.label2.Location = new System.Drawing.Point(4, 81);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(308, 41);
+			this.label2.Size = new System.Drawing.Size(308, 39);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "1.1 Номер учетной системы";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,8 +165,7 @@ namespace ESF_kz.Forms
 			// tbPartA_Num
 			// 
 			this.tbPartA_Num.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartA_Num.Enabled = false;
-			this.tbPartA_Num.Location = new System.Drawing.Point(319, 53);
+			this.tbPartA_Num.Location = new System.Drawing.Point(319, 50);
 			this.tbPartA_Num.Name = "tbPartA_Num";
 			this.tbPartA_Num.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_Num.TabIndex = 2;
@@ -171,9 +175,9 @@ namespace ESF_kz.Forms
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label3.Location = new System.Drawing.Point(4, 127);
+			this.label3.Location = new System.Drawing.Point(4, 121);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(308, 41);
+			this.label3.Size = new System.Drawing.Size(308, 39);
 			this.label3.TabIndex = 3;
 			this.label3.Text = "2. Дата выписки";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,9 +187,9 @@ namespace ESF_kz.Forms
 			this.label4.AutoSize = true;
 			this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(4, 169);
+			this.label4.Location = new System.Drawing.Point(4, 161);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(308, 41);
+			this.label4.Size = new System.Drawing.Size(308, 39);
 			this.label4.TabIndex = 4;
 			this.label4.Text = "Ввод бумажного ЭСФ";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,9 +199,9 @@ namespace ESF_kz.Forms
 			this.l_PaperESFDate.AutoSize = true;
 			this.l_PaperESFDate.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_PaperESFDate.Enabled = false;
-			this.l_PaperESFDate.Location = new System.Drawing.Point(4, 253);
+			this.l_PaperESFDate.Location = new System.Drawing.Point(4, 241);
 			this.l_PaperESFDate.Name = "l_PaperESFDate";
-			this.l_PaperESFDate.Size = new System.Drawing.Size(308, 41);
+			this.l_PaperESFDate.Size = new System.Drawing.Size(308, 39);
 			this.l_PaperESFDate.TabIndex = 5;
 			this.l_PaperESFDate.Text = "2.1 Дата выписки на бумажном носителе";
 			this.l_PaperESFDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,9 +211,9 @@ namespace ESF_kz.Forms
 			this.label6.AutoSize = true;
 			this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(4, 337);
+			this.label6.Location = new System.Drawing.Point(4, 321);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(308, 41);
+			this.label6.Size = new System.Drawing.Size(308, 39);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "4. Исправленный";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,9 +223,9 @@ namespace ESF_kz.Forms
 			this.l_CorrectedESFDate.AutoSize = true;
 			this.l_CorrectedESFDate.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_CorrectedESFDate.Enabled = false;
-			this.l_CorrectedESFDate.Location = new System.Drawing.Point(4, 379);
+			this.l_CorrectedESFDate.Location = new System.Drawing.Point(4, 361);
 			this.l_CorrectedESFDate.Name = "l_CorrectedESFDate";
-			this.l_CorrectedESFDate.Size = new System.Drawing.Size(308, 41);
+			this.l_CorrectedESFDate.Size = new System.Drawing.Size(308, 39);
 			this.l_CorrectedESFDate.TabIndex = 7;
 			this.l_CorrectedESFDate.Text = "4.1 Дата выписки";
 			this.l_CorrectedESFDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,9 +235,9 @@ namespace ESF_kz.Forms
 			this.l_CorrectedESFAccSysNum.AutoSize = true;
 			this.l_CorrectedESFAccSysNum.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_CorrectedESFAccSysNum.Enabled = false;
-			this.l_CorrectedESFAccSysNum.Location = new System.Drawing.Point(4, 421);
+			this.l_CorrectedESFAccSysNum.Location = new System.Drawing.Point(4, 401);
 			this.l_CorrectedESFAccSysNum.Name = "l_CorrectedESFAccSysNum";
-			this.l_CorrectedESFAccSysNum.Size = new System.Drawing.Size(308, 41);
+			this.l_CorrectedESFAccSysNum.Size = new System.Drawing.Size(308, 39);
 			this.l_CorrectedESFAccSysNum.TabIndex = 8;
 			this.l_CorrectedESFAccSysNum.Text = "4.2 Номер учетной системы";
 			this.l_CorrectedESFAccSysNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,9 +247,9 @@ namespace ESF_kz.Forms
 			this.l_CorrectedESFNum.AutoSize = true;
 			this.l_CorrectedESFNum.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_CorrectedESFNum.Enabled = false;
-			this.l_CorrectedESFNum.Location = new System.Drawing.Point(4, 463);
+			this.l_CorrectedESFNum.Location = new System.Drawing.Point(4, 441);
 			this.l_CorrectedESFNum.Name = "l_CorrectedESFNum";
-			this.l_CorrectedESFNum.Size = new System.Drawing.Size(308, 41);
+			this.l_CorrectedESFNum.Size = new System.Drawing.Size(308, 39);
 			this.l_CorrectedESFNum.TabIndex = 9;
 			this.l_CorrectedESFNum.Text = "4.3 Регистрационный номер";
 			this.l_CorrectedESFNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -255,9 +259,9 @@ namespace ESF_kz.Forms
 			this.label10.AutoSize = true;
 			this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(4, 505);
+			this.label10.Location = new System.Drawing.Point(4, 481);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(308, 41);
+			this.label10.Size = new System.Drawing.Size(308, 39);
 			this.label10.TabIndex = 10;
 			this.label10.Text = "5. Дополнительный";
 			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -267,9 +271,9 @@ namespace ESF_kz.Forms
 			this.l_AddedESFDate.AutoSize = true;
 			this.l_AddedESFDate.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_AddedESFDate.Enabled = false;
-			this.l_AddedESFDate.Location = new System.Drawing.Point(4, 547);
+			this.l_AddedESFDate.Location = new System.Drawing.Point(4, 521);
 			this.l_AddedESFDate.Name = "l_AddedESFDate";
-			this.l_AddedESFDate.Size = new System.Drawing.Size(308, 41);
+			this.l_AddedESFDate.Size = new System.Drawing.Size(308, 39);
 			this.l_AddedESFDate.TabIndex = 11;
 			this.l_AddedESFDate.Text = "5.1 Дата выписки";
 			this.l_AddedESFDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,9 +283,9 @@ namespace ESF_kz.Forms
 			this.l_AddedESFAccSysNum.AutoSize = true;
 			this.l_AddedESFAccSysNum.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_AddedESFAccSysNum.Enabled = false;
-			this.l_AddedESFAccSysNum.Location = new System.Drawing.Point(4, 589);
+			this.l_AddedESFAccSysNum.Location = new System.Drawing.Point(4, 561);
 			this.l_AddedESFAccSysNum.Name = "l_AddedESFAccSysNum";
-			this.l_AddedESFAccSysNum.Size = new System.Drawing.Size(308, 41);
+			this.l_AddedESFAccSysNum.Size = new System.Drawing.Size(308, 39);
 			this.l_AddedESFAccSysNum.TabIndex = 12;
 			this.l_AddedESFAccSysNum.Text = "5.2 Номер учетной системы ";
 			this.l_AddedESFAccSysNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -291,9 +295,9 @@ namespace ESF_kz.Forms
 			this.l_AddedESFNum.AutoSize = true;
 			this.l_AddedESFNum.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_AddedESFNum.Enabled = false;
-			this.l_AddedESFNum.Location = new System.Drawing.Point(4, 631);
+			this.l_AddedESFNum.Location = new System.Drawing.Point(4, 601);
 			this.l_AddedESFNum.Name = "l_AddedESFNum";
-			this.l_AddedESFNum.Size = new System.Drawing.Size(308, 56);
+			this.l_AddedESFNum.Size = new System.Drawing.Size(308, 39);
 			this.l_AddedESFNum.TabIndex = 13;
 			this.l_AddedESFNum.Text = "5.3 Регистрационный номер";
 			this.l_AddedESFNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -301,7 +305,7 @@ namespace ESF_kz.Forms
 			// tbPartA_AccSysNum
 			// 
 			this.tbPartA_AccSysNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartA_AccSysNum.Location = new System.Drawing.Point(319, 95);
+			this.tbPartA_AccSysNum.Location = new System.Drawing.Point(319, 90);
 			this.tbPartA_AccSysNum.Name = "tbPartA_AccSysNum";
 			this.tbPartA_AccSysNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_AccSysNum.TabIndex = 14;
@@ -309,8 +313,7 @@ namespace ESF_kz.Forms
 			// dtpPartA_Date
 			// 
 			this.dtpPartA_Date.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartA_Date.Enabled = false;
-			this.dtpPartA_Date.Location = new System.Drawing.Point(319, 137);
+			this.dtpPartA_Date.Location = new System.Drawing.Point(319, 130);
 			this.dtpPartA_Date.Name = "dtpPartA_Date";
 			this.dtpPartA_Date.Size = new System.Drawing.Size(200, 20);
 			this.dtpPartA_Date.TabIndex = 15;
@@ -318,7 +321,7 @@ namespace ESF_kz.Forms
 			// dtpPartA_TurnoverDate
 			// 
 			this.dtpPartA_TurnoverDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartA_TurnoverDate.Location = new System.Drawing.Point(319, 305);
+			this.dtpPartA_TurnoverDate.Location = new System.Drawing.Point(319, 290);
 			this.dtpPartA_TurnoverDate.MaxDate = new System.DateTime(2099, 7, 16, 0, 0, 0, 0);
 			this.dtpPartA_TurnoverDate.MinDate = new System.DateTime(2015, 9, 4, 14, 49, 4, 937);
 			this.dtpPartA_TurnoverDate.Name = "dtpPartA_TurnoverDate";
@@ -331,9 +334,9 @@ namespace ESF_kz.Forms
 			// 
 			this.chbxPartA_isCorrectedESF.AutoSize = true;
 			this.chbxPartA_isCorrectedESF.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.chbxPartA_isCorrectedESF.Location = new System.Drawing.Point(319, 340);
+			this.chbxPartA_isCorrectedESF.Location = new System.Drawing.Point(319, 324);
 			this.chbxPartA_isCorrectedESF.Name = "chbxPartA_isCorrectedESF";
-			this.chbxPartA_isCorrectedESF.Size = new System.Drawing.Size(625, 35);
+			this.chbxPartA_isCorrectedESF.Size = new System.Drawing.Size(625, 33);
 			this.chbxPartA_isCorrectedESF.TabIndex = 18;
 			this.chbxPartA_isCorrectedESF.UseVisualStyleBackColor = true;
 			this.chbxPartA_isCorrectedESF.CheckedChanged += new System.EventHandler(this.chbxPartA_isCorrectedESF_CheckedChanged);
@@ -342,7 +345,7 @@ namespace ESF_kz.Forms
 			// 
 			this.dtpPartA_CorrectedESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.dtpPartA_CorrectedESFDate.Enabled = false;
-			this.dtpPartA_CorrectedESFDate.Location = new System.Drawing.Point(319, 389);
+			this.dtpPartA_CorrectedESFDate.Location = new System.Drawing.Point(319, 370);
 			this.dtpPartA_CorrectedESFDate.Name = "dtpPartA_CorrectedESFDate";
 			this.dtpPartA_CorrectedESFDate.Size = new System.Drawing.Size(200, 20);
 			this.dtpPartA_CorrectedESFDate.TabIndex = 19;
@@ -351,7 +354,7 @@ namespace ESF_kz.Forms
 			// 
 			this.tbPartA_CorrectedESFAccSysNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbPartA_CorrectedESFAccSysNum.Enabled = false;
-			this.tbPartA_CorrectedESFAccSysNum.Location = new System.Drawing.Point(319, 431);
+			this.tbPartA_CorrectedESFAccSysNum.Location = new System.Drawing.Point(319, 410);
 			this.tbPartA_CorrectedESFAccSysNum.Name = "tbPartA_CorrectedESFAccSysNum";
 			this.tbPartA_CorrectedESFAccSysNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_CorrectedESFAccSysNum.TabIndex = 20;
@@ -360,7 +363,7 @@ namespace ESF_kz.Forms
 			// 
 			this.tbPartA_CorrectedESFNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbPartA_CorrectedESFNum.Enabled = false;
-			this.tbPartA_CorrectedESFNum.Location = new System.Drawing.Point(319, 473);
+			this.tbPartA_CorrectedESFNum.Location = new System.Drawing.Point(319, 450);
 			this.tbPartA_CorrectedESFNum.Name = "tbPartA_CorrectedESFNum";
 			this.tbPartA_CorrectedESFNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_CorrectedESFNum.TabIndex = 21;
@@ -369,9 +372,9 @@ namespace ESF_kz.Forms
 			// 
 			this.chbxPartA_isAddedESF.AutoSize = true;
 			this.chbxPartA_isAddedESF.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.chbxPartA_isAddedESF.Location = new System.Drawing.Point(319, 508);
+			this.chbxPartA_isAddedESF.Location = new System.Drawing.Point(319, 484);
 			this.chbxPartA_isAddedESF.Name = "chbxPartA_isAddedESF";
-			this.chbxPartA_isAddedESF.Size = new System.Drawing.Size(625, 35);
+			this.chbxPartA_isAddedESF.Size = new System.Drawing.Size(625, 33);
 			this.chbxPartA_isAddedESF.TabIndex = 22;
 			this.chbxPartA_isAddedESF.UseVisualStyleBackColor = true;
 			this.chbxPartA_isAddedESF.CheckedChanged += new System.EventHandler(this.chbxPartA_isAddedESF_CheckedChanged);
@@ -380,7 +383,7 @@ namespace ESF_kz.Forms
 			// 
 			this.dtpPartA_AddedESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.dtpPartA_AddedESFDate.Enabled = false;
-			this.dtpPartA_AddedESFDate.Location = new System.Drawing.Point(319, 557);
+			this.dtpPartA_AddedESFDate.Location = new System.Drawing.Point(319, 530);
 			this.dtpPartA_AddedESFDate.Name = "dtpPartA_AddedESFDate";
 			this.dtpPartA_AddedESFDate.Size = new System.Drawing.Size(200, 20);
 			this.dtpPartA_AddedESFDate.TabIndex = 23;
@@ -389,7 +392,7 @@ namespace ESF_kz.Forms
 			// 
 			this.tbPartA_AddedESFAccSysNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbPartA_AddedESFAccSysNum.Enabled = false;
-			this.tbPartA_AddedESFAccSysNum.Location = new System.Drawing.Point(319, 599);
+			this.tbPartA_AddedESFAccSysNum.Location = new System.Drawing.Point(319, 570);
 			this.tbPartA_AddedESFAccSysNum.Name = "tbPartA_AddedESFAccSysNum";
 			this.tbPartA_AddedESFAccSysNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_AddedESFAccSysNum.TabIndex = 24;
@@ -398,7 +401,7 @@ namespace ESF_kz.Forms
 			// 
 			this.tbPartA_AddedESFNum.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbPartA_AddedESFNum.Enabled = false;
-			this.tbPartA_AddedESFNum.Location = new System.Drawing.Point(319, 649);
+			this.tbPartA_AddedESFNum.Location = new System.Drawing.Point(319, 610);
 			this.tbPartA_AddedESFNum.Name = "tbPartA_AddedESFNum";
 			this.tbPartA_AddedESFNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_AddedESFNum.TabIndex = 25;
@@ -411,7 +414,7 @@ namespace ESF_kz.Forms
 			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label14.Location = new System.Drawing.Point(4, 1);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(940, 41);
+			this.label14.Size = new System.Drawing.Size(940, 39);
 			this.label14.TabIndex = 26;
 			this.label14.Text = "Раздел А. Общий раздел";
 			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -421,9 +424,9 @@ namespace ESF_kz.Forms
 			this.l_PaperESFReason.AutoSize = true;
 			this.l_PaperESFReason.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.l_PaperESFReason.Enabled = false;
-			this.l_PaperESFReason.Location = new System.Drawing.Point(4, 211);
+			this.l_PaperESFReason.Location = new System.Drawing.Point(4, 201);
 			this.l_PaperESFReason.Name = "l_PaperESFReason";
-			this.l_PaperESFReason.Size = new System.Drawing.Size(308, 41);
+			this.l_PaperESFReason.Size = new System.Drawing.Size(308, 39);
 			this.l_PaperESFReason.TabIndex = 27;
 			this.l_PaperESFReason.Text = "Причина выписки на бумажном носителе";
 			this.l_PaperESFReason.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -432,9 +435,9 @@ namespace ESF_kz.Forms
 			// 
 			this.l_TurnoverDate.AutoSize = true;
 			this.l_TurnoverDate.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.l_TurnoverDate.Location = new System.Drawing.Point(4, 295);
+			this.l_TurnoverDate.Location = new System.Drawing.Point(4, 281);
 			this.l_TurnoverDate.Name = "l_TurnoverDate";
-			this.l_TurnoverDate.Size = new System.Drawing.Size(308, 41);
+			this.l_TurnoverDate.Size = new System.Drawing.Size(308, 39);
 			this.l_TurnoverDate.TabIndex = 28;
 			this.l_TurnoverDate.Text = "3. Дата совершения оборота";
 			this.l_TurnoverDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -443,10 +446,11 @@ namespace ESF_kz.Forms
 			// 
 			this.dtpPartA_PaperESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.dtpPartA_PaperESFDate.Enabled = false;
-			this.dtpPartA_PaperESFDate.Location = new System.Drawing.Point(319, 263);
+			this.dtpPartA_PaperESFDate.Location = new System.Drawing.Point(319, 250);
 			this.dtpPartA_PaperESFDate.Name = "dtpPartA_PaperESFDate";
 			this.dtpPartA_PaperESFDate.Size = new System.Drawing.Size(200, 20);
 			this.dtpPartA_PaperESFDate.TabIndex = 16;
+			this.dtpPartA_PaperESFDate.ValueChanged += new System.EventHandler(this.dtpPartA_PaperESFDate_ValueChanged);
 			// 
 			// combxPartA_PaperESFReason
 			// 
@@ -457,7 +461,7 @@ namespace ESF_kz.Forms
             "Простой системы",
             "Блокирование доступа к Системе",
             "Отсутствовало требование по выписке ЭСФ"});
-			this.combxPartA_PaperESFReason.Location = new System.Drawing.Point(319, 221);
+			this.combxPartA_PaperESFReason.Location = new System.Drawing.Point(319, 210);
 			this.combxPartA_PaperESFReason.Name = "combxPartA_PaperESFReason";
 			this.combxPartA_PaperESFReason.Size = new System.Drawing.Size(300, 21);
 			this.combxPartA_PaperESFReason.TabIndex = 29;
@@ -467,7 +471,7 @@ namespace ESF_kz.Forms
 			// 
 			this.chbxPartA_isPaperESF.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.chbxPartA_isPaperESF.AutoSize = true;
-			this.chbxPartA_isPaperESF.Location = new System.Drawing.Point(319, 182);
+			this.chbxPartA_isPaperESF.Location = new System.Drawing.Point(319, 173);
 			this.chbxPartA_isPaperESF.Name = "chbxPartA_isPaperESF";
 			this.chbxPartA_isPaperESF.Size = new System.Drawing.Size(15, 14);
 			this.chbxPartA_isPaperESF.TabIndex = 30;
@@ -493,6 +497,25 @@ namespace ESF_kz.Forms
 			// 
 			this.epPartA_TurnoverDate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
 			this.epPartA_TurnoverDate.ContainerControl = this;
+			// 
+			// l_PanelA_operatorFullname
+			// 
+			this.l_PanelA_operatorFullname.AutoSize = true;
+			this.l_PanelA_operatorFullname.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PanelA_operatorFullname.Location = new System.Drawing.Point(4, 641);
+			this.l_PanelA_operatorFullname.Name = "l_PanelA_operatorFullname";
+			this.l_PanelA_operatorFullname.Size = new System.Drawing.Size(308, 46);
+			this.l_PanelA_operatorFullname.TabIndex = 31;
+			this.l_PanelA_operatorFullname.Text = "ФИО оператора отправившего ЭСФ";
+			this.l_PanelA_operatorFullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbPartA_operatorFullname
+			// 
+			this.tbPartA_operatorFullname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartA_operatorFullname.Location = new System.Drawing.Point(319, 654);
+			this.tbPartA_operatorFullname.Name = "tbPartA_operatorFullname";
+			this.tbPartA_operatorFullname.Size = new System.Drawing.Size(400, 20);
+			this.tbPartA_operatorFullname.TabIndex = 32;
 			// 
 			// panelESFpartA
 			// 
@@ -555,5 +578,7 @@ namespace ESF_kz.Forms
 		private System.Windows.Forms.ErrorProvider epPartA_PaperESFDate;
 		private System.Windows.Forms.ErrorProvider epPartA_PaperESFReason;
 		private System.Windows.Forms.ErrorProvider epPartA_TurnoverDate;
+		private System.Windows.Forms.Label l_PanelA_operatorFullname;
+		private System.Windows.Forms.TextBox tbPartA_operatorFullname;
 	}
 }

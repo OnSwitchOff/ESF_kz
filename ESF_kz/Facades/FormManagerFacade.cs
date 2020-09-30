@@ -31,7 +31,7 @@ namespace ESF_kz
 
 		internal static string getOperatorFullname()
 		{
-			return "Kassov VIktor";
+			return invoiceForm.getPannel<panelESFpartA>().getOperatorFullname();
 		}
 
 		internal static DateTime getRelatedInvoiceDate()

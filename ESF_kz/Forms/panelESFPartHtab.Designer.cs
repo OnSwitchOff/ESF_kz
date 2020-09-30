@@ -54,7 +54,11 @@
 			this.productNumberInDeclaration = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.catalogTruId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.additional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.l_totalExciseAmount = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -71,16 +75,24 @@
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartH_ParticipantTin, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.l_totalExciseAmount, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 6);
+			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 7);
+			this.tableLayoutPanel1.Controls.Add(this.label4, 0, 8);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 5;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00005F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.999997F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.999997F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.99995F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999994F));
+			this.tableLayoutPanel1.RowCount = 9;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.695696F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347824F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347824F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.86952F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.347826F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(928, 645);
 			this.tableLayoutPanel1.TabIndex = 6;
 			// 
@@ -89,9 +101,9 @@
 			this.l_PartH_ParticipantTin.AutoEllipsis = true;
 			this.l_PartH_ParticipantTin.AutoSize = true;
 			this.l_PartH_ParticipantTin.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.l_PartH_ParticipantTin.Location = new System.Drawing.Point(4, 65);
+			this.l_PartH_ParticipantTin.Location = new System.Drawing.Point(4, 57);
 			this.l_PartH_ParticipantTin.Name = "l_PartH_ParticipantTin";
-			this.l_PartH_ParticipantTin.Size = new System.Drawing.Size(456, 31);
+			this.l_PartH_ParticipantTin.Size = new System.Drawing.Size(456, 27);
 			this.l_PartH_ParticipantTin.TabIndex = 0;
 			this.l_PartH_ParticipantTin.Text = "34.1 ИИН/БИН участников совместной деятельности";
 			this.l_PartH_ParticipantTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,9 +112,9 @@
 			// 
 			this.l_PartH_ParticipantReorgTin.AutoSize = true;
 			this.l_PartH_ParticipantReorgTin.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.l_PartH_ParticipantReorgTin.Location = new System.Drawing.Point(4, 97);
+			this.l_PartH_ParticipantReorgTin.Location = new System.Drawing.Point(4, 85);
 			this.l_PartH_ParticipantReorgTin.Name = "l_PartH_ParticipantReorgTin";
-			this.l_PartH_ParticipantReorgTin.Size = new System.Drawing.Size(456, 31);
+			this.l_PartH_ParticipantReorgTin.Size = new System.Drawing.Size(456, 27);
 			this.l_PartH_ParticipantReorgTin.TabIndex = 1;
 			this.l_PartH_ParticipantReorgTin.Text = "34.2 БИН реорганизованного лица";
 			this.l_PartH_ParticipantReorgTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,7 +122,7 @@
 			// tbPartH_ParticipantReorgTin
 			// 
 			this.tbPartH_ParticipantReorgTin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.tbPartH_ParticipantReorgTin.Location = new System.Drawing.Point(467, 102);
+			this.tbPartH_ParticipantReorgTin.Location = new System.Drawing.Point(467, 88);
 			this.tbPartH_ParticipantReorgTin.Name = "tbPartH_ParticipantReorgTin";
 			this.tbPartH_ParticipantReorgTin.Size = new System.Drawing.Size(457, 20);
 			this.tbPartH_ParticipantReorgTin.TabIndex = 14;
@@ -123,7 +135,7 @@
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.Location = new System.Drawing.Point(4, 1);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(920, 63);
+			this.label9.Size = new System.Drawing.Size(920, 55);
 			this.label9.TabIndex = 45;
 			this.label9.Text = "Раздел H. Данные по товарам, работам, услугам участников совместной деятельности";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,7 +143,7 @@
 			// tbPartH_ParticipantTin
 			// 
 			this.tbPartH_ParticipantTin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.tbPartH_ParticipantTin.Location = new System.Drawing.Point(467, 70);
+			this.tbPartH_ParticipantTin.Location = new System.Drawing.Point(467, 60);
 			this.tbPartH_ParticipantTin.Name = "tbPartH_ParticipantTin";
 			this.tbPartH_ParticipantTin.Size = new System.Drawing.Size(457, 20);
 			this.tbPartH_ParticipantTin.TabIndex = 46;
@@ -162,9 +174,9 @@
             this.additional});
 			this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView1.Location = new System.Drawing.Point(4, 132);
+			this.dataGridView1.Location = new System.Drawing.Point(4, 116);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(920, 441);
+			this.dataGridView1.Size = new System.Drawing.Size(920, 380);
 			this.dataGridView1.TabIndex = 47;
 			// 
 			// rowNumber
@@ -304,14 +316,50 @@
 			this.additional.HeaderText = "Дополнительные данные";
 			this.additional.Name = "additional";
 			// 
+			// l_totalExciseAmount
+			// 
+			this.l_totalExciseAmount.AutoSize = true;
+			this.l_totalExciseAmount.Location = new System.Drawing.Point(4, 500);
+			this.l_totalExciseAmount.Name = "l_totalExciseAmount";
+			this.l_totalExciseAmount.Size = new System.Drawing.Size(94, 13);
+			this.l_totalExciseAmount.TabIndex = 48;
+			this.l_totalExciseAmount.Text = "totalExciseAmount";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(4, 528);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(82, 13);
+			this.label1.TabIndex = 49;
+			this.label1.Text = "totalNdsAmount";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(4, 556);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(91, 13);
+			this.label2.TabIndex = 50;
+			this.label2.Text = "totalPriceWithTax";
+			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(4, 577);
+			this.label3.Location = new System.Drawing.Point(4, 584);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(85, 13);
-			this.label3.TabIndex = 48;
-			this.label3.Text = "Всего по счету:";
+			this.label3.Size = new System.Drawing.Size(107, 13);
+			this.label3.TabIndex = 51;
+			this.label3.Text = "totalPriceWIthoutTax";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(4, 612);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(90, 13);
+			this.label4.TabIndex = 52;
+			this.label4.Text = "totalTurnoverSize";
 			// 
 			// panelESFpartHtab
 			// 
@@ -355,7 +403,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label l_totalExciseAmount;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TNVED;
@@ -373,5 +421,9 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn productNumberInDeclaration;
 		private System.Windows.Forms.DataGridViewTextBoxColumn catalogTruId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn additional;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label4;
 	}
 }

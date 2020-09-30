@@ -19,7 +19,7 @@ namespace ESF_kz
 		[XmlElement(ElementName = "date")]
 		public string dateString
 		{
-			get { return this.date.ToString("dd.mm.yyyy"); }
+			get { return this.date.ToString("dd.MM.yyyy"); }
 			set { this.date = DateTime.Parse(value); }
 		}
 

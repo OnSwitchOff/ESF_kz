@@ -105,6 +105,7 @@ namespace ESF_kz
 			colorSelectedButton(btnESFpartB);
 			this.PanelESFpartB.Show();
 			this.PanelESFpartB.BringToFront();
+			this.PanelESFpartB.CreateFirstTab("Seller");
 			lastShownPanel = PanelESFpartB;
 		}
 
@@ -247,7 +248,7 @@ namespace ESF_kz
 
 		private void ESF_form_ResizeBegin(object sender, EventArgs e)
 		{
-			hideAllPanels();
+
 		}
 
 		private void ESF_form_ResizeEnd(object sender, EventArgs e)

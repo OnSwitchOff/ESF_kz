@@ -188,6 +188,7 @@ namespace ESF_kz
 			// btnESFpartJ
 			// 
 			this.btnESFpartJ.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnESFpartJ.Enabled = false;
 			this.btnESFpartJ.Location = new System.Drawing.Point(3, 435);
 			this.btnESFpartJ.Name = "btnESFpartJ";
 			this.btnESFpartJ.Size = new System.Drawing.Size(250, 42);
@@ -213,6 +214,7 @@ namespace ESF_kz
 			// btnESFpartH
 			// 
 			this.btnESFpartH.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnESFpartH.Enabled = false;
 			this.btnESFpartH.Location = new System.Drawing.Point(3, 339);
 			this.btnESFpartH.Name = "btnESFpartH";
 			this.btnESFpartH.Size = new System.Drawing.Size(250, 42);
@@ -351,33 +353,33 @@ namespace ESF_kz
 			// openToolStripMenuItem
 			// 
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.openToolStripMenuItem.Text = "open";
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
 			// 
 			// loadToolStripMenuItem
 			// 
 			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.loadToolStripMenuItem.Text = "load";
 			// 
 			// sendToolStripMenuItem
 			// 
 			this.sendToolStripMenuItem.Name = "sendToolStripMenuItem";
-			this.sendToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.sendToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.sendToolStripMenuItem.Text = "send";
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.saveAsToolStripMenuItem.Text = "save as";
 			this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
 			// 
 			// clearAllToolStripMenuItem
 			// 
 			this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
-			this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.clearAllToolStripMenuItem.Text = "clear All";
 			this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
 			// 

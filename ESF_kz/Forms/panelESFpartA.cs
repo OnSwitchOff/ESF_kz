@@ -21,6 +21,7 @@ namespace ESF_kz.Forms
 		public panelESFpartA()
 		{
 			InitializeComponent();
+			/*
 			//Проверка -1.1 Номер учетной системы-
 			tbAccSysNum_Validating(this.tbPartA_AccSysNum, null);
 			//Иницализация -2. Дата выписки- текущей датой
@@ -32,7 +33,25 @@ namespace ESF_kz.Forms
 			//Добавление делегата проверки -Причина выписки на бумажном носителе-
 			this.combxPartA_PaperESFReason.Validating += CombxPartA_PaperESFReason_Validating;
 			//Добавление делегата проверки -2.1 Дата выписки на бумажном носителе-
-			this.dtpPartA_PaperESFDate.Validating += DtpPartA_PaperESFDate_Validating;
+			this.dtpPartA_PaperESFDate.Validating += DtpPartA_PaperESFDate_Validating;*/
+		}
+
+		internal string getOperatorFullname()
+		{
+			return tbPartA_operatorFullname.Text;
+		}
+
+		internal bool setOperatorFullname(string name)
+		{
+			try
+			{
+				tbPartA_operatorFullname.Text = name;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 
 		internal string getAddedESFNum()
@@ -172,64 +191,6 @@ namespace ESF_kz.Forms
 			}
 		}
 
-
-		//Делегата проверки -2.1 Дата выписки на бумажном носителе-
-		private void DtpPartA_PaperESFDate_Validating(object sender, CancelEventArgs e)
-		{
-			bool flag = false;
-			string alertMsg = "";
-
-			bool isLargeCompany = false;//??????
-			bool isNDSPayer = false;//????			
-			bool isOlderThanFiveYears = DateTime.Now > dtpPartA_PaperESFDate.Value.AddYears(5);
-			bool isOlderThan_2018_01_01 = dtpPartA_PaperESFDate.Value < new DateTime(2018, 1, 1);
-			bool isOlderThan_2019_01_01 = dtpPartA_PaperESFDate.Value < new DateTime(2018, 1, 1);
-			bool isChosenMissingRequirement = combxPartA_PaperESFReason.Text == MISSING_REQUIREMENT; ;
-
-
-
-			if (isChosenMissingRequirement)
-			{
-				if (isOlderThanFiveYears)
-				{
-					alertMsg = "старше 5 лет";
-				}
-				else
-				{
-					//1. Если дата бумажного СФ, на который	необходимо выписать исправленный и дополнительный ЭСФ, является до 01.01.2018 года(но не больше 5 лет с текущей даты), то проверки осуществлять не нужно.
-					if (isOlderThan_2018_01_01)
-					{
-						flag = true;
-					}
-					//2. Если дата бумажного СФ, на который необходимо выписать исправленный и дополнительный ЭСФ, равна 01.01.2018 года и позже, то нужно проверить входит ли Пользователь в список крупных компаний.Если пользователь входит в 
-					//список крупных компаний, то выходит сообщение: "Вы не можете вводить бумажный СФ с причиной "Отсутствовало требование по выписке ЭСФ".
-					else if (!isOlderThan_2018_01_01 && isLargeCompany)
-					{
-						alertMsg = "Вы не можете вводить бумажный СФ с причиной \"Отсутствовало требование по выписке ЭСФ\"";
-					}
-					//3.Если дата бумажного СФ, на который необходимо выписать исправленный и дополнительный ЭСФ, равна 01.01.2019 года и позже(но не больше 5 лет с текущей даты), то необходимо проверить
-					//является ли Пользователь плательщиком НДС на дату выписки бумажного счетафактуры.При ошибке сообщение: "Вы не можете вводить бумажный СФ с причиной "Отсутствовало требование повыписке ЭСФ"".
-					else if (!isOlderThan_2019_01_01 && !isNDSPayer)
-					{
-						alertMsg = "Вы не можете вводить бумажный СФ с причиной \"Отсутствовало требование повыписке ЭСФ\"";
-					}
-					else
-					{
-						flag = true;
-					}					
-				}
-			}
-
-			if(!flag)
-			{
-				epPartA_PaperESFDate.SetError(dtpPartA_PaperESFDate, alertMsg);
-			}
-			else
-			{
-				epPartA_PaperESFDate.Clear();
-			}
-		}
-
 		internal bool setInvoiceTurnoverDate(DateTime turnoverDate)
 		{
 			try
@@ -243,10 +204,6 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal void setOperatorFullname(string operatorFullname)
-		{
-			//throw new NotImplementedException();
-		}
 
 		internal bool setInvoiceType(InvoiceType invoiceType)
 		{
@@ -329,7 +286,7 @@ namespace ESF_kz.Forms
 				case UNLAWFUL_REMOVAL_REGISTRATIONE:
 				case MISSING_REQUIREMENT:
 					dtpPartA_PaperESFDate.Enabled = true;
-					DtpPartA_PaperESFDate_Validating(epPartA_PaperESFDate, null);
+					CombxPartA_PaperESFReason_Validating(combxPartA_PaperESFReason, null);
 					break;
 				default:
 					dtpPartA_PaperESFDate.Enabled = false;
@@ -349,15 +306,21 @@ namespace ESF_kz.Forms
 			{
 				chbxPartA_isAddedESF.Checked = false;
 				l_CorrectedESFDate.Enabled = true;
+				dtpPartA_CorrectedESFDate.Enabled = true;
 				l_CorrectedESFAccSysNum.Enabled = true;
+				tbPartA_CorrectedESFAccSysNum.Enabled = true;
 				l_CorrectedESFNum.Enabled = true;
+				tbPartA_CorrectedESFNum.Enabled = true;
 				FillCorrectedESFData();				
 			}
 			else
 			{
 				l_CorrectedESFDate.Enabled = false;
+				dtpPartA_CorrectedESFDate.Enabled = false;
 				l_CorrectedESFAccSysNum.Enabled = false;
+				tbPartA_CorrectedESFAccSysNum.Enabled = false;
 				l_CorrectedESFNum.Enabled = false;
+				tbPartA_CorrectedESFNum.Enabled = false;
 				ClearCorrectedESFData();
 			}
 		}
@@ -383,7 +346,9 @@ namespace ESF_kz.Forms
 
 		private void ClearCorrectedESFData()
 		{
-			
+			dtpPartA_CorrectedESFDate.Value = DateTime.Now;
+			tbPartA_CorrectedESFAccSysNum.Text = "";
+			tbPartA_CorrectedESFNum.Text = "";
 		}
 
 		private void FillCorrectedESFData()
@@ -399,6 +364,10 @@ namespace ESF_kz.Forms
 				l_AddedESFDate.Enabled = true;
 				l_AddedESFAccSysNum.Enabled = true;
 				l_AddedESFNum.Enabled = true;
+				dtpPartA_AddedESFDate.Enabled = true;				
+				tbPartA_AddedESFAccSysNum.Enabled = true;				
+				tbPartA_AddedESFNum.Enabled = true;
+				
 				FillAddedESFData();
 			}
 			else
@@ -406,13 +375,18 @@ namespace ESF_kz.Forms
 				l_AddedESFDate.Enabled = false;
 				l_AddedESFAccSysNum.Enabled = false;
 				l_AddedESFNum.Enabled = false;
+				dtpPartA_AddedESFDate.Enabled = false;
+				tbPartA_AddedESFAccSysNum.Enabled = false;
+				tbPartA_AddedESFNum.Enabled = false;				
 				ClearAddedESFData();
 			}
 		}
 
 		private void ClearAddedESFData()
 		{
-			
+			dtpPartA_AddedESFDate.Value = DateTime.Now;
+			tbPartA_AddedESFAccSysNum.Text = "";
+			tbPartA_AddedESFNum.Text = "";
 		}
 
 		private void FillAddedESFData()
@@ -516,6 +490,62 @@ namespace ESF_kz.Forms
 			else
 			{
 				return InvoiceType.ORDINARY_INVOICE;
+			}
+		}
+
+		private void dtpPartA_PaperESFDate_ValueChanged(object sender, EventArgs e)
+		{
+			bool flag = false;
+			string alertMsg = "";
+
+			bool isLargeCompany = false;//??????
+			bool isNDSPayer = false;//????			
+			bool isOlderThanFiveYears = DateTime.Now > dtpPartA_PaperESFDate.Value.AddYears(5);
+			bool isOlderThan_2018_01_01 = dtpPartA_PaperESFDate.Value < new DateTime(2018, 1, 1);
+			bool isOlderThan_2019_01_01 = dtpPartA_PaperESFDate.Value < new DateTime(2018, 1, 1);
+			bool isChosenMissingRequirement = combxPartA_PaperESFReason.Text == MISSING_REQUIREMENT; ;
+
+
+
+			if (isChosenMissingRequirement)
+			{
+				if (isOlderThanFiveYears)
+				{
+					alertMsg = "старше 5 лет";
+				}
+				else
+				{
+					//1. Если дата бумажного СФ, на который	необходимо выписать исправленный и дополнительный ЭСФ, является до 01.01.2018 года(но не больше 5 лет с текущей даты), то проверки осуществлять не нужно.
+					if (isOlderThan_2018_01_01)
+					{
+						flag = true;
+					}
+					//2. Если дата бумажного СФ, на который необходимо выписать исправленный и дополнительный ЭСФ, равна 01.01.2018 года и позже, то нужно проверить входит ли Пользователь в список крупных компаний.Если пользователь входит в 
+					//список крупных компаний, то выходит сообщение: "Вы не можете вводить бумажный СФ с причиной "Отсутствовало требование по выписке ЭСФ".
+					else if (!isOlderThan_2018_01_01 && isLargeCompany)
+					{
+						alertMsg = "Вы не можете вводить бумажный СФ с причиной \"Отсутствовало требование по выписке ЭСФ\"";
+					}
+					//3.Если дата бумажного СФ, на который необходимо выписать исправленный и дополнительный ЭСФ, равна 01.01.2019 года и позже(но не больше 5 лет с текущей даты), то необходимо проверить
+					//является ли Пользователь плательщиком НДС на дату выписки бумажного счетафактуры.При ошибке сообщение: "Вы не можете вводить бумажный СФ с причиной "Отсутствовало требование повыписке ЭСФ"".
+					else if (!isOlderThan_2019_01_01 && !isNDSPayer)
+					{
+						alertMsg = "Вы не можете вводить бумажный СФ с причиной \"Отсутствовало требование повыписке ЭСФ\"";
+					}
+					else
+					{
+						flag = true;
+					}
+				}
+			}
+
+			if (!flag)
+			{
+				epPartA_PaperESFDate.SetError(dtpPartA_PaperESFDate, alertMsg);
+			}
+			else
+			{
+				epPartA_PaperESFDate.Clear();
 			}
 		}
 	}
