@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 {
@@ -11,7 +12,17 @@ namespace ESF_kz
 	public class DeliveryTermV2
 	{
 		//Дата договора(контракт) на поставку товаров (работ, услуг) (E 27.4)+
+		[XmlIgnore]
 		public DateTime contractDate;
+
+		[XmlElement(ElementName = "contractDate")]
+		public string contractDateString
+		{
+			get { return this.contractDate.ToString("dd.MM.yyyy"); }
+			set { this.contractDate = DateTime.Parse(value); }
+		}
+
+
 
 		//Номер договора(контракт) на поставку товаров (работ, услуг) (E 27.3)+
 		public string contractNum;
@@ -34,8 +45,18 @@ namespace ESF_kz
 		//Номер доверенности на поставку товаров (работ, услуг) (E 30.1)+
 		public string warrant;
 
+		
 		//Дата доверенности на поставку товаров(работ, услуг) (E 30.2)+
+		[XmlIgnore]
 		public DateTime warrantDate;
+
+		[XmlElement (ElementName = "warrantDate")]
+		public string warrantDateString
+		{
+			get { return warrantDate.ToString("dd.MM.yyyy"); }
+			set { this.warrantDate = DateTime.Parse(value); }
+		}
+
 
 		public DeliveryTermV2() { }
 	}

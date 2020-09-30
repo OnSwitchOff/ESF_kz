@@ -505,6 +505,8 @@ namespace ESF_kz.Forms
 			this.Name = "panelESFpartA";
 			this.Padding = new System.Windows.Forms.Padding(10);
 			this.Size = new System.Drawing.Size(968, 708);
+			this.SizeChanged += new System.EventHandler(this.panelESFpartA_SizeChanged);
+			this.Resize += new System.EventHandler(this.panelESFpartA_Resize);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_Date)).EndInit();

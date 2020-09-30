@@ -38,9 +38,9 @@ namespace ESF_kz.Forms
 			return PanelESFPartBtab;
 		}
 
-		public void RemoveLastTab()
+		public void RemoveTabById(int id)
 		{
-
+			getTabControll().TabPages.Remove(getTabControll().TabPages[id]);
 		}
 
 		public void RemoveAllTabs()

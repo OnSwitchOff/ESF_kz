@@ -12,7 +12,6 @@ namespace ESF_kz.Forms
 {
 	public partial class panelESFpartHtab : AbstractUCESFpanelTab
 	{
-
 		enum column
 		{
 			rowNumber,

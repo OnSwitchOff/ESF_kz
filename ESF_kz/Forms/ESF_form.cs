@@ -15,6 +15,8 @@ namespace ESF_kz
 {
 	public partial class ESF_form : Form
 	{
+		AbstractUCESFpanel lastShownPanel;
+		Button selectedPanel;
 
 		private void setESFformField(AbstractUCESFpanel esf_panel)
 		{
@@ -24,16 +26,52 @@ namespace ESF_kz
 		public ESF_form()
 		{
 			InitializeComponent();
+			hideAllPanels();
+			showFirstPanel();
 			setESFformFieldForPanels();
 			FormManagerFacade.setInvoiceForm(this);
+		}
+
+		private void hideAllPanels()
+		{
+			this.PanelESFpartA.Visible = false;
+			this.PanelESFpartB.Visible = false;
+			this.PanelESFpartC.Visible = false;
+			this.PanelESFpartD.Visible = false;
+			this.PanelESFpartE.Visible = false;
+			this.PanelESFpartF.Visible = false;
+			this.PanelESFpartG.Visible = false;
+			this.PanelESFpartH.Visible = false;
+			this.PanelESFpartI.Visible = false;
+			this.PanelESFpartJ.Visible = false;
+			this.PanelESFpartK.Visible = false;
+			this.PanelESFpartL.Visible = false;
+		}
+
+		private void showFirstPanel()
+		{
+			if (lastShownPanel != null)
+				lastShownPanel.Visible = false;
+			this.PanelESFpartA.Visible = true;
+			colorSelectedButton(btnESFpartA);
+			lastShownPanel = this.PanelESFpartA;
+		}
+		
+		private void colorSelectedButton(Button btn)
+		{
+			if (selectedPanel != null)
+			{
+				selectedPanel.BackColor = Color.FromArgb(240);
+			}
+			selectedPanel = btn;
+			selectedPanel.BackColor = Color.SkyBlue;
 		}
 
 		private void setESFformFieldForPanels()
 		{
 			foreach (AbstractUCESFpanel item in this.splitContainer1.Panel2.Controls)
 			{
-				item.setESFform(this);
-				
+				item.setESFform(this);				
 			}
 		}
 
@@ -54,73 +92,110 @@ namespace ESF_kz
 
 		private void btnESFpartA_Click(object sender, EventArgs e)
 		{
-			this.PanelESFpartA.BringToFront();			
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartA);
+			this.PanelESFpartA.Show();
+			this.PanelESFpartA.BringToFront();
+			lastShownPanel = PanelESFpartA;
 		}
 
 		private void btnESFpartB_Click(object sender, EventArgs e)
-		{			
+		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartB);
+			this.PanelESFpartB.Show();
 			this.PanelESFpartB.BringToFront();
+			lastShownPanel = PanelESFpartB;
 		}
 
 		private void btnESFpartC_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartC);
+			this.PanelESFpartC.Show();
 			this.PanelESFpartC.BringToFront();
+			lastShownPanel = PanelESFpartC;
 		}
 
 		private void btnESFpartD_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartD);
+			this.PanelESFpartD.Show();
 			this.PanelESFpartD.BringToFront();
+			lastShownPanel = PanelESFpartD;
 		}
 
 		private void btnESFpartE_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartE);
+			this.PanelESFpartE.Show();
 			this.PanelESFpartE.BringToFront();
+			lastShownPanel = PanelESFpartE;
 		}
 
 		private void btnESFpartF_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartF);
+			this.PanelESFpartF.Show();
 			this.PanelESFpartF.BringToFront();
+			lastShownPanel = PanelESFpartF;
 		}
 
 		private void btnESFpartG_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartG);
+			this.PanelESFpartG.Show();
 			this.PanelESFpartG.BringToFront();
+			lastShownPanel = PanelESFpartG;
 		}
 
 		private void btnESFpartH_Click(object sender, EventArgs e)
 		{
-			panelESFpartHtab PannelESFPartHtab1 = new panelESFpartHtab();
-			panelESFpartHtab PannelESFPartHtab2 = new panelESFpartHtab();
-			PannelESFPartHtab1.Dock = DockStyle.Fill;
-			PannelESFPartHtab2.Dock = DockStyle.Fill;
-			if (this.PanelESFpartH.getTabControll().TabPages.Count < 2)
-			{
-				this.PanelESFpartH.getTabControll().TabPages.Add("taB 1");
-				this.PanelESFpartH.getTabControll().TabPages.Add("taB 2");
-			}				
-			this.PanelESFpartH.getTabControll().TabPages[0].Controls.Add(PannelESFPartHtab1);
-			this.PanelESFpartH.getTabControll().TabPages[1].Controls.Add(PannelESFPartHtab2);
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartH);
+			this.PanelESFpartH.Show();
 			this.PanelESFpartH.BringToFront();
+			lastShownPanel = PanelESFpartH;
 		}
 
 		private void btnESFpartI_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartI);
+			this.PanelESFpartI.Show();
 			this.PanelESFpartI.BringToFront();
+			lastShownPanel = PanelESFpartI;
 		}
 
 		private void btnESFpartJ_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartJ);
+			this.PanelESFpartJ.Show();
 			this.PanelESFpartJ.BringToFront();
+			lastShownPanel = PanelESFpartJ;
 		}
 
 		private void btnESFpartK_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartK);
+			this.PanelESFpartK.Show();
 			this.PanelESFpartK.BringToFront();
+			lastShownPanel = PanelESFpartK;
 		}
 
 		private void btnESFpartL_Click(object sender, EventArgs e)
 		{
+			lastShownPanel.Hide();
+			colorSelectedButton(btnESFpartL);
+			this.PanelESFpartL.Show();
 			this.PanelESFpartL.BringToFront();
+			lastShownPanel = PanelESFpartL;
 		}
 
 
@@ -166,6 +241,23 @@ namespace ESF_kz
 		private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			SessionDataManagerFacade.getInvoiceBodyString();
+		}
+
+
+
+		private void ESF_form_ResizeBegin(object sender, EventArgs e)
+		{
+			hideAllPanels();
+		}
+
+		private void ESF_form_ResizeEnd(object sender, EventArgs e)
+		{
+			
+		}
+
+		private void ESF_form_SizeChanged(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

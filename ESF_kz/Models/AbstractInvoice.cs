@@ -18,7 +18,7 @@ namespace ESF_kz
 		[XmlElement("date")]
 		public string SomeDateString
 		{
-			get { return this.date.ToString("dd.mm.yyyy"); }
+			get { return this.date.ToString("dd.MM.yyyy"); }
 			set { this.date = DateTime.Parse(value); }
 		}
 
@@ -37,6 +37,14 @@ namespace ESF_kz
 		public RelatedInvoice relatedInvoice;
 
 		//Дата совершения оборота (A 3)
+		[XmlIgnore]
 		public DateTime turnoverDate;
+
+		[XmlElement("turnoverDate")]
+		public string turnoverDateString
+		{
+			get { return this.turnoverDate.ToString("dd.MM.yyyy"); }
+			set { this.turnoverDate = DateTime.Parse(value); }
+		}
 	}
 }

@@ -328,14 +328,15 @@ namespace ESF_kz
 
 					panelESFpartH panelH = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartH>();
 					panelH.RemoveAllTabs();
-					int ParticipantCounter = 0;
+					int sellerParticipantCounter = 0;
+					int customerParticipantCounter = 0;
 					if (invoice.sellerParticipants !=null)
 					{
 						foreach (ParticipantV2 participant in invoice.sellerParticipants)
 						{
-							ParticipantCounter++;
-							panelH.CreateTab("(Seller)Participant  #" + ParticipantCounter);
-							panelESFpartHtab hTab = panelH.getTab(ParticipantCounter);
+							sellerParticipantCounter++;
+							panelH.CreateSellerTab(" Participant  #" + sellerParticipantCounter);
+							panelESFpartHtab hTab = panelH.getSellerTab(sellerParticipantCounter);
 							int shareCounter = 0;
 							foreach (ProductShare share in participant.productShares)
 							{
@@ -372,9 +373,9 @@ namespace ESF_kz
 					{
 						foreach (ParticipantV2 participant in invoice.customerParticipants)
 						{
-							ParticipantCounter++;
-							panelH.CreateTab("(Customer)Participant  #" + ParticipantCounter);
-							panelESFpartHtab hTab = panelH.getTab(ParticipantCounter);
+							customerParticipantCounter++;
+							panelH.CreateCustomerTab(" Participant  #" + customerParticipantCounter);
+							panelESFpartHtab hTab = panelH.getCustomerTab(customerParticipantCounter);
 							int shareCounter = 0;
 							foreach (ProductShare share in participant.productShares)
 							{
@@ -431,54 +432,54 @@ namespace ESF_kz
 			}
 		}
 
-		internal static int getShareByCustomerParticipantCount(int number)
+		internal static int getShareByCustomerParticipantCount(int customerNumber)
 		{
-			return getCustomerParticipantsCount();
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(customerNumber).GetDataGrid().Rows.Count;
 		}
 
 		internal static string getCustomerProductShareAdditional(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareAdditional(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getProductShareAdditional(productShareNumber);
 		}
 
 		internal static float getCustomerProductShareExciseAmount(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareExciseAmount(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getProductShareExciseAmount(productShareNumber);
 		}
 
 		internal static float getCustomerProductShareNDSAmount(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareNDSAmount(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getProductShareNDSAmount(productShareNumber);
 		}
 
 		internal static float getCustomerProductSharePriceWithoutTax(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductSharePriceWithoutTax(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getProductSharePriceWithoutTax(productShareNumber);
 		}
 
 		internal static float getCustomerProductSharePriceWithhTax(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductSharePriceWithTax(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getProductSharePriceWithTax(productShareNumber);
 		}
 
 		internal static int getCustomerProductShareProductNumber(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getShareProductNumber(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getShareProductNumber(productShareNumber);
 		}
 
 		internal static int getSellerProductShareProductNumber(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getShareProductNumber(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getShareProductNumber(productSharNum);
 		}
 
 		internal static float getCustomerProductShareQuantity(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareQuantity(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getProductShareQuantity(productShareNumber);
 		}
 
 		internal static float getCustomerProductShareTurnoverSize(int participantNumber, int productShareNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(participantNumber).getProductShareTurnoverSize(productShareNumber);
+			return invoiceForm.getPannel<panelESFpartH>().getCustomerTab(participantNumber).getProductShareTurnoverSize(productShareNumber);
 		}
 
 		internal static int getCustomersCount()
@@ -783,6 +784,11 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartI>().getInvoiceSellerAgentName();
 		}
 
+		internal static bool setInvoiceNum(string num)
+		{
+			return invoiceForm.getPannel<panelESFpartA>().setInvoiceNum(num);
+		}
+
 		internal static string getInvoiceSellerAgentTin()
 		{
 			return invoiceForm.getPannel<panelESFpartI>().getInvoiceSellerAgentTin();
@@ -793,9 +799,19 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartB>().getSellerParticipantsCount();
 		}
 
+		internal static bool setInvoiceDate(DateTime date)
+		{
+			return invoiceForm.getPannel<panelESFpartA>().setInvoiceDate(date);
+		}
+
 		internal static string getSellerParticipantTin(int number)
 		{
 			return invoiceForm.getPannel<panelESFpartB>().getTab(number).getSellerParticipantTin();
+		}
+
+		internal static string getInvoiceNum()
+		{
+			return invoiceForm.getPannel<panelESFpartA>().getInvoiceNum();
 		}
 
 		internal static string getSellerParticipantReorgTin(int number)
@@ -803,44 +819,49 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartB>().getTab(number).getSellerParticipantReorgTin();
 		}
 
-		internal static int getShareBySellerParticipantCount(int number)
+		internal static DateTime getInvoiceDate()
 		{
-			return getSellerParticipantsCount();
+			return invoiceForm.getPannel<panelESFpartA>().getInvoiceDate();
+		}
+
+		internal static int getShareBySellerParticipantCount(int sellerNumber)
+		{
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).GetDataGrid().Rows.Count;
 		}
 
 		internal static string getSellerProductShareAdditional(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareAdditional(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getProductShareAdditional(productSharNum);
 		}
 
 		internal static float getSellerProductShareExciseAmount(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareExciseAmount(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getProductShareExciseAmount(productSharNum);
 		}
 
 		internal static float getSellerProductShareNDSAmount(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareNDSAmount(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getProductShareNDSAmount(productSharNum);
 		}
 
 		internal static float getSellerProductSharePriceWithoutTax(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductSharePriceWithoutTax(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getProductSharePriceWithoutTax(productSharNum);
 		}
 
 		internal static float getSellerProductSharePriceWithhTax(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductSharePriceWithTax(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getProductSharePriceWithTax(productSharNum);
 		}
 
 		internal static float getSellerProductShareQuantity(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareQuantity(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getProductShareQuantity(productSharNum);
 		}
 
 		internal static float getSellerProductShareTurnoverSize(int sellerNumber, int productSharNum)
 		{
-			return invoiceForm.getPannel<panelESFpartH>().getTab(sellerNumber).getProductShareTurnoverSize(productSharNum);
+			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).getProductShareTurnoverSize(productSharNum);
 		}
 
 		internal static string getSellerTrailer(int sellerNum)
@@ -1030,6 +1051,11 @@ namespace ESF_kz
 			{
 				return false;
 			}
+		}
+
+		internal static InvoiceType getInvoiceType()
+		{
+			return invoiceForm.getPannel<panelESFpartA>().getInvoiceType();
 		}
 	}
 }

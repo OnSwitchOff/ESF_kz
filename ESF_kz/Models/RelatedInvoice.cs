@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ESF_kz
 
@@ -12,7 +13,15 @@ namespace ESF_kz
 	public class RelatedInvoice
 	{
 		//Дата выписки ЭСФ (A 4.1, A 5.1)
+		[XmlIgnore]
 		public DateTime date;
+
+		[XmlElement(ElementName = "date")]
+		public string dateString
+		{
+			get { return this.date.ToString("dd.mm.yyyy"); }
+			set { this.date = DateTime.Parse(value); }
+		}
 
 		//Исходящий номер ЭСФ в бухгалтерии отправителя (A 4.2, A 5.2)
 		//pattern value="[0-9]{1,30}

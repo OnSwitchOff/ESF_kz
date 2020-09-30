@@ -76,7 +76,7 @@ namespace ESF_kz
 
 			foreach(XmlNode invoice in xInvoiceSet)
 			{
-				if(invoice.Name == "v2:invoice")
+				if(invoice.Name == "v2:invoice" || invoice.Name == "invoice")
 				{
 					InvoiceV2 invoiceV2 = new InvoiceV2();
 					foreach (XmlNode item in invoice)
@@ -86,11 +86,18 @@ namespace ESF_kz
 							switch (item.Name)
 							{
 								case "date":
-									tmp = item.InnerText.Split('.');
-									day = int.Parse(tmp[0]);
-									month = int.Parse(tmp[1]);
-									year = int.Parse(tmp[2]);
-									invoiceV2.date = new DateTime(year, month, day);
+									try
+									{
+										tmp = item.InnerText.Split('.');
+										day = int.Parse(tmp[0]);
+										month = int.Parse(tmp[1]);
+										year = int.Parse(tmp[2]);
+										invoiceV2.date = new DateTime(year, month, day);
+									}
+									catch (Exception)
+									{
+
+									}									
 									break;
 								case "invoiceType":
 									if (item.InnerText == InvoiceType.ORDINARY_INVOICE.ToString())
@@ -115,11 +122,19 @@ namespace ESF_kz
 											switch (subItem.Name)
 											{
 												case "date":
-													tmp = subItem.InnerText.Split('.');
-													day = int.Parse(tmp[0]);
-													month = int.Parse(tmp[1]);
-													year = int.Parse(tmp[2]);
-													invoiceV2.relatedInvoice.date = new DateTime(year, month, day);
+													try
+													{
+														tmp = subItem.InnerText.Split('.');
+														day = int.Parse(tmp[0]);
+														month = int.Parse(tmp[1]);
+														year = int.Parse(tmp[2]);
+														invoiceV2.relatedInvoice.date = new DateTime(year, month, day);
+													}
+													catch (Exception)
+													{
+														
+													}
+													
 													break;
 												case "num":
 													invoiceV2.relatedInvoice.num = subItem.InnerText;
@@ -134,11 +149,18 @@ namespace ESF_kz
 									}
 									break;
 								case "turnoverDate":
-									tmp = item.InnerText.Split('.');
-									day = int.Parse(tmp[0]);
-									month = int.Parse(tmp[1]);
-									year = int.Parse(tmp[2]);
-									invoiceV2.turnoverDate= new DateTime(year, month, day);
+									try
+									{
+										tmp = item.InnerText.Split('.');
+										day = int.Parse(tmp[0]);
+										month = int.Parse(tmp[1]);
+										year = int.Parse(tmp[2]);
+										invoiceV2.turnoverDate = new DateTime(year, month, day);
+									}
+									catch (Exception)
+									{
+
+									}									
 									break;
 								case "addInf":
 									invoiceV2.addInf = item.InnerText;
@@ -196,11 +218,18 @@ namespace ESF_kz
 									invoiceV2.customerAgentAddress = item.InnerText;
 									break;
 								case "customerAgentDocDate":
-									tmp = item.InnerText.Split('.');
-									day = int.Parse(tmp[0]);
-									month = int.Parse(tmp[1]);
-									year = int.Parse(tmp[2]);
-									invoiceV2.customerAgentDocDate = new DateTime(year,month,day);
+									try
+									{
+										tmp = item.InnerText.Split('.');
+										day = int.Parse(tmp[0]);
+										month = int.Parse(tmp[1]);
+										year = int.Parse(tmp[2]);
+										invoiceV2.customerAgentDocDate = new DateTime(year, month, day);
+									}
+									catch (Exception)
+									{
+
+									}									
 									break;
 								case "customerAgentDocNum":
 									invoiceV2.customerAgentDocNum = item.InnerText;
@@ -326,18 +355,32 @@ namespace ESF_kz
 									}
 									break;
 								case "datePaper":
-									tmp = item.InnerText.Split('.');
-									day = int.Parse(tmp[0]);
-									month = int.Parse(tmp[1]);
-									year = int.Parse(tmp[2]);
-									invoiceV2.datePaper = new DateTime(year, month, day);
+									try
+									{
+										tmp = item.InnerText.Split('.');
+										day = int.Parse(tmp[0]);
+										month = int.Parse(tmp[1]);
+										year = int.Parse(tmp[2]);
+										invoiceV2.datePaper = new DateTime(year, month, day);
+									}
+									catch (Exception)
+									{
+
+									}									
 									break;
 								case "deliveryDocDate":
-									tmp = item.InnerText.Split('.');
-									day = int.Parse(tmp[0]);
-									month = int.Parse(tmp[1]);
-									year = int.Parse(tmp[2]);
-									invoiceV2.deliveryDocDate = new DateTime(year, month, day);
+									try
+									{
+										tmp = item.InnerText.Split('.');
+										day = int.Parse(tmp[0]);
+										month = int.Parse(tmp[1]);
+										year = int.Parse(tmp[2]);
+										invoiceV2.deliveryDocDate = new DateTime(year, month, day);
+									}
+									catch (Exception)
+									{
+
+									}
 									break;
 								case "deliveryDocNum":
 									invoiceV2.deliveryDocNum = item.InnerText;
@@ -351,11 +394,18 @@ namespace ESF_kz
 											switch (node.Name)
 											{
 												case "contractDate":
-													tmp = node.InnerText.Split('.');
-													day = int.Parse(tmp[0]);
-													month = int.Parse(tmp[1]);
-													year = int.Parse(tmp[2]);
-													invoiceV2.deliveryTerm.contractDate = new DateTime(year, month, day);
+													try
+													{
+														tmp = node.InnerText.Split('.');
+														day = int.Parse(tmp[0]);
+														month = int.Parse(tmp[1]);
+														year = int.Parse(tmp[2]);
+														invoiceV2.deliveryTerm.contractDate = new DateTime(year, month, day);
+													}
+													catch (Exception)
+													{
+
+													}
 													break;
 												case "contractNum":
 													invoiceV2.deliveryTerm.contractNum = node.InnerText;
@@ -379,11 +429,18 @@ namespace ESF_kz
 													invoiceV2.deliveryTerm.warrant = node.InnerText;
 													break;
 												case "warrantDate":
-													tmp = node.InnerText.Split('.');
-													day = int.Parse(tmp[0]);
-													month = int.Parse(tmp[1]);
-													year = int.Parse(tmp[2]);
-													invoiceV2.deliveryTerm.warrantDate = new DateTime(year, month, day);
+													try
+													{
+														tmp = node.InnerText.Split('.');
+														day = int.Parse(tmp[0]);
+														month = int.Parse(tmp[1]);
+														year = int.Parse(tmp[2]);
+														invoiceV2.deliveryTerm.warrantDate = new DateTime(year, month, day);
+													}
+													catch (Exception)
+													{
+
+													}
 													break;
 												default:
 													break;
@@ -535,11 +592,18 @@ namespace ESF_kz
 									invoiceV2.sellerAgentAddress = item.InnerText;
 									break;
 								case "sellerAgentDocDate":
-									tmp = item.InnerText.Split('.');
-									day = int.Parse(tmp[0]);
-									month = int.Parse(tmp[1]);
-									year = int.Parse(tmp[2]);
-									invoiceV2.sellerAgentDocDate = new DateTime(year, month, day);
+									try
+									{
+										tmp = item.InnerText.Split('.');
+										day = int.Parse(tmp[0]);
+										month = int.Parse(tmp[1]);
+										year = int.Parse(tmp[2]);
+										invoiceV2.sellerAgentDocDate = new DateTime(year, month, day);
+									}
+									catch (Exception)
+									{
+
+									}									
 									break;
 								case "sellerAgentDocNum":
 									invoiceV2.sellerAgentDocNum = item.InnerText;
@@ -742,8 +806,7 @@ namespace ESF_kz
 
 		internal static bool setInvoiceNum(string num)
 		{
-			invoiceNum = num;
-			return true;
+			return FormManagerFacade.setInvoiceNum(num);
 		}
 
 		internal static DateTime getlastEventDate()
@@ -758,8 +821,7 @@ namespace ESF_kz
 
 		internal static bool setInvoiceDate(DateTime date)
 		{
-			invoiceDate = date;
-			return true;
+			return FormManagerFacade.setInvoiceDate(date);		
 		}
 
 		internal static bool getfullInfoOnStatusChange()
@@ -774,12 +836,12 @@ namespace ESF_kz
 
 		private static string getInvoiceNum()
 		{
-			return invoiceNum;
+			return FormManagerFacade.getInvoiceNum();
 		}
 
 		private static DateTime getInvoiceDate()
 		{
-			return invoiceDate;
+			return FormManagerFacade.getInvoiceDate();
 		}
 
 		internal static invoiceUploadInfo[] getInvoiceUploadInfoList()
@@ -834,7 +896,7 @@ namespace ESF_kz
 		{
 			List<SellerV2> sellerV2s = new List<SellerV2>();
 			int tempSellersCount = getSellersCount();
-			for (int sellerNum = 0; sellerNum < tempSellersCount; sellerNum++)
+			for (int sellerNum = 1; sellerNum <= tempSellersCount; sellerNum++)
 			{
 				SellerV2 sellerV2 = new SellerV2();
 				sellerV2.address = SessionDataManagerFacade.getSellerAddress(sellerNum);// "sellerAddress";
@@ -1848,7 +1910,7 @@ namespace ESF_kz
 
 		private static InvoiceType getInvoiceType()
 		{
-			return invoiceType;
+			return FormManagerFacade.getInvoiceType();
 		}
 	}
 }

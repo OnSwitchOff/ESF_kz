@@ -7,27 +7,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Deployment.Internal;
 
 namespace ESF_kz.Forms
 {
 	public partial class panelESFpartH : AbstractUCESFpanel
 	{
+		List<int> customerIndexes = new List<int>();
+		List<int> sellerIndexes = new List<int>();
+
 		public panelESFpartH()
 		{
 			InitializeComponent();
 		}
 
-		public panelESFpartHtab CreateTab(string title)
+		internal List<int> getCuromerIndexes()
+		{
+			return customerIndexes;
+		}
+
+		internal List<int> getSellerIndexes()
+		{
+			return sellerIndexes;
+		}
+
+		public panelESFpartHtab CreateSellerTab(string title)
 		{
 			panelESFpartHtab PanelESFPartHtab = new panelESFpartHtab();
 			PanelESFPartHtab.setESFform(this.getESFform());
 			PanelESFPartHtab.Dock = DockStyle.Fill;
-			this.tabControl1.TabPages.Add(title);
+			this.tabControl1.TabPages.Add("Seller"+title);
 			this.tabControl1.TabPages[tabControl1.TabCount - 1].Controls.Add(PanelESFPartHtab);
+			sellerIndexes.Add(tabControl1.TabCount - 1);
+
 			return PanelESFPartHtab;
 		}
 
-		public panelESFpartHtab CreateFirstTab(string title)
+		public panelESFpartHtab CreateCustomerTab(string title)
+		{
+			panelESFpartHtab PanelESFPartHtab = new panelESFpartHtab();
+			PanelESFPartHtab.setESFform(this.getESFform());
+			PanelESFPartHtab.Dock = DockStyle.Fill;
+			this.tabControl1.TabPages.Add("Customer"+title);
+			this.tabControl1.TabPages[tabControl1.TabCount - 1].Controls.Add(PanelESFPartHtab);
+			customerIndexes.Add(tabControl1.TabCount - 1);
+			return PanelESFPartHtab;
+		}
+
+		/*public panelESFpartHtab CreateFirstTab(string title)
 		{
 			panelESFpartHtab PanelESFPartHtab = new panelESFpartHtab();
 			PanelESFPartHtab.setESFform(this.getESFform());
@@ -35,7 +62,7 @@ namespace ESF_kz.Forms
 			this.tabControl1.TabPages.Add(title);
 			this.tabControl1.TabPages[0].Controls.Add(PanelESFPartHtab);
 			return PanelESFPartHtab;
-		}
+		}*/
 
 		public TabControl getTabControll()
 		{
@@ -47,14 +74,26 @@ namespace ESF_kz.Forms
 			return (panelESFpartHtab)(this.tabControl1.TabPages[0].Controls[0]);
 		}
 
-		public panelESFpartHtab getTab(int num)
+		public panelESFpartHtab getSellerTab(int num)
 		{
-			return (panelESFpartHtab)(this.tabControl1.TabPages[num - 1].Controls[0]);
+			return (panelESFpartHtab)(this.tabControl1.TabPages[sellerIndexes[num - 1]].Controls[0]);
+		}
+
+		public panelESFpartHtab getCustomerTab(int num)
+		{
+			return (panelESFpartHtab)(this.tabControl1.TabPages[customerIndexes[num - 1]].Controls[0]);
 		}
 
 		internal void RemoveAllTabs()
 		{
 			getTabControll().TabPages.Clear();
+			sellerIndexes.Clear();
+			customerIndexes.Clear();
+		}
+
+		internal void RemoveTabById(int id)
+		{
+			getTabControll().TabPages.Remove(getTabControll().TabPages[id]);
 		}
 	}
 }

@@ -260,6 +260,11 @@ namespace ESF_kz.Forms
 				{
 					chbxPartA_isCorrectedESF.Checked = true;
 				}
+				else
+				{
+					chbxPartA_isAddedESF.Checked = false;
+					chbxPartA_isCorrectedESF.Checked = false;
+				}
 				return true;
 			}
 			catch (Exception)
@@ -442,17 +447,9 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal bool setInvoiceDate(DateTime date)
+		internal string getInvoiceNum()
 		{
-			try
-			{
-				dtpPartA_Date.Value = date;
-				return true;
-			}
-			catch
-			{
-				return false;
-			}
+			return tbPartA_Num.Text;
 		}
 
 		internal bool setInvoiceNum(string num)
@@ -476,6 +473,50 @@ namespace ESF_kz.Forms
 		internal void clearReasonPaper()
 		{
 			combxPartA_PaperESFReason.SelectedItem = null;
+		}
+
+		private void panelESFpartA_SizeChanged(object sender, EventArgs e)
+		{
+			this.Visible = true;
+		}
+
+		private void panelESFpartA_Resize(object sender, EventArgs e)
+		{
+			this.Visible = false;
+		}
+
+		internal DateTime getInvoiceDate()
+		{
+			return this.dtpPartA_Date.Value;
+		}
+
+		internal bool setInvoiceDate(DateTime date)
+		{
+			try
+			{
+				this.dtpPartA_Date.Value = date;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal InvoiceType getInvoiceType()
+		{
+			if (chbxPartA_isAddedESF.Checked)
+			{
+				return InvoiceType.ADDITIONAL_INVOICE;
+			}
+			else if (chbxPartA_isCorrectedESF.Checked)
+			{
+				return InvoiceType.FIXED_INVOICE;
+			}
+			else
+			{
+				return InvoiceType.ORDINARY_INVOICE;
+			}
 		}
 	}
 }

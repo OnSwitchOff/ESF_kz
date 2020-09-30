@@ -31,7 +31,15 @@ namespace ESF_kz
 		public string customerAgentAddress;
 
 		//Документ-Дата (J 42.2)-
+		[XmlIgnore]
 		public DateTime customerAgentDocDate;
+
+		[XmlElement(ElementName = "customerAgentDocDate")]
+		public string customerAgentDocDateString
+		{			
+			get { return this.customerAgentDocDate.ToString("dd.MM.yyyy"); }
+			set { this.customerAgentDocDate = DateTime.Parse(value); }			
+		}
 
 		//Документ-Номер (J 42.1)-
 		public string customerAgentDocNum;
@@ -51,10 +59,26 @@ namespace ESF_kz
 		public List<CustomerV2> customers;
 
 		//Дата выписки на бумажном носителе (2.1)-
+		[XmlIgnore]
 		public DateTime datePaper;
 
+		[XmlElement(ElementName = "datePaper")]
+		public string datePaperString
+		{
+			get { return this.datePaper.ToString("dd.MM.yyyy"); }
+			set { this.datePaper = DateTime.Parse(value); }
+		}
+
 		//Дата документа, подтверждающего поставку товаров (работ, услуг) (F 32.2)-
+		[XmlIgnore]
 		public DateTime deliveryDocDate;
+
+		[XmlElement(ElementName = "deliveryDocDate")]
+		public string deliveryDocDateString
+		{
+			get { return this.deliveryDocDate.ToString("dd.MM.yyyy"); }
+			set { this.deliveryDocDate = DateTime.Parse(value); }
+		}
 
 		//Номер документа, подтверждающего поставку товаров (работ, услуг) (F 32.1)-
 		public string deliveryDocNum;
@@ -75,7 +99,15 @@ namespace ESF_kz
 		public string sellerAgentAddress;
 
 		//Документ-Дата (I 38.2)-
+		[XmlIgnore]
 		public DateTime sellerAgentDocDate;
+
+		[XmlElement(ElementName = "sellerAgentDocDate")]
+		public string sellerAgentDocDateString
+		{
+			get { return this.sellerAgentDocDate.ToString("dd.MM.yyyy"); }
+			set { this.sellerAgentDocDate = DateTime.Parse(value); }
+		}
 
 		//Документ-Номер (I 38.1)-
 		public string sellerAgentDocNum;
