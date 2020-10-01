@@ -1,4 +1,5 @@
-﻿using ESF_kz.InvoiceService;
+﻿using ESF_kz.Forms;
+using ESF_kz.InvoiceService;
 using ESF_kz.LocalService;
 using ESF_kz.SessionService;
 using ESF_kz.UploadInvoiceService;
@@ -420,7 +421,8 @@ namespace ESF_kz
 				invoiceCont = (invoiceContainerV2)xmlSerializer.Deserialize(fs);
 			}*/
 
-			Application.Run(new ESF_form());
+			//Application.Run(new ESF_form());
+			Application.Run(new LogInForm());
 			
 		}
 	}

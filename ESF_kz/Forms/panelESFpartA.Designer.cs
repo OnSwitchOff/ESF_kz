@@ -63,12 +63,12 @@ namespace ESF_kz.Forms
 			this.dtpPartA_PaperESFDate = new System.Windows.Forms.DateTimePicker();
 			this.combxPartA_PaperESFReason = new System.Windows.Forms.ComboBox();
 			this.chbxPartA_isPaperESF = new System.Windows.Forms.CheckBox();
+			this.l_PanelA_operatorFullname = new System.Windows.Forms.Label();
+			this.tbPartA_operatorFullname = new System.Windows.Forms.TextBox();
 			this.epPartA_Date = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_PaperESFDate = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_PaperESFReason = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_TurnoverDate = new System.Windows.Forms.ErrorProvider(this.components);
-			this.l_PanelA_operatorFullname = new System.Windows.Forms.Label();
-			this.tbPartA_operatorFullname = new System.Windows.Forms.TextBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_Date)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_PaperESFDate)).BeginInit();
@@ -327,7 +327,7 @@ namespace ESF_kz.Forms
 			this.dtpPartA_TurnoverDate.Name = "dtpPartA_TurnoverDate";
 			this.dtpPartA_TurnoverDate.Size = new System.Drawing.Size(200, 20);
 			this.dtpPartA_TurnoverDate.TabIndex = 17;
-			this.dtpPartA_TurnoverDate.Value = new System.DateTime(2020, 9, 4, 14, 49, 4, 937);
+			this.dtpPartA_TurnoverDate.Value = new System.DateTime(2020, 10, 1, 0, 0, 0, 0);
 			this.dtpPartA_TurnoverDate.ValueChanged += new System.EventHandler(this.dtpPartA_TurnoverDate_ValueChanged);
 			// 
 			// chbxPartA_isCorrectedESF
@@ -478,6 +478,25 @@ namespace ESF_kz.Forms
 			this.chbxPartA_isPaperESF.UseVisualStyleBackColor = true;
 			this.chbxPartA_isPaperESF.CheckedChanged += new System.EventHandler(this.chbxPartA_isPaperESF_CheckedChanged);
 			// 
+			// l_PanelA_operatorFullname
+			// 
+			this.l_PanelA_operatorFullname.AutoSize = true;
+			this.l_PanelA_operatorFullname.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.l_PanelA_operatorFullname.Location = new System.Drawing.Point(4, 641);
+			this.l_PanelA_operatorFullname.Name = "l_PanelA_operatorFullname";
+			this.l_PanelA_operatorFullname.Size = new System.Drawing.Size(308, 46);
+			this.l_PanelA_operatorFullname.TabIndex = 31;
+			this.l_PanelA_operatorFullname.Text = "ФИО оператора отправившего ЭСФ";
+			this.l_PanelA_operatorFullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbPartA_operatorFullname
+			// 
+			this.tbPartA_operatorFullname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartA_operatorFullname.Location = new System.Drawing.Point(319, 654);
+			this.tbPartA_operatorFullname.Name = "tbPartA_operatorFullname";
+			this.tbPartA_operatorFullname.Size = new System.Drawing.Size(400, 20);
+			this.tbPartA_operatorFullname.TabIndex = 32;
+			// 
 			// epPartA_Date
 			// 
 			this.epPartA_Date.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -497,25 +516,6 @@ namespace ESF_kz.Forms
 			// 
 			this.epPartA_TurnoverDate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
 			this.epPartA_TurnoverDate.ContainerControl = this;
-			// 
-			// l_PanelA_operatorFullname
-			// 
-			this.l_PanelA_operatorFullname.AutoSize = true;
-			this.l_PanelA_operatorFullname.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.l_PanelA_operatorFullname.Location = new System.Drawing.Point(4, 641);
-			this.l_PanelA_operatorFullname.Name = "l_PanelA_operatorFullname";
-			this.l_PanelA_operatorFullname.Size = new System.Drawing.Size(308, 46);
-			this.l_PanelA_operatorFullname.TabIndex = 31;
-			this.l_PanelA_operatorFullname.Text = "ФИО оператора отправившего ЭСФ";
-			this.l_PanelA_operatorFullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// tbPartA_operatorFullname
-			// 
-			this.tbPartA_operatorFullname.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartA_operatorFullname.Location = new System.Drawing.Point(319, 654);
-			this.tbPartA_operatorFullname.Name = "tbPartA_operatorFullname";
-			this.tbPartA_operatorFullname.Size = new System.Drawing.Size(400, 20);
-			this.tbPartA_operatorFullname.TabIndex = 32;
 			// 
 			// panelESFpartA
 			// 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ESF_kz
 {
@@ -46,6 +47,13 @@ namespace ESF_kz
 				return panelA.getAddedESFDate();
 			}
 			return new DateTime(1990,9,24);
+		}
+
+		internal static void AddRowByInvoiceInfo(MainForm form, InvoiceService.InvoiceInfo invoiceInfo)
+		{
+			form.AddRowByInvoiceInfo(invoiceInfo);
+
+			//grid.
 		}
 
 		internal static string getRelatedInvoiceNum()

@@ -558,6 +558,8 @@ namespace ESF_kz.Forms
 					numUpDown_participantCounter.Enabled = false;
 				}	
 			}
+
+			((ESF_form)this.TopLevelControl).SetEnableBtnESFpartJ(chbxPartC_isPrincipal.Checked || chbxPartC_isJointActivityParticipant.Checked);
 		}
 
 		private void chbxPartC_isSharingAgreementParticipant_CheckedChanged(object sender, EventArgs e)
@@ -706,6 +708,7 @@ namespace ESF_kz.Forms
 				statusList.Remove(CustomerType.PRINCIPAL);
 			}
 			chbxPartC_isRetail_Validating();
+			((ESF_form)this.TopLevelControl).SetEnableBtnESFpartJ(chbxPartC_isPrincipal.Checked || chbxPartC_isJointActivityParticipant.Checked);
 		}
 
 		private void chbxPartC_isRetail_CheckedChanged(object sender, EventArgs e)

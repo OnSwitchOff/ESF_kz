@@ -264,5 +264,10 @@ namespace ESF_kz
 		{
 			btnESFpartH.Enabled = v;
 		}
+
+		internal void SetEnableBtnESFpartJ(bool v)
+		{
+			btnESFpartJ.Enabled = v;
+		}
 	}
 }

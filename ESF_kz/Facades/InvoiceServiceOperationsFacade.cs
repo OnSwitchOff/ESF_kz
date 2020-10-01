@@ -74,13 +74,13 @@ namespace ESF_kz
 			
 		}
 
-		static public bool QueryInvoiceById()
+		static public bool QueryInvoiceById(out QueryInvoiceResponse queryInvoiceResponse)
 		{
 			InvoiceByIdRequest invoiceByIdRequest = new InvoiceByIdRequest();
 			invoiceByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();			
 			invoiceByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList(); 
 
-			QueryInvoiceResponse queryInvoiceResponse;
+			//QueryInvoiceResponse queryInvoiceResponse;
 			try
 			{
 				queryInvoiceResponse = getServiceClient().queryInvoiceById(invoiceByIdRequest);
@@ -88,6 +88,7 @@ namespace ESF_kz
 			}
 			catch (Exception)
 			{
+				queryInvoiceResponse = null;
 				return false;
 			}			
 		}
@@ -129,7 +130,7 @@ namespace ESF_kz
 			}			
 		}
 
-		static public bool QueryUpdates()
+		static public bool QueryUpdates(out QueryInvoiceUpdateResponse queryInvoiceUpdateResponse)
 		{
 			QueryInvoiceUpdateRequest queryInvoiceUpdateRequest = new QueryInvoiceUpdateRequest();
 			queryInvoiceUpdateRequest.sessionId = SessionDataManagerFacade.getSessionId();
@@ -139,7 +140,7 @@ namespace ESF_kz
 			queryInvoiceUpdateRequest.limit = SessionDataManagerFacade.getlimit();
 			queryInvoiceUpdateRequest.fullInfoOnStatusChange = SessionDataManagerFacade.getfullInfoOnStatusChange();
 
-			QueryInvoiceUpdateResponse queryInvoiceUpdateResponse;
+			//QueryInvoiceUpdateResponse queryInvoiceUpdateResponse;
 			try
 			{
 				queryInvoiceUpdateResponse = getServiceClient().queryUpdates(queryInvoiceUpdateRequest);
@@ -147,6 +148,7 @@ namespace ESF_kz
 			}
 			catch (Exception)
 			{
+				queryInvoiceUpdateResponse = null;
 				return false;
 			}			
 		}
