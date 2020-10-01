@@ -14,14 +14,15 @@ namespace ESF_kz.Forms
 	{
 		public panelESFpartB()
 		{
-			InitializeComponent();						
+			InitializeComponent();
+			CreateFirstTab("Seller");
 		}
 
 		public panelESFpartBtab CreateTab(string title)
 		{
 			panelESFpartBtab PanelESFPartBtab = new panelESFpartBtab();
-			PanelESFPartBtab.setESFform(this.getESFform());
-			var obj = PanelESFPartBtab.getESFform();
+			//PanelESFPartBtab.setESFform(this.getESFform());
+			//var obj = PanelESFPartBtab.getESFform();
 			PanelESFPartBtab.Dock = DockStyle.Fill;
 			this.tabControl1.TabPages.Add(title);
 			this.tabControl1.TabPages[tabControl1.TabCount-1].Controls.Add(PanelESFPartBtab);
@@ -31,8 +32,6 @@ namespace ESF_kz.Forms
 		public panelESFpartBtab CreateFirstTab(string title)
 		{
 			panelESFpartBtab PanelESFPartBtab = new panelESFpartBtab();
-			PanelESFPartBtab.setESFform(this.getESFform());
-			var obj = PanelESFPartBtab.getESFform();
 			PanelESFPartBtab.Dock = DockStyle.Fill;
 			this.tabControl1.TabPages.Add(title);
 			this.tabControl1.TabPages[0].Controls.Add(PanelESFPartBtab);

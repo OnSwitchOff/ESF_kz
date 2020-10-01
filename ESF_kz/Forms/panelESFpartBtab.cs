@@ -377,16 +377,16 @@ namespace ESF_kz.Forms
 
 		private void chbxPartB_isSharingAgreementParticipant_CheckedChanged(object sender, EventArgs e)
 		{
-			TabControl tabControl = (TabControl)this.Parent.Parent;
+			TabControl tabControl = ((ESF_form)this.TopLevelControl).getPannel<panelESFpartB>().getTabControll();
 			if (chbxPartB_isSharingAgreementParticipant.Checked)
 			{
 				statusList.Add(SellerType.SHARING_AGREEMENT_PARTICIPANT);
 				tabControl.TabPages[0].Text = "Seller-Participant #1";
 				tbPartB_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
-				if(numUpDown_participantCounter.Value==1)
+				if(tabControl.TabPages[0].Controls[0] == this && numUpDown_participantCounter.Value==1)
 				{
-					//numUpDown_participantCounter.Value = 2;
+					numUpDown_participantCounter.Value = 2;
 				}				
 			}
 			else
@@ -433,7 +433,7 @@ namespace ESF_kz.Forms
 
 		private void chbxPartB_isJointActivityParticipant_CheckedChanged(object sender, EventArgs e)
 		{
-			TabControl tabControl = (TabControl)this.Parent.Parent;
+			TabControl tabControl = ((ESF_form)this.TopLevelControl).getPannel<panelESFpartB>().getTabControll();
 			if (chbxPartB_isJointActivityParticipant.Checked)
 			{
 				statusList.Add(SellerType.JOINT_ACTIVITY_PARTICIPANT);
@@ -445,16 +445,17 @@ namespace ESF_kz.Forms
 				{					
 					tabControl.TabPages[0].Text = "Seller-Participant #1";
 					numUpDown_participantCounter.Enabled = true;
-					//if(numUpDown_participantCounter.Value == 1)
-					//numUpDown_participantCounter.Value = 2;
+					if(numUpDown_participantCounter.Value == 1 && tabControl.TabPages[0].Controls[0] == this)
+					numUpDown_participantCounter.Value = 2;
 				}
 			}
 			else
 			{
 				statusList.Remove(SellerType.JOINT_ACTIVITY_PARTICIPANT);
-				tabControl.TabPages[0].Text = "Seller";
+				
 				if(chbxPartB_isSharingAgreementParticipant.Checked == false)
 				{
+					tabControl.TabPages[0].Text = "Seller";
 					numUpDown_participantCounter.Value = 1;
 					numUpDown_participantCounter.Enabled = false;
 				}				
@@ -483,7 +484,9 @@ namespace ESF_kz.Forms
 
 		private void numUpDown_participantCounter_ValueChanged(object sender, EventArgs e)
 		{
-			panelESFpartB PanelESFpartB = this.getESFform().getPannel<panelESFpartB>();
+
+			//cTab creating/removing
+			panelESFpartB PanelESFpartB = ((ESF_form)this.TopLevelControl).getPannel<panelESFpartB>();
 			TabControl tabControl = PanelESFpartB.getTabControll(); 
 			if(tabControl.TabCount < numUpDown_participantCounter.Value)
 			{
@@ -512,6 +515,46 @@ namespace ESF_kz.Forms
 					chbxPartB_isJointActivityParticipant.Checked = false;
 				}
 			}
+
+			//hTab creating/removing
+			ESF_form esf = (ESF_form)this.TopLevelControl;
+			panelESFpartH panelH = esf.getPannel<panelESFpartH>();
+			panelESFpartC panelC = esf.getPannel<panelESFpartC>();
+			int customerParticipantsCount = panelC.getCustomerParticipantsCount();
+			int sellerParticipantsCount = (int)numUpDown_participantCounter.Value;
+			List<int> indexes = panelH.getSellerIndexes();
+			
+
+			if (sellerParticipantsCount > 1)
+			{
+				esf.SetEnableBtnESFPartH(true);
+				int hTabSellerCount = indexes.Count;
+				int difference = sellerParticipantsCount - hTabSellerCount;
+				if (difference>0)
+				{
+					for (int i = 1; i <= difference; i++)
+					{
+						panelESFpartHtab hTab = panelH.CreateSellerTab(" Participant #" + (hTabSellerCount+i));
+					}
+				}
+				else
+				{
+					for (int i = 0; i > difference; i--)
+					{
+						panelH.RemoveLastSellerTab();
+					}
+				}
+			}
+			else
+			{
+				panelH.RemoveAllSellerTabs();
+				if (customerParticipantsCount < 2)
+				{
+					esf.SetEnableBtnESFPartH(false);
+				}
+			}
+			
+
 		}
 
 		internal string getSellerParticipantTin()

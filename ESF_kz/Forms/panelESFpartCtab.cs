@@ -28,7 +28,7 @@ namespace ESF_kz.Forms
 
 		private void numUpDown_participantCounter_ValueChanged(object sender, EventArgs e)
 		{
-
+			//cTab Create/remove
 			panelESFpartC PanelESFpartC = (panelESFpartC)this.Parent.Parent.Parent;
 			TabControl tabControl = PanelESFpartC.getTabControll();
 			if (tabControl.TabCount < numUpDown_participantCounter.Value)
@@ -58,6 +58,45 @@ namespace ESF_kz.Forms
 					chbxPartC_isJointActivityParticipant.Checked = false;
 				}
 			}
+
+			//hTab creating/removing
+			ESF_form esf = (ESF_form)this.TopLevelControl;
+			panelESFpartH panelH = esf.getPannel<panelESFpartH>();
+			panelESFpartB panelB = esf.getPannel<panelESFpartB>();
+			int customerParticipantsCount = (int)numUpDown_participantCounter.Value;
+			int sellerParticipantsCount = panelB.getSellerParticipantsCount();
+			List<int> indexes = panelH.getCuromerIndexes();
+
+
+			if (customerParticipantsCount > 1)
+			{
+				esf.SetEnableBtnESFPartH(true);
+				int hTabCustomerCount = indexes.Count;
+				int difference = customerParticipantsCount - hTabCustomerCount;
+				if (difference > 0)
+				{
+					for (int i = 1; i <= difference; i++)
+					{
+						panelESFpartHtab hTab = panelH.CreateCustomerTab(" Participant #" + (hTabCustomerCount + i));
+					}
+				}
+				else
+				{
+					for (int i = 0; i > difference; i--)
+					{
+						panelH.RemoveLastCustomerTab();
+					}
+				}
+			}
+			else
+			{
+				panelH.RemoveAllCustomerTabs();
+				if (sellerParticipantsCount < 2)
+				{
+					esf.SetEnableBtnESFPartH(false);
+				}
+			}
+			
 		}
 
 		internal int getCustomerParticipantsCount()
@@ -496,23 +535,28 @@ namespace ESF_kz.Forms
 
 		private void chbxPartC_isJointActivityParticipant_CheckedChanged(object sender, EventArgs e)
 		{
-			TabControl tabControl = (TabControl)this.Parent.Parent;
+			TabControl tabControl = ((ESF_form)this.TopLevelControl).getPannel<panelESFpartC>().getTabControll();
 			if (chbxPartC_isJointActivityParticipant.Checked)
 			{
+				statusList.Add(CustomerType.JOINT_ACTIVITY_PARTICIPANT);
 				tabControl.TabPages[0].Text = "Customer-Participant #1";
 				tbPartC_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
-				numUpDown_participantCounter.Value = 2;
-				statusList.Add(CustomerType.JOINT_ACTIVITY_PARTICIPANT);
+				if (numUpDown_participantCounter.Value == 1 && tabControl.TabPages[0].Controls[0] == this)
+					numUpDown_participantCounter.Value = 2;
+				
 			}
 			else
 			{
-				tabControl.TabPages[0].Text = "Customer";
-				tbPartC_shareParticipation.Enabled = false;
-				tbPartC_shareParticipation.Text = "";
-				numUpDown_participantCounter.Value = 1;
-				numUpDown_participantCounter.Enabled = false;
 				statusList.Remove(CustomerType.JOINT_ACTIVITY_PARTICIPANT);
+				if (chbxPartC_isSharingAgreementParticipant.Checked == false)
+				{
+					tabControl.TabPages[0].Text = "Customer";
+					tbPartC_shareParticipation.Enabled = false;
+					tbPartC_shareParticipation.Text = "";
+					numUpDown_participantCounter.Value = 1;
+					numUpDown_participantCounter.Enabled = false;
+				}	
 			}
 		}
 
@@ -532,22 +576,29 @@ namespace ESF_kz.Forms
 			}
 			chbxPartC_isRetail_Validating();
 
-			TabControl tabControl = (TabControl)this.Parent.Parent;
+			TabControl tabControl = ((ESF_form)this.TopLevelControl).getPannel<panelESFpartC>().getTabControll();
 			if (chbxPartC_isSharingAgreementParticipant.Checked)
 			{
 				tabControl.TabPages[0].Text = "Customer-Participant #1";
 				tbPartC_shareParticipation.Enabled = true;
 				numUpDown_participantCounter.Enabled = true;
-				numUpDown_participantCounter.Value = 2;
-
+				if (tabControl.TabPages[0].Controls[0] == this && numUpDown_participantCounter.Value == 1)
+				{
+					numUpDown_participantCounter.Value = 2;
+				}
 			}
 			else
 			{
-				tabControl.TabPages[0].Text = "Customer";
+				
 				tbPartC_shareParticipation.Enabled = false;
 				tbPartC_shareParticipation.Text = "";
-				numUpDown_participantCounter.Value = 1;
-				numUpDown_participantCounter.Enabled = false;
+				if (chbxPartC_isJointActivityParticipant.Checked == false)
+				{
+					tabControl.TabPages[0].Text = "Customer";
+					numUpDown_participantCounter.Value = 1;
+					numUpDown_participantCounter.Enabled = false;
+				}
+					
 			}
 		}
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Deployment.Internal;
+using System.Threading;
 
 namespace ESF_kz.Forms
 {
@@ -84,6 +85,35 @@ namespace ESF_kz.Forms
 			return (panelESFpartHtab)(this.tabControl1.TabPages[customerIndexes[num - 1]].Controls[0]);
 		}
 
+		internal void RemoveLastSellerTab()
+		{
+			int count = customerIndexes.Count;
+			for (int i = 0; i < count; i++)
+			{
+				if (customerIndexes[i] > sellerIndexes[sellerIndexes.Count-1])
+				{
+					customerIndexes[i]--;
+				}
+			}
+			RemoveTabById(sellerIndexes[sellerIndexes.Count-1]);
+			sellerIndexes.RemoveAt(sellerIndexes.Count - 1);
+		}
+
+		internal void RemoveLastCustomerTab()
+		{
+			int count = sellerIndexes.Count;
+			for (int i = 0; i < count; i++)
+			{
+				if (sellerIndexes[i] > customerIndexes[customerIndexes.Count-1])
+				{
+					sellerIndexes[i]--;
+				}
+			}
+			RemoveTabById(customerIndexes[customerIndexes.Count - 1]);
+			customerIndexes.RemoveAt(customerIndexes.Count - 1);
+		}
+
+
 		internal void RemoveAllTabs()
 		{
 			getTabControll().TabPages.Clear();
@@ -94,6 +124,24 @@ namespace ESF_kz.Forms
 		internal void RemoveTabById(int id)
 		{
 			getTabControll().TabPages.Remove(getTabControll().TabPages[id]);
+		}
+
+		internal void RemoveAllSellerTabs()
+		{
+			int count = sellerIndexes.Count;
+			for (int i = 0; i < count; i++)
+			{
+				RemoveLastSellerTab();
+			}
+		}
+
+		internal void RemoveAllCustomerTabs()
+		{
+			int count = customerIndexes.Count;
+			for (int i = 0; i < count; i++)
+			{
+				RemoveLastCustomerTab();
+			}
 		}
 	}
 }
