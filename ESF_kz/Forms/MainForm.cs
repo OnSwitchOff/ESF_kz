@@ -1,4 +1,5 @@
 ﻿using ESF_kz.InvoiceService;
+using ESF_kz.SessionService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,6 +67,30 @@ namespace ESF_kz.Forms
 			XmlNode newNode = doc.DocumentElement;
 
 			
+		}
+
+		private void toolStripButton3_Click(object sender, EventArgs e)
+		{
+			SessionServiceOperationsFacade.getCurrentUser();
+			SessionServiceOperationsFacade.getCurrentUserProfile();
+			User user = SessionDataManagerFacade.getCurrentUserData();
+			profileInfo[] profileInfos = SessionDataManagerFacade.getCurrentUserProfilesData();
+		}
+
+		private void toolStripButton4_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(SessionServiceOperationsFacade.CurrentSessionStatus().ToString());
+		}
+
+		private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+
+		}
+
+		private void toolStripButton5_Click(object sender, EventArgs e)
+		{
+			if (SessionServiceOperationsFacade.CloseSessionByCredentials())
+				MessageBox.Show("Closed");
 		}
 	}
 }

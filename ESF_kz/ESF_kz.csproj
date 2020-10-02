@@ -213,6 +213,12 @@
     <Compile Include="Forms\panelESFpartK.Designer.cs">
       <DependentUpon>panelESFpartK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserInfoForm.Designer.cs">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvoiceXMLParser.cs" />
     <Compile Include="Models\AbstractCustomer.cs" />
     <Compile Include="Models\AbstractInvoice.cs" />
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\panelESFpartL.resx">
       <DependentUpon>panelESFpartL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserInfoForm.resx">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

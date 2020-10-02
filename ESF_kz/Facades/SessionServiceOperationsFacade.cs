@@ -7,6 +7,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ESF_kz
 {
@@ -97,7 +98,7 @@ namespace ESF_kz
 			closeSessionResponse CloseSessionByCredentialsResponse;
 			try
 			{
-				CloseSessionByCredentialsResponse = getServiceClient().closeSessionByCredentials(CloseSessionByCredentialsRequest);
+				CloseSessionByCredentialsResponse = getServiceClient().closeSessionByCredentials(CloseSessionByCredentialsRequest);				
 				SessionDataManagerFacade.clearSessionData();
 				return true;
 			}
@@ -136,7 +137,7 @@ namespace ESF_kz
 			}
 		}
 
-		private static mySessionStatus CurrentSessionStatus()
+		internal static mySessionStatus CurrentSessionStatus()
 		{
 			if(!SessionDataManagerFacade.isEmptySessionId())
 			{
@@ -165,7 +166,7 @@ namespace ESF_kz
 			return mySessionStatus.NOT_FOUND;
 		}
 
-		private static bool getCurrentUser()
+		internal static bool getCurrentUser()
 		{
 			switch (CurrentSessionStatus())
 			{
@@ -192,7 +193,7 @@ namespace ESF_kz
 			}			
 		}
 
-		private static bool getCurrentUserProfile()
+		internal static bool getCurrentUserProfile()
 		{
 			switch (CurrentSessionStatus())
 			{

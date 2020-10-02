@@ -10,6 +10,9 @@ namespace ESF_kz
 	static class ResponseManagerFacade
 	{
 
+
+
+
 		internal static invoiceContainerV2 ParseInvoiceConatinerV2XML(XmlDocument xDoc)
 		{
 			XmlElement xRoot = xDoc.DocumentElement;//invoiceContainer
