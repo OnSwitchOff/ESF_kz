@@ -124,11 +124,6 @@
 			this.label19 = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
 			this.label21 = new System.Windows.Forms.Label();
-			this.label24 = new System.Windows.Forms.Label();
-			this.label25 = new System.Windows.Forms.Label();
-			this.label26 = new System.Windows.Forms.Label();
-			this.label27 = new System.Windows.Forms.Label();
-			this.label28 = new System.Windows.Forms.Label();
 			this.tbHeadOfficeTin = new System.Windows.Forms.TextBox();
 			this.tbHeadOfficeNameRu = new System.Windows.Forms.TextBox();
 			this.tbHeadOfficeLastNameRu = new System.Windows.Forms.TextBox();
@@ -141,16 +136,20 @@
 			this.tbHeadOfficeAddressKz = new System.Windows.Forms.TextBox();
 			this.tbHeadOfficeCertificateCeries = new System.Windows.Forms.TextBox();
 			this.tbHeadOfficeCertificateNum = new System.Windows.Forms.TextBox();
-			this.tbHeadOfficeType = new System.Windows.Forms.TextBox();
-			this.label30 = new System.Windows.Forms.Label();
-			this.tbHeadOfficeEnterpriseAdministrator = new System.Windows.Forms.TextBox();
-			this.tbHeadOfficeBudgetIin = new System.Windows.Forms.TextBox();
 			this.tbHeadOfficeKogd = new System.Windows.Forms.TextBox();
+			this.label27 = new System.Windows.Forms.Label();
+			this.tbHeadOfficeBudgetIin = new System.Windows.Forms.TextBox();
+			this.label28 = new System.Windows.Forms.Label();
+			this.label26 = new System.Windows.Forms.Label();
+			this.tbHeadOfficeEnterpriseAdministrator = new System.Windows.Forms.TextBox();
+			this.label30 = new System.Windows.Forms.Label();
+			this.label25 = new System.Windows.Forms.Label();
+			this.label24 = new System.Windows.Forms.Label();
+			this.tbHeadOfficeType = new System.Windows.Forms.TextBox();
 			this.label22 = new System.Windows.Forms.Label();
 			this.chbxHeadOfficeIsResident = new System.Windows.Forms.CheckBox();
 			this.accountsTab = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
 			this.label23 = new System.Windows.Forms.Label();
 			this.label29 = new System.Windows.Forms.Label();
@@ -182,6 +181,7 @@
 			this.checkBox10 = new System.Windows.Forms.CheckBox();
 			this.textBox11 = new System.Windows.Forms.TextBox();
 			this.textBox13 = new System.Windows.Forms.TextBox();
+			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.tabControl1.SuspendLayout();
 			this.userTab.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
@@ -1297,56 +1297,6 @@
 			this.label21.TabIndex = 11;
 			this.label21.Text = "Номер свидетельства плательщика НДС";
 			// 
-			// label24
-			// 
-			this.label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label24.AutoSize = true;
-			this.label24.Location = new System.Drawing.Point(3, 344);
-			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(132, 13);
-			this.label24.TabIndex = 14;
-			this.label24.Text = "\tТип налогоплательщика";
-			// 
-			// label25
-			// 
-			this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label25.AutoSize = true;
-			this.label25.Location = new System.Drawing.Point(3, 370);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(93, 13);
-			this.label25.TabIndex = 15;
-			this.label25.Text = "Банковский счет";
-			// 
-			// label26
-			// 
-			this.label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label26.AutoSize = true;
-			this.label26.Location = new System.Drawing.Point(3, 396);
-			this.label26.Name = "label26";
-			this.label26.Size = new System.Drawing.Size(155, 13);
-			this.label26.TabIndex = 16;
-			this.label26.Text = "ИИН директора предприятия";
-			// 
-			// label27
-			// 
-			this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label27.AutoSize = true;
-			this.label27.Location = new System.Drawing.Point(3, 448);
-			this.label27.Name = "label27";
-			this.label27.Size = new System.Drawing.Size(199, 13);
-			this.label27.TabIndex = 18;
-			this.label27.Text = "Код органа государственных доходов";
-			// 
-			// label28
-			// 
-			this.label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label28.AutoSize = true;
-			this.label28.Location = new System.Drawing.Point(3, 422);
-			this.label28.Name = "label28";
-			this.label28.Size = new System.Drawing.Size(321, 13);
-			this.label28.TabIndex = 19;
-			this.label28.Text = "ИИН ответственного работника по расчетам с бюджетом ЮЛ";
-			// 
 			// tbHeadOfficeTin
 			// 
 			this.tbHeadOfficeTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1443,13 +1393,59 @@
 			this.tbHeadOfficeCertificateNum.Size = new System.Drawing.Size(400, 20);
 			this.tbHeadOfficeCertificateNum.TabIndex = 31;
 			// 
-			// tbHeadOfficeType
+			// tbHeadOfficeKogd
 			// 
-			this.tbHeadOfficeType.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbHeadOfficeType.Location = new System.Drawing.Point(355, 341);
-			this.tbHeadOfficeType.Name = "tbHeadOfficeType";
-			this.tbHeadOfficeType.Size = new System.Drawing.Size(400, 20);
-			this.tbHeadOfficeType.TabIndex = 34;
+			this.tbHeadOfficeKogd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbHeadOfficeKogd.Location = new System.Drawing.Point(355, 445);
+			this.tbHeadOfficeKogd.Name = "tbHeadOfficeKogd";
+			this.tbHeadOfficeKogd.Size = new System.Drawing.Size(400, 20);
+			this.tbHeadOfficeKogd.TabIndex = 38;
+			// 
+			// label27
+			// 
+			this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.label27.AutoSize = true;
+			this.label27.Location = new System.Drawing.Point(3, 448);
+			this.label27.Name = "label27";
+			this.label27.Size = new System.Drawing.Size(199, 13);
+			this.label27.TabIndex = 18;
+			this.label27.Text = "Код органа государственных доходов";
+			// 
+			// tbHeadOfficeBudgetIin
+			// 
+			this.tbHeadOfficeBudgetIin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbHeadOfficeBudgetIin.Location = new System.Drawing.Point(355, 419);
+			this.tbHeadOfficeBudgetIin.Name = "tbHeadOfficeBudgetIin";
+			this.tbHeadOfficeBudgetIin.Size = new System.Drawing.Size(400, 20);
+			this.tbHeadOfficeBudgetIin.TabIndex = 37;
+			// 
+			// label28
+			// 
+			this.label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.label28.AutoSize = true;
+			this.label28.Location = new System.Drawing.Point(3, 422);
+			this.label28.Name = "label28";
+			this.label28.Size = new System.Drawing.Size(321, 13);
+			this.label28.TabIndex = 19;
+			this.label28.Text = "ИИН ответственного работника по расчетам с бюджетом ЮЛ";
+			// 
+			// label26
+			// 
+			this.label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.label26.AutoSize = true;
+			this.label26.Location = new System.Drawing.Point(3, 396);
+			this.label26.Name = "label26";
+			this.label26.Size = new System.Drawing.Size(155, 13);
+			this.label26.TabIndex = 16;
+			this.label26.Text = "ИИН директора предприятия";
+			// 
+			// tbHeadOfficeEnterpriseAdministrator
+			// 
+			this.tbHeadOfficeEnterpriseAdministrator.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbHeadOfficeEnterpriseAdministrator.Location = new System.Drawing.Point(355, 393);
+			this.tbHeadOfficeEnterpriseAdministrator.Name = "tbHeadOfficeEnterpriseAdministrator";
+			this.tbHeadOfficeEnterpriseAdministrator.Size = new System.Drawing.Size(400, 20);
+			this.tbHeadOfficeEnterpriseAdministrator.TabIndex = 36;
 			// 
 			// label30
 			// 
@@ -1463,29 +1459,33 @@
 			this.label30.TabIndex = 35;
 			this.label30.Text = "View Settlement Accounts";
 			// 
-			// tbHeadOfficeEnterpriseAdministrator
+			// label25
 			// 
-			this.tbHeadOfficeEnterpriseAdministrator.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbHeadOfficeEnterpriseAdministrator.Location = new System.Drawing.Point(355, 393);
-			this.tbHeadOfficeEnterpriseAdministrator.Name = "tbHeadOfficeEnterpriseAdministrator";
-			this.tbHeadOfficeEnterpriseAdministrator.Size = new System.Drawing.Size(400, 20);
-			this.tbHeadOfficeEnterpriseAdministrator.TabIndex = 36;
+			this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.label25.AutoSize = true;
+			this.label25.Location = new System.Drawing.Point(3, 370);
+			this.label25.Name = "label25";
+			this.label25.Size = new System.Drawing.Size(93, 13);
+			this.label25.TabIndex = 15;
+			this.label25.Text = "Банковский счет";
 			// 
-			// tbHeadOfficeBudgetIin
+			// label24
 			// 
-			this.tbHeadOfficeBudgetIin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbHeadOfficeBudgetIin.Location = new System.Drawing.Point(355, 419);
-			this.tbHeadOfficeBudgetIin.Name = "tbHeadOfficeBudgetIin";
-			this.tbHeadOfficeBudgetIin.Size = new System.Drawing.Size(400, 20);
-			this.tbHeadOfficeBudgetIin.TabIndex = 37;
+			this.label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.label24.AutoSize = true;
+			this.label24.Location = new System.Drawing.Point(3, 344);
+			this.label24.Name = "label24";
+			this.label24.Size = new System.Drawing.Size(132, 13);
+			this.label24.TabIndex = 14;
+			this.label24.Text = "\tТип налогоплательщика";
 			// 
-			// tbHeadOfficeKogd
+			// tbHeadOfficeType
 			// 
-			this.tbHeadOfficeKogd.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbHeadOfficeKogd.Location = new System.Drawing.Point(355, 445);
-			this.tbHeadOfficeKogd.Name = "tbHeadOfficeKogd";
-			this.tbHeadOfficeKogd.Size = new System.Drawing.Size(400, 20);
-			this.tbHeadOfficeKogd.TabIndex = 38;
+			this.tbHeadOfficeType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbHeadOfficeType.Location = new System.Drawing.Point(355, 341);
+			this.tbHeadOfficeType.Name = "tbHeadOfficeType";
+			this.tbHeadOfficeType.Size = new System.Drawing.Size(400, 20);
+			this.tbHeadOfficeType.TabIndex = 34;
 			// 
 			// label22
 			// 
@@ -1532,20 +1532,6 @@
 			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel4.Size = new System.Drawing.Size(865, 491);
 			this.tableLayoutPanel4.TabIndex = 0;
-			// 
-			// treeView1
-			// 
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.Location = new System.Drawing.Point(3, 3);
-			this.treeView1.Name = "treeView1";
-			treeNode1.Name = "SettlementAccount_1";
-			treeNode1.Text = "Settlement Account #1";
-			treeNode2.Name = "Settlement Accounts";
-			treeNode2.Text = "Settlement Accounts";
-			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-			this.treeView1.Size = new System.Drawing.Size(167, 485);
-			this.treeView1.TabIndex = 0;
 			// 
 			// tableLayoutPanel5
 			// 
@@ -1879,6 +1865,23 @@
 			this.textBox13.Name = "textBox13";
 			this.textBox13.Size = new System.Drawing.Size(400, 20);
 			this.textBox13.TabIndex = 41;
+			// 
+			// treeView1
+			// 
+			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.Location = new System.Drawing.Point(3, 3);
+			this.treeView1.Name = "treeView1";
+			treeNode1.Name = "SettlementAccount_1";
+			treeNode1.Text = "Settlement Account #1";
+			treeNode2.Name = "Settlement Accounts";
+			treeNode2.Text = "Settlement Accounts";
+			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+			this.treeView1.ShowNodeToolTips = true;
+			this.treeView1.ShowPlusMinus = false;
+			this.treeView1.ShowRootLines = false;
+			this.treeView1.Size = new System.Drawing.Size(167, 485);
+			this.treeView1.TabIndex = 0;
 			// 
 			// UserInfoForm
 			// 

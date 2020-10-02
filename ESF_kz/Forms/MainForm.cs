@@ -75,6 +75,7 @@ namespace ESF_kz.Forms
 			SessionServiceOperationsFacade.getCurrentUserProfile();
 			User user = SessionDataManagerFacade.getCurrentUserData();
 			profileInfo[] profileInfos = SessionDataManagerFacade.getCurrentUserProfilesData();
+			if (FormManagerFacade.FillUserInfoForm(user)) ;
 		}
 
 		private void toolStripButton4_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESF_kz.SessionService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,29 @@ namespace ESF_kz.Forms
 		public UserInfoForm()
 		{
 			InitializeComponent();
+			FormManagerFacade.setUserInfoForm(this);
 		}
 
+		internal bool fillUserInfoForm(User user)
+		{
+			try
+			{
+				fillUserInfoTab();
+				fillTaxpayerInfoTab();
+				fillHeadOfficeInfoTab();
+				fillSettlementAccountsTab();
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		private void fillUserInfoTab()
+		{
+			tbUserLogin
+		}
 
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using ESF_kz.Forms;
+using ESF_kz.SessionService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,20 @@ namespace ESF_kz
 	static class FormManagerFacade
 	{
 		static private ESF_form invoiceForm;
+		static private UserInfoForm userInfoForm;
 
+		static internal bool setUserInfoForm(UserInfoForm form)
+		{
+			try
+			{
+				userInfoForm = form;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 		static internal bool setInvoiceForm(ESF_form form)
 		{
 			try
@@ -28,6 +42,11 @@ namespace ESF_kz
 		static internal ESF_form getInvoiceForm()
 		{
 			return invoiceForm;
+		}
+
+		static internal UserInfoForm getUserInfoForm()
+		{
+			return userInfoForm;
 		}
 
 		internal static string getOperatorFullname()
@@ -107,6 +126,11 @@ namespace ESF_kz
 		internal static string getConsigneeTin()
 		{
 			return invoiceForm.getPannel<panelESFpartD>().getConsigneeTin();
+		}
+
+		internal static bool FillUserInfoForm(User user)
+		{
+			return getUserInfoForm().fillUserInfoForm(user);
 		}
 
 		internal static string getConsignorAddress()
