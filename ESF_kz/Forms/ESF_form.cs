@@ -229,7 +229,6 @@ namespace ESF_kz
 			xDoc.Load(filename);
 			invoiceContainerV2 ic = SessionDataManagerFacade.ParseInvoiceXML(xDoc);
 			FormManagerFacade.fillInvoiceForm(ic);
-
 			MessageBox.Show("Файл открыт");
 		}
 

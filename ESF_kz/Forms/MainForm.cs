@@ -56,7 +56,7 @@ namespace ESF_kz.Forms
 
 		private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			string invoiceId = getDataGrid().Rows[e.RowIndex].Cells[2].Value.ToString();
+			/*string invoiceId = getDataGrid().Rows[e.RowIndex].Cells[2].Value.ToString();
 			MessageBox.Show(invoiceId);
 			SessionDataManagerFacade.setInvoiceId(long.Parse(invoiceId));
 			QueryInvoiceResponse queryInvoiceResponse = new QueryInvoiceResponse();
@@ -64,18 +64,19 @@ namespace ESF_kz.Forms
 
 			XmlDocument doc = new XmlDocument();
 			doc.LoadXml(queryInvoiceResponse.invoiceInfoList[0].invoiceBody);
-			XmlNode newNode = doc.DocumentElement;
-
-			
+			XmlNode newNode = doc.DocumentElement;			*/
 		}
 
 		private void toolStripButton3_Click(object sender, EventArgs e)
 		{
+			UserInfoForm userInfoForm = new UserInfoForm();
+			userInfoForm.Show();
 			SessionServiceOperationsFacade.getCurrentUser();
 			SessionServiceOperationsFacade.getCurrentUserProfile();
 			User user = SessionDataManagerFacade.getCurrentUserData();
 			profileInfo[] profileInfos = SessionDataManagerFacade.getCurrentUserProfilesData();
-			if (FormManagerFacade.FillUserInfoForm(user)) ;
+			FormManagerFacade.FillUserInfoForm(user);
+			FormManagerFacade.FillProfileInfoForm(profileInfos);
 		}
 
 		private void toolStripButton4_Click(object sender, EventArgs e)
@@ -92,6 +93,22 @@ namespace ESF_kz.Forms
 		{
 			if (SessionServiceOperationsFacade.CloseSessionByCredentials())
 				MessageBox.Show("Closed");
+		}
+
+		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string invoiceId = getDataGrid().Rows[e.RowIndex].Cells[2].Value.ToString();
+			MessageBox.Show(invoiceId);
+			SessionDataManagerFacade.setInvoiceId(long.Parse(invoiceId));
+			QueryInvoiceResponse queryInvoiceResponse = new QueryInvoiceResponse();
+			InvoiceServiceOperationsFacade.QueryInvoiceById(out queryInvoiceResponse);
+
+			XmlDocument doc = new XmlDocument();
+			doc.LoadXml(queryInvoiceResponse.invoiceInfoList[0].invoiceBody);
+			XmlNode newNode = doc.DocumentElement;
+			InvoiceV2 invoice = ResponseManagerFacade.ParseInvoiceBody(newNode);
+			ESF_form invoiceForm = FormManagerFacade.FillInvoiceFormByInvoice(invoice);
+			invoiceForm.Show();
 		}
 	}
 }

@@ -28,9 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Settlement Account #1");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Settlement Accounts", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Settlement Accounts");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Profiles");
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.userTab = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -100,7 +99,7 @@
 			this.tbTaxpayerFirstNameKz = new System.Windows.Forms.TextBox();
 			this.tbTaxpayerMiddleNameKz = new System.Windows.Forms.TextBox();
 			this.tbTaxpayerAddressRu = new System.Windows.Forms.TextBox();
-			this.tbAddressKz = new System.Windows.Forms.TextBox();
+			this.tbTaxpayerAddressKz = new System.Windows.Forms.TextBox();
 			this.tbTaxpayerCerificateCeries = new System.Windows.Forms.TextBox();
 			this.tbTaxpayerCertificateNum = new System.Windows.Forms.TextBox();
 			this.chbxTaxpayerIsResident = new System.Windows.Forms.CheckBox();
@@ -160,28 +159,45 @@
 			this.label35 = new System.Windows.Forms.Label();
 			this.label36 = new System.Windows.Forms.Label();
 			this.label37 = new System.Windows.Forms.Label();
-			this.label38 = new System.Windows.Forms.Label();
+			this.tbSettlementAccountId = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountTaxpayerTin = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountBankId = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountBankNameRu = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountBankNameKz = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountBankBik = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountBankCode = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountBankTin = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountBankRnn = new System.Windows.Forms.TextBox();
 			this.label39 = new System.Windows.Forms.Label();
+			this.chbxSettlementAccountBankActive = new System.Windows.Forms.CheckBox();
 			this.label40 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
-			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.textBox7 = new System.Windows.Forms.TextBox();
-			this.textBox8 = new System.Windows.Forms.TextBox();
-			this.textBox9 = new System.Windows.Forms.TextBox();
-			this.textBox10 = new System.Windows.Forms.TextBox();
-			this.textBox12 = new System.Windows.Forms.TextBox();
-			this.label45 = new System.Windows.Forms.Label();
-			this.label46 = new System.Windows.Forms.Label();
-			this.textBox16 = new System.Windows.Forms.TextBox();
 			this.label47 = new System.Windows.Forms.Label();
-			this.checkBox10 = new System.Windows.Forms.CheckBox();
-			this.textBox11 = new System.Windows.Forms.TextBox();
-			this.textBox13 = new System.Windows.Forms.TextBox();
-			this.treeView1 = new System.Windows.Forms.TreeView();
+			this.label46 = new System.Windows.Forms.Label();
+			this.label45 = new System.Windows.Forms.Label();
+			this.tbSettlementAccountType = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccount = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountDateOpen = new System.Windows.Forms.TextBox();
+			this.tbSettlementAccountDateClose = new System.Windows.Forms.TextBox();
+			this.tvSettlementAccounts = new System.Windows.Forms.TreeView();
+			this.profileInfoTab = new System.Windows.Forms.TabPage();
+			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+			this.tbProfileInfoIin = new System.Windows.Forms.TextBox();
+			this.tbProfileInfoTin = new System.Windows.Forms.TextBox();
+			this.tbProfileInfoBusinessProfileType = new System.Windows.Forms.TextBox();
+			this.tbProfileInfoStatus = new System.Windows.Forms.TextBox();
+			this.tbProfileInfoType = new System.Windows.Forms.TextBox();
+			this.tbProfileInfoProjectParticipantType = new System.Windows.Forms.TextBox();
+			this.tbProfileInfoProjectCode = new System.Windows.Forms.TextBox();
+			this.tbProfileInfoProjectName = new System.Windows.Forms.TextBox();
+			this.l_ProfileInfoIin = new System.Windows.Forms.Label();
+			this.l_ProfileInfoTin = new System.Windows.Forms.Label();
+			this.l_ProfileInfoBusinessProfileType = new System.Windows.Forms.Label();
+			this.l_ProfileInfoStatus = new System.Windows.Forms.Label();
+			this.l_ProfileInfoType = new System.Windows.Forms.Label();
+			this.l_ProfileInfoProjectParticipationType = new System.Windows.Forms.Label();
+			this.l_ProfileInfoProjectCode = new System.Windows.Forms.Label();
+			this.l_ProfileInfoProjectName = new System.Windows.Forms.Label();
+			this.tvProfileInfo = new System.Windows.Forms.TreeView();
 			this.tabControl1.SuspendLayout();
 			this.userTab.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
@@ -192,6 +208,8 @@
 			this.accountsTab.SuspendLayout();
 			this.tableLayoutPanel4.SuspendLayout();
 			this.tableLayoutPanel5.SuspendLayout();
+			this.profileInfoTab.SuspendLayout();
+			this.tableLayoutPanel6.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -200,6 +218,7 @@
 			this.tabControl1.Controls.Add(this.taxpayerTab);
 			this.tabControl1.Controls.Add(this.headOfficeTab);
 			this.tabControl1.Controls.Add(this.accountsTab);
+			this.tabControl1.Controls.Add(this.profileInfoTab);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
@@ -664,6 +683,7 @@
 			this.l_UserTaxpayerInfo.Size = new System.Drawing.Size(98, 13);
 			this.l_UserTaxpayerInfo.TabIndex = 35;
 			this.l_UserTaxpayerInfo.Text = "View Taxpayer Info";
+			this.l_UserTaxpayerInfo.Click += new System.EventHandler(this.l_UserTaxpayerInfo_Click);
 			// 
 			// taxpayerTab
 			// 
@@ -710,7 +730,7 @@
 			this.tableLayoutPanel2.Controls.Add(this.tbTaxpayerFirstNameKz, 1, 6);
 			this.tableLayoutPanel2.Controls.Add(this.tbTaxpayerMiddleNameKz, 1, 7);
 			this.tableLayoutPanel2.Controls.Add(this.tbTaxpayerAddressRu, 1, 8);
-			this.tableLayoutPanel2.Controls.Add(this.tbAddressKz, 1, 9);
+			this.tableLayoutPanel2.Controls.Add(this.tbTaxpayerAddressKz, 1, 9);
 			this.tableLayoutPanel2.Controls.Add(this.tbTaxpayerCerificateCeries, 1, 10);
 			this.tableLayoutPanel2.Controls.Add(this.tbTaxpayerCertificateNum, 1, 11);
 			this.tableLayoutPanel2.Controls.Add(this.chbxTaxpayerIsResident, 1, 12);
@@ -1009,13 +1029,13 @@
 			this.tbTaxpayerAddressRu.Size = new System.Drawing.Size(400, 20);
 			this.tbTaxpayerAddressRu.TabIndex = 28;
 			// 
-			// tbAddressKz
+			// tbTaxpayerAddressKz
 			// 
-			this.tbAddressKz.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbAddressKz.Location = new System.Drawing.Point(352, 219);
-			this.tbAddressKz.Name = "tbAddressKz";
-			this.tbAddressKz.Size = new System.Drawing.Size(400, 20);
-			this.tbAddressKz.TabIndex = 29;
+			this.tbTaxpayerAddressKz.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbTaxpayerAddressKz.Location = new System.Drawing.Point(352, 219);
+			this.tbTaxpayerAddressKz.Name = "tbTaxpayerAddressKz";
+			this.tbTaxpayerAddressKz.Size = new System.Drawing.Size(400, 20);
+			this.tbTaxpayerAddressKz.TabIndex = 29;
 			// 
 			// tbTaxpayerCerificateCeries
 			// 
@@ -1054,6 +1074,7 @@
 			this.l_linkToHeadOfficeTab.Size = new System.Drawing.Size(111, 13);
 			this.l_linkToHeadOfficeTab.TabIndex = 33;
 			this.l_linkToHeadOfficeTab.Text = "View Head Office Info";
+			this.l_linkToHeadOfficeTab.Click += new System.EventHandler(this.l_linkToHeadOfficeTab_Click);
 			// 
 			// tbTaxpayerType
 			// 
@@ -1074,6 +1095,7 @@
 			this.l_linkToAccountsTab.Size = new System.Drawing.Size(131, 13);
 			this.l_linkToAccountsTab.TabIndex = 35;
 			this.l_linkToAccountsTab.Text = "View Settlement Accounts";
+			this.l_linkToAccountsTab.Click += new System.EventHandler(this.l_linkToAccountsTab_Click);
 			// 
 			// tbTaxpayerEnterpriseAdministrator
 			// 
@@ -1458,6 +1480,7 @@
 			this.label30.Size = new System.Drawing.Size(131, 13);
 			this.label30.TabIndex = 35;
 			this.label30.Text = "View Settlement Accounts";
+			this.label30.Click += new System.EventHandler(this.l_linkToAccountsTab_Click);
 			// 
 			// label25
 			// 
@@ -1524,7 +1547,7 @@
 			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
 			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
 			this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
-			this.tableLayoutPanel4.Controls.Add(this.treeView1, 0, 0);
+			this.tableLayoutPanel4.Controls.Add(this.tvSettlementAccounts, 0, 0);
 			this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
 			this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -1547,27 +1570,25 @@
 			this.tableLayoutPanel5.Controls.Add(this.label35, 0, 6);
 			this.tableLayoutPanel5.Controls.Add(this.label36, 0, 7);
 			this.tableLayoutPanel5.Controls.Add(this.label37, 0, 8);
-			this.tableLayoutPanel5.Controls.Add(this.label38, 0, 9);
-			this.tableLayoutPanel5.Controls.Add(this.label39, 0, 10);
-			this.tableLayoutPanel5.Controls.Add(this.label40, 0, 11);
-			this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
-			this.tableLayoutPanel5.Controls.Add(this.textBox2, 1, 1);
-			this.tableLayoutPanel5.Controls.Add(this.textBox3, 1, 2);
-			this.tableLayoutPanel5.Controls.Add(this.textBox4, 1, 3);
-			this.tableLayoutPanel5.Controls.Add(this.textBox5, 1, 4);
-			this.tableLayoutPanel5.Controls.Add(this.textBox6, 1, 5);
-			this.tableLayoutPanel5.Controls.Add(this.textBox7, 1, 6);
-			this.tableLayoutPanel5.Controls.Add(this.textBox8, 1, 7);
-			this.tableLayoutPanel5.Controls.Add(this.textBox9, 1, 8);
-			this.tableLayoutPanel5.Controls.Add(this.textBox10, 1, 9);
-			this.tableLayoutPanel5.Controls.Add(this.textBox12, 1, 11);
-			this.tableLayoutPanel5.Controls.Add(this.label45, 0, 14);
-			this.tableLayoutPanel5.Controls.Add(this.label46, 0, 13);
-			this.tableLayoutPanel5.Controls.Add(this.textBox16, 1, 13);
-			this.tableLayoutPanel5.Controls.Add(this.label47, 0, 12);
-			this.tableLayoutPanel5.Controls.Add(this.checkBox10, 1, 10);
-			this.tableLayoutPanel5.Controls.Add(this.textBox11, 1, 14);
-			this.tableLayoutPanel5.Controls.Add(this.textBox13, 1, 12);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountId, 1, 0);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountTaxpayerTin, 1, 1);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountBankId, 1, 2);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountBankNameRu, 1, 3);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountBankNameKz, 1, 4);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountBankBik, 1, 5);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountBankCode, 1, 6);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountBankTin, 1, 7);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountBankRnn, 1, 8);
+			this.tableLayoutPanel5.Controls.Add(this.label39, 0, 9);
+			this.tableLayoutPanel5.Controls.Add(this.chbxSettlementAccountBankActive, 1, 9);
+			this.tableLayoutPanel5.Controls.Add(this.label40, 0, 10);
+			this.tableLayoutPanel5.Controls.Add(this.label47, 0, 11);
+			this.tableLayoutPanel5.Controls.Add(this.label46, 0, 12);
+			this.tableLayoutPanel5.Controls.Add(this.label45, 0, 13);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountType, 1, 10);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccount, 1, 11);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountDateOpen, 1, 12);
+			this.tableLayoutPanel5.Controls.Add(this.tbSettlementAccountDateClose, 1, 13);
 			this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel5.Location = new System.Drawing.Point(176, 3);
 			this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -1684,204 +1705,391 @@
 			this.label37.TabIndex = 8;
 			this.label37.Text = "РНН банка как ЮЛ";
 			// 
-			// label38
+			// tbSettlementAccountId
 			// 
-			this.label38.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label38.AutoSize = true;
-			this.label38.Location = new System.Drawing.Point(3, 278);
-			this.label38.Name = "label38";
-			this.label38.Size = new System.Drawing.Size(146, 13);
-			this.label38.TabIndex = 9;
-			this.label38.Text = "Адрес на казахском языке";
+			this.tbSettlementAccountId.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountId.Location = new System.Drawing.Point(280, 5);
+			this.tbSettlementAccountId.Name = "tbSettlementAccountId";
+			this.tbSettlementAccountId.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountId.TabIndex = 20;
+			// 
+			// tbSettlementAccountTaxpayerTin
+			// 
+			this.tbSettlementAccountTaxpayerTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountTaxpayerTin.Location = new System.Drawing.Point(280, 35);
+			this.tbSettlementAccountTaxpayerTin.Name = "tbSettlementAccountTaxpayerTin";
+			this.tbSettlementAccountTaxpayerTin.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountTaxpayerTin.TabIndex = 21;
+			// 
+			// tbSettlementAccountBankId
+			// 
+			this.tbSettlementAccountBankId.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountBankId.Location = new System.Drawing.Point(280, 65);
+			this.tbSettlementAccountBankId.Name = "tbSettlementAccountBankId";
+			this.tbSettlementAccountBankId.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountBankId.TabIndex = 22;
+			// 
+			// tbSettlementAccountBankNameRu
+			// 
+			this.tbSettlementAccountBankNameRu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountBankNameRu.Location = new System.Drawing.Point(280, 95);
+			this.tbSettlementAccountBankNameRu.Name = "tbSettlementAccountBankNameRu";
+			this.tbSettlementAccountBankNameRu.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountBankNameRu.TabIndex = 23;
+			// 
+			// tbSettlementAccountBankNameKz
+			// 
+			this.tbSettlementAccountBankNameKz.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountBankNameKz.Location = new System.Drawing.Point(280, 125);
+			this.tbSettlementAccountBankNameKz.Name = "tbSettlementAccountBankNameKz";
+			this.tbSettlementAccountBankNameKz.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountBankNameKz.TabIndex = 24;
+			// 
+			// tbSettlementAccountBankBik
+			// 
+			this.tbSettlementAccountBankBik.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountBankBik.Location = new System.Drawing.Point(280, 155);
+			this.tbSettlementAccountBankBik.Name = "tbSettlementAccountBankBik";
+			this.tbSettlementAccountBankBik.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountBankBik.TabIndex = 25;
+			// 
+			// tbSettlementAccountBankCode
+			// 
+			this.tbSettlementAccountBankCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountBankCode.Location = new System.Drawing.Point(280, 185);
+			this.tbSettlementAccountBankCode.Name = "tbSettlementAccountBankCode";
+			this.tbSettlementAccountBankCode.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountBankCode.TabIndex = 26;
+			// 
+			// tbSettlementAccountBankTin
+			// 
+			this.tbSettlementAccountBankTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountBankTin.Location = new System.Drawing.Point(280, 215);
+			this.tbSettlementAccountBankTin.Name = "tbSettlementAccountBankTin";
+			this.tbSettlementAccountBankTin.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountBankTin.TabIndex = 27;
+			// 
+			// tbSettlementAccountBankRnn
+			// 
+			this.tbSettlementAccountBankRnn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountBankRnn.Location = new System.Drawing.Point(280, 245);
+			this.tbSettlementAccountBankRnn.Name = "tbSettlementAccountBankRnn";
+			this.tbSettlementAccountBankRnn.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountBankRnn.TabIndex = 28;
 			// 
 			// label39
 			// 
 			this.label39.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label39.AutoSize = true;
-			this.label39.Location = new System.Drawing.Point(3, 308);
+			this.label39.Location = new System.Drawing.Point(3, 278);
 			this.label39.Name = "label39";
 			this.label39.Size = new System.Drawing.Size(74, 13);
 			this.label39.TabIndex = 10;
 			this.label39.Text = "Статус банка";
 			// 
+			// chbxSettlementAccountBankActive
+			// 
+			this.chbxSettlementAccountBankActive.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.chbxSettlementAccountBankActive.AutoSize = true;
+			this.chbxSettlementAccountBankActive.Location = new System.Drawing.Point(280, 278);
+			this.chbxSettlementAccountBankActive.Name = "chbxSettlementAccountBankActive";
+			this.chbxSettlementAccountBankActive.Size = new System.Drawing.Size(15, 14);
+			this.chbxSettlementAccountBankActive.TabIndex = 40;
+			this.chbxSettlementAccountBankActive.UseVisualStyleBackColor = true;
+			// 
 			// label40
 			// 
 			this.label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label40.AutoSize = true;
-			this.label40.Location = new System.Drawing.Point(3, 338);
+			this.label40.Location = new System.Drawing.Point(3, 308);
 			this.label40.Name = "label40";
 			this.label40.Size = new System.Drawing.Size(57, 13);
 			this.label40.TabIndex = 11;
 			this.label40.Text = "\tТип счёта";
 			// 
-			// textBox1
-			// 
-			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox1.Location = new System.Drawing.Point(280, 5);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(400, 20);
-			this.textBox1.TabIndex = 20;
-			// 
-			// textBox2
-			// 
-			this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox2.Location = new System.Drawing.Point(280, 35);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(400, 20);
-			this.textBox2.TabIndex = 21;
-			// 
-			// textBox3
-			// 
-			this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox3.Location = new System.Drawing.Point(280, 65);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(400, 20);
-			this.textBox3.TabIndex = 22;
-			// 
-			// textBox4
-			// 
-			this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox4.Location = new System.Drawing.Point(280, 95);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(400, 20);
-			this.textBox4.TabIndex = 23;
-			// 
-			// textBox5
-			// 
-			this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox5.Location = new System.Drawing.Point(280, 125);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(400, 20);
-			this.textBox5.TabIndex = 24;
-			// 
-			// textBox6
-			// 
-			this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox6.Location = new System.Drawing.Point(280, 155);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(400, 20);
-			this.textBox6.TabIndex = 25;
-			// 
-			// textBox7
-			// 
-			this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox7.Location = new System.Drawing.Point(280, 185);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(400, 20);
-			this.textBox7.TabIndex = 26;
-			// 
-			// textBox8
-			// 
-			this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox8.Location = new System.Drawing.Point(280, 215);
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(400, 20);
-			this.textBox8.TabIndex = 27;
-			// 
-			// textBox9
-			// 
-			this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox9.Location = new System.Drawing.Point(280, 245);
-			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(400, 20);
-			this.textBox9.TabIndex = 28;
-			// 
-			// textBox10
-			// 
-			this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox10.Location = new System.Drawing.Point(280, 275);
-			this.textBox10.Name = "textBox10";
-			this.textBox10.Size = new System.Drawing.Size(400, 20);
-			this.textBox10.TabIndex = 29;
-			// 
-			// textBox12
-			// 
-			this.textBox12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox12.Location = new System.Drawing.Point(280, 335);
-			this.textBox12.Name = "textBox12";
-			this.textBox12.Size = new System.Drawing.Size(400, 20);
-			this.textBox12.TabIndex = 31;
-			// 
-			// label45
-			// 
-			this.label45.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label45.AutoSize = true;
-			this.label45.Location = new System.Drawing.Point(3, 428);
-			this.label45.Name = "label45";
-			this.label45.Size = new System.Drawing.Size(116, 13);
-			this.label45.TabIndex = 15;
-			this.label45.Text = "\tДата закрытия счёта";
-			// 
-			// label46
-			// 
-			this.label46.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label46.AutoSize = true;
-			this.label46.Location = new System.Drawing.Point(3, 398);
-			this.label46.Name = "label46";
-			this.label46.Size = new System.Drawing.Size(115, 13);
-			this.label46.TabIndex = 14;
-			this.label46.Text = "\t\tДата открытия счёта";
-			// 
-			// textBox16
-			// 
-			this.textBox16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox16.Location = new System.Drawing.Point(280, 395);
-			this.textBox16.Name = "textBox16";
-			this.textBox16.Size = new System.Drawing.Size(400, 20);
-			this.textBox16.TabIndex = 34;
-			// 
 			// label47
 			// 
 			this.label47.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label47.AutoSize = true;
-			this.label47.Location = new System.Drawing.Point(3, 368);
+			this.label47.Location = new System.Drawing.Point(3, 338);
 			this.label47.Name = "label47";
 			this.label47.Size = new System.Drawing.Size(62, 13);
 			this.label47.TabIndex = 39;
 			this.label47.Text = "Счёт (ИИК)";
 			// 
-			// checkBox10
+			// label46
 			// 
-			this.checkBox10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.checkBox10.AutoSize = true;
-			this.checkBox10.Location = new System.Drawing.Point(280, 308);
-			this.checkBox10.Name = "checkBox10";
-			this.checkBox10.Size = new System.Drawing.Size(15, 14);
-			this.checkBox10.TabIndex = 40;
-			this.checkBox10.UseVisualStyleBackColor = true;
+			this.label46.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.label46.AutoSize = true;
+			this.label46.Location = new System.Drawing.Point(3, 368);
+			this.label46.Name = "label46";
+			this.label46.Size = new System.Drawing.Size(115, 13);
+			this.label46.TabIndex = 14;
+			this.label46.Text = "\t\tДата открытия счёта";
 			// 
-			// textBox11
+			// label45
 			// 
-			this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox11.Location = new System.Drawing.Point(280, 425);
-			this.textBox11.Name = "textBox11";
-			this.textBox11.Size = new System.Drawing.Size(400, 20);
-			this.textBox11.TabIndex = 30;
+			this.label45.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.label45.AutoSize = true;
+			this.label45.Location = new System.Drawing.Point(3, 398);
+			this.label45.Name = "label45";
+			this.label45.Size = new System.Drawing.Size(116, 13);
+			this.label45.TabIndex = 15;
+			this.label45.Text = "\tДата закрытия счёта";
 			// 
-			// textBox13
+			// tbSettlementAccountType
 			// 
-			this.textBox13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.textBox13.Location = new System.Drawing.Point(280, 365);
-			this.textBox13.Name = "textBox13";
-			this.textBox13.Size = new System.Drawing.Size(400, 20);
-			this.textBox13.TabIndex = 41;
+			this.tbSettlementAccountType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountType.Location = new System.Drawing.Point(280, 305);
+			this.tbSettlementAccountType.Name = "tbSettlementAccountType";
+			this.tbSettlementAccountType.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountType.TabIndex = 31;
 			// 
-			// treeView1
+			// tbSettlementAccount
 			// 
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.Location = new System.Drawing.Point(3, 3);
-			this.treeView1.Name = "treeView1";
-			treeNode1.Name = "SettlementAccount_1";
-			treeNode1.Text = "Settlement Account #1";
-			treeNode2.Name = "Settlement Accounts";
-			treeNode2.Text = "Settlement Accounts";
-			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+			this.tbSettlementAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccount.Location = new System.Drawing.Point(280, 335);
+			this.tbSettlementAccount.Name = "tbSettlementAccount";
+			this.tbSettlementAccount.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccount.TabIndex = 41;
+			// 
+			// tbSettlementAccountDateOpen
+			// 
+			this.tbSettlementAccountDateOpen.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountDateOpen.Location = new System.Drawing.Point(280, 365);
+			this.tbSettlementAccountDateOpen.Name = "tbSettlementAccountDateOpen";
+			this.tbSettlementAccountDateOpen.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountDateOpen.TabIndex = 34;
+			// 
+			// tbSettlementAccountDateClose
+			// 
+			this.tbSettlementAccountDateClose.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbSettlementAccountDateClose.Location = new System.Drawing.Point(280, 395);
+			this.tbSettlementAccountDateClose.Name = "tbSettlementAccountDateClose";
+			this.tbSettlementAccountDateClose.Size = new System.Drawing.Size(400, 20);
+			this.tbSettlementAccountDateClose.TabIndex = 30;
+			// 
+			// tvSettlementAccounts
+			// 
+			this.tvSettlementAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tvSettlementAccounts.Location = new System.Drawing.Point(3, 3);
+			this.tvSettlementAccounts.Name = "tvSettlementAccounts";
+			treeNode1.Name = "Settlement Accounts";
+			treeNode1.Text = "Settlement Accounts";
+			this.tvSettlementAccounts.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+			this.tvSettlementAccounts.ShowNodeToolTips = true;
+			this.tvSettlementAccounts.ShowPlusMinus = false;
+			this.tvSettlementAccounts.ShowRootLines = false;
+			this.tvSettlementAccounts.Size = new System.Drawing.Size(167, 485);
+			this.tvSettlementAccounts.TabIndex = 0;
+			// 
+			// profileInfoTab
+			// 
+			this.profileInfoTab.Controls.Add(this.tableLayoutPanel6);
+			this.profileInfoTab.Location = new System.Drawing.Point(4, 22);
+			this.profileInfoTab.Name = "profileInfoTab";
+			this.profileInfoTab.Padding = new System.Windows.Forms.Padding(3);
+			this.profileInfoTab.Size = new System.Drawing.Size(871, 497);
+			this.profileInfoTab.TabIndex = 4;
+			this.profileInfoTab.Text = "Profile Info";
+			this.profileInfoTab.UseVisualStyleBackColor = true;
+			// 
+			// tableLayoutPanel6
+			// 
+			this.tableLayoutPanel6.ColumnCount = 3;
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.9711F));
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.43353F));
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.47977F));
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoIin, 2, 0);
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoTin, 2, 1);
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoBusinessProfileType, 2, 2);
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoStatus, 2, 3);
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoType, 2, 4);
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoProjectParticipantType, 2, 5);
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoProjectCode, 2, 6);
+			this.tableLayoutPanel6.Controls.Add(this.tbProfileInfoProjectName, 2, 7);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoIin, 1, 0);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoTin, 1, 1);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoBusinessProfileType, 1, 2);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoStatus, 1, 3);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoType, 1, 4);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoProjectParticipationType, 1, 5);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoProjectCode, 1, 6);
+			this.tableLayoutPanel6.Controls.Add(this.l_ProfileInfoProjectName, 1, 7);
+			this.tableLayoutPanel6.Controls.Add(this.tvProfileInfo, 0, 0);
+			this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+			this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+			this.tableLayoutPanel6.RowCount = 8;
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel6.Size = new System.Drawing.Size(865, 491);
+			this.tableLayoutPanel6.TabIndex = 0;
+			// 
+			// tbProfileInfoIin
+			// 
+			this.tbProfileInfoIin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoIin.Location = new System.Drawing.Point(439, 20);
+			this.tbProfileInfoIin.Name = "tbProfileInfoIin";
+			this.tbProfileInfoIin.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoIin.TabIndex = 8;
+			// 
+			// tbProfileInfoTin
+			// 
+			this.tbProfileInfoTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoTin.Location = new System.Drawing.Point(439, 81);
+			this.tbProfileInfoTin.Name = "tbProfileInfoTin";
+			this.tbProfileInfoTin.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoTin.TabIndex = 9;
+			// 
+			// tbProfileInfoBusinessProfileType
+			// 
+			this.tbProfileInfoBusinessProfileType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoBusinessProfileType.Location = new System.Drawing.Point(439, 142);
+			this.tbProfileInfoBusinessProfileType.Name = "tbProfileInfoBusinessProfileType";
+			this.tbProfileInfoBusinessProfileType.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoBusinessProfileType.TabIndex = 10;
+			// 
+			// tbProfileInfoStatus
+			// 
+			this.tbProfileInfoStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoStatus.Location = new System.Drawing.Point(439, 203);
+			this.tbProfileInfoStatus.Name = "tbProfileInfoStatus";
+			this.tbProfileInfoStatus.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoStatus.TabIndex = 11;
+			// 
+			// tbProfileInfoType
+			// 
+			this.tbProfileInfoType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoType.Location = new System.Drawing.Point(439, 264);
+			this.tbProfileInfoType.Name = "tbProfileInfoType";
+			this.tbProfileInfoType.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoType.TabIndex = 12;
+			// 
+			// tbProfileInfoProjectParticipantType
+			// 
+			this.tbProfileInfoProjectParticipantType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoProjectParticipantType.Location = new System.Drawing.Point(439, 325);
+			this.tbProfileInfoProjectParticipantType.Name = "tbProfileInfoProjectParticipantType";
+			this.tbProfileInfoProjectParticipantType.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoProjectParticipantType.TabIndex = 13;
+			// 
+			// tbProfileInfoProjectCode
+			// 
+			this.tbProfileInfoProjectCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoProjectCode.Location = new System.Drawing.Point(439, 386);
+			this.tbProfileInfoProjectCode.Name = "tbProfileInfoProjectCode";
+			this.tbProfileInfoProjectCode.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoProjectCode.TabIndex = 14;
+			// 
+			// tbProfileInfoProjectName
+			// 
+			this.tbProfileInfoProjectName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbProfileInfoProjectName.Location = new System.Drawing.Point(439, 449);
+			this.tbProfileInfoProjectName.Name = "tbProfileInfoProjectName";
+			this.tbProfileInfoProjectName.Size = new System.Drawing.Size(400, 20);
+			this.tbProfileInfoProjectName.TabIndex = 15;
+			// 
+			// l_ProfileInfoIin
+			// 
+			this.l_ProfileInfoIin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoIin.AutoSize = true;
+			this.l_ProfileInfoIin.Location = new System.Drawing.Point(219, 24);
+			this.l_ProfileInfoIin.Name = "l_ProfileInfoIin";
+			this.l_ProfileInfoIin.Size = new System.Drawing.Size(31, 13);
+			this.l_ProfileInfoIin.TabIndex = 0;
+			this.l_ProfileInfoIin.Text = "ИИН";
+			// 
+			// l_ProfileInfoTin
+			// 
+			this.l_ProfileInfoTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoTin.AutoSize = true;
+			this.l_ProfileInfoTin.Location = new System.Drawing.Point(219, 78);
+			this.l_ProfileInfoTin.Name = "l_ProfileInfoTin";
+			this.l_ProfileInfoTin.Size = new System.Drawing.Size(199, 26);
+			this.l_ProfileInfoTin.TabIndex = 1;
+			this.l_ProfileInfoTin.Text = "БИН предприятия от имени которого может действовать пользователь";
+			// 
+			// l_ProfileInfoBusinessProfileType
+			// 
+			this.l_ProfileInfoBusinessProfileType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoBusinessProfileType.AutoSize = true;
+			this.l_ProfileInfoBusinessProfileType.Location = new System.Drawing.Point(219, 133);
+			this.l_ProfileInfoBusinessProfileType.Name = "l_ProfileInfoBusinessProfileType";
+			this.l_ProfileInfoBusinessProfileType.Size = new System.Drawing.Size(183, 39);
+			this.l_ProfileInfoBusinessProfileType.TabIndex = 2;
+			this.l_ProfileInfoBusinessProfileType.Text = "Тип пользователя определяющий полномочия в рамках данного предприятия";
+			// 
+			// l_ProfileInfoStatus
+			// 
+			this.l_ProfileInfoStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoStatus.AutoSize = true;
+			this.l_ProfileInfoStatus.Location = new System.Drawing.Point(219, 200);
+			this.l_ProfileInfoStatus.Name = "l_ProfileInfoStatus";
+			this.l_ProfileInfoStatus.Size = new System.Drawing.Size(211, 26);
+			this.l_ProfileInfoStatus.TabIndex = 3;
+			this.l_ProfileInfoStatus.Text = "Статус пользователя в рамках данного предприятия";
+			// 
+			// l_ProfileInfoType
+			// 
+			this.l_ProfileInfoType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoType.AutoSize = true;
+			this.l_ProfileInfoType.Location = new System.Drawing.Point(219, 268);
+			this.l_ProfileInfoType.Name = "l_ProfileInfoType";
+			this.l_ProfileInfoType.Size = new System.Drawing.Size(117, 13);
+			this.l_ProfileInfoType.TabIndex = 4;
+			this.l_ProfileInfoType.Text = "Тип данного профиля";
+			// 
+			// l_ProfileInfoProjectParticipationType
+			// 
+			this.l_ProfileInfoProjectParticipationType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoProjectParticipationType.AutoSize = true;
+			this.l_ProfileInfoProjectParticipationType.Location = new System.Drawing.Point(219, 329);
+			this.l_ProfileInfoProjectParticipationType.Name = "l_ProfileInfoProjectParticipationType";
+			this.l_ProfileInfoProjectParticipationType.Size = new System.Drawing.Size(124, 13);
+			this.l_ProfileInfoProjectParticipationType.TabIndex = 5;
+			this.l_ProfileInfoProjectParticipationType.Text = "Тип участника проекта";
+			// 
+			// l_ProfileInfoProjectCode
+			// 
+			this.l_ProfileInfoProjectCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoProjectCode.AutoSize = true;
+			this.l_ProfileInfoProjectCode.Location = new System.Drawing.Point(219, 390);
+			this.l_ProfileInfoProjectCode.Name = "l_ProfileInfoProjectCode";
+			this.l_ProfileInfoProjectCode.Size = new System.Drawing.Size(70, 13);
+			this.l_ProfileInfoProjectCode.TabIndex = 6;
+			this.l_ProfileInfoProjectCode.Text = "Код проекта";
+			// 
+			// l_ProfileInfoProjectName
+			// 
+			this.l_ProfileInfoProjectName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.l_ProfileInfoProjectName.AutoSize = true;
+			this.l_ProfileInfoProjectName.Location = new System.Drawing.Point(219, 452);
+			this.l_ProfileInfoProjectName.Name = "l_ProfileInfoProjectName";
+			this.l_ProfileInfoProjectName.Size = new System.Drawing.Size(127, 13);
+			this.l_ProfileInfoProjectName.TabIndex = 7;
+			this.l_ProfileInfoProjectName.Text = "Наименование проекта";
+			// 
+			// tvProfileInfo
+			// 
+			this.tvProfileInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tvProfileInfo.Location = new System.Drawing.Point(3, 3);
+			this.tvProfileInfo.Name = "tvProfileInfo";
+			treeNode2.Name = "Profiles";
+			treeNode2.Text = "Profiles";
+			this.tvProfileInfo.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2});
-			this.treeView1.ShowNodeToolTips = true;
-			this.treeView1.ShowPlusMinus = false;
-			this.treeView1.ShowRootLines = false;
-			this.treeView1.Size = new System.Drawing.Size(167, 485);
-			this.treeView1.TabIndex = 0;
+			this.tableLayoutPanel6.SetRowSpan(this.tvProfileInfo, 8);
+			this.tvProfileInfo.Size = new System.Drawing.Size(210, 485);
+			this.tvProfileInfo.TabIndex = 0;
+			this.tvProfileInfo.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvProfileInfo_AfterSelect);
 			// 
 			// UserInfoForm
 			// 
@@ -1905,6 +2113,9 @@
 			this.tableLayoutPanel4.ResumeLayout(false);
 			this.tableLayoutPanel5.ResumeLayout(false);
 			this.tableLayoutPanel5.PerformLayout();
+			this.profileInfoTab.ResumeLayout(false);
+			this.tableLayoutPanel6.ResumeLayout(false);
+			this.tableLayoutPanel6.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -1980,7 +2191,7 @@
 		private System.Windows.Forms.TextBox tbTaxpayerFirstNameKz;
 		private System.Windows.Forms.TextBox tbTaxpayerMiddleNameKz;
 		private System.Windows.Forms.TextBox tbTaxpayerAddressRu;
-		private System.Windows.Forms.TextBox tbAddressKz;
+		private System.Windows.Forms.TextBox tbTaxpayerAddressKz;
 		private System.Windows.Forms.TextBox tbTaxpayerCerificateCeries;
 		private System.Windows.Forms.TextBox tbTaxpayerCertificateNum;
 		private System.Windows.Forms.CheckBox chbxTaxpayerIsResident;
@@ -2040,27 +2251,44 @@
 		private System.Windows.Forms.Label label35;
 		private System.Windows.Forms.Label label36;
 		private System.Windows.Forms.Label label37;
-		private System.Windows.Forms.Label label38;
 		private System.Windows.Forms.Label label39;
 		private System.Windows.Forms.Label label40;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox5;
-		private System.Windows.Forms.TextBox textBox6;
-		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.TextBox textBox8;
-		private System.Windows.Forms.TextBox textBox9;
-		private System.Windows.Forms.TextBox textBox10;
-		private System.Windows.Forms.TextBox textBox12;
+		private System.Windows.Forms.TextBox tbSettlementAccountId;
+		private System.Windows.Forms.TextBox tbSettlementAccountTaxpayerTin;
+		private System.Windows.Forms.TextBox tbSettlementAccountBankId;
+		private System.Windows.Forms.TextBox tbSettlementAccountBankNameRu;
+		private System.Windows.Forms.TextBox tbSettlementAccountBankNameKz;
+		private System.Windows.Forms.TextBox tbSettlementAccountBankBik;
+		private System.Windows.Forms.TextBox tbSettlementAccountBankCode;
+		private System.Windows.Forms.TextBox tbSettlementAccountBankTin;
+		private System.Windows.Forms.TextBox tbSettlementAccountBankRnn;
+		private System.Windows.Forms.TextBox tbSettlementAccountType;
 		private System.Windows.Forms.Label label45;
 		private System.Windows.Forms.Label label46;
-		private System.Windows.Forms.TextBox textBox16;
+		private System.Windows.Forms.TextBox tbSettlementAccountDateOpen;
 		private System.Windows.Forms.Label label47;
-		private System.Windows.Forms.CheckBox checkBox10;
-		private System.Windows.Forms.TextBox textBox11;
-		private System.Windows.Forms.TextBox textBox13;
-		private System.Windows.Forms.TreeView treeView1;
+		private System.Windows.Forms.CheckBox chbxSettlementAccountBankActive;
+		private System.Windows.Forms.TextBox tbSettlementAccountDateClose;
+		private System.Windows.Forms.TextBox tbSettlementAccount;
+		private System.Windows.Forms.TreeView tvSettlementAccounts;
+		private System.Windows.Forms.TabPage profileInfoTab;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+		private System.Windows.Forms.Label l_ProfileInfoIin;
+		private System.Windows.Forms.Label l_ProfileInfoTin;
+		private System.Windows.Forms.Label l_ProfileInfoBusinessProfileType;
+		private System.Windows.Forms.Label l_ProfileInfoStatus;
+		private System.Windows.Forms.Label l_ProfileInfoType;
+		private System.Windows.Forms.Label l_ProfileInfoProjectParticipationType;
+		private System.Windows.Forms.Label l_ProfileInfoProjectCode;
+		private System.Windows.Forms.Label l_ProfileInfoProjectName;
+		private System.Windows.Forms.TextBox tbProfileInfoIin;
+		private System.Windows.Forms.TextBox tbProfileInfoTin;
+		private System.Windows.Forms.TextBox tbProfileInfoBusinessProfileType;
+		private System.Windows.Forms.TextBox tbProfileInfoStatus;
+		private System.Windows.Forms.TextBox tbProfileInfoType;
+		private System.Windows.Forms.TextBox tbProfileInfoProjectParticipantType;
+		private System.Windows.Forms.TextBox tbProfileInfoProjectCode;
+		private System.Windows.Forms.TextBox tbProfileInfoProjectName;
+		private System.Windows.Forms.TreeView tvProfileInfo;
 	}
 }
