@@ -114,6 +114,40 @@ namespace ESF_kz.Forms
 			}
 		}
 
+		internal bool AddNewProductRow(ProductV2 product)
+		{
+			try
+			{
+				int newRowIndex = GetDataGrid().Rows.Count;
+				GetDataGrid().Rows.Add();
+				setProductNumber(newRowIndex, newRowIndex+1);
+				setProductAdditional(newRowIndex, product.additional);
+				setProductCatalogTruId(newRowIndex, product.catalogTruId);
+				setProductDescription(newRowIndex, product.description);
+				setProductExciseAmount(newRowIndex, product.exciseAmount);
+				setProductExciseRate(newRowIndex, product.exciseRate);
+				//panelG.setProductKpvedCode(productCounter, product.kpvedCode);
+				setProductNDSAmount(newRowIndex, product.ndsAmount);
+				setProductNDSRate(newRowIndex, product.ndsRate);
+				setProductPriceWithTax(newRowIndex, product.priceWithTax);
+				setProductPriceWithoutTax(newRowIndex, product.priceWithoutTax);
+				setProductDeclaration(newRowIndex, product.productDeclaration);
+				setProductNumberInDeclaration(newRowIndex, product.productDeclaration);
+				setProductQuantity(newRowIndex, product.quantity);
+				setProductTnvedName(newRowIndex, product.tnvedName);
+				setProductTruOriginCode(newRowIndex, product.truOriginCode);
+				setProductTurnoverSize(newRowIndex, product.turnoverSize);
+				setProductUnitCode(newRowIndex, product.unitCode);
+				setProductUnitNominclature(newRowIndex, product.unitNomenclature);
+				setProductUnitPrice(newRowIndex, product.unitPrice);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
 		internal string getProductCatalogTruId(int productNum)
 		{
 			return GetDataGrid().Rows[productNum-1].Cells[(int)column.catalogTruId].Value.ToString();
@@ -563,6 +597,20 @@ namespace ESF_kz.Forms
 		{
 			chbxPartG_withoutNDS.Checked = false;
 		}
+
+		private void contextProducts_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+			switch(e.ClickedItem.Name)
+			{
+				case "miAddProduct":
+					ProductForm productForm = new ProductForm();
+					productForm.Show();
+					break;
+				default:
+					break;
+			}				
+		}
+
 
 		/*internal ProductV2 getProductByNumber(int productNumber)
 		{

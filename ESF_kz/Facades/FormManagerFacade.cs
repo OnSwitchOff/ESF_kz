@@ -89,6 +89,11 @@ namespace ESF_kz
 			return null;
 		}
 
+		internal static bool AddNewProductRow(ProductV2 product)
+		{
+			return invoiceForm.getPannel<panelESFpartG>().AddNewProductRow(product);
+		}
+
 		internal static string getRelatedInvoiceRegistrationNum()
 		{
 			panelESFpartA panelA = invoiceForm.getPannel<panelESFpartA>();

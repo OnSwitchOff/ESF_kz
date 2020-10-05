@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tbPartG_totalTurnoverSize = new System.Windows.Forms.TextBox();
 			this.tbPartG_totalPriceWithTax = new System.Windows.Forms.TextBox();
@@ -66,8 +67,12 @@
 			this.l_PartG_totalExciseAmount = new System.Windows.Forms.Label();
 			this.l_PartG_ndsRateType = new System.Windows.Forms.Label();
 			this.chbxPartG_withoutNDS = new System.Windows.Forms.CheckBox();
+			this.miAddProduct = new System.Windows.Forms.ToolStripMenuItem();
+			this.miEditProduct = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextProducts = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.contextProducts.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -168,6 +173,7 @@
             this.catalogTruId,
             this.additional});
 			this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
+			this.dataGridView1.ContextMenuStrip = this.contextProducts;
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(4, 139);
 			this.dataGridView1.Name = "dataGridView1";
@@ -443,6 +449,27 @@
 			this.chbxPartG_withoutNDS.Text = "Тип НДС (\'Без НДС – не РК\')";
 			this.chbxPartG_withoutNDS.UseVisualStyleBackColor = true;
 			// 
+			// miAddProduct
+			// 
+			this.miAddProduct.Name = "miAddProduct";
+			this.miAddProduct.Size = new System.Drawing.Size(144, 22);
+			this.miAddProduct.Text = "Add  Product";
+			// 
+			// miEditProduct
+			// 
+			this.miEditProduct.Name = "miEditProduct";
+			this.miEditProduct.Size = new System.Drawing.Size(144, 22);
+			this.miEditProduct.Text = "Edit Product";
+			// 
+			// contextProducts
+			// 
+			this.contextProducts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miAddProduct,
+            this.miEditProduct});
+			this.contextProducts.Name = "contextProducts";
+			this.contextProducts.Size = new System.Drawing.Size(145, 48);
+			this.contextProducts.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextProducts_ItemClicked);
+			// 
 			// panelESFpartG
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,6 +480,7 @@
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.contextProducts.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -514,5 +542,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn productNumberInDeclaration;
 		private System.Windows.Forms.DataGridViewTextBoxColumn catalogTruId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn additional;
+		private System.Windows.Forms.ContextMenuStrip contextProducts;
+		private System.Windows.Forms.ToolStripMenuItem miAddProduct;
+		private System.Windows.Forms.ToolStripMenuItem miEditProduct;
 	}
 }
