@@ -10,7 +10,12 @@ namespace ESF_kz
 	{
 		internal static void ParsingXmlExeption(string v, string innerText, Exception e)
 		{
-			throw new NotImplementedException();
+			
+		}
+
+		internal static void ParsingStringExeption(Type type, string text)
+		{
+			
 		}
 	}
 }

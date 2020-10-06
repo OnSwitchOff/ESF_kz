@@ -25,6 +25,19 @@ namespace ESF_kz
 		private static string userTin;
 		private static string userPassword;
 		private static string userSignCertPath;
+
+		internal static void EnumFieldInintitalize<T>(ref T truOriginCode, string text) where T: Enum
+		{
+			if (ValidatingManager.enumIsDefined<T>(text))
+			{
+				truOriginCode = ParsingManager.ParseStringToEnum<T>(text);
+			}
+			else
+			{
+				LogManagerFacade.ParsingStringExeption(typeof(T), text);
+			}
+		}
+
 		private static string userAuthCertPath;
 
 		internal static void setSignCertPath(string signCertPath)
@@ -572,30 +585,35 @@ namespace ESF_kz
 			List<ProductV2> productV2s = new List<ProductV2>();
 			int productsCount = getProductsCount();
 			for (int productNum = 1; productNum <= productsCount; productNum++)
-			{
-				ProductV2 product = new ProductV2();
-				product.additional = getProductAdditional(productNum);//"additional";
-				product.catalogTruId = getProductCatalogTruId(productNum);//"catalogTruId";
-				product.description = getProductDescription(productNum);//"description";
-				product.exciseAmount = getProductExciseAmount(productNum);// 10;
-				product.exciseRate = getProductExciseRate(productNum);// 0.10f;
-				product.kpvedCode = getProductKpvedCode(productNum);// "kpvedcode";
-				product.ndsAmount = getProductNDSAmount(productNum);// 10.2f;
-				product.ndsRate = getProductNDSRAte(productNum);// 1;
-				product.priceWithoutTax = getProductPriceWithoutTax(productNum);// 10;
-				product.priceWithTax = getProductPriceWithTax(productNum);// 20.3f;
-				product.productDeclaration = getProductDeclaration(productNum);// "declration";
-				product.productNumberInDeclaration = getProductNumberInDeclaration(productNum);// "numInDec";
-				product.quantity = getProductQuantity(productNum);
-				product.tnvedName = getProductTnvedName(productNum);// "tnvedName";
-				product.truOriginCode = getProductTruOriginCode(productNum);// TruOriginCode.three;
-				product.turnoverSize = getProductTurnoverSize(productNum); //40.36f;
-				product.unitCode = getProductUnitCode(productNum);// "unitcode";
-				product.unitNomenclature = getProductUnitNominclature(productNum);// "unitNomen";
-				product.unitPrice = getProductUnitPrice(productNum);// 20.3f;			
-				productV2s.Add(product);
+			{		
+				productV2s.Add(getProductV2ByRowNumber(productNum));
 			}
 			return productV2s;
+		}
+
+		internal static ProductV2 getProductV2ByRowNumber(int productNum)
+		{
+			ProductV2 product = new ProductV2();
+			product.additional = getProductAdditional(productNum);//"additional";
+			product.catalogTruId = getProductCatalogTruId(productNum);//"catalogTruId";
+			product.description = getProductDescription(productNum);//"description";
+			product.exciseAmount = getProductExciseAmount(productNum);// 10;
+			product.exciseRate = getProductExciseRate(productNum);// 0.10f;
+			product.kpvedCode = getProductKpvedCode(productNum);// "kpvedcode";
+			product.ndsAmount = getProductNDSAmount(productNum);// 10.2f;
+			product.ndsRate = getProductNDSRAte(productNum);// 1;
+			product.priceWithoutTax = getProductPriceWithoutTax(productNum);// 10;
+			product.priceWithTax = getProductPriceWithTax(productNum);// 20.3f;
+			product.productDeclaration = getProductDeclaration(productNum);// "declration";
+			product.productNumberInDeclaration = getProductNumberInDeclaration(productNum);// "numInDec";
+			product.quantity = getProductQuantity(productNum);
+			product.tnvedName = getProductTnvedName(productNum);// "tnvedName";
+			product.truOriginCode = getProductTruOriginCode(productNum);// TruOriginCode.three;
+			product.turnoverSize = getProductTurnoverSize(productNum); //40.36f;
+			product.unitCode = getProductUnitCode(productNum);// "unitcode";
+			product.unitNomenclature = getProductUnitNominclature(productNum);// "unitNomen";
+			product.unitPrice = getProductUnitPrice(productNum);// 20.3f;
+			return product;
 		}
 
 		private static float getProductQuantity(int productNum)

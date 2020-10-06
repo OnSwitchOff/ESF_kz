@@ -54,6 +54,9 @@
 			this.productNumberInDeclaration = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.catalogTruId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.additional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.contextProducts = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.miAddProduct = new System.Windows.Forms.ToolStripMenuItem();
+			this.miEditProduct = new System.Windows.Forms.ToolStripMenuItem();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tbPartG_currencyRate = new System.Windows.Forms.TextBox();
@@ -67,9 +70,6 @@
 			this.l_PartG_totalExciseAmount = new System.Windows.Forms.Label();
 			this.l_PartG_ndsRateType = new System.Windows.Forms.Label();
 			this.chbxPartG_withoutNDS = new System.Windows.Forms.CheckBox();
-			this.miAddProduct = new System.Windows.Forms.ToolStripMenuItem();
-			this.miEditProduct = new System.Windows.Forms.ToolStripMenuItem();
-			this.contextProducts = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.contextProducts.SuspendLayout();
@@ -179,6 +179,7 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(944, 493);
 			this.dataGridView1.TabIndex = 51;
+			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
 			// rowNumber
 			// 
@@ -318,6 +319,28 @@
 			this.additional.HeaderText = "Дополнительные данные";
 			this.additional.Name = "additional";
 			// 
+			// contextProducts
+			// 
+			this.contextProducts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miAddProduct,
+            this.miEditProduct});
+			this.contextProducts.Name = "contextProducts";
+			this.contextProducts.Size = new System.Drawing.Size(145, 48);
+			// 
+			// miAddProduct
+			// 
+			this.miAddProduct.Name = "miAddProduct";
+			this.miAddProduct.Size = new System.Drawing.Size(180, 22);
+			this.miAddProduct.Text = "Add  Product";
+			this.miAddProduct.Click += new System.EventHandler(this.miAddProduct_Click);
+			// 
+			// miEditProduct
+			// 
+			this.miEditProduct.Name = "miEditProduct";
+			this.miEditProduct.Size = new System.Drawing.Size(180, 22);
+			this.miEditProduct.Text = "Edit Product";
+			this.miEditProduct.Click += new System.EventHandler(this.miEditProduct_Click);
+			// 
 			// label1
 			// 
 			this.label1.AutoEllipsis = true;
@@ -448,27 +471,6 @@
 			this.chbxPartG_withoutNDS.TabIndex = 63;
 			this.chbxPartG_withoutNDS.Text = "Тип НДС (\'Без НДС – не РК\')";
 			this.chbxPartG_withoutNDS.UseVisualStyleBackColor = true;
-			// 
-			// miAddProduct
-			// 
-			this.miAddProduct.Name = "miAddProduct";
-			this.miAddProduct.Size = new System.Drawing.Size(144, 22);
-			this.miAddProduct.Text = "Add  Product";
-			// 
-			// miEditProduct
-			// 
-			this.miEditProduct.Name = "miEditProduct";
-			this.miEditProduct.Size = new System.Drawing.Size(144, 22);
-			this.miEditProduct.Text = "Edit Product";
-			// 
-			// contextProducts
-			// 
-			this.contextProducts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miAddProduct,
-            this.miEditProduct});
-			this.contextProducts.Name = "contextProducts";
-			this.contextProducts.Size = new System.Drawing.Size(145, 48);
-			this.contextProducts.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextProducts_ItemClicked);
 			// 
 			// panelESFpartG
 			// 

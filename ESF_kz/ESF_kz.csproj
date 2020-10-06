@@ -83,10 +83,12 @@
     <Compile Include="Facades\InvoiceServiceOperationsFacade.cs" />
     <Compile Include="Facades\LocalServiceOperationFacade.cs" />
     <Compile Include="Facades\LogManagerFacade.cs" />
+    <Compile Include="Facades\ParsingManager.cs" />
     <Compile Include="Facades\ResponseManagerFacade.cs" />
     <Compile Include="Facades\SessionDataManagerFacade.cs" />
     <Compile Include="Facades\SessionServiceOperationsFacade.cs" />
     <Compile Include="Facades\UploadInvoiceServiceOperationFacade.cs" />
+    <Compile Include="Facades\ValidatingManager.cs" />
     <Compile Include="Forms\AbstractUCESFpanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

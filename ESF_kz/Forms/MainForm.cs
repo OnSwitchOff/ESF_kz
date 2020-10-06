@@ -97,18 +97,21 @@ namespace ESF_kz.Forms
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			string invoiceId = getDataGrid().Rows[e.RowIndex].Cells[2].Value.ToString();
-			MessageBox.Show(invoiceId);
-			SessionDataManagerFacade.setInvoiceId(long.Parse(invoiceId));
-			QueryInvoiceResponse queryInvoiceResponse = new QueryInvoiceResponse();
-			InvoiceServiceOperationsFacade.QueryInvoiceById(out queryInvoiceResponse);
+			if (e.RowIndex > -1)
+			{
+				string invoiceId = getDataGrid().Rows[e.RowIndex].Cells[2].Value.ToString();
+				MessageBox.Show(invoiceId);
+				SessionDataManagerFacade.setInvoiceId(long.Parse(invoiceId));
+				QueryInvoiceResponse queryInvoiceResponse = new QueryInvoiceResponse();
+				InvoiceServiceOperationsFacade.QueryInvoiceById(out queryInvoiceResponse);
 
-			XmlDocument doc = new XmlDocument();
-			doc.LoadXml(queryInvoiceResponse.invoiceInfoList[0].invoiceBody);
-			XmlNode newNode = doc.DocumentElement;
-			InvoiceV2 invoice = ResponseManagerFacade.ParseInvoiceBody(newNode);
-			ESF_form invoiceForm = FormManagerFacade.FillInvoiceFormByInvoice(invoice);
-			invoiceForm.Show();
+				XmlDocument doc = new XmlDocument();
+				doc.LoadXml(queryInvoiceResponse.invoiceInfoList[0].invoiceBody);
+				XmlNode newNode = doc.DocumentElement;
+				InvoiceV2 invoice = ResponseManagerFacade.ParseInvoiceBody(newNode);
+				ESF_form invoiceForm = FormManagerFacade.FillInvoiceFormByInvoice(invoice);
+				invoiceForm.Show();
+			}			
 		}
 	}
 }

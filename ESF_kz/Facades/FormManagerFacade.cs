@@ -13,6 +13,7 @@ namespace ESF_kz
 	{
 		static private ESF_form invoiceForm;
 		static private UserInfoForm userInfoForm;
+		static private ProductForm productForm;
 
 		static internal bool setUserInfoForm(UserInfoForm form)
 		{
@@ -26,6 +27,30 @@ namespace ESF_kz
 				return false;
 			}
 		}
+
+		internal static bool setProductForm(ProductForm form)
+		{
+			try
+			{
+				productForm = form;
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+
+		internal static ProductForm getProductForm()
+		{
+			return productForm;
+		}
+
+		internal static ProductV2 getProductFromProductForm()
+		{
+			return getProductForm().getProductFromForm();
+		}
+
 		static internal bool setInvoiceForm(ESF_form form)
 		{
 			try
@@ -473,6 +498,25 @@ namespace ESF_kz
 
 				
 			}
+		}
+
+		internal static ProductForm FillProductFormByProduct(ProductV2 product)
+		{
+			ProductForm productForm = new ProductForm();
+			productForm.setTruOriginCode(product.truOriginCode);
+			productForm.setDescription(product.description);
+			productForm.setTnvedName(product.tnvedName);
+			productForm.setUnitCode(product.unitCode);
+			productForm.setUnitNomenclature(product.unitNomenclature);
+			productForm.setQuantity(product.quantity);
+			productForm.setUnitPrice(product.unitPrice);
+			productForm.setExciseRate(product.exciseRate);
+			productForm.setNdsRate(product.ndsRate);
+			productForm.setProductDeclaration(product.productDeclaration);
+			productForm.setProductNumberInDeclaration(product.productNumberInDeclaration);
+			productForm.setCatalogTruId(product.catalogTruId);
+			productForm.setAdditional(product.additional);
+			return productForm;
 		}
 
 		internal static ESF_form FillInvoiceFormByInvoice(InvoiceV2 invoice)
