@@ -198,6 +198,11 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartJ>().getCustomerAgentDocNum();
 		}
 
+		internal static bool EditProductRow(ProductV2 product)
+		{
+			return invoiceForm.getPannel<panelESFpartG>().EditProductRow(product);
+		}
+
 		internal static string getCustomerAgentName()
 		{
 			return invoiceForm.getPannel<panelESFpartJ>().getCustomerAgentName();

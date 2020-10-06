@@ -138,5 +138,12 @@ namespace ESF_kz.Forms
 		{
 			tbProductAdditional.Text = additional;
 		}
+
+		private void btnSave_Click(object sender, EventArgs e)
+		{
+			ProductV2 product = FormManagerFacade.getProductFromProductForm();
+			FormManagerFacade.EditProductRow(product);
+			this.Close();
+		}
 	}
 }

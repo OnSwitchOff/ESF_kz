@@ -182,6 +182,39 @@ namespace ESF_kz.Forms
 			return "";
 		}
 
+		internal bool EditProductRow(ProductV2 product)
+		{
+			try
+			{
+				int RowIndex = getSelectedRowIndex()+1;
+				setProductNumber(RowIndex, RowIndex);
+				setProductAdditional(RowIndex, product.additional);
+				setProductCatalogTruId(RowIndex, product.catalogTruId);
+				setProductDescription(RowIndex, product.description);
+				setProductExciseAmount(RowIndex, product.exciseAmount);
+				setProductExciseRate(RowIndex, product.exciseRate);
+				//panelG.setProductKpvedCode(productCounter, product.kpvedCode);
+				setProductNDSAmount(RowIndex, product.ndsAmount);
+				setProductNDSRate(RowIndex, product.ndsRate);
+				setProductPriceWithTax(RowIndex, product.priceWithTax);
+				setProductPriceWithoutTax(RowIndex, product.priceWithoutTax);
+				setProductDeclaration(RowIndex, product.productDeclaration);
+				setProductNumberInDeclaration(RowIndex, product.productDeclaration);
+				setProductQuantity(RowIndex, product.quantity);
+				setProductTnvedName(RowIndex, product.tnvedName);
+				setProductTruOriginCode(RowIndex, product.truOriginCode);
+				setProductTurnoverSize(RowIndex, product.turnoverSize);
+				setProductUnitCode(RowIndex, product.unitCode);
+				setProductUnitNominclature(RowIndex, product.unitNomenclature);
+				setProductUnitPrice(RowIndex, product.unitPrice);
+				return true;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+			
+		}
 
 		internal bool setProductDescription(int productNum, string nameTRN)
 		{

@@ -709,6 +709,7 @@
 			this.btnSave.TabIndex = 59;
 			this.btnSave.Text = "Save changes";
 			this.btnSave.UseVisualStyleBackColor = true;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// epProductFormQuantity
 			// 
