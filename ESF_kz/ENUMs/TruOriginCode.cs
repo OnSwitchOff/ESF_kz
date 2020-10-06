@@ -9,11 +9,11 @@ namespace ESF_kz
 	[Serializable]
 	public enum TruOriginCode
 	{
-		one,
-		two,
-		three,
-		four,
-		five,
-		six
+		one = 1,
+		two = 2,
+		three = 3,
+		four = 4,
+		five = 5,
+		six = 6
 	}
 }

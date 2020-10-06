@@ -49,7 +49,7 @@ namespace ESF_kz.Forms
 			product.priceWithTax = product.turnoverSize + product.ndsAmount;
 			product.productDeclaration = tbProductProductDeclaration.Text;
 			product.productNumberInDeclaration = tbProductNumberInDeclaration.Text;
-			product.catalogTruId = cbProductTruOriginCode.Text;
+			product.catalogTruId = tbProductCatalogTruId.Text;
 			product.additional = tbProductAdditional.Text;
 			return product;
 		}

@@ -124,7 +124,7 @@ namespace ESF_kz.Forms
 			{
 				GetDataGrid().Rows.Add();
 				int newRowIndex = GetDataGrid().Rows.Count;				
-				setProductNumber(newRowIndex, newRowIndex+1);
+				setProductNumber(newRowIndex, newRowIndex);
 				setProductAdditional(newRowIndex, product.additional);
 				setProductCatalogTruId(newRowIndex, product.catalogTruId);
 				setProductDescription(newRowIndex, product.description);
@@ -154,7 +154,8 @@ namespace ESF_kz.Forms
 
 		internal string getProductCatalogTruId(int productNum)
 		{
-			if(null!= GetDataGrid().Rows[productNum - 1].Cells[(int)column.catalogTruId].Value)
+			object result = GetDataGrid().Rows[productNum - 1].Cells[(int)column.catalogTruId].Value;
+			if (null!= GetDataGrid().Rows[productNum - 1].Cells[(int)column.catalogTruId].Value)
 			return GetDataGrid().Rows[productNum - 1].Cells[(int)column.catalogTruId].Value.ToString();
 			return "";			
 		}
@@ -379,7 +380,7 @@ namespace ESF_kz.Forms
 		{
 			if (GetDataGrid().Rows[productNum - 1].Cells[(int)column.typeTRN].Value!=null)
 			{
-				int obj = int.Parse(GetDataGrid().Rows[productNum - 1].Cells[(int)column.typeTRN].Value.ToString()) - 1;
+				int obj = int.Parse(GetDataGrid().Rows[productNum - 1].Cells[(int)column.typeTRN].Value.ToString());
 				return (TruOriginCode)obj;
 			}
 			return default;
@@ -390,7 +391,7 @@ namespace ESF_kz.Forms
 			try
 			{
 				DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)GetDataGrid().Rows[productNum-1].Cells[(int)column.typeTRN];
-				comboBoxCell.Value = comboBoxCell.Items[(int)code];
+				comboBoxCell.Value = comboBoxCell.Items[(int)code-1];
 				return true;
 			}
 			catch (Exception)
