@@ -15,45 +15,54 @@ namespace ESF_kz
 			return Enum.IsDefined(typeof(T), str);
 		}
 
-		internal static bool ValidateFloatTextBox(TextBox tbProduct, ErrorProvider epProductForm)
+		internal static bool ValidateFloatTextBox(TextBox tb, ErrorProvider ep)
 		{
 			bool result = false;
-			Regex regex = new Regex(@"^(\d+)([.]?)(\d*)[1-9]$");
-			bool isEmpty = tbProduct.Text == "";
-			bool isCorrectFormat = regex.IsMatch(tbProduct.Text);
+			Regex regex = new Regex(@"^(\d*)|(\d*[.]\d*)$");
+			bool isEmpty = tb.Text == "";
+			bool isCorrectFormat = regex.IsMatch(tb.Text);
+			if(isCorrectFormat)
+			{
+				tb.Text = float.Parse(tb.Text).ToString();
+			}
+
 			if (isEmpty)
 			{
-				epProductForm.SetError(tbProduct, "Empty value");
+				ep.SetError(tb, "Empty value");
 			}
 			else if (!isCorrectFormat)
 			{
-				epProductForm.SetError(tbProduct, "Wrong format(must be float)");
+				ep.SetError(tb, "Wrong format(must be float)");
 			}
 			else
 			{
-				epProductForm.Clear();
+				ep.Clear();
 				result = true;
 			}
 			return result;
 		}
 
-		internal static bool ValidateIntegerTextBox(TextBox tbProduct, ErrorProvider epProductForm)
+		internal static bool ValidateIntegerTextBox(TextBox tb, ErrorProvider ep)
 		{
 			bool result = false;
 			Regex regex = new Regex(@"^\d*$");
-			bool isEmpty = tbProduct.Text == "";
-			bool isCorrectFormat = regex.IsMatch(tbProduct.Text);
+			bool isEmpty = tb.Text == "";
+			bool isCorrectFormat = regex.IsMatch(tb.Text);
+			if (isCorrectFormat)
+			{
+				tb.Text = int.Parse(tb.Text).ToString();
+			}
 			if (isEmpty)
 			{
-				epProductForm.SetError(tbProduct, "Empty value");
+				ep.SetError(tb, "Empty value");
 			}
 			else if (!isCorrectFormat)
 			{
-				epProductForm.SetError(tbProduct, "Wrong format(must be integer)");
+				ep.SetError(tb, "Wrong format(must be integer)");
 			}
 			else
 			{
-				epProductForm.Clear();
+				ep.Clear();
 				result = true;
 			}
 			return result;

@@ -8,6 +8,7 @@ namespace ESF_kz
 {
 	//Реквизиты грузополучателя (D 26)
 	[Serializable]
+	
 	public class ConsigneeV2
 	{
 		//Адрес (D 26.3)+

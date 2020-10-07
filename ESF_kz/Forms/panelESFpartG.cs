@@ -712,6 +712,35 @@ namespace ESF_kz.Forms
 			return selectedRowIndex;
 		}
 
+		internal void RecalcTotalAmounts()
+		{
+			DataGridView dataGrid = GetDataGrid();
+			float totalExciseAmount = 0;
+			float totalNdsAmount = 0;
+			float totalPriceWithoutTax = 0;
+			float totalPriceWithTax = 0;
+			float totalTurnoverSize = 0;
+			object temp;
+			foreach ( DataGridViewRow row in dataGrid.Rows)
+			{
+				temp = row.Cells["exciseAmount"].Value;
+				totalExciseAmount += temp==null?0:(float)temp;
+				temp = row.Cells["ndsAmount"].Value;
+				totalNdsAmount += temp == null ? 0 : (float)temp;
+				temp = row.Cells["priceWithoutTax"].Value;
+				totalPriceWithoutTax += temp == null ? 0 : (float)temp;
+				temp = row.Cells["priceWithTax"].Value;
+				totalPriceWithTax += temp == null ? 0 : (float)temp;
+				temp = row.Cells["turnoverSize"].Value;
+				totalTurnoverSize += temp == null ? 0 : (float)temp;
+			}
+			tbPartG_totalExciseAmount.Text = totalExciseAmount.ToString();
+			tbPartG_totalNdsAmount.Text = totalNdsAmount.ToString();
+			tbPartG_totalPriceWithoutTax.Text = totalPriceWithoutTax.ToString();
+			tbPartG_totalPriceWithTax.Text = totalPriceWithTax.ToString();
+			tbPartG_totalTurnoverSize.Text = totalTurnoverSize.ToString();
+		}
+
 
 		/*internal ProductV2 getProductByNumber(int productNumber)
 		{

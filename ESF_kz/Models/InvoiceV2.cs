@@ -21,6 +21,7 @@ namespace ESF_kz
 
 		//Реквизиты грузополучателя (D 24)
 		[XmlElement(ElementName = "consignee")]
+		[MyCustom("consignee")]
 		public ConsigneeV2 consignee;
 
 		//Реквизиты грузоотправителя (D 23)

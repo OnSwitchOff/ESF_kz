@@ -232,24 +232,28 @@ namespace ESF_kz
 			using (StreamReader sr = new StreamReader(invoiceBodyPath))
 			{
 				invoiceBodyString = sr.ReadToEnd();
-			}*/				
+			}*/
 
-			string str = "";
-			XmlSerializer xmlSerializer = new XmlSerializer(typeof(invoiceContainerV2));
+			//string str = "";
+			/*XmlSerializer xmlSerializer = new XmlSerializer(typeof(invoiceContainerV2));
 
 			using (FileStream fs = new FileStream("testW.xml", FileMode.OpenOrCreate))
 			using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
 			{				
 				xmlSerializer.Serialize(sw, getInvoiceContainer());
-			}
+			}*/
 
-			using (FileStream fs = new FileStream("testW.xml", FileMode.OpenOrCreate))
+			/*using (FileStream fs = new FileStream("testW.xml", FileMode.OpenOrCreate))
 			using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
 			{	
 				str = sr.ReadToEnd();
 			}
-
 			return str;
+			 */
+
+			return ParsingManager.getInvoiceBodyString(getInvoice());
+
+			
 		}
 
 		private static List<SellerV2> getSellersV2()
@@ -1263,8 +1267,11 @@ namespace ESF_kz
 			invoiceV2.customerAgentDocDate = getCustomerAgentDocDate();//DateTime.Now;
 			invoiceV2.customerAgentDocNum = getCustomerAgentDocNum();// "customerAgentDocNum";
 			invoiceV2.customerAgentName = getCustomerAgentName();//"customerAgentName";
-			invoiceV2.customerAgentTin = getCustomerAgentTin();//"customerAgentTin";				
-			invoiceV2.customerParticipants = getCustomerParticipants();
+			invoiceV2.customerAgentTin = getCustomerAgentTin();//"customerAgentTin";
+			if(FormManagerFacade.getCustomersCount()>1)
+			{
+				invoiceV2.customerParticipants = getCustomerParticipants();
+			}			
 			invoiceV2.customers = getCustomers();
 			invoiceV2.datePaper = getInvoiceDatePaper();// DateTime.Now;
 			invoiceV2.deliveryDocDate = getInvoiceDeliveryDocDate();//DateTime.Now;
@@ -1277,8 +1284,11 @@ namespace ESF_kz
 			invoiceV2.sellerAgentDocDate = getInvoiceSellerAgentDocDate();// DateTime.Now;
 			invoiceV2.sellerAgentDocNum = getInvoiceSellerAgentDocNum();// "sellerAgentDocNum";
 			invoiceV2.sellerAgentName = getInvoiceSellerAgentName();// "sellerAgentName";
-			invoiceV2.sellerAgentTin = getInvoiceSellerAgentTin();// "sellerAgentTin";				
-			invoiceV2.sellerParticipants = getSellerParticipants();
+			invoiceV2.sellerAgentTin = getInvoiceSellerAgentTin();// "sellerAgentTin";
+			if(FormManagerFacade.getSellerParticipantsCount()>1)
+			{
+				invoiceV2.sellerParticipants = getSellerParticipants();
+			}			
 			invoiceV2.sellers = getSellersV2();
 			return invoiceV2;
 		}

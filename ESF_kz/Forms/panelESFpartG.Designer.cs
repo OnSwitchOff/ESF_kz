@@ -77,26 +77,27 @@
 			// 
 			// tableLayoutPanel1
 			// 
+			this.tableLayoutPanel1.AutoScroll = true;
 			this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalTurnoverSize, 1, 9);
-			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalPriceWithTax, 1, 8);
-			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalPriceWithoutTax, 1, 7);
-			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalNdsAmount, 1, 6);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalTurnoverSize, 1, 7);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalPriceWithTax, 1, 9);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalPriceWithoutTax, 1, 5);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalNdsAmount, 1, 8);
 			this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 4);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartG_currencyRate, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartG_currencyCode, 1, 1);
-			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalNdsAmount, 0, 6);
-			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalPriceWithoutTax, 0, 7);
-			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalPriceWithTax, 0, 8);
-			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalTurnoverSize, 0, 9);
-			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalExciseAmount, 1, 5);
-			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalExciseAmount, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalNdsAmount, 0, 8);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalPriceWithoutTax, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalPriceWithTax, 0, 9);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalTurnoverSize, 0, 7);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartG_totalExciseAmount, 1, 6);
+			this.tableLayoutPanel1.Controls.Add(this.l_PartG_totalExciseAmount, 0, 6);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartG_ndsRateType, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.chbxPartG_withoutNDS, 1, 3);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,13 +114,14 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.840035F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.840035F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.836195F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(952, 792);
 			this.tableLayoutPanel1.TabIndex = 5;
 			// 
 			// tbPartG_totalTurnoverSize
 			// 
 			this.tbPartG_totalTurnoverSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartG_totalTurnoverSize.Location = new System.Drawing.Point(479, 763);
+			this.tbPartG_totalTurnoverSize.Location = new System.Drawing.Point(479, 700);
 			this.tbPartG_totalTurnoverSize.Name = "tbPartG_totalTurnoverSize";
 			this.tbPartG_totalTurnoverSize.Size = new System.Drawing.Size(300, 20);
 			this.tbPartG_totalTurnoverSize.TabIndex = 61;
@@ -127,7 +129,7 @@
 			// tbPartG_totalPriceWithTax
 			// 
 			this.tbPartG_totalPriceWithTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartG_totalPriceWithTax.Location = new System.Drawing.Point(479, 730);
+			this.tbPartG_totalPriceWithTax.Location = new System.Drawing.Point(479, 763);
 			this.tbPartG_totalPriceWithTax.Name = "tbPartG_totalPriceWithTax";
 			this.tbPartG_totalPriceWithTax.Size = new System.Drawing.Size(300, 20);
 			this.tbPartG_totalPriceWithTax.TabIndex = 60;
@@ -135,7 +137,7 @@
 			// tbPartG_totalPriceWithoutTax
 			// 
 			this.tbPartG_totalPriceWithoutTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartG_totalPriceWithoutTax.Location = new System.Drawing.Point(479, 700);
+			this.tbPartG_totalPriceWithoutTax.Location = new System.Drawing.Point(479, 640);
 			this.tbPartG_totalPriceWithoutTax.Name = "tbPartG_totalPriceWithoutTax";
 			this.tbPartG_totalPriceWithoutTax.Size = new System.Drawing.Size(300, 20);
 			this.tbPartG_totalPriceWithoutTax.TabIndex = 59;
@@ -143,7 +145,7 @@
 			// tbPartG_totalNdsAmount
 			// 
 			this.tbPartG_totalNdsAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartG_totalNdsAmount.Location = new System.Drawing.Point(479, 670);
+			this.tbPartG_totalNdsAmount.Location = new System.Drawing.Point(479, 730);
 			this.tbPartG_totalNdsAmount.Name = "tbPartG_totalNdsAmount";
 			this.tbPartG_totalNdsAmount.Size = new System.Drawing.Size(300, 20);
 			this.tbPartG_totalNdsAmount.TabIndex = 58;
@@ -151,6 +153,7 @@
 			// dataGridView1
 			// 
 			this.dataGridView1.AllowUserToAddRows = false;
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rowNumber,
@@ -183,13 +186,14 @@
 			// 
 			// rowNumber
 			// 
-			this.rowNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.rowNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.rowNumber.HeaderText = "№ п/п";
 			this.rowNumber.Name = "rowNumber";
+			this.rowNumber.Width = 59;
 			// 
 			// typeTRN
 			// 
-			this.typeTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.typeTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.typeTRN.HeaderText = "Признак происхождения товаров и услуг";
 			this.typeTRN.Items.AddRange(new object[] {
             "1",
@@ -199,125 +203,143 @@
             "5",
             "6"});
 			this.typeTRN.Name = "typeTRN";
+			this.typeTRN.Width = 128;
 			// 
 			// nameTRN
 			// 
-			this.nameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.nameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.nameTRN.FillWeight = 300F;
 			this.nameTRN.HeaderText = "Наименование товаров, работ и услуг";
 			this.nameTRN.Name = "nameTRN";
+			this.nameTRN.Width = 110;
 			// 
 			// fullnameTRN
 			// 
-			this.fullnameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.fullnameTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.fullnameTRN.FillWeight = 400F;
 			this.fullnameTRN.HeaderText = "Наименование товаров в соответствии с Декларацией на товары или заявления о ввозе" +
     " товаров и уплате косвенных налогов";
 			this.fullnameTRN.Name = "fullnameTRN";
+			this.fullnameTRN.Width = 223;
 			// 
 			// TNVED
 			// 
-			this.TNVED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.TNVED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.TNVED.FillWeight = 200F;
 			this.TNVED.HeaderText = "Код товара (ТНВЭД ЕАЭС)";
 			this.TNVED.Name = "TNVED";
+			this.TNVED.Width = 85;
 			// 
 			// measure
 			// 
-			this.measure.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.measure.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.measure.HeaderText = "Единица измерения";
 			this.measure.Name = "measure";
+			this.measure.Width = 123;
 			// 
 			// quantity
 			// 
-			this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.quantity.FillWeight = 150F;
 			this.quantity.HeaderText = "Количество (объем)";
 			this.quantity.Name = "quantity";
+			this.quantity.Width = 122;
 			// 
 			// pricePerOne
 			// 
-			this.pricePerOne.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.pricePerOne.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.pricePerOne.FillWeight = 150F;
 			this.pricePerOne.HeaderText = "Цена (тариф) за единицу товара, работы, услуг и без косвенных налогов";
 			this.pricePerOne.Name = "pricePerOne";
+			this.pricePerOne.Width = 146;
 			// 
 			// priceWithoutTax
 			// 
-			this.priceWithoutTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.priceWithoutTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.priceWithoutTax.FillWeight = 150F;
 			this.priceWithoutTax.HeaderText = "Стоимость товаров, работ, услуг без косвенных налогов";
 			this.priceWithoutTax.Name = "priceWithoutTax";
+			this.priceWithoutTax.Width = 166;
 			// 
 			// exciseRate
 			// 
-			this.exciseRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.exciseRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.exciseRate.HeaderText = "Акциз ставка";
 			this.exciseRate.Name = "exciseRate";
+			this.exciseRate.Width = 93;
 			// 
 			// exciseAmount
 			// 
-			this.exciseAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.exciseAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.exciseAmount.FillWeight = 150F;
 			this.exciseAmount.HeaderText = "Акциз сумма";
 			this.exciseAmount.Name = "exciseAmount";
+			this.exciseAmount.Width = 91;
 			// 
 			// turnoverSize
 			// 
-			this.turnoverSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.turnoverSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.turnoverSize.FillWeight = 150F;
 			this.turnoverSize.HeaderText = "Размер оборота по реализации(облагаемый/необлагаемый оборот)";
 			this.turnoverSize.Name = "turnoverSize";
+			this.turnoverSize.Width = 253;
 			// 
 			// ndsRate
 			// 
-			this.ndsRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ndsRate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.ndsRate.HeaderText = "НДС ставка";
 			this.ndsRate.Name = "ndsRate";
+			this.ndsRate.Width = 87;
 			// 
 			// ndsAmount
 			// 
-			this.ndsAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ndsAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.ndsAmount.FillWeight = 150F;
 			this.ndsAmount.HeaderText = "НДС сумма";
 			this.ndsAmount.Name = "ndsAmount";
+			this.ndsAmount.Width = 85;
 			// 
 			// priceWithTax
 			// 
-			this.priceWithTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.priceWithTax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.priceWithTax.FillWeight = 150F;
 			this.priceWithTax.HeaderText = "Стоимость товаров, работ, услуг с учетом косвенных налогов";
 			this.priceWithTax.Name = "priceWithTax";
+			this.priceWithTax.Width = 132;
 			// 
 			// productDeclaration
 			// 
-			this.productDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.productDeclaration.FillWeight = 150F;
 			this.productDeclaration.HeaderText = "№ Декларации на товары, заявления о ввозе товаров и уплате косвенных налогов, СТ-" +
     "1 или СТ-KZ";
 			this.productDeclaration.Name = "productDeclaration";
+			this.productDeclaration.Width = 182;
 			// 
 			// productNumberInDeclaration
 			// 
-			this.productNumberInDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.productNumberInDeclaration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.productNumberInDeclaration.FillWeight = 150F;
 			this.productNumberInDeclaration.HeaderText = "Номер товарной позиции из Декларации на товары или заявления о ввозе товаров и уп" +
     "лате косвенных налогов";
 			this.productNumberInDeclaration.Name = "productNumberInDeclaration";
+			this.productNumberInDeclaration.Width = 207;
 			// 
 			// catalogTruId
 			// 
-			this.catalogTruId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.catalogTruId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.catalogTruId.FillWeight = 150F;
 			this.catalogTruId.HeaderText = "Идентификатор товара, работы, услуг";
 			this.catalogTruId.Name = "catalogTruId";
+			this.catalogTruId.Width = 142;
 			// 
 			// additional
 			// 
-			this.additional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.additional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
 			this.additional.FillWeight = 200F;
 			this.additional.HeaderText = "Дополнительные данные";
 			this.additional.Name = "additional";
+			this.additional.Width = 147;
 			// 
 			// contextProducts
 			// 
@@ -330,14 +352,14 @@
 			// miAddProduct
 			// 
 			this.miAddProduct.Name = "miAddProduct";
-			this.miAddProduct.Size = new System.Drawing.Size(180, 22);
+			this.miAddProduct.Size = new System.Drawing.Size(144, 22);
 			this.miAddProduct.Text = "Add  Product";
 			this.miAddProduct.Click += new System.EventHandler(this.miAddProduct_Click);
 			// 
 			// miEditProduct
 			// 
 			this.miEditProduct.Name = "miEditProduct";
-			this.miEditProduct.Size = new System.Drawing.Size(180, 22);
+			this.miEditProduct.Size = new System.Drawing.Size(144, 22);
 			this.miEditProduct.Text = "Edit Product";
 			this.miEditProduct.Click += new System.EventHandler(this.miEditProduct_Click);
 			// 
@@ -397,7 +419,7 @@
 			// 
 			this.l_PartG_totalNdsAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.l_PartG_totalNdsAmount.AutoSize = true;
-			this.l_PartG_totalNdsAmount.Location = new System.Drawing.Point(4, 674);
+			this.l_PartG_totalNdsAmount.Location = new System.Drawing.Point(4, 734);
 			this.l_PartG_totalNdsAmount.Name = "l_PartG_totalNdsAmount";
 			this.l_PartG_totalNdsAmount.Size = new System.Drawing.Size(82, 13);
 			this.l_PartG_totalNdsAmount.TabIndex = 53;
@@ -407,7 +429,7 @@
 			// 
 			this.l_PartG_totalPriceWithoutTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.l_PartG_totalPriceWithoutTax.AutoSize = true;
-			this.l_PartG_totalPriceWithoutTax.Location = new System.Drawing.Point(4, 704);
+			this.l_PartG_totalPriceWithoutTax.Location = new System.Drawing.Point(4, 644);
 			this.l_PartG_totalPriceWithoutTax.Name = "l_PartG_totalPriceWithoutTax";
 			this.l_PartG_totalPriceWithoutTax.Size = new System.Drawing.Size(106, 13);
 			this.l_PartG_totalPriceWithoutTax.TabIndex = 54;
@@ -417,7 +439,7 @@
 			// 
 			this.l_PartG_totalPriceWithTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.l_PartG_totalPriceWithTax.AutoSize = true;
-			this.l_PartG_totalPriceWithTax.Location = new System.Drawing.Point(4, 734);
+			this.l_PartG_totalPriceWithTax.Location = new System.Drawing.Point(4, 767);
 			this.l_PartG_totalPriceWithTax.Name = "l_PartG_totalPriceWithTax";
 			this.l_PartG_totalPriceWithTax.Size = new System.Drawing.Size(91, 13);
 			this.l_PartG_totalPriceWithTax.TabIndex = 55;
@@ -427,7 +449,7 @@
 			// 
 			this.l_PartG_totalTurnoverSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.l_PartG_totalTurnoverSize.AutoSize = true;
-			this.l_PartG_totalTurnoverSize.Location = new System.Drawing.Point(4, 767);
+			this.l_PartG_totalTurnoverSize.Location = new System.Drawing.Point(4, 704);
 			this.l_PartG_totalTurnoverSize.Name = "l_PartG_totalTurnoverSize";
 			this.l_PartG_totalTurnoverSize.Size = new System.Drawing.Size(90, 13);
 			this.l_PartG_totalTurnoverSize.TabIndex = 56;
@@ -436,7 +458,7 @@
 			// tbPartG_totalExciseAmount
 			// 
 			this.tbPartG_totalExciseAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbPartG_totalExciseAmount.Location = new System.Drawing.Point(479, 640);
+			this.tbPartG_totalExciseAmount.Location = new System.Drawing.Point(479, 670);
 			this.tbPartG_totalExciseAmount.Name = "tbPartG_totalExciseAmount";
 			this.tbPartG_totalExciseAmount.Size = new System.Drawing.Size(300, 20);
 			this.tbPartG_totalExciseAmount.TabIndex = 57;
@@ -445,7 +467,7 @@
 			// 
 			this.l_PartG_totalExciseAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.l_PartG_totalExciseAmount.AutoSize = true;
-			this.l_PartG_totalExciseAmount.Location = new System.Drawing.Point(4, 644);
+			this.l_PartG_totalExciseAmount.Location = new System.Drawing.Point(4, 674);
 			this.l_PartG_totalExciseAmount.Name = "l_PartG_totalExciseAmount";
 			this.l_PartG_totalExciseAmount.Size = new System.Drawing.Size(94, 13);
 			this.l_PartG_totalExciseAmount.TabIndex = 52;
@@ -518,13 +540,16 @@
 		private System.Windows.Forms.TextBox tbPartG_totalPriceWithoutTax;
 		private System.Windows.Forms.TextBox tbPartG_totalNdsAmount;
 		private System.Windows.Forms.Label l_PartG_totalNdsAmount;
-		private System.Windows.Forms.Label l_PartG_totalPriceWithoutTax;
 		private System.Windows.Forms.Label l_PartG_totalPriceWithTax;
 		private System.Windows.Forms.Label l_PartG_totalTurnoverSize;
 		private System.Windows.Forms.TextBox tbPartG_totalExciseAmount;
 		private System.Windows.Forms.Label l_PartG_totalExciseAmount;
 		private System.Windows.Forms.Label l_PartG_ndsRateType;
 		private System.Windows.Forms.CheckBox chbxPartG_withoutNDS;
+		private System.Windows.Forms.ContextMenuStrip contextProducts;
+		private System.Windows.Forms.ToolStripMenuItem miAddProduct;
+		private System.Windows.Forms.ToolStripMenuItem miEditProduct;
+		private System.Windows.Forms.Label l_PartG_totalPriceWithoutTax;
 		private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
 		private System.Windows.Forms.DataGridViewComboBoxColumn typeTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameTRN;
@@ -544,8 +569,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn productNumberInDeclaration;
 		private System.Windows.Forms.DataGridViewTextBoxColumn catalogTruId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn additional;
-		private System.Windows.Forms.ContextMenuStrip contextProducts;
-		private System.Windows.Forms.ToolStripMenuItem miAddProduct;
-		private System.Windows.Forms.ToolStripMenuItem miEditProduct;
 	}
 }

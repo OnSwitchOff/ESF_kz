@@ -85,11 +85,11 @@
 			this.tbProductTnvedName = new System.Windows.Forms.TextBox();
 			this.label17 = new System.Windows.Forms.Label();
 			this.btnSave = new System.Windows.Forms.Button();
+			this.cbProductTruOriginCode = new System.Windows.Forms.ComboBox();
 			this.epProductFormQuantity = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epProductUnitPrice = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epProductExciseRate = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epProductNdsRate = new System.Windows.Forms.ErrorProvider(this.components);
-			this.cbProductTruOriginCode = new System.Windows.Forms.ComboBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epProductFormQuantity)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epProductUnitPrice)).BeginInit();
@@ -100,16 +100,17 @@
 			// tbProductExciseRate
 			// 
 			this.tbProductExciseRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductExciseRate.Location = new System.Drawing.Point(608, 212);
+			this.tbProductExciseRate.Location = new System.Drawing.Point(605, 212);
 			this.tbProductExciseRate.Name = "tbProductExciseRate";
 			this.tbProductExciseRate.Size = new System.Drawing.Size(200, 20);
 			this.tbProductExciseRate.TabIndex = 54;
+			this.tbProductExciseRate.Text = "0";
 			this.tbProductExciseRate.Validated += new System.EventHandler(this.tbProductExciseRate_Validated);
 			// 
 			// tbProductAdditional
 			// 
 			this.tbProductAdditional.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductAdditional.Location = new System.Drawing.Point(608, 446);
+			this.tbProductAdditional.Location = new System.Drawing.Point(605, 446);
 			this.tbProductAdditional.Name = "tbProductAdditional";
 			this.tbProductAdditional.Size = new System.Drawing.Size(200, 20);
 			this.tbProductAdditional.TabIndex = 53;
@@ -117,7 +118,7 @@
 			// tbProductCatalogTruId
 			// 
 			this.tbProductCatalogTruId.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductCatalogTruId.Location = new System.Drawing.Point(608, 420);
+			this.tbProductCatalogTruId.Location = new System.Drawing.Point(605, 420);
 			this.tbProductCatalogTruId.Name = "tbProductCatalogTruId";
 			this.tbProductCatalogTruId.Size = new System.Drawing.Size(200, 20);
 			this.tbProductCatalogTruId.TabIndex = 52;
@@ -125,7 +126,7 @@
 			// tbProductNumberInDeclaration
 			// 
 			this.tbProductNumberInDeclaration.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductNumberInDeclaration.Location = new System.Drawing.Point(608, 394);
+			this.tbProductNumberInDeclaration.Location = new System.Drawing.Point(605, 394);
 			this.tbProductNumberInDeclaration.Name = "tbProductNumberInDeclaration";
 			this.tbProductNumberInDeclaration.Size = new System.Drawing.Size(200, 20);
 			this.tbProductNumberInDeclaration.TabIndex = 51;
@@ -133,7 +134,7 @@
 			// tbProductProductDeclaration
 			// 
 			this.tbProductProductDeclaration.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductProductDeclaration.Location = new System.Drawing.Point(608, 368);
+			this.tbProductProductDeclaration.Location = new System.Drawing.Point(605, 368);
 			this.tbProductProductDeclaration.Name = "tbProductProductDeclaration";
 			this.tbProductProductDeclaration.Size = new System.Drawing.Size(200, 20);
 			this.tbProductProductDeclaration.TabIndex = 50;
@@ -142,78 +143,86 @@
 			// 
 			this.tbProductPriceWithTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbProductPriceWithTax.Enabled = false;
-			this.tbProductPriceWithTax.Location = new System.Drawing.Point(608, 342);
+			this.tbProductPriceWithTax.Location = new System.Drawing.Point(605, 342);
 			this.tbProductPriceWithTax.Name = "tbProductPriceWithTax";
 			this.tbProductPriceWithTax.Size = new System.Drawing.Size(200, 20);
 			this.tbProductPriceWithTax.TabIndex = 49;
+			this.tbProductPriceWithTax.Text = "0";
 			// 
 			// tbProductNdsAmount
 			// 
 			this.tbProductNdsAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbProductNdsAmount.Enabled = false;
-			this.tbProductNdsAmount.Location = new System.Drawing.Point(608, 316);
+			this.tbProductNdsAmount.Location = new System.Drawing.Point(605, 316);
 			this.tbProductNdsAmount.Name = "tbProductNdsAmount";
 			this.tbProductNdsAmount.Size = new System.Drawing.Size(200, 20);
 			this.tbProductNdsAmount.TabIndex = 48;
+			this.tbProductNdsAmount.Text = "0";
 			// 
 			// tbProductNdsRate
 			// 
 			this.tbProductNdsRate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductNdsRate.Location = new System.Drawing.Point(608, 290);
+			this.tbProductNdsRate.Location = new System.Drawing.Point(605, 290);
 			this.tbProductNdsRate.Name = "tbProductNdsRate";
 			this.tbProductNdsRate.Size = new System.Drawing.Size(200, 20);
 			this.tbProductNdsRate.TabIndex = 47;
+			this.tbProductNdsRate.Text = "0";
 			this.tbProductNdsRate.Validated += new System.EventHandler(this.tbProductNdsRate_Validated);
 			// 
 			// tbProductTurnoverSize
 			// 
 			this.tbProductTurnoverSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbProductTurnoverSize.Enabled = false;
-			this.tbProductTurnoverSize.Location = new System.Drawing.Point(608, 264);
+			this.tbProductTurnoverSize.Location = new System.Drawing.Point(605, 264);
 			this.tbProductTurnoverSize.Name = "tbProductTurnoverSize";
 			this.tbProductTurnoverSize.Size = new System.Drawing.Size(200, 20);
 			this.tbProductTurnoverSize.TabIndex = 46;
+			this.tbProductTurnoverSize.Text = "0";
 			// 
 			// tbProductExciseAmount
 			// 
 			this.tbProductExciseAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbProductExciseAmount.Enabled = false;
-			this.tbProductExciseAmount.Location = new System.Drawing.Point(608, 238);
+			this.tbProductExciseAmount.Location = new System.Drawing.Point(605, 238);
 			this.tbProductExciseAmount.Name = "tbProductExciseAmount";
 			this.tbProductExciseAmount.Size = new System.Drawing.Size(200, 20);
 			this.tbProductExciseAmount.TabIndex = 45;
+			this.tbProductExciseAmount.Text = "0";
 			// 
 			// tbProductPriceWithoutTax
 			// 
 			this.tbProductPriceWithoutTax.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tbProductPriceWithoutTax.Enabled = false;
-			this.tbProductPriceWithoutTax.Location = new System.Drawing.Point(608, 186);
+			this.tbProductPriceWithoutTax.Location = new System.Drawing.Point(605, 186);
 			this.tbProductPriceWithoutTax.Name = "tbProductPriceWithoutTax";
 			this.tbProductPriceWithoutTax.Size = new System.Drawing.Size(200, 20);
 			this.tbProductPriceWithoutTax.TabIndex = 43;
+			this.tbProductPriceWithoutTax.Text = "0";
 			// 
 			// tbProductUnitPrice
 			// 
 			this.tbProductUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductUnitPrice.Location = new System.Drawing.Point(608, 160);
+			this.tbProductUnitPrice.Location = new System.Drawing.Point(605, 160);
 			this.tbProductUnitPrice.Name = "tbProductUnitPrice";
 			this.tbProductUnitPrice.Size = new System.Drawing.Size(200, 20);
 			this.tbProductUnitPrice.TabIndex = 42;
+			this.tbProductUnitPrice.Text = "0";
 			this.tbProductUnitPrice.Validated += new System.EventHandler(this.tbProductUnitPrice_Validated);
 			// 
 			// tbProductQuantity
 			// 
 			this.tbProductQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductQuantity.Location = new System.Drawing.Point(608, 134);
+			this.tbProductQuantity.Location = new System.Drawing.Point(605, 134);
 			this.tbProductQuantity.Name = "tbProductQuantity";
 			this.tbProductQuantity.Size = new System.Drawing.Size(200, 20);
 			this.tbProductQuantity.TabIndex = 41;
+			this.tbProductQuantity.Text = "0";
 			this.tbProductQuantity.Validated += new System.EventHandler(this.tbProductQuantity_Validated);
 			// 
 			// tbProductUnitNomenclature
 			// 
 			this.tbProductUnitNomenclature.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductUnitNomenclature.Location = new System.Drawing.Point(608, 108);
+			this.tbProductUnitNomenclature.Location = new System.Drawing.Point(605, 108);
 			this.tbProductUnitNomenclature.Name = "tbProductUnitNomenclature";
 			this.tbProductUnitNomenclature.Size = new System.Drawing.Size(200, 20);
 			this.tbProductUnitNomenclature.TabIndex = 40;
@@ -221,7 +230,7 @@
 			// tbProductUnitCode
 			// 
 			this.tbProductUnitCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductUnitCode.Location = new System.Drawing.Point(608, 82);
+			this.tbProductUnitCode.Location = new System.Drawing.Point(605, 82);
 			this.tbProductUnitCode.Name = "tbProductUnitCode";
 			this.tbProductUnitCode.Size = new System.Drawing.Size(200, 20);
 			this.tbProductUnitCode.TabIndex = 39;
@@ -229,7 +238,7 @@
 			// tbProductDescription
 			// 
 			this.tbProductDescription.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductDescription.Location = new System.Drawing.Point(608, 30);
+			this.tbProductDescription.Location = new System.Drawing.Point(605, 30);
 			this.tbProductDescription.Name = "tbProductDescription";
 			this.tbProductDescription.Size = new System.Drawing.Size(200, 20);
 			this.tbProductDescription.TabIndex = 38;
@@ -238,7 +247,7 @@
 			// 
 			this.label36.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label36.AutoSize = true;
-			this.label36.Location = new System.Drawing.Point(455, 267);
+			this.label36.Location = new System.Drawing.Point(453, 267);
 			this.label36.Name = "label36";
 			this.label36.Size = new System.Drawing.Size(66, 13);
 			this.label36.TabIndex = 36;
@@ -258,7 +267,7 @@
 			// 
 			this.label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label28.AutoSize = true;
-			this.label28.Location = new System.Drawing.Point(455, 293);
+			this.label28.Location = new System.Drawing.Point(453, 293);
 			this.label28.Name = "label28";
 			this.label28.Size = new System.Drawing.Size(47, 13);
 			this.label28.TabIndex = 28;
@@ -268,7 +277,7 @@
 			// 
 			this.label29.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label29.AutoSize = true;
-			this.label29.Location = new System.Drawing.Point(455, 319);
+			this.label29.Location = new System.Drawing.Point(453, 319);
 			this.label29.Name = "label29";
 			this.label29.Size = new System.Drawing.Size(60, 13);
 			this.label29.TabIndex = 29;
@@ -278,7 +287,7 @@
 			// 
 			this.label30.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label30.AutoSize = true;
-			this.label30.Location = new System.Drawing.Point(455, 345);
+			this.label30.Location = new System.Drawing.Point(453, 345);
 			this.label30.Name = "label30";
 			this.label30.Size = new System.Drawing.Size(70, 13);
 			this.label30.TabIndex = 30;
@@ -288,7 +297,7 @@
 			// 
 			this.label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label31.AutoSize = true;
-			this.label31.Location = new System.Drawing.Point(455, 371);
+			this.label31.Location = new System.Drawing.Point(453, 371);
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(97, 13);
 			this.label31.TabIndex = 31;
@@ -298,7 +307,7 @@
 			// 
 			this.label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label32.AutoSize = true;
-			this.label32.Location = new System.Drawing.Point(455, 397);
+			this.label32.Location = new System.Drawing.Point(453, 397);
 			this.label32.Name = "label32";
 			this.label32.Size = new System.Drawing.Size(143, 13);
 			this.label32.TabIndex = 32;
@@ -308,7 +317,7 @@
 			// 
 			this.label33.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label33.AutoSize = true;
-			this.label33.Location = new System.Drawing.Point(455, 423);
+			this.label33.Location = new System.Drawing.Point(453, 423);
 			this.label33.Name = "label33";
 			this.label33.Size = new System.Drawing.Size(67, 13);
 			this.label33.TabIndex = 33;
@@ -318,7 +327,7 @@
 			// 
 			this.label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label34.AutoSize = true;
-			this.label34.Location = new System.Drawing.Point(455, 449);
+			this.label34.Location = new System.Drawing.Point(453, 449);
 			this.label34.Name = "label34";
 			this.label34.Size = new System.Drawing.Size(52, 13);
 			this.label34.TabIndex = 34;
@@ -398,7 +407,7 @@
 			// 
 			this.label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label35.AutoSize = true;
-			this.label35.Location = new System.Drawing.Point(455, 7);
+			this.label35.Location = new System.Drawing.Point(453, 7);
 			this.label35.Name = "label35";
 			this.label35.Size = new System.Drawing.Size(71, 13);
 			this.label35.TabIndex = 35;
@@ -418,7 +427,7 @@
 			// 
 			this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label20.AutoSize = true;
-			this.label20.Location = new System.Drawing.Point(455, 33);
+			this.label20.Location = new System.Drawing.Point(453, 33);
 			this.label20.Name = "label20";
 			this.label20.Size = new System.Drawing.Size(58, 13);
 			this.label20.TabIndex = 20;
@@ -428,7 +437,7 @@
 			// 
 			this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label21.AutoSize = true;
-			this.label21.Location = new System.Drawing.Point(455, 85);
+			this.label21.Location = new System.Drawing.Point(453, 85);
 			this.label21.Name = "label21";
 			this.label21.Size = new System.Drawing.Size(49, 13);
 			this.label21.TabIndex = 21;
@@ -438,7 +447,7 @@
 			// 
 			this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label22.AutoSize = true;
-			this.label22.Location = new System.Drawing.Point(455, 111);
+			this.label22.Location = new System.Drawing.Point(453, 111);
 			this.label22.Name = "label22";
 			this.label22.Size = new System.Drawing.Size(90, 13);
 			this.label22.TabIndex = 22;
@@ -448,7 +457,7 @@
 			// 
 			this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label23.AutoSize = true;
-			this.label23.Location = new System.Drawing.Point(455, 137);
+			this.label23.Location = new System.Drawing.Point(453, 137);
 			this.label23.Name = "label23";
 			this.label23.Size = new System.Drawing.Size(44, 13);
 			this.label23.TabIndex = 23;
@@ -458,7 +467,7 @@
 			// 
 			this.label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label24.AutoSize = true;
-			this.label24.Location = new System.Drawing.Point(455, 163);
+			this.label24.Location = new System.Drawing.Point(453, 163);
 			this.label24.Name = "label24";
 			this.label24.Size = new System.Drawing.Size(48, 13);
 			this.label24.TabIndex = 24;
@@ -468,7 +477,7 @@
 			// 
 			this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label25.AutoSize = true;
-			this.label25.Location = new System.Drawing.Point(455, 189);
+			this.label25.Location = new System.Drawing.Point(453, 189);
 			this.label25.Name = "label25";
 			this.label25.Size = new System.Drawing.Size(85, 13);
 			this.label25.TabIndex = 25;
@@ -478,7 +487,7 @@
 			// 
 			this.label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label26.AutoSize = true;
-			this.label26.Location = new System.Drawing.Point(455, 215);
+			this.label26.Location = new System.Drawing.Point(453, 215);
 			this.label26.Name = "label26";
 			this.label26.Size = new System.Drawing.Size(60, 13);
 			this.label26.TabIndex = 26;
@@ -488,7 +497,7 @@
 			// 
 			this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label27.AutoSize = true;
-			this.label27.Location = new System.Drawing.Point(455, 241);
+			this.label27.Location = new System.Drawing.Point(453, 241);
 			this.label27.Name = "label27";
 			this.label27.Size = new System.Drawing.Size(73, 13);
 			this.label27.TabIndex = 27;
@@ -579,7 +588,7 @@
 			this.tableLayoutPanel1.ColumnCount = 3;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.71074F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.28926F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 259F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 262F));
 			this.tableLayoutPanel1.Controls.Add(this.l_ProductDescription, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label20, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label15, 0, 0);
@@ -665,7 +674,7 @@
 			// 
 			// btnAdd
 			// 
-			this.btnAdd.Location = new System.Drawing.Point(608, 472);
+			this.btnAdd.Location = new System.Drawing.Point(605, 472);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(75, 23);
 			this.btnAdd.TabIndex = 55;
@@ -686,7 +695,7 @@
 			// tbProductTnvedName
 			// 
 			this.tbProductTnvedName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.tbProductTnvedName.Location = new System.Drawing.Point(608, 56);
+			this.tbProductTnvedName.Location = new System.Drawing.Point(605, 56);
 			this.tbProductTnvedName.Name = "tbProductTnvedName";
 			this.tbProductTnvedName.Size = new System.Drawing.Size(200, 20);
 			this.tbProductTnvedName.TabIndex = 57;
@@ -695,7 +704,7 @@
 			// 
 			this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.label17.AutoSize = true;
-			this.label17.Location = new System.Drawing.Point(455, 59);
+			this.label17.Location = new System.Drawing.Point(453, 59);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(62, 13);
 			this.label17.TabIndex = 58;
@@ -703,13 +712,21 @@
 			// 
 			// btnSave
 			// 
-			this.btnSave.Location = new System.Drawing.Point(455, 472);
+			this.btnSave.Location = new System.Drawing.Point(453, 472);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(97, 23);
 			this.btnSave.TabIndex = 59;
 			this.btnSave.Text = "Save changes";
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+			// 
+			// cbProductTruOriginCode
+			// 
+			this.cbProductTruOriginCode.FormattingEnabled = true;
+			this.cbProductTruOriginCode.Location = new System.Drawing.Point(605, 3);
+			this.cbProductTruOriginCode.Name = "cbProductTruOriginCode";
+			this.cbProductTruOriginCode.Size = new System.Drawing.Size(200, 21);
+			this.cbProductTruOriginCode.TabIndex = 60;
 			// 
 			// epProductFormQuantity
 			// 
@@ -730,14 +747,6 @@
 			// 
 			this.epProductNdsRate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
 			this.epProductNdsRate.ContainerControl = this;
-			// 
-			// cbProductTruOriginCode
-			// 
-			this.cbProductTruOriginCode.FormattingEnabled = true;
-			this.cbProductTruOriginCode.Location = new System.Drawing.Point(608, 3);
-			this.cbProductTruOriginCode.Name = "cbProductTruOriginCode";
-			this.cbProductTruOriginCode.Size = new System.Drawing.Size(200, 21);
-			this.cbProductTruOriginCode.TabIndex = 60;
 			// 
 			// ProductForm
 			// 

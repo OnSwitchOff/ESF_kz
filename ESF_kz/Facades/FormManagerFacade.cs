@@ -119,6 +119,11 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartG>().AddNewProductRow(product);
 		}
 
+		internal static void FillProductPriceWithoutTax(string v)
+		{
+			productForm.FillProductPriceWithoutTax(v);
+		}
+
 		internal static string getRelatedInvoiceRegistrationNum()
 		{
 			panelESFpartA panelA = invoiceForm.getPannel<panelESFpartA>();
@@ -148,6 +153,16 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartD>().getConsigneeCountryCode();
 		}
 
+		internal static void FillProductExciseAmount(string v)
+		{
+			productForm.FillProductExciseAmount(v);
+		}
+
+		internal static void FillProductTurnoverSize(string v)
+		{
+			productForm.FillProductTurnoverSize(v);
+		}
+
 		internal static string getConsigneeName()
 		{
 			return invoiceForm.getPannel<panelESFpartD>().getConsigneeName();
@@ -171,6 +186,16 @@ namespace ESF_kz
 		internal static string getConsignorAddress()
 		{
 			return invoiceForm.getPannel<panelESFpartD>().getConsignorAddress();
+		}
+
+		internal static void FillProductNdsAmount(string v)
+		{
+			productForm.FillProductNdsAmount(v);
+		}
+
+		internal static void FillProductPriceWithTax(string v)
+		{
+			productForm.FillProductPriceWithTax(v);
 		}
 
 		internal static string getConsignorName()
@@ -503,6 +528,11 @@ namespace ESF_kz
 
 				
 			}
+		}
+
+		internal static void RecalcTotalAmounts()
+		{
+			invoiceForm.getPannel<panelESFpartG>().RecalcTotalAmounts();
 		}
 
 		internal static ProductForm FillProductFormByProduct(ProductV2 product)

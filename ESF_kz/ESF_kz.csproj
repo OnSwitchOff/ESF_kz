@@ -242,6 +242,7 @@
     <Compile Include="Models\invoiceContainer.cs" />
     <Compile Include="Models\InvoiceV1.cs" />
     <Compile Include="Models\InvoiceV2.cs" />
+    <Compile Include="Models\MyCustomAttribute.cs" />
     <Compile Include="Models\ParticipantV1.cs" />
     <Compile Include="Models\ParticipantV2.cs" />
     <Compile Include="Models\ProductSetV1.cs" />

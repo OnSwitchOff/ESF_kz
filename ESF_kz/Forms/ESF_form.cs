@@ -268,5 +268,11 @@ namespace ESF_kz
 		{
 			btnESFpartJ.Enabled = v;
 		}
+
+		private void sendToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			LocalServiceOperationFacade.GenerateInvoiceSignature();
+			UploadInvoiceServiceOperationFacade.SendInvoice();
+		}
 	}
 }

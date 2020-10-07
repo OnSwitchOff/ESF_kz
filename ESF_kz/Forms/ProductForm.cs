@@ -27,6 +27,7 @@ namespace ESF_kz.Forms
 		{
 			ProductV2 product = FormManagerFacade.getProductFromProductForm();			
 			FormManagerFacade.AddNewProductRow(product);
+			FormManagerFacade.RecalcTotalAmounts();
 			this.Close();			
 		}
 
@@ -56,22 +57,96 @@ namespace ESF_kz.Forms
 
 		private void tbProductQuantity_Validated(object sender, EventArgs e)
 		{
-			ValidatingManager.ValidateFloatTextBox(tbProductQuantity,epProductFormQuantity);			
+			if(ValidatingManager.ValidateFloatTextBox(tbProductQuantity,epProductFormQuantity) && ValidatingManager.ValidateFloatTextBox(tbProductUnitPrice, epProductUnitPrice))
+			{
+				FormManagerFacade.FillProductPriceWithoutTax(CalcProductPriceWithoutTax());
+				FormManagerFacade.FillProductExciseAmount(CalcProductExciseAmount());
+				FormManagerFacade.FillProductTurnoverSize(CalcProductTurnoverSize());
+				FormManagerFacade.FillProductNdsAmount(CalcProductNdsAmount());
+				FormManagerFacade.FillProductPriceWithTax(CalcProductPriceWithTax());
+			}
 		}
 
 		private void tbProductUnitPrice_Validated(object sender, EventArgs e)
 		{
-			ValidatingManager.ValidateFloatTextBox(tbProductUnitPrice, epProductUnitPrice);
+			if (ValidatingManager.ValidateFloatTextBox(tbProductQuantity, epProductFormQuantity) && ValidatingManager.ValidateFloatTextBox(tbProductUnitPrice, epProductUnitPrice))
+			{
+				FormManagerFacade.FillProductPriceWithoutTax(CalcProductPriceWithoutTax());
+				FormManagerFacade.FillProductExciseAmount(CalcProductExciseAmount());
+				FormManagerFacade.FillProductTurnoverSize(CalcProductTurnoverSize());
+				FormManagerFacade.FillProductNdsAmount(CalcProductNdsAmount());
+				FormManagerFacade.FillProductPriceWithTax(CalcProductPriceWithTax());
+			}
 		}
+
+		private string CalcProductPriceWithoutTax()
+		{
+			return (float.Parse(tbProductQuantity.Text) * float.Parse(tbProductUnitPrice.Text)).ToString();
+		}
+
+		internal void FillProductPriceWithoutTax(string v)
+		{
+			tbProductPriceWithoutTax.Text = v;
+		}		
 
 		private void tbProductExciseRate_Validated(object sender, EventArgs e)
 		{
-			ValidatingManager.ValidateFloatTextBox(tbProductExciseRate, epProductExciseRate);
+			if(ValidatingManager.ValidateFloatTextBox(tbProductExciseRate, epProductExciseRate))
+			{
+				FormManagerFacade.FillProductExciseAmount(CalcProductExciseAmount());
+				FormManagerFacade.FillProductTurnoverSize(CalcProductTurnoverSize());
+				FormManagerFacade.FillProductNdsAmount(CalcProductNdsAmount());
+				FormManagerFacade.FillProductPriceWithTax(CalcProductPriceWithTax());
+			}
+		}
+
+		private string CalcProductTurnoverSize()
+		{
+			return (float.Parse(tbProductExciseAmount.Text) + float.Parse(tbProductPriceWithoutTax.Text)).ToString();
+		}
+
+		internal void FillProductTurnoverSize(string v)
+		{
+			tbProductTurnoverSize.Text = v;
+		}
+
+		private string CalcProductExciseAmount()
+		{
+			return (float.Parse(tbProductPriceWithoutTax.Text) * float.Parse(tbProductExciseRate.Text)/100).ToString();
+		}
+
+		internal void FillProductExciseAmount(string v)
+		{
+			tbProductExciseAmount.Text = v;
 		}
 
 		private void tbProductNdsRate_Validated(object sender, EventArgs e)
 		{
-			ValidatingManager.ValidateIntegerTextBox(tbProductNdsRate, epProductNdsRate);
+			if(ValidatingManager.ValidateIntegerTextBox(tbProductNdsRate, epProductNdsRate))
+			{
+				FormManagerFacade.FillProductNdsAmount(CalcProductNdsAmount());
+				FormManagerFacade.FillProductPriceWithTax(CalcProductPriceWithTax());
+			}
+		}
+
+		private string CalcProductPriceWithTax()
+		{
+			return (float.Parse(tbProductNdsAmount.Text) + float.Parse(tbProductTurnoverSize.Text)).ToString();
+		}
+
+		internal void FillProductPriceWithTax(string v)
+		{
+			tbProductPriceWithTax.Text = v;
+		}
+
+		private string CalcProductNdsAmount()
+		{
+			return (float.Parse(tbProductTurnoverSize.Text) * float.Parse(tbProductNdsRate.Text)/100).ToString();
+		}
+
+		internal void FillProductNdsAmount(string v)
+		{
+			tbProductNdsAmount.Text = v;
 		}
 
 		internal void setTruOriginCode(TruOriginCode truOriginCode)
@@ -143,7 +218,9 @@ namespace ESF_kz.Forms
 		{
 			ProductV2 product = FormManagerFacade.getProductFromProductForm();
 			FormManagerFacade.EditProductRow(product);
+			FormManagerFacade.RecalcTotalAmounts();
 			this.Close();
 		}
+
 	}
 }

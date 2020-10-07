@@ -29,12 +29,22 @@ namespace ESF_kz.Forms
 		{
 			QueryInvoiceUpdateResponse queryInvoiceUpdateResponse = new QueryInvoiceUpdateResponse();
 			InvoiceServiceOperationsFacade.QueryUpdates(out queryInvoiceUpdateResponse);
+			ClearDataGrid();
 			foreach (InvoiceInfo invoiceInfo in queryInvoiceUpdateResponse.invoiceInfoList)
 			{
 				FormManagerFacade.AddRowByInvoiceInfo(this,invoiceInfo);
 			}
+			SortDataGridBy("Date");			
+		}
 
-			
+		private void SortDataGridBy(string columnName)
+		{
+			this.dataGridView1.Sort(this.dataGridView1.Columns[columnName], ListSortDirection.Descending);
+		}
+
+		private void ClearDataGrid()
+		{
+			this.dataGridView1.Rows.Clear();
 		}
 
 		internal DataGridView getDataGrid()
@@ -47,7 +57,7 @@ namespace ESF_kz.Forms
 			DataGridView grid = getDataGrid();
 			int count = grid.Rows.Count;
 			grid.Rows.Add();
-			grid.Rows[count].Cells[0].Value = count;
+			grid.Rows[count].Cells[0].Value = count+1;
 			grid.Rows[count].Cells[2].Value = invoiceInfo.invoiceId;
 			grid.Rows[count].Cells[3].Value = invoiceInfo.inputDate;
 			grid.Rows[count].Cells[4].Value = invoiceInfo.invoiceStatus;

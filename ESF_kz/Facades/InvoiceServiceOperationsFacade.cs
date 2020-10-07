@@ -77,7 +77,7 @@ namespace ESF_kz
 		static public bool QueryInvoiceById(out QueryInvoiceResponse queryInvoiceResponse)
 		{
 			InvoiceByIdRequest invoiceByIdRequest = new InvoiceByIdRequest();
-			invoiceByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();			
+			invoiceByIdRequest.sessionId = SessionDataManagerFacade.getSessionId();
 			invoiceByIdRequest.idList = SessionDataManagerFacade.getInvoiceIdList(); 
 
 			//QueryInvoiceResponse queryInvoiceResponse;
