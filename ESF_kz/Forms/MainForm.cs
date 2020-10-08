@@ -118,7 +118,7 @@ namespace ESF_kz.Forms
 				XmlDocument doc = new XmlDocument();
 				doc.LoadXml(queryInvoiceResponse.invoiceInfoList[0].invoiceBody);
 				XmlNode newNode = doc.DocumentElement;
-				InvoiceV2 invoice = ResponseManagerFacade.ParseInvoiceBody(newNode);
+				InvoiceV2 invoice = ParsingManager.ParseInvoiceBody(newNode);
 				ESF_form invoiceForm = FormManagerFacade.FillInvoiceFormByInvoice(invoice);
 				invoiceForm.Show();
 			}			

@@ -35,10 +35,13 @@
 			this.l_PartF_deliveryDocDate = new System.Windows.Forms.Label();
 			this.tbPartF_deliveryDocNum = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.dtpPartF_deliveryDocDate = new System.Windows.Forms.DateTimePicker();
 			this.epPartF_deliveryDocNum = new System.Windows.Forms.ErrorProvider(this.components);
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.tbPartF_deliveryDocDate = new System.Windows.Forms.TextBox();
+			this.dtpPartF_deliveryDocDate = new System.Windows.Forms.DateTimePicker();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartF_deliveryDocNum)).BeginInit();
+			this.tableLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -52,7 +55,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.l_PartF_deliveryDocDate, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartF_deliveryDocNum, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartF_deliveryDocDate, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -126,17 +129,41 @@
 			this.label9.Text = "Раздел F. Реквизиты документов, подтверждающих поставку товаров, работ, услуг";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// dtpPartF_deliveryDocDate
-			// 
-			this.dtpPartF_deliveryDocDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartF_deliveryDocDate.Location = new System.Drawing.Point(395, 186);
-			this.dtpPartF_deliveryDocDate.Name = "dtpPartF_deliveryDocDate";
-			this.dtpPartF_deliveryDocDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartF_deliveryDocDate.TabIndex = 46;
-			// 
 			// epPartF_deliveryDocNum
 			// 
 			this.epPartF_deliveryDocNum.ContainerControl = this;
+			// 
+			// tableLayoutPanel2
+			// 
+			this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tableLayoutPanel2.ColumnCount = 2;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.Controls.Add(this.dtpPartF_deliveryDocDate, 0, 0);
+			this.tableLayoutPanel2.Controls.Add(this.tbPartF_deliveryDocDate, 0, 0);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(395, 180);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			this.tableLayoutPanel2.RowCount = 1;
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel2.TabIndex = 58;
+			// 
+			// tbPartF_deliveryDocDate
+			// 
+			this.tbPartF_deliveryDocDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartF_deliveryDocDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartF_deliveryDocDate.Name = "tbPartF_deliveryDocDate";
+			this.tbPartF_deliveryDocDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartF_deliveryDocDate.TabIndex = 18;
+			// 
+			// dtpPartF_deliveryDocDate
+			// 
+			this.dtpPartF_deliveryDocDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartF_deliveryDocDate.Location = new System.Drawing.Point(174, 6);
+			this.dtpPartF_deliveryDocDate.Name = "dtpPartF_deliveryDocDate";
+			this.dtpPartF_deliveryDocDate.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartF_deliveryDocDate.TabIndex = 47;
+			this.dtpPartF_deliveryDocDate.ValueChanged += new System.EventHandler(this.dtpPartF_deliveryDocDate_ValueChanged);
 			// 
 			// panelESFpartF
 			// 
@@ -148,6 +175,8 @@
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartF_deliveryDocNum)).EndInit();
+			this.tableLayoutPanel2.ResumeLayout(false);
+			this.tableLayoutPanel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -160,7 +189,9 @@
 		private System.Windows.Forms.Label l_PartF_deliveryDocDate;
 		private System.Windows.Forms.TextBox tbPartF_deliveryDocNum;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.DateTimePicker dtpPartF_deliveryDocDate;
 		private System.Windows.Forms.ErrorProvider epPartF_deliveryDocNum;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+		private System.Windows.Forms.DateTimePicker dtpPartF_deliveryDocDate;
+		private System.Windows.Forms.TextBox tbPartF_deliveryDocDate;
 	}
 }

@@ -90,7 +90,7 @@ namespace ESF_kz
 			{
 				return panelA.getAddedESFDate();
 			}
-			return new DateTime(1990,9,24);
+			return new DateTime();
 		}
 
 		internal static void AddRowByInvoiceInfo(MainForm form, InvoiceService.InvoiceInfo invoiceInfo)
@@ -558,7 +558,10 @@ namespace ESF_kz
 		{			
 			ESF_form invoiceForm = new ESF_form();
 			panelESFpartA panelA = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartA>();
-			panelA.setInvoiceDate(invoice.date);
+			DateTime zeroDate = new DateTime();
+
+			if (invoice.date != zeroDate)			
+				panelA.setInvoiceDate(invoice.date);		
 			panelA.setInvoiceNum(invoice.num);
 
 			panelA.setInvoiceType(invoice.invoiceType);
@@ -566,19 +569,25 @@ namespace ESF_kz
 			{
 				panelA.setAddedESFRegistrationNum(invoice.relatedInvoice.registrationNumber);
 				panelA.setAddedESFNum(invoice.relatedInvoice.num);
-				panelA.setAddedESFDate(invoice.relatedInvoice.date);
+				if(invoice.relatedInvoice.date!=zeroDate)
+					panelA.setAddedESFDate(invoice.relatedInvoice.date);
 			}
 			else if (invoice.invoiceType == InvoiceType.FIXED_INVOICE)
 			{
 				panelA.setCorrectedESFRegistrationNum(invoice.relatedInvoice.registrationNumber);
 				panelA.setCorrectedESFNum(invoice.relatedInvoice.num);
-				panelA.setCorrectedESFDate(invoice.relatedInvoice.date);
+				if (invoice.relatedInvoice.date != zeroDate)
+					panelA.setCorrectedESFDate(invoice.relatedInvoice.date);
 			}
 
 			panelA.setOperatorFullname(invoice.operatorFullname);
-			panelA.setInvoiceTurnoverDate(invoice.turnoverDate);
-			panelA.setInvoiceDatePaper(invoice.datePaper);
-			panelA.setReasonPaper(invoice.reasonPaper);
+			if (invoice.turnoverDate != zeroDate)
+				panelA.setInvoiceTurnoverDate(invoice.turnoverDate);
+			if (invoice.datePaper != zeroDate)
+			{
+				panelA.setInvoiceDatePaper(invoice.datePaper);
+				panelA.setReasonPaper(invoice.reasonPaper);
+			}				
 
 			panelESFpartB panelB = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartB>();
 			panelB.RemoveAllTabs();
@@ -602,7 +611,8 @@ namespace ESF_kz
 					bTab.setSellerKbe(seller.kbe);
 					bTab.setSellerName(seller.name);
 					bTab.setSellerReorgTin(seller.reorganizedTin);
-					bTab.setSellerShareParticipation(seller.shareParticipation);
+					if(seller.shareParticipation!=0)
+						bTab.setSellerShareParticipation(seller.shareParticipation);
 					bTab.setSellerStatuses(seller.statuses);
 					bTab.setSellerTin(seller.tin);
 					bTab.setSellerTrailer(seller.trailer);
@@ -626,7 +636,8 @@ namespace ESF_kz
 					cTab.setCustomerCountryCode(customer.countryCode);
 					cTab.setCustomerName(customer.name);
 					cTab.setCustomerRoergTin(customer.reorganizedTin);
-					cTab.setCustomerShareParticipation(customer.shareParticipation);
+					if (customer.shareParticipation != 0)
+						cTab.setCustomerShareParticipation(customer.shareParticipation);
 					cTab.setCustomerStatuses(customer.statuses);
 					cTab.setCustomerTin(customer.tin);
 					cTab.setCustomerTrailer(customer.trailer);
@@ -660,7 +671,8 @@ namespace ESF_kz
 			panelESFpartE panelE = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartE>();
 			if (invoice.deliveryTerm != null)
 			{
-				panelE.setDeliveryTermContractDate(invoice.deliveryTerm.contractDate);
+				if (invoice.deliveryTerm.contractDate != zeroDate)
+					panelE.setDeliveryTermContractDate(invoice.deliveryTerm.contractDate);
 				panelE.setDeliveryTermContractNum(invoice.deliveryTerm.contractNum);
 				panelE.setDeliveryTermConditiomCode(invoice.deliveryTerm.deliveryConditionCode);
 				panelE.setDeliveryTermDestination(invoice.deliveryTerm.destination);
@@ -668,12 +680,14 @@ namespace ESF_kz
 				panelE.setDeliveryTermTerm(invoice.deliveryTerm.term);
 				panelE.setDeliveryTermTransportTypeCode(invoice.deliveryTerm.transportTypeCode);
 				panelE.setDeliveryTermWarrant(invoice.deliveryTerm.warrant);
-				panelE.setDeliveryTermWarrantDate(invoice.deliveryTerm.warrantDate);
+				if(invoice.deliveryTerm.warrantDate != zeroDate)
+					panelE.setDeliveryTermWarrantDate(invoice.deliveryTerm.warrantDate);
 			}
 
 
 			panelESFpartF panelF = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartF>();
-			panelF.setInvoiceDeliveryDocDate(invoice.deliveryDocDate);
+			if (invoice.deliveryDocDate != zeroDate)
+				panelF.setInvoiceDeliveryDocDate(invoice.deliveryDocDate);
 			panelF.setInvoiceDeliveryDocNum(invoice.deliveryDocNum);
 
 			panelESFpartG panelG = FormManagerFacade.getInvoiceForm().getPannel<panelESFpartG>();
@@ -1215,6 +1229,11 @@ namespace ESF_kz
 		internal static int getShareBySellerParticipantCount(int sellerNumber)
 		{
 			return invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerNumber).GetDataGrid().Rows.Count;
+		}
+
+		internal static bool isPaperESF()
+		{
+			return invoiceForm.getPannel<panelESFpartA>().isPaperESF();
 		}
 
 		internal static string getSellerProductShareAdditional(int sellerNumber, int productSharNum)

@@ -123,7 +123,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getDeliveryTermContractDate()
 		{
-			return dtpPartE_contractDate.Enabled ? dtpPartE_contractDate.Value : new DateTime(1990,09,24);
+			return dtpPartE_contractDate.Enabled ? dtpPartE_contractDate.Value : new DateTime();
 		}
 
 		internal bool setDeliveryTermContractDate(DateTime date)
@@ -266,7 +266,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getDeliveryTermWarrantDate()
 		{
-			return dtpPartE_warrantDate.Value;
+			return tbPartE_warrantDate.Text == ""? new DateTime() : dtpPartE_warrantDate.Value;
 		}
 
 		internal bool setDeliveryTermWarrantDate(DateTime date)
@@ -280,6 +280,16 @@ namespace ESF_kz.Forms
 			{
 				return false;
 			}
+		}
+
+		private void dtpPartE_contractDate_ValueChanged(object sender, EventArgs e)
+		{
+			tbPartE_contractDate.Text = dtpPartE_contractDate.Value.ToString("dd.MM.yyyy");
+		}
+
+		private void dtpPartE_warrantDate_ValueChanged(object sender, EventArgs e)
+		{
+			tbPartE_warrantDate.Text = dtpPartE_warrantDate.Value.ToString("dd.MM.yyyy");
 		}
 	}
 }

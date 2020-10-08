@@ -65,7 +65,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getCustomerAgentDocDate()
 		{
-			return dtpPartJ_customerAgentDocDate.Value;
+			return  tbPartJ_customerAgentDocDate.Text == ""? new DateTime(): dtpPartJ_customerAgentDocDate.Value;
 		}
 
 		internal bool setCustomerAgentDocDate(DateTime date)
@@ -133,6 +133,11 @@ namespace ESF_kz.Forms
 			{
 				return false;
 			}
+		}
+
+		private void dtpPartJ_customerAgentDocDate_ValueChanged(object sender, EventArgs e)
+		{
+			tbPartJ_customerAgentDocDate.Text = dtpPartJ_customerAgentDocDate.Value.ToString("dd.MM.yyyy");
 		}
 	}
 }

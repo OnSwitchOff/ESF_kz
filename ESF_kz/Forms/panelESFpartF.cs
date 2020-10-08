@@ -39,7 +39,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getInvoiceDeliveryDocDate()
 		{
-			return dtpPartF_deliveryDocDate.Value;
+			return tbPartF_deliveryDocDate.Text == ""? new DateTime() : dtpPartF_deliveryDocDate.Value;
 		}
 
 		internal bool setInvoiceDeliveryDocDate(DateTime date)
@@ -71,6 +71,11 @@ namespace ESF_kz.Forms
 			{
 				return false;
 			}
+		}
+
+		private void dtpPartF_deliveryDocDate_ValueChanged(object sender, EventArgs e)
+		{
+			tbPartF_deliveryDocDate.Text = dtpPartF_deliveryDocDate.Value.ToString("dd.MM.yyyy");
 		}
 	}
 }

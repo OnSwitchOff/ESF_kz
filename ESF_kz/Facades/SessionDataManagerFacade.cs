@@ -113,7 +113,7 @@ namespace ESF_kz
 
 		internal static invoiceContainerV2 ParseInvoiceXML(XmlDocument xDoc)
 		{
-			return ResponseManagerFacade.ParseInvoiceConatinerV2XML(xDoc);
+			return ParsingManager.ParseInvoiceConatinerV2XML(xDoc);
 		}
 
 		private static long getInvoiceId()
@@ -274,7 +274,10 @@ namespace ESF_kz
 				sellerV2.kbe = SessionDataManagerFacade.getSellerKbe(sellerNum);// "kbe";
 				sellerV2.name = SessionDataManagerFacade.getSellerName(sellerNum);// "sellerName";
 				sellerV2.reorganizedTin = SessionDataManagerFacade.getSellerReorgTin(sellerNum);// "reorgTin";
-				sellerV2.shareParticipation = SessionDataManagerFacade.getSellerShareParticipation(sellerNum);// 0.25f;																									 
+				if (tempSellersCount>1)
+				{
+					sellerV2.shareParticipation = SessionDataManagerFacade.getSellerShareParticipation(sellerNum);// 0.25f;	
+				}																												 
 				sellerV2.statuses = SessionDataManagerFacade.getSellerStatuses(sellerNum);//sellerTypes;
 				sellerV2.tin = SessionDataManagerFacade.getSellerTin(sellerNum);// "tin";
 				sellerV2.trailer = SessionDataManagerFacade.getSellerTrailer(sellerNum); //"trailer";
@@ -550,6 +553,7 @@ namespace ESF_kz
 			productSetV2.currencyRate = getProductSetCurrencyRate();// 0.25f;
 			productSetV2.ndsRateType = getProductSetNdsRateType();//.WITHOUT_NDS_NOT_KZ;				
 			productSetV2.products = getProductsV2();
+			GetAndSetProductsTo(ref productSetV2.products);
 			productSetV2.totalExciseAmount = getProductSetTotalExciseAmount();// 100;
 			productSetV2.totalNdsAmount = getProductSetTotalNDSAmount();// 100;
 			productSetV2.totalPriceWithoutTax = getProductSetTotalPriceWithoutTax();// 100;
@@ -558,6 +562,8 @@ namespace ESF_kz
 
 			return productSetV2;
 		}
+
+		
 
 		private static float getProductSetTotalTurnoverSize()
 		{
@@ -593,6 +599,15 @@ namespace ESF_kz
 				productV2s.Add(getProductV2ByRowNumber(productNum));
 			}
 			return productV2s;
+		}
+
+		private static void GetAndSetProductsTo(ref List<ProductV2> products)
+		{
+			products = getProductsV2();
+			if (products.Count == 0)
+			{
+				products = null;
+			}
 		}
 
 		internal static ProductV2 getProductV2ByRowNumber(int productNum)
@@ -750,6 +765,12 @@ namespace ESF_kz
 			return deliveryTermV2;
 		}
 
+		private static void GetAndSetDeliveryTermTo(ref DeliveryTermV2 deliveryTerm)
+		{
+			DeliveryTermV2 term = getDeliveryTermV2();
+			deliveryTerm = term;
+		}
+
 		private static DateTime getDeliveryTermWarrantDate()
 		{
 			return FormManagerFacade.getDeliveryTermWarrantDate();
@@ -822,6 +843,7 @@ namespace ESF_kz
 				customerV2.countryCode = getCustomerCountryCode(customerNumber);// "KZ";
 				customerV2.name = getCustomerName(customerNumber);// "customerName";
 				customerV2.reorganizedTin = getCustomerReorgTin(customerNumber);// "customerreorgtin";
+				if (tempCount>1)
 				customerV2.shareParticipation = getCustomerShareParticipation(customerNumber);//0.22f;				
 				customerV2.statuses = getCustomerStatusesByCustomer(customerNumber);// statuses;
 				customerV2.tin = getCustomerTin(customerNumber); //"customerTin";
@@ -1030,6 +1052,17 @@ namespace ESF_kz
 			return consignor;
 		}
 
+		private static void GetAndSetConsignorTo(ref Consignor consignor)
+		{
+			Consignor temp = new Consignor();
+			temp = getConsignor();
+			if (temp.address == "" && temp.name == "" && temp.tin == "")
+			{
+				temp = null;
+			}
+			consignor = null;
+		}
+
 		private static string getConsignorTin()
 		{
 			return FormManagerFacade.getConsignorTin();
@@ -1053,6 +1086,16 @@ namespace ESF_kz
 			consigneeV2.name = getConsigneeName();// "Consegnee Name";
 			consigneeV2.tin = getConsigneeTin();// "COnsegnee Tin";
 			return consigneeV2;
+		}
+		private static void GetAndSetConsigneeTo(ref ConsigneeV2 consignee)
+		{
+			ConsigneeV2 temp = new ConsigneeV2();
+			temp = getConsignee();
+			if (temp.address == "" && temp.name == "" && temp.tin == "" && temp.countryCode == "")
+			{
+				temp = null;
+			}
+			consignee = null;
 		}
 
 		private static string getConsigneeTin()
@@ -1092,6 +1135,34 @@ namespace ESF_kz
 			relatedInvoice.num = getRelatedInvoiceNum();//"relatedInv num";
 			relatedInvoice.registrationNumber = getRelatedInvoiceRegistrationNum();// "registrat NUmber";
 			return relatedInvoice;
+		}
+
+		private static void GetAndSetRelatedInvoiceTo(ref RelatedInvoice relatedInvoice)
+		{
+			bool isNull = true;
+			DateTime tmpDate = getRelatedInvoiceDate();
+			string tmpNum = getRelatedInvoiceNum();
+			string tmpRegNum = getRelatedInvoiceRegistrationNum();
+			RelatedInvoice tmpInvoice = new RelatedInvoice();
+			if (tmpDate != new DateTime())
+			{
+				isNull = false;
+				tmpInvoice.date = tmpDate;
+			}
+			if(tmpNum != "" && tmpNum !=null)
+			{
+				isNull = false;
+				tmpInvoice.num = tmpNum;
+			}
+			if (tmpRegNum !="" && tmpRegNum !=null)
+			{
+				isNull = false;
+				tmpInvoice.registrationNumber = tmpRegNum;
+			}
+			if (!isNull)
+			{
+				relatedInvoice = tmpInvoice;
+			}
 		}
 
 		private static string getRelatedInvoiceRegistrationNum()
@@ -1258,11 +1329,11 @@ namespace ESF_kz
 			invoiceV2.date = getInvoiceDate();// DateTime.Now;
 			invoiceV2.num = getInvoiceNum();//"invoice num";
 			invoiceV2.operatorFullname = getOperatorFullname();//"Kassov Viktor";				
-			invoiceV2.relatedInvoice = getRelatedInvoice();
+			GetAndSetRelatedInvoiceTo(ref invoiceV2.relatedInvoice);
 			invoiceV2.turnoverDate = getInvoiceTurnoverDate();//DateTime.Now;
 			invoiceV2.addInf = getInvoiceAddInf();//"addInf";				
-			invoiceV2.consignee = getConsignee();
-			invoiceV2.consignor = getConsignor();
+			GetAndSetConsigneeTo(ref invoiceV2.consignee);
+			GetAndSetConsignorTo(ref invoiceV2.consignor);
 			invoiceV2.customerAgentAddress = getCustomerAgentAddress();//"customerAgentAddress";
 			invoiceV2.customerAgentDocDate = getCustomerAgentDocDate();//DateTime.Now;
 			invoiceV2.customerAgentDocNum = getCustomerAgentDocNum();// "customerAgentDocNum";
@@ -1272,14 +1343,18 @@ namespace ESF_kz
 			{
 				invoiceV2.customerParticipants = getCustomerParticipants();
 			}			
-			invoiceV2.customers = getCustomers();
-			invoiceV2.datePaper = getInvoiceDatePaper();// DateTime.Now;
+			invoiceV2.customers = getCustomers();			
 			invoiceV2.deliveryDocDate = getInvoiceDeliveryDocDate();//DateTime.Now;
-			invoiceV2.deliveryDocNum = getInvoiceDeliveryDocNum();//"DeliveryDocNum";				
-			invoiceV2.deliveryTerm = getDeliveryTermV2();
+			invoiceV2.deliveryDocNum = getInvoiceDeliveryDocNum();//"DeliveryDocNum";
+			GetAndSetDeliveryTermTo(ref invoiceV2.deliveryTerm);
 			invoiceV2.productSet = getProductSetV2();
 			invoiceV2.publicOffice = getPublicOffice();
-			invoiceV2.reasonPaper = getReasonPaper();// PaperReasonType.MISSING_REQUIREMENT;
+			if (isPaperESF())
+			{
+				invoiceV2.datePaper = getInvoiceDatePaper();// DateTime.Now;
+				invoiceV2.reasonPaper = getReasonPaper();// PaperReasonType.MISSING_REQUIREMENT;
+			}
+			
 			invoiceV2.sellerAgentAddress = getInvoiceSellerAgentAddress();// "sellerAgentAddress";
 			invoiceV2.sellerAgentDocDate = getInvoiceSellerAgentDocDate();// DateTime.Now;
 			invoiceV2.sellerAgentDocNum = getInvoiceSellerAgentDocNum();// "sellerAgentDocNum";
@@ -1291,6 +1366,13 @@ namespace ESF_kz
 			}			
 			invoiceV2.sellers = getSellersV2();
 			return invoiceV2;
+		}
+
+		
+
+		private static bool isPaperESF()
+		{
+			return FormManagerFacade.isPaperESF();
 		}
 
 		private static InvoiceType getInvoiceType()

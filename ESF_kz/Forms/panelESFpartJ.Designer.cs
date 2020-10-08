@@ -46,11 +46,14 @@
 			this.epPartJ_customerAgentName = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartJ_customerAgentAddress = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartJ_customerAgentDocNum = new System.Windows.Forms.ErrorProvider(this.components);
+			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+			this.tbPartJ_customerAgentDocDate = new System.Windows.Forms.TextBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartJ_customerAgentTin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartJ_customerAgentName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartJ_customerAgentAddress)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartJ_customerAgentDocNum)).BeginInit();
+			this.tableLayoutPanel3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -64,13 +67,13 @@
 			this.tableLayoutPanel1.Controls.Add(this.l_PartJ_customerAgentDocDate, 0, 6);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartJ_customerAgentDocNum, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartJ_customerAgentDocDate, 1, 6);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartJ_customerAgentTin, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartJ_customerAgentName, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.l_PartJ_customerAgentAddress, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartJ_customerAgentTin, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartJ_customerAgentName, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartJ_customerAgentAddress, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 6);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -144,10 +147,11 @@
 			// dtpPartJ_customerAgentDocDate
 			// 
 			this.dtpPartJ_customerAgentDocDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartJ_customerAgentDocDate.Location = new System.Drawing.Point(464, 296);
+			this.dtpPartJ_customerAgentDocDate.Location = new System.Drawing.Point(174, 6);
 			this.dtpPartJ_customerAgentDocDate.Name = "dtpPartJ_customerAgentDocDate";
-			this.dtpPartJ_customerAgentDocDate.Size = new System.Drawing.Size(200, 20);
+			this.dtpPartJ_customerAgentDocDate.Size = new System.Drawing.Size(18, 20);
 			this.dtpPartJ_customerAgentDocDate.TabIndex = 46;
+			this.dtpPartJ_customerAgentDocDate.ValueChanged += new System.EventHandler(this.dtpPartJ_customerAgentDocDate_ValueChanged);
 			// 
 			// l_PartJ_customerAgentTin
 			// 
@@ -226,6 +230,29 @@
 			// 
 			this.epPartJ_customerAgentDocNum.ContainerControl = this;
 			// 
+			// tableLayoutPanel3
+			// 
+			this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tableLayoutPanel3.ColumnCount = 2;
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel3.Controls.Add(this.tbPartJ_customerAgentDocDate, 0, 0);
+			this.tableLayoutPanel3.Controls.Add(this.dtpPartJ_customerAgentDocDate, 1, 0);
+			this.tableLayoutPanel3.Location = new System.Drawing.Point(464, 289);
+			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+			this.tableLayoutPanel3.RowCount = 1;
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel3.TabIndex = 58;
+			// 
+			// tbPartJ_customerAgentDocDate
+			// 
+			this.tbPartJ_customerAgentDocDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartJ_customerAgentDocDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartJ_customerAgentDocDate.Name = "tbPartJ_customerAgentDocDate";
+			this.tbPartJ_customerAgentDocDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartJ_customerAgentDocDate.TabIndex = 18;
+			// 
 			// panelESFpartJ
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +266,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartJ_customerAgentName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartJ_customerAgentAddress)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartJ_customerAgentDocNum)).EndInit();
+			this.tableLayoutPanel3.ResumeLayout(false);
+			this.tableLayoutPanel3.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -262,5 +291,7 @@
 		private System.Windows.Forms.ErrorProvider epPartJ_customerAgentName;
 		private System.Windows.Forms.ErrorProvider epPartJ_customerAgentAddress;
 		private System.Windows.Forms.ErrorProvider epPartJ_customerAgentDocNum;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+		private System.Windows.Forms.TextBox tbPartJ_customerAgentDocDate;
 	}
 }

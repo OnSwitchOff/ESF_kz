@@ -48,7 +48,6 @@
 			this.tbPartE_destination = new System.Windows.Forms.TextBox();
 			this.tbPartE_deliveryConditionCode = new System.Windows.Forms.TextBox();
 			this.tbPartE_term = new System.Windows.Forms.TextBox();
-			this.dtpPartE_warrantDate = new System.Windows.Forms.DateTimePicker();
 			this.epPartE_contractNum = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartE_contractDate = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartE_term = new System.Windows.Forms.ErrorProvider(this.components);
@@ -56,7 +55,12 @@
 			this.epPartE_warrant = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartE_destination = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartE_deliveryConditionCode = new System.Windows.Forms.ErrorProvider(this.components);
+			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+			this.tbPartE_contractDate = new System.Windows.Forms.TextBox();
 			this.dtpPartE_contractDate = new System.Windows.Forms.DateTimePicker();
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.tbPartE_warrantDate = new System.Windows.Forms.TextBox();
+			this.dtpPartE_warrantDate = new System.Windows.Forms.DateTimePicker();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_contractNum)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_contractDate)).BeginInit();
@@ -65,6 +69,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_warrant)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_destination)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_deliveryConditionCode)).BeginInit();
+			this.tableLayoutPanel3.SuspendLayout();
+			this.tableLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -91,24 +97,25 @@
 			this.tableLayoutPanel1.Controls.Add(this.tbPartE_destination, 1, 10);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartE_deliveryConditionCode, 1, 11);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartE_term, 1, 5);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartE_warrantDate, 1, 9);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartE_contractDate, 1, 4);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 4);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 9);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 12;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333417F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.332583F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333416F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.332582F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(920, 651);
 			this.tableLayoutPanel1.TabIndex = 4;
 			// 
@@ -308,14 +315,6 @@
 			this.tbPartE_term.TabIndex = 41;
 			this.tbPartE_term.TextChanged += new System.EventHandler(this.tbPartE_term_TextChanged);
 			// 
-			// dtpPartE_warrantDate
-			// 
-			this.dtpPartE_warrantDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartE_warrantDate.Location = new System.Drawing.Point(463, 503);
-			this.dtpPartE_warrantDate.Name = "dtpPartE_warrantDate";
-			this.dtpPartE_warrantDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartE_warrantDate.TabIndex = 54;
-			// 
 			// epPartE_contractNum
 			// 
 			this.epPartE_contractNum.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -351,13 +350,69 @@
 			this.epPartE_deliveryConditionCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
 			this.epPartE_deliveryConditionCode.ContainerControl = this;
 			// 
+			// tableLayoutPanel3
+			// 
+			this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tableLayoutPanel3.ColumnCount = 2;
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel3.Controls.Add(this.dtpPartE_contractDate, 0, 0);
+			this.tableLayoutPanel3.Controls.Add(this.tbPartE_contractDate, 0, 0);
+			this.tableLayoutPanel3.Location = new System.Drawing.Point(463, 227);
+			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+			this.tableLayoutPanel3.RowCount = 1;
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel3.TabIndex = 56;
+			// 
+			// tbPartE_contractDate
+			// 
+			this.tbPartE_contractDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartE_contractDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartE_contractDate.Name = "tbPartE_contractDate";
+			this.tbPartE_contractDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartE_contractDate.TabIndex = 18;
+			// 
 			// dtpPartE_contractDate
 			// 
 			this.dtpPartE_contractDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartE_contractDate.Location = new System.Drawing.Point(463, 233);
+			this.dtpPartE_contractDate.Location = new System.Drawing.Point(174, 6);
 			this.dtpPartE_contractDate.Name = "dtpPartE_contractDate";
-			this.dtpPartE_contractDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartE_contractDate.TabIndex = 55;
+			this.dtpPartE_contractDate.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartE_contractDate.TabIndex = 56;
+			this.dtpPartE_contractDate.ValueChanged += new System.EventHandler(this.dtpPartE_contractDate_ValueChanged);
+			// 
+			// tableLayoutPanel2
+			// 
+			this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tableLayoutPanel2.ColumnCount = 2;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.Controls.Add(this.dtpPartE_warrantDate, 0, 0);
+			this.tableLayoutPanel2.Controls.Add(this.tbPartE_warrantDate, 0, 0);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(463, 497);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			this.tableLayoutPanel2.RowCount = 1;
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel2.TabIndex = 57;
+			// 
+			// tbPartE_warrantDate
+			// 
+			this.tbPartE_warrantDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartE_warrantDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartE_warrantDate.Name = "tbPartE_warrantDate";
+			this.tbPartE_warrantDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartE_warrantDate.TabIndex = 18;
+			// 
+			// dtpPartE_warrantDate
+			// 
+			this.dtpPartE_warrantDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartE_warrantDate.Location = new System.Drawing.Point(174, 6);
+			this.dtpPartE_warrantDate.Name = "dtpPartE_warrantDate";
+			this.dtpPartE_warrantDate.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartE_warrantDate.TabIndex = 55;
+			this.dtpPartE_warrantDate.ValueChanged += new System.EventHandler(this.dtpPartE_warrantDate_ValueChanged);
 			// 
 			// panelESFpartE
 			// 
@@ -375,6 +430,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_warrant)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_destination)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartE_deliveryConditionCode)).EndInit();
+			this.tableLayoutPanel3.ResumeLayout(false);
+			this.tableLayoutPanel3.PerformLayout();
+			this.tableLayoutPanel2.ResumeLayout(false);
+			this.tableLayoutPanel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -400,7 +459,6 @@
 		private System.Windows.Forms.TextBox tbPartE_destination;
 		private System.Windows.Forms.TextBox tbPartE_deliveryConditionCode;
 		private System.Windows.Forms.TextBox tbPartE_term;
-		private System.Windows.Forms.DateTimePicker dtpPartE_warrantDate;
 		private System.Windows.Forms.ErrorProvider epPartE_contractNum;
 		private System.Windows.Forms.ErrorProvider epPartE_contractDate;
 		private System.Windows.Forms.ErrorProvider epPartE_term;
@@ -408,6 +466,11 @@
 		private System.Windows.Forms.ErrorProvider epPartE_warrant;
 		private System.Windows.Forms.ErrorProvider epPartE_destination;
 		private System.Windows.Forms.ErrorProvider epPartE_deliveryConditionCode;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.DateTimePicker dtpPartE_contractDate;
+		private System.Windows.Forms.TextBox tbPartE_contractDate;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+		private System.Windows.Forms.DateTimePicker dtpPartE_warrantDate;
+		private System.Windows.Forms.TextBox tbPartE_warrantDate;
 	}
 }

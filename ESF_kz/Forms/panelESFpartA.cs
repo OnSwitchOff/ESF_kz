@@ -21,6 +21,7 @@ namespace ESF_kz.Forms
 		public panelESFpartA()
 		{
 			InitializeComponent();
+			ClearDateTextBoxes();
 			/*
 			//Проверка -1.1 Номер учетной системы-
 			tbAccSysNum_Validating(this.tbPartA_AccSysNum, null);
@@ -34,6 +35,15 @@ namespace ESF_kz.Forms
 			this.combxPartA_PaperESFReason.Validating += CombxPartA_PaperESFReason_Validating;
 			//Добавление делегата проверки -2.1 Дата выписки на бумажном носителе-
 			this.dtpPartA_PaperESFDate.Validating += DtpPartA_PaperESFDate_Validating;*/
+		}
+
+		private void ClearDateTextBoxes()
+		{
+			tbPartA_AddedESFDate.Text = "";
+			tbPartA_CorrectedESFDate.Text = "";
+			tbPartA_Date.Text = "";
+			tbPartA_PaperESFDate.Text = "";
+			tbPartA_TurnoverDate.Text = "";
 		}
 
 		internal string getOperatorFullname()
@@ -130,7 +140,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getAddedESFDate()
 		{
-			return dtpPartA_AddedESFDate.Value;
+			return tbPartA_AddedESFDate.Text == "" ? new DateTime() : dtpPartA_AddedESFDate.Value;
 		}
 
 		internal bool setAddedESFDate(DateTime dateTime)
@@ -148,7 +158,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getCorrectedESFDate()
 		{
-			return dtpPartA_CorrectedESFDate.Value;
+			return tbPartA_CorrectedESFDate.Text == "" ? new DateTime() : dtpPartA_CorrectedESFDate.Value;
 		}
 
 		internal bool setCorrectedESFDate(DateTime dateTime)
@@ -263,6 +273,7 @@ namespace ESF_kz.Forms
 				l_PaperESFDate.Enabled = true;
 				l_PaperESFReason.Enabled = true;
 				combxPartA_PaperESFReason.Enabled = true;
+				tbPartA_PaperESFDate.Enabled = true;
 				CombxPartA_PaperESFReason_Validating(this.combxPartA_PaperESFReason, null);
 			}
 			else
@@ -273,6 +284,8 @@ namespace ESF_kz.Forms
 				combxPartA_PaperESFReason.Text = "";
 				dtpPartA_PaperESFDate.Value = DateTime.Now;
 				dtpPartA_PaperESFDate.Enabled = false;
+				tbPartA_PaperESFDate.Enabled = false;
+				tbPartA_PaperESFDate.Text = "";
 				epPartA_PaperESFDate.Clear();
 				epPartA_PaperESFReason.Clear();
 			}
@@ -311,10 +324,12 @@ namespace ESF_kz.Forms
 				tbPartA_CorrectedESFAccSysNum.Enabled = true;
 				l_CorrectedESFNum.Enabled = true;
 				tbPartA_CorrectedESFNum.Enabled = true;
+				tbPartA_CorrectedESFDate.Enabled = true;
 				FillCorrectedESFData();				
 			}
 			else
 			{
+				tbPartA_CorrectedESFDate.Enabled = false;
 				l_CorrectedESFDate.Enabled = false;
 				dtpPartA_CorrectedESFDate.Enabled = false;
 				l_CorrectedESFAccSysNum.Enabled = false;
@@ -328,7 +343,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getInvoiceDatePaper()
 		{
-			return dtpPartA_PaperESFDate.Value;
+			return tbPartA_PaperESFDate.Text == ""? new DateTime(): dtpPartA_PaperESFDate.Value;
 		}
 
 		internal bool setInvoiceDatePaper(DateTime date)
@@ -349,6 +364,7 @@ namespace ESF_kz.Forms
 			dtpPartA_CorrectedESFDate.Value = DateTime.Now;
 			tbPartA_CorrectedESFAccSysNum.Text = "";
 			tbPartA_CorrectedESFNum.Text = "";
+			tbPartA_CorrectedESFDate.Text = "";
 		}
 
 		private void FillCorrectedESFData()
@@ -367,6 +383,7 @@ namespace ESF_kz.Forms
 				dtpPartA_AddedESFDate.Enabled = true;				
 				tbPartA_AddedESFAccSysNum.Enabled = true;				
 				tbPartA_AddedESFNum.Enabled = true;
+				tbPartA_AddedESFDate.Enabled = true;
 				
 				FillAddedESFData();
 			}
@@ -377,7 +394,9 @@ namespace ESF_kz.Forms
 				l_AddedESFNum.Enabled = false;
 				dtpPartA_AddedESFDate.Enabled = false;
 				tbPartA_AddedESFAccSysNum.Enabled = false;
-				tbPartA_AddedESFNum.Enabled = false;				
+				tbPartA_AddedESFNum.Enabled = false;
+				tbPartA_AddedESFDate.Enabled = true;
+
 				ClearAddedESFData();
 			}
 		}
@@ -387,6 +406,7 @@ namespace ESF_kz.Forms
 			dtpPartA_AddedESFDate.Value = DateTime.Now;
 			tbPartA_AddedESFAccSysNum.Text = "";
 			tbPartA_AddedESFNum.Text = "";
+			tbPartA_AddedESFDate.Text = "";
 		}
 
 		private void FillAddedESFData()
@@ -441,7 +461,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getInvoiceTurnoverDate()
 		{
-			return dtpPartA_TurnoverDate.Value;
+			return  tbPartA_TurnoverDate.Text == ""? new DateTime(): dtpPartA_TurnoverDate.Value;
 		}
 
 		internal void clearReasonPaper()
@@ -461,7 +481,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getInvoiceDate()
 		{
-			return this.dtpPartA_Date.Value;
+			return tbPartA_Date.Text == "" ? new DateTime():this.dtpPartA_Date.Value;
 		}
 
 		internal bool setInvoiceDate(DateTime date)
@@ -547,6 +567,36 @@ namespace ESF_kz.Forms
 			{
 				epPartA_PaperESFDate.Clear();
 			}
+		}
+
+		private void dtpPartA_Date_ValueChanged(object sender, EventArgs e)
+		{
+			tbPartA_Date.Text = dtpPartA_Date.Value.ToString("dd.MM.yyyy");
+		}
+
+		private void dtpPartA_PaperESFDate_ValueChanged_1(object sender, EventArgs e)
+		{
+			tbPartA_PaperESFDate.Text = dtpPartA_PaperESFDate.Value.ToString("dd.MM.yyyy");
+		}
+
+		private void dtpPartA_TurnoverDate_ValueChanged_1(object sender, EventArgs e)
+		{
+			tbPartA_TurnoverDate.Text = dtpPartA_TurnoverDate.Value.ToString("dd.MM.yyyy");
+		}
+
+		private void dtpPartA_CorrectedESFDate_ValueChanged(object sender, EventArgs e)
+		{
+			tbPartA_CorrectedESFDate.Text = dtpPartA_CorrectedESFDate.Value.ToString("dd.MM.yyyy");
+		}
+
+		private void tbPartA_AddedESFDate_TextChanged(object sender, EventArgs e)
+		{
+			tbPartA_AddedESFDate.Text = dtpPartA_AddedESFDate.Value.ToString("dd.MM.yyyy");
+		}
+
+		internal bool isPaperESF()
+		{
+			return chbxPartA_isPaperESF.Checked;
 		}
 	}
 }

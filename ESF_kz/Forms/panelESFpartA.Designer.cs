@@ -47,29 +47,44 @@ namespace ESF_kz.Forms
 			this.l_AddedESFAccSysNum = new System.Windows.Forms.Label();
 			this.l_AddedESFNum = new System.Windows.Forms.Label();
 			this.tbPartA_AccSysNum = new System.Windows.Forms.TextBox();
-			this.dtpPartA_Date = new System.Windows.Forms.DateTimePicker();
-			this.dtpPartA_TurnoverDate = new System.Windows.Forms.DateTimePicker();
 			this.chbxPartA_isCorrectedESF = new System.Windows.Forms.CheckBox();
-			this.dtpPartA_CorrectedESFDate = new System.Windows.Forms.DateTimePicker();
 			this.tbPartA_CorrectedESFAccSysNum = new System.Windows.Forms.TextBox();
 			this.tbPartA_CorrectedESFNum = new System.Windows.Forms.TextBox();
 			this.chbxPartA_isAddedESF = new System.Windows.Forms.CheckBox();
-			this.dtpPartA_AddedESFDate = new System.Windows.Forms.DateTimePicker();
 			this.tbPartA_AddedESFAccSysNum = new System.Windows.Forms.TextBox();
 			this.tbPartA_AddedESFNum = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.l_PaperESFReason = new System.Windows.Forms.Label();
 			this.l_TurnoverDate = new System.Windows.Forms.Label();
-			this.dtpPartA_PaperESFDate = new System.Windows.Forms.DateTimePicker();
 			this.combxPartA_PaperESFReason = new System.Windows.Forms.ComboBox();
 			this.chbxPartA_isPaperESF = new System.Windows.Forms.CheckBox();
 			this.l_PanelA_operatorFullname = new System.Windows.Forms.Label();
 			this.tbPartA_operatorFullname = new System.Windows.Forms.TextBox();
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.tbPartA_Date = new System.Windows.Forms.TextBox();
+			this.dtpPartA_Date = new System.Windows.Forms.DateTimePicker();
+			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+			this.dtpPartA_PaperESFDate = new System.Windows.Forms.DateTimePicker();
+			this.tbPartA_PaperESFDate = new System.Windows.Forms.TextBox();
+			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+			this.dtpPartA_TurnoverDate = new System.Windows.Forms.DateTimePicker();
+			this.tbPartA_TurnoverDate = new System.Windows.Forms.TextBox();
+			this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+			this.dtpPartA_CorrectedESFDate = new System.Windows.Forms.DateTimePicker();
+			this.tbPartA_CorrectedESFDate = new System.Windows.Forms.TextBox();
+			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+			this.dtpPartA_AddedESFDate = new System.Windows.Forms.DateTimePicker();
+			this.tbPartA_AddedESFDate = new System.Windows.Forms.TextBox();
 			this.epPartA_Date = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_PaperESFDate = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_PaperESFReason = new System.Windows.Forms.ErrorProvider(this.components);
 			this.epPartA_TurnoverDate = new System.Windows.Forms.ErrorProvider(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
+			this.tableLayoutPanel2.SuspendLayout();
+			this.tableLayoutPanel3.SuspendLayout();
+			this.tableLayoutPanel4.SuspendLayout();
+			this.tableLayoutPanel5.SuspendLayout();
+			this.tableLayoutPanel6.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_Date)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_PaperESFDate)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_PaperESFReason)).BeginInit();
@@ -80,8 +95,9 @@ namespace ESF_kz.Forms
 			// 
 			this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
 			this.tableLayoutPanel1.ColumnCount = 2;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66667F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33148F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66853F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartA_Num, 1, 1);
@@ -97,24 +113,24 @@ namespace ESF_kz.Forms
 			this.tableLayoutPanel1.Controls.Add(this.l_AddedESFAccSysNum, 0, 14);
 			this.tableLayoutPanel1.Controls.Add(this.l_AddedESFNum, 0, 15);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartA_AccSysNum, 1, 2);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartA_Date, 1, 3);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartA_TurnoverDate, 1, 7);
 			this.tableLayoutPanel1.Controls.Add(this.chbxPartA_isCorrectedESF, 1, 8);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartA_CorrectedESFDate, 1, 9);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartA_CorrectedESFAccSysNum, 1, 10);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartA_CorrectedESFNum, 1, 11);
 			this.tableLayoutPanel1.Controls.Add(this.chbxPartA_isAddedESF, 1, 12);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartA_AddedESFDate, 1, 13);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartA_AddedESFAccSysNum, 1, 14);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartA_AddedESFNum, 1, 15);
 			this.tableLayoutPanel1.Controls.Add(this.label14, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.l_PaperESFReason, 0, 5);
 			this.tableLayoutPanel1.Controls.Add(this.l_TurnoverDate, 0, 7);
-			this.tableLayoutPanel1.Controls.Add(this.dtpPartA_PaperESFDate, 1, 6);
 			this.tableLayoutPanel1.Controls.Add(this.combxPartA_PaperESFReason, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.chbxPartA_isPaperESF, 1, 4);
 			this.tableLayoutPanel1.Controls.Add(this.l_PanelA_operatorFullname, 0, 16);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartA_operatorFullname, 1, 16);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 6);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 7);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 9);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 13);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -310,26 +326,6 @@ namespace ESF_kz.Forms
 			this.tbPartA_AccSysNum.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_AccSysNum.TabIndex = 14;
 			// 
-			// dtpPartA_Date
-			// 
-			this.dtpPartA_Date.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartA_Date.Location = new System.Drawing.Point(319, 130);
-			this.dtpPartA_Date.Name = "dtpPartA_Date";
-			this.dtpPartA_Date.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartA_Date.TabIndex = 15;
-			// 
-			// dtpPartA_TurnoverDate
-			// 
-			this.dtpPartA_TurnoverDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartA_TurnoverDate.Location = new System.Drawing.Point(319, 290);
-			this.dtpPartA_TurnoverDate.MaxDate = new System.DateTime(2099, 7, 16, 0, 0, 0, 0);
-			this.dtpPartA_TurnoverDate.MinDate = new System.DateTime(2015, 9, 4, 14, 49, 4, 937);
-			this.dtpPartA_TurnoverDate.Name = "dtpPartA_TurnoverDate";
-			this.dtpPartA_TurnoverDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartA_TurnoverDate.TabIndex = 17;
-			this.dtpPartA_TurnoverDate.Value = new System.DateTime(2020, 10, 1, 0, 0, 0, 0);
-			this.dtpPartA_TurnoverDate.ValueChanged += new System.EventHandler(this.dtpPartA_TurnoverDate_ValueChanged);
-			// 
 			// chbxPartA_isCorrectedESF
 			// 
 			this.chbxPartA_isCorrectedESF.AutoSize = true;
@@ -340,15 +336,6 @@ namespace ESF_kz.Forms
 			this.chbxPartA_isCorrectedESF.TabIndex = 18;
 			this.chbxPartA_isCorrectedESF.UseVisualStyleBackColor = true;
 			this.chbxPartA_isCorrectedESF.CheckedChanged += new System.EventHandler(this.chbxPartA_isCorrectedESF_CheckedChanged);
-			// 
-			// dtpPartA_CorrectedESFDate
-			// 
-			this.dtpPartA_CorrectedESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartA_CorrectedESFDate.Enabled = false;
-			this.dtpPartA_CorrectedESFDate.Location = new System.Drawing.Point(319, 370);
-			this.dtpPartA_CorrectedESFDate.Name = "dtpPartA_CorrectedESFDate";
-			this.dtpPartA_CorrectedESFDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartA_CorrectedESFDate.TabIndex = 19;
 			// 
 			// tbPartA_CorrectedESFAccSysNum
 			// 
@@ -378,15 +365,6 @@ namespace ESF_kz.Forms
 			this.chbxPartA_isAddedESF.TabIndex = 22;
 			this.chbxPartA_isAddedESF.UseVisualStyleBackColor = true;
 			this.chbxPartA_isAddedESF.CheckedChanged += new System.EventHandler(this.chbxPartA_isAddedESF_CheckedChanged);
-			// 
-			// dtpPartA_AddedESFDate
-			// 
-			this.dtpPartA_AddedESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartA_AddedESFDate.Enabled = false;
-			this.dtpPartA_AddedESFDate.Location = new System.Drawing.Point(319, 530);
-			this.dtpPartA_AddedESFDate.Name = "dtpPartA_AddedESFDate";
-			this.dtpPartA_AddedESFDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartA_AddedESFDate.TabIndex = 23;
 			// 
 			// tbPartA_AddedESFAccSysNum
 			// 
@@ -442,16 +420,6 @@ namespace ESF_kz.Forms
 			this.l_TurnoverDate.Text = "3. Дата совершения оборота";
 			this.l_TurnoverDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// dtpPartA_PaperESFDate
-			// 
-			this.dtpPartA_PaperESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.dtpPartA_PaperESFDate.Enabled = false;
-			this.dtpPartA_PaperESFDate.Location = new System.Drawing.Point(319, 250);
-			this.dtpPartA_PaperESFDate.Name = "dtpPartA_PaperESFDate";
-			this.dtpPartA_PaperESFDate.Size = new System.Drawing.Size(200, 20);
-			this.dtpPartA_PaperESFDate.TabIndex = 16;
-			this.dtpPartA_PaperESFDate.ValueChanged += new System.EventHandler(this.dtpPartA_PaperESFDate_ValueChanged);
-			// 
 			// combxPartA_PaperESFReason
 			// 
 			this.combxPartA_PaperESFReason.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -497,6 +465,171 @@ namespace ESF_kz.Forms
 			this.tbPartA_operatorFullname.Size = new System.Drawing.Size(400, 20);
 			this.tbPartA_operatorFullname.TabIndex = 32;
 			// 
+			// tableLayoutPanel2
+			// 
+			this.tableLayoutPanel2.ColumnCount = 2;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel2.Controls.Add(this.tbPartA_Date, 0, 0);
+			this.tableLayoutPanel2.Controls.Add(this.dtpPartA_Date, 1, 0);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(319, 124);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			this.tableLayoutPanel2.RowCount = 1;
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel2.TabIndex = 43;
+			// 
+			// tbPartA_Date
+			// 
+			this.tbPartA_Date.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartA_Date.Location = new System.Drawing.Point(3, 6);
+			this.tbPartA_Date.Name = "tbPartA_Date";
+			this.tbPartA_Date.Size = new System.Drawing.Size(165, 20);
+			this.tbPartA_Date.TabIndex = 18;
+			// 
+			// dtpPartA_Date
+			// 
+			this.dtpPartA_Date.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartA_Date.Location = new System.Drawing.Point(174, 6);
+			this.dtpPartA_Date.Name = "dtpPartA_Date";
+			this.dtpPartA_Date.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartA_Date.TabIndex = 17;
+			this.dtpPartA_Date.ValueChanged += new System.EventHandler(this.dtpPartA_Date_ValueChanged);
+			// 
+			// tableLayoutPanel3
+			// 
+			this.tableLayoutPanel3.ColumnCount = 2;
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel3.Controls.Add(this.dtpPartA_PaperESFDate, 0, 0);
+			this.tableLayoutPanel3.Controls.Add(this.tbPartA_PaperESFDate, 0, 0);
+			this.tableLayoutPanel3.Location = new System.Drawing.Point(319, 244);
+			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+			this.tableLayoutPanel3.RowCount = 1;
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel3.TabIndex = 44;
+			// 
+			// dtpPartA_PaperESFDate
+			// 
+			this.dtpPartA_PaperESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartA_PaperESFDate.Enabled = false;
+			this.dtpPartA_PaperESFDate.Location = new System.Drawing.Point(174, 6);
+			this.dtpPartA_PaperESFDate.Name = "dtpPartA_PaperESFDate";
+			this.dtpPartA_PaperESFDate.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartA_PaperESFDate.TabIndex = 19;
+			this.dtpPartA_PaperESFDate.ValueChanged += new System.EventHandler(this.dtpPartA_PaperESFDate_ValueChanged_1);
+			// 
+			// tbPartA_PaperESFDate
+			// 
+			this.tbPartA_PaperESFDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartA_PaperESFDate.Enabled = false;
+			this.tbPartA_PaperESFDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartA_PaperESFDate.Name = "tbPartA_PaperESFDate";
+			this.tbPartA_PaperESFDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartA_PaperESFDate.TabIndex = 18;
+			// 
+			// tableLayoutPanel4
+			// 
+			this.tableLayoutPanel4.ColumnCount = 2;
+			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel4.Controls.Add(this.dtpPartA_TurnoverDate, 0, 0);
+			this.tableLayoutPanel4.Controls.Add(this.tbPartA_TurnoverDate, 0, 0);
+			this.tableLayoutPanel4.Location = new System.Drawing.Point(319, 284);
+			this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+			this.tableLayoutPanel4.RowCount = 1;
+			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel4.Size = new System.Drawing.Size(199, 33);
+			this.tableLayoutPanel4.TabIndex = 48;
+			// 
+			// dtpPartA_TurnoverDate
+			// 
+			this.dtpPartA_TurnoverDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartA_TurnoverDate.Location = new System.Drawing.Point(174, 6);
+			this.dtpPartA_TurnoverDate.MaxDate = new System.DateTime(2099, 7, 16, 0, 0, 0, 0);
+			this.dtpPartA_TurnoverDate.MinDate = new System.DateTime(2015, 9, 4, 14, 49, 4, 937);
+			this.dtpPartA_TurnoverDate.Name = "dtpPartA_TurnoverDate";
+			this.dtpPartA_TurnoverDate.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartA_TurnoverDate.TabIndex = 19;
+			this.dtpPartA_TurnoverDate.Value = new System.DateTime(2020, 10, 1, 0, 0, 0, 0);
+			this.dtpPartA_TurnoverDate.ValueChanged += new System.EventHandler(this.dtpPartA_TurnoverDate_ValueChanged_1);
+			// 
+			// tbPartA_TurnoverDate
+			// 
+			this.tbPartA_TurnoverDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartA_TurnoverDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartA_TurnoverDate.Name = "tbPartA_TurnoverDate";
+			this.tbPartA_TurnoverDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartA_TurnoverDate.TabIndex = 18;
+			// 
+			// tableLayoutPanel5
+			// 
+			this.tableLayoutPanel5.ColumnCount = 2;
+			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel5.Controls.Add(this.dtpPartA_CorrectedESFDate, 0, 0);
+			this.tableLayoutPanel5.Controls.Add(this.tbPartA_CorrectedESFDate, 0, 0);
+			this.tableLayoutPanel5.Location = new System.Drawing.Point(319, 364);
+			this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+			this.tableLayoutPanel5.RowCount = 1;
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel5.TabIndex = 46;
+			// 
+			// dtpPartA_CorrectedESFDate
+			// 
+			this.dtpPartA_CorrectedESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartA_CorrectedESFDate.Enabled = false;
+			this.dtpPartA_CorrectedESFDate.Location = new System.Drawing.Point(174, 6);
+			this.dtpPartA_CorrectedESFDate.Name = "dtpPartA_CorrectedESFDate";
+			this.dtpPartA_CorrectedESFDate.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartA_CorrectedESFDate.TabIndex = 20;
+			this.dtpPartA_CorrectedESFDate.ValueChanged += new System.EventHandler(this.dtpPartA_CorrectedESFDate_ValueChanged);
+			// 
+			// tbPartA_CorrectedESFDate
+			// 
+			this.tbPartA_CorrectedESFDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartA_CorrectedESFDate.Enabled = false;
+			this.tbPartA_CorrectedESFDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartA_CorrectedESFDate.Name = "tbPartA_CorrectedESFDate";
+			this.tbPartA_CorrectedESFDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartA_CorrectedESFDate.TabIndex = 18;
+			// 
+			// tableLayoutPanel6
+			// 
+			this.tableLayoutPanel6.ColumnCount = 2;
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+			this.tableLayoutPanel6.Controls.Add(this.dtpPartA_AddedESFDate, 0, 0);
+			this.tableLayoutPanel6.Controls.Add(this.tbPartA_AddedESFDate, 0, 0);
+			this.tableLayoutPanel6.Location = new System.Drawing.Point(319, 524);
+			this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+			this.tableLayoutPanel6.RowCount = 1;
+			this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 33);
+			this.tableLayoutPanel6.TabIndex = 47;
+			// 
+			// dtpPartA_AddedESFDate
+			// 
+			this.dtpPartA_AddedESFDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.dtpPartA_AddedESFDate.Enabled = false;
+			this.dtpPartA_AddedESFDate.Location = new System.Drawing.Point(174, 6);
+			this.dtpPartA_AddedESFDate.Name = "dtpPartA_AddedESFDate";
+			this.dtpPartA_AddedESFDate.Size = new System.Drawing.Size(18, 20);
+			this.dtpPartA_AddedESFDate.TabIndex = 24;
+			// 
+			// tbPartA_AddedESFDate
+			// 
+			this.tbPartA_AddedESFDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbPartA_AddedESFDate.Enabled = false;
+			this.tbPartA_AddedESFDate.Location = new System.Drawing.Point(3, 6);
+			this.tbPartA_AddedESFDate.Name = "tbPartA_AddedESFDate";
+			this.tbPartA_AddedESFDate.Size = new System.Drawing.Size(165, 20);
+			this.tbPartA_AddedESFDate.TabIndex = 18;
+			this.tbPartA_AddedESFDate.TextChanged += new System.EventHandler(this.tbPartA_AddedESFDate_TextChanged);
+			// 
 			// epPartA_Date
 			// 
 			this.epPartA_Date.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -532,6 +665,16 @@ namespace ESF_kz.Forms
 			this.Resize += new System.EventHandler(this.panelESFpartA_Resize);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			this.tableLayoutPanel2.ResumeLayout(false);
+			this.tableLayoutPanel2.PerformLayout();
+			this.tableLayoutPanel3.ResumeLayout(false);
+			this.tableLayoutPanel3.PerformLayout();
+			this.tableLayoutPanel4.ResumeLayout(false);
+			this.tableLayoutPanel4.PerformLayout();
+			this.tableLayoutPanel5.ResumeLayout(false);
+			this.tableLayoutPanel5.PerformLayout();
+			this.tableLayoutPanel6.ResumeLayout(false);
+			this.tableLayoutPanel6.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_Date)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_PaperESFDate)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.epPartA_PaperESFReason)).EndInit();
@@ -558,14 +701,9 @@ namespace ESF_kz.Forms
 		private System.Windows.Forms.Label l_AddedESFAccSysNum;
 		private System.Windows.Forms.Label l_AddedESFNum;
 		private System.Windows.Forms.TextBox tbPartA_AccSysNum;
-		private System.Windows.Forms.DateTimePicker dtpPartA_Date;
-		private System.Windows.Forms.DateTimePicker dtpPartA_PaperESFDate;
-		private System.Windows.Forms.DateTimePicker dtpPartA_TurnoverDate;
 		private System.Windows.Forms.CheckBox chbxPartA_isCorrectedESF;
-		private System.Windows.Forms.DateTimePicker dtpPartA_CorrectedESFDate;
 		private System.Windows.Forms.TextBox tbPartA_CorrectedESFAccSysNum;
 		private System.Windows.Forms.TextBox tbPartA_CorrectedESFNum;
-		private System.Windows.Forms.DateTimePicker dtpPartA_AddedESFDate;
 		private System.Windows.Forms.TextBox tbPartA_AddedESFAccSysNum;
 		private System.Windows.Forms.TextBox tbPartA_AddedESFNum;
 		private System.Windows.Forms.CheckBox chbxPartA_isAddedESF;
@@ -580,5 +718,20 @@ namespace ESF_kz.Forms
 		private System.Windows.Forms.ErrorProvider epPartA_TurnoverDate;
 		private System.Windows.Forms.Label l_PanelA_operatorFullname;
 		private System.Windows.Forms.TextBox tbPartA_operatorFullname;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+		private System.Windows.Forms.TextBox tbPartA_Date;
+		private System.Windows.Forms.DateTimePicker dtpPartA_Date;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+		private System.Windows.Forms.DateTimePicker dtpPartA_PaperESFDate;
+		private System.Windows.Forms.TextBox tbPartA_PaperESFDate;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+		private System.Windows.Forms.DateTimePicker dtpPartA_TurnoverDate;
+		private System.Windows.Forms.TextBox tbPartA_TurnoverDate;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+		private System.Windows.Forms.DateTimePicker dtpPartA_CorrectedESFDate;
+		private System.Windows.Forms.TextBox tbPartA_CorrectedESFDate;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+		private System.Windows.Forms.DateTimePicker dtpPartA_AddedESFDate;
+		private System.Windows.Forms.TextBox tbPartA_AddedESFDate;
 	}
 }

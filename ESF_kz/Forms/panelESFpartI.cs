@@ -95,7 +95,7 @@ namespace ESF_kz.Forms
 
 		internal DateTime getInvoiceSellerAgentDocDate()
 		{
-			return dtpPartI_sellerAgentDocDate.Value;
+			return tbPartI_sellerAgentDocDate.Text == ""? new DateTime() :  dtpPartI_sellerAgentDocDate.Value;
 		}
 
 		internal bool setInvoiceSellerAgentDocDate(DateTime dateTime)
@@ -163,6 +163,11 @@ namespace ESF_kz.Forms
 			{
 				return false;
 			}
+		}
+
+		private void dtpPartI_sellerAgentDocDate_ValueChanged(object sender, EventArgs e)
+		{
+			tbPartI_sellerAgentDocDate.Text = dtpPartI_sellerAgentDocDate.Value.ToString("dd.MM.yyyy");
 		}
 	}
 }

@@ -10,9 +10,9 @@ namespace ESF_kz
 	[Serializable]
 	public enum PaperReasonType
 	{
+		NULL,
 		DOWN_TIME,//Простой системы
 		UNLAWFUL_REMOVAL_REGISTRATION,//Неправомерное снятие с регистрационного учета
-		MISSING_REQUIREMENT//Отсутствовало требование по выписке ЭСФ
-		
+		MISSING_REQUIREMENT//Отсутствовало требование по выписке ЭСФ		
 	}
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace ESF_kz
 {
 	//Реквизиты грузополучателя (D 26)
+	
 	class ConsigneeV1
 	{
 		//Адрес (D 26.3)+

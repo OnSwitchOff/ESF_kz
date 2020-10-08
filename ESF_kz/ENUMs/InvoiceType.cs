@@ -9,8 +9,8 @@ namespace ESF_kz
 	//Тип ЭСФ
 	public	enum InvoiceType
 	{
-		ORDINARY_INVOICE,//Основной ЭСФ
-		FIXED_INVOICE,//Исправленный ЭСФ (A 4)
-		ADDITIONAL_INVOICE//Дополнительный ЭСФ (A 5)
+		ORDINARY_INVOICE=1,//Основной ЭСФ
+		FIXED_INVOICE=2,//Исправленный ЭСФ (A 4)
+		ADDITIONAL_INVOICE=3//Дополнительный ЭСФ (A 5)
 	}
 }
