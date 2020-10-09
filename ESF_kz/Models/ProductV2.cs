@@ -59,7 +59,7 @@ namespace ESF_kz
 		public string tnvedName;
 
 		//Признак происхождения ТРУ (G 2)-
-		public TruOriginCode truOriginCode;
+		public int truOriginCode;
 
 		//Размер оборота по реализации (облагаемый/необлагаемый оборот) (G 11)
 		//fractionDigits value = "2", totalDigits value="17

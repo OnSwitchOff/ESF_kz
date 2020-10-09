@@ -295,12 +295,12 @@ namespace ESF_kz.Forms
 			}
 		}
 
-		internal bool setProductShareTruOriginCode(int productNum, TruOriginCode code)
+		internal bool setProductShareTruOriginCode(int productNum, int code)
 		{
 			try
 			{
 				DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)GetDataGrid().Rows[productNum - 1].Cells[(int)column.typeTRN];
-				comboBoxCell.Value = comboBoxCell.Items[(int)code];
+				comboBoxCell.Value = comboBoxCell.Items[code-1];
 				return true;
 			}
 			catch (Exception)

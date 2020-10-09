@@ -102,8 +102,9 @@ namespace ESF_kz
 				SessionDataManagerFacade.clearSessionData();
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}						
 		}
@@ -180,8 +181,9 @@ namespace ESF_kz
 						SessionDataManagerFacade.setCurrentUserData(CurrentUserResponse.user);
 						return true;
 					}
-					catch (Exception)
+					catch (Exception e)
 					{
+						System.Windows.Forms.MessageBox.Show(e.Message);
 						return false;
 					}
 					
@@ -207,8 +209,9 @@ namespace ESF_kz
 						SessionDataManagerFacade.setCurrentUserProfilesData(CurrentUserProfilesResponse.profileInfoList);
 						return true;
 					}
-					catch (Exception)
+					catch (Exception e)
 					{
+						System.Windows.Forms.MessageBox.Show(e.Message);
 						return false;
 					}
 

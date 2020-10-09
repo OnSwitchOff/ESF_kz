@@ -28,15 +28,17 @@ namespace ESF_kz
 			syncInvoiceRequest.x509Certificate = SessionDataManagerFacade.getX509SignCertificate();
 			syncInvoiceRequest.invoiceUploadInfoList = SessionDataManagerFacade.getInvoiceUploadInfoList();
 
-			SyncInvoiceResponse syncInvoiceResponse;
+			//SyncInvoiceResponse syncInvoiceResponse;
+			object syncInvoiceResponse;
 			try
 			{
 				syncInvoiceResponse = getServiceClient().syncInvoice(syncInvoiceRequest);
-				return SessionDataManagerFacade.setInvoiceId(syncInvoiceResponse);
+				return SessionDataManagerFacade.setInvoiceId((SyncInvoiceResponse)syncInvoiceResponse);
 				
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}

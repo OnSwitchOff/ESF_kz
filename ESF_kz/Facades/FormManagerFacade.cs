@@ -891,7 +891,7 @@ namespace ESF_kz
 
 		internal static string getCustomerBranchTin(int customerNumber)
 		{
-			return invoiceForm.getPannel<panelESFpartC>().getTab(customerNumber).getCustomerTin();
+			return invoiceForm.getPannel<panelESFpartC>().getTab(customerNumber).getCustomerBranchTin();
 		}
 
 		internal static string getCustomerAddress(int customerNumber)
@@ -1046,7 +1046,7 @@ namespace ESF_kz
 
 		internal static string getProductKpvedCode(int productNum)
 		{
-			return "some kpnved code???";
+			return "";
 			//return invoiceForm.getPannel<panelESFpartG>().getProductKpvedCode(productNum);
 		}
 

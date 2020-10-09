@@ -67,8 +67,9 @@ namespace ESF_kz
 						return false;
 				}
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}
 			
@@ -86,8 +87,9 @@ namespace ESF_kz
 				queryInvoiceResponse = getServiceClient().queryInvoiceById(invoiceByIdRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				queryInvoiceResponse = null;
 				return false;
 			}			
@@ -105,8 +107,9 @@ namespace ESF_kz
 				queryInvoiceSummaryResponse = getServiceClient().queryInvoiceSummaryById(invoiceSummaryByIdRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -124,8 +127,9 @@ namespace ESF_kz
 				queryInvoiceByKeyResponse = getServiceClient().queryInvoiceByKey(invoiceByKeyRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -146,8 +150,9 @@ namespace ESF_kz
 				queryInvoiceUpdateResponse = getServiceClient().queryUpdates(queryInvoiceUpdateRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				queryInvoiceUpdateResponse = null;
 				return false;
 			}			
@@ -166,8 +171,9 @@ namespace ESF_kz
 				invoiceSummaryByKeyResponse = getServiceClient().queryInvoiceSummaryByKey(invoiceSummaryByKeyRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -184,8 +190,9 @@ namespace ESF_kz
 				queryInvoiceResponse1 = getServiceClient().queryInvoice(queryInvoiceRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return true;
 			}			
 		}
@@ -204,8 +211,9 @@ namespace ESF_kz
 				tryChangeStatusResponse = getServiceClient().revokeInvoiceById(invoiceByIdWithReasonRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -224,8 +232,9 @@ namespace ESF_kz
 				tryChangeStatusResponse = getServiceClient().declineInvoiceById(invoiceByIdWithReasonRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -244,8 +253,9 @@ namespace ESF_kz
 				tryChangeStatusResponse = getServiceClient().unrevokeInvoiceById(invoiceByIdWithReasonRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -262,8 +272,9 @@ namespace ESF_kz
 				invoiceSummaryResponse = getServiceClient().confirmInvoiceById(invoiceByIdRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -280,8 +291,9 @@ namespace ESF_kz
 				invoiceErrorByIdResponse = getServiceClient().queryInvoiceErrorById(invoiceErrorByIdRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -298,8 +310,9 @@ namespace ESF_kz
 				queryInvoiceHistoryByIdResponse = getServiceClient().queryInvoiceHistoryById(queryInvoiceHistoryByIdRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}
@@ -319,8 +332,9 @@ namespace ESF_kz
 				deleteInvoiceByIdResponse = getServiceClient().deleteInvoiceById(deleteInvoiceByIdRequest);
 				return true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
+				System.Windows.Forms.MessageBox.Show(e.Message);
 				return false;
 			}			
 		}

@@ -104,74 +104,6 @@ namespace ESF_kz
 				}	
 			}
 
-			foreach (FieldInfo fi in typeof(AbstractInvoice).GetFields())
-			{
-				object value = invoice.GetType().GetField(fi.Name).GetValue(invoice);
-				if (value != null)
-				{
-					switch (fi.FieldType.ToString())
-					{
-						case "System.String":
-							if (value != "")
-							{
-								XElement stringEl = new XElement(fi.Name, value);
-								xInvoice.Add(stringEl);
-							}
-							break;
-						case "System.DateTime":
-							if ((DateTime)value != zeroDate)
-							{
-								XElement dateEl = new XElement(fi.Name, ((DateTime)value).ToString("dd.MM.yyyy"));
-								xInvoice.Add(dateEl);
-							}								
-							break;
-						default:
-							Regex objectRegex = new Regex(@"^ESF_kz[.]");
-							bool isObject = objectRegex.IsMatch(fi.FieldType.ToString());
-							Regex listRegex = new Regex(@"System[.]Collections[.]Generic[.]List`1[[]ESF_kz[.]\w*[]]$");
-							bool isList = listRegex.IsMatch(fi.FieldType.ToString());
-							if (isObject)
-							{
-								Regex typeRegex = new Regex(@".*Type$");
-								if (typeRegex.IsMatch(fi.FieldType.ToString()))
-								{
-									if ((int)value != 0)
-									{
-										XElement enumEl = new XElement(fi.Name, value.ToString());
-										xInvoice.Add(enumEl);
-									}										
-								}
-								else
-								{
-									var attrs = fi.GetCustomAttributes();
-									Match m2 = Regex.Match(fi.FieldType.ToString(), "^ESF_kz[.](.*?)$");
-									string tagName = m2.Groups[1].ToString().Replace("V2", "");
-									tagName = fi.Name;
-									xInvoice.Add(getXmlStringByObject(value, tagName));
-								}
-							}
-							else if (isList)
-							{
-								string lisTagName = fi.Name;
-								string itemTagName = "item";
-								foreach (var attr in fi.GetCustomAttributes())
-								{
-									if (attr.GetType().ToString() == "System.Xml.Serialization.XmlArrayItemAttribute")
-									{
-										itemTagName = ((XmlArrayItemAttribute)attr).ElementName;
-									}
-								}
-								object listEl = getXmlStringByList(value, lisTagName, itemTagName);
-								if (listEl != null)
-								{
-									xInvoice.Add(listEl);
-								}
-							}
-							break;
-					}
-				}
-			}
-
 			result = xInvoice.ToString();
 			return result;
 		}
@@ -201,6 +133,8 @@ namespace ESF_kz
 
 		private static XElement getXmlStringByObject(object value, string tagName)
 		{
+			List<string> hideIfZeroTagList = getFloatExclusionList();
+
 			XElement classEl = new XElement(tagName);
 
 			foreach  (FieldInfo fi in value.GetType().GetFields())
@@ -225,18 +159,21 @@ namespace ESF_kz
 							}							
 							break;
 						case "System.Single":
-							//if((float)fieldValue != 0)
+							if (!( hideIfZeroTagList.Contains(fi.Name) && (float)fieldValue == 0))
 							{
 								XElement floatEl = new XElement(fi.Name, fieldValue);
 								classEl.Add(floatEl);
 							}
 							break;
 						case "System.Boolean":
-							XElement boolEl = new XElement(fi.Name, fieldValue);
-							classEl.Add(boolEl);
+							if (!(fi.Name == "isBranchNonResident" && (bool)fieldValue == false))
+							{
+								XElement boolEl = new XElement(fi.Name, fieldValue);
+								classEl.Add(boolEl);
+							}						
 							break;
 						case "System.Int32":
-							//if((int)fieldValue != 0)
+							if (!( hideIfZeroTagList.Contains(fi.Name) && (int)fieldValue == 0))
 							{
 								XElement intEl = new XElement(fi.Name, fieldValue);
 								classEl.Add(intEl);
@@ -290,6 +227,19 @@ namespace ESF_kz
 			}
 
 			return classEl;
+		}
+
+		private static List<string> getFloatExclusionList()
+		{
+			List<string> hideIfZeroTagList = new List<string>();
+			hideIfZeroTagList.Add("shareParticipation");
+			hideIfZeroTagList.Add("currencyRate");
+			hideIfZeroTagList.Add("exciseAmount");
+			hideIfZeroTagList.Add("exciseRate");
+			hideIfZeroTagList.Add("ndsRate");
+			hideIfZeroTagList.Add("quantity");
+			hideIfZeroTagList.Add("unitPrice");
+			return hideIfZeroTagList;
 		}
 
 		internal static invoiceContainerV2 ParseInvoiceConatinerV2XML(XmlDocument xDoc)
@@ -827,7 +777,7 @@ namespace ESF_kz
 						productV2.tnvedName = subnode.InnerText;
 						break;
 					case "truOriginCode":
-						productV2.truOriginCode = (TruOriginCode)Enum.Parse(typeof(TruOriginCode), subnode.InnerText);
+						productV2.truOriginCode = int.Parse(subnode.InnerText);
 						break;
 					case "turnoverSize":
 						productV2.turnoverSize = float.Parse(subnode.InnerText);

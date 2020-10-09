@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -526,6 +527,14 @@ namespace ESF_kz
 			return publicOffice;
 		}
 
+		private static void GetAndSetPublicOfficeTo(ref PublicOffice publicOffice)
+		{
+			PublicOffice temp = getPublicOffice();
+			if (temp.bik == "" && temp.iik == "" && temp.payPurpose == "" && temp.productCode == "")
+				temp = null;
+			publicOffice = temp;
+		}
+
 		private static string getPublicOfficeProductCode()
 		{
 			return FormManagerFacade.getPublicOfficeProductCode();
@@ -627,7 +636,7 @@ namespace ESF_kz
 			product.productNumberInDeclaration = getProductNumberInDeclaration(productNum);// "numInDec";
 			product.quantity = getProductQuantity(productNum);
 			product.tnvedName = getProductTnvedName(productNum);// "tnvedName";
-			product.truOriginCode = getProductTruOriginCode(productNum);// TruOriginCode.three;
+			product.truOriginCode = (int)getProductTruOriginCode(productNum);// TruOriginCode.three;
 			product.turnoverSize = getProductTurnoverSize(productNum); //40.36f;
 			product.unitCode = getProductUnitCode(productNum);// "unitcode";
 			product.unitNomenclature = getProductUnitNominclature(productNum);// "unitNomen";
@@ -1095,7 +1104,7 @@ namespace ESF_kz
 			{
 				temp = null;
 			}
-			consignee = null;
+			consignee = temp;
 		}
 
 		private static string getConsigneeTin()
@@ -1348,7 +1357,7 @@ namespace ESF_kz
 			invoiceV2.deliveryDocNum = getInvoiceDeliveryDocNum();//"DeliveryDocNum";
 			GetAndSetDeliveryTermTo(ref invoiceV2.deliveryTerm);
 			invoiceV2.productSet = getProductSetV2();
-			invoiceV2.publicOffice = getPublicOffice();
+			GetAndSetPublicOfficeTo(ref invoiceV2.publicOffice);
 			if (isPaperESF())
 			{
 				invoiceV2.datePaper = getInvoiceDatePaper();// DateTime.Now;

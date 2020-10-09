@@ -34,7 +34,7 @@ namespace ESF_kz.Forms
 		internal ProductV2 getProductFromForm()
 		{
 			ProductV2 product = new ProductV2();
-			SessionDataManagerFacade.EnumFieldInintitalize(ref product.truOriginCode, cbProductTruOriginCode.Text);
+			product.truOriginCode = int.Parse(cbProductTruOriginCode.Text);
 			product.description = tbProductDescription.Text;
 			product.tnvedName = tbProductTnvedName.Text;
 			product.unitCode = tbProductUnitCode.Text;
@@ -149,7 +149,7 @@ namespace ESF_kz.Forms
 			tbProductNdsAmount.Text = v;
 		}
 
-		internal void setTruOriginCode(TruOriginCode truOriginCode)
+		internal void setTruOriginCode(int truOriginCode)
 		{
 			cbProductTruOriginCode.Text = truOriginCode.ToString();
 		}

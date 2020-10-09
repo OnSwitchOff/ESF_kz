@@ -271,6 +271,7 @@ namespace ESF_kz
 
 		private void sendToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			FormManagerFacade.setInvoiceDate(DateTime.Now);
 			LocalServiceOperationFacade.GenerateInvoiceSignature();
 			UploadInvoiceServiceOperationFacade.SendInvoice();
 		}
