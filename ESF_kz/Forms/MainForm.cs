@@ -17,6 +17,7 @@ namespace ESF_kz.Forms
 	{
 		public MainForm()
 		{
+			new LogInForm().ShowDialog();
 			InitializeComponent();
 		}
 
@@ -30,11 +31,14 @@ namespace ESF_kz.Forms
 			QueryInvoiceUpdateResponse queryInvoiceUpdateResponse = new QueryInvoiceUpdateResponse();
 			InvoiceServiceOperationsFacade.QueryUpdates(out queryInvoiceUpdateResponse);
 			ClearDataGrid();
-			foreach (InvoiceInfo invoiceInfo in queryInvoiceUpdateResponse.invoiceInfoList)
+			if (queryInvoiceUpdateResponse != null)
 			{
-				FormManagerFacade.AddRowByInvoiceInfo(this,invoiceInfo);
-			}
-			SortDataGridBy("Date");			
+				foreach (InvoiceInfo invoiceInfo in queryInvoiceUpdateResponse.invoiceInfoList)
+				{
+					FormManagerFacade.AddRowByInvoiceInfo(this, invoiceInfo);
+				}
+				SortDataGridBy("Date");
+			}					
 		}
 
 		private void SortDataGridBy(string columnName)
@@ -122,6 +126,13 @@ namespace ESF_kz.Forms
 				ESF_form invoiceForm = FormManagerFacade.FillInvoiceFormByInvoice(invoice);
 				invoiceForm.Show();
 			}			
+		}
+
+		private void toolStripButton6_Click(object sender, EventArgs e)
+		{
+			ESF_form invoiceForm = new ESF_form();
+			FormManagerFacade.setInvoiceDate(DateTime.Now);
+			invoiceForm.Show();
 		}
 	}
 }

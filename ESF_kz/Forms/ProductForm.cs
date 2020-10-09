@@ -16,10 +16,10 @@ namespace ESF_kz.Forms
 		public ProductForm()
 		{
 			InitializeComponent();
-			foreach(TruOriginCode code in Enum.GetValues(typeof(TruOriginCode)))
+			/*foreach(TruOriginCode code in Enum.GetValues(typeof(TruOriginCode)))
 			{
 				cbProductTruOriginCode.Items.Add(code.ToString());
-			}
+			}*/
 			FormManagerFacade.setProductForm(this);
 		}
 
@@ -34,7 +34,8 @@ namespace ESF_kz.Forms
 		internal ProductV2 getProductFromForm()
 		{
 			ProductV2 product = new ProductV2();
-			product.truOriginCode = int.Parse(cbProductTruOriginCode.Text);
+			
+			product.truOriginCode = cbProductTruOriginCode.Text != ""? int.Parse(cbProductTruOriginCode.Text):6;
 			product.description = tbProductDescription.Text;
 			product.tnvedName = tbProductTnvedName.Text;
 			product.unitCode = tbProductUnitCode.Text;
@@ -220,6 +221,19 @@ namespace ESF_kz.Forms
 			FormManagerFacade.EditProductRow(product);
 			FormManagerFacade.RecalcTotalAmounts();
 			this.Close();
+		}
+
+		private void label35_Click(object sender, EventArgs e)
+		{
+			string info0 = @"- «1» -в случае реализации товара, включенного в Перечень, а также товара, код ТН ВЭД ЕАЭС и наименование которого включен в Перечень,ввезенного на территорию РК с территории государств - членов ЕАЭС;" + "\n";
+			string info1 = @"- «2» -в случае реализации товара, не включенного в Перечень, а также товара, код ТН ВЭД ЕАЭС и наименование которого не включен в Перечень, ввезенного на территорию РК из государств - членов ЕАЭС;" + "\n";
+			string info2 = @"- «3» -в случае реализации товара, код ТН ВЭД ЕАЭС и наименование которого включен в Перечень, произведенного на территории РК;" + "\n";
+			string info3 = @"- «4» -в случае реализации товара, код ТН ВЭД ЕАЭС и наименование которого не включен в Перечень, произведенного на территории РК;" + "\n";
+			string info4 = @"- «5» -в случае реализации товара, не относящегося к Признакам «1», «2», «3», «4»;" + "\n";
+			string info5 = @"- «6» -в случае выполнения работ, оказания услуг.";
+			string title = "Признак происхождения товара";
+			InfoForm infoForm = new InfoForm(title, info0 + info1 + info2 + info3 + info4 + info5);
+			DialogResult result = infoForm.ShowDialog();
 		}
 
 	}

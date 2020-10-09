@@ -21,7 +21,7 @@ namespace ESF_kz
 			Regex regex = new Regex(@"^(\d*)|(\d*[.]\d*)$");
 			bool isEmpty = tb.Text == "";
 			bool isCorrectFormat = regex.IsMatch(tb.Text);
-			if(isCorrectFormat)
+			if(isCorrectFormat && !isEmpty)
 			{
 				tb.Text = float.Parse(tb.Text).ToString();
 			}

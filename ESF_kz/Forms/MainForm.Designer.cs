@@ -44,6 +44,7 @@
 			this.invoiceStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.direction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.info = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip1.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -56,7 +57,8 @@
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripButton5,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton6});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -193,6 +195,15 @@
 			this.info.HeaderText = "Info";
 			this.info.Name = "info";
 			// 
+			// toolStripButton6
+			// 
+			this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+			this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton6.Name = "toolStripButton6";
+			this.toolStripButton6.Size = new System.Drawing.Size(99, 22);
+			this.toolStripButton6.Text = "CreateInvoice";
+			this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,5 +239,6 @@
 		private System.Windows.Forms.ToolStripButton toolStripButton3;
 		private System.Windows.Forms.ToolStripButton toolStripButton4;
 		private System.Windows.Forms.ToolStripButton toolStripButton5;
+		private System.Windows.Forms.ToolStripButton toolStripButton6;
 	}
 }

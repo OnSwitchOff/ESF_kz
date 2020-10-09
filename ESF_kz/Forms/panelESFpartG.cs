@@ -72,7 +72,7 @@ namespace ESF_kz.Forms
 
 		internal float getProductSetCurrencyRate()
 		{
-			return float.Parse(tbPartG_currencyRate.Text);
+			return tbPartG_currencyRate.Text == "" ? 0: float.Parse(tbPartG_currencyRate.Text);
 		}
 
 		internal bool setProductSetCurrencyRate(float rate)
@@ -419,12 +419,12 @@ namespace ESF_kz.Forms
 			return default;
 		}
 
-		internal bool setProductTruOriginCode(int productNum, int code)
+		internal bool setProductTruOriginCode(int productNum, int value)
 		{
 			try
 			{
-				DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)GetDataGrid().Rows[productNum-1].Cells[(int)column.typeTRN];
-				comboBoxCell.Value = comboBoxCell.Items[code-1];
+				DataGridViewTextBoxCell textBoxCell = (DataGridViewTextBoxCell)GetDataGrid().Rows[productNum-1].Cells[(int)column.typeTRN];
+				textBoxCell.Value = textBoxCell.Value = value;
 				return true;
 			}
 			catch (Exception)
@@ -553,7 +553,7 @@ namespace ESF_kz.Forms
 
 		internal float getProductSetTotalExciseAmount()
 		{
-			return float.Parse(tbPartG_totalExciseAmount.Text);
+			return tbPartG_totalExciseAmount.Text == ""? 0:float.Parse(tbPartG_totalExciseAmount.Text);
 		}
 
 		internal bool setProductSetTotalExciseAmount(float amount)
@@ -584,7 +584,7 @@ namespace ESF_kz.Forms
 
 		internal float getProductSetTotalNDSAmount()
 		{
-			return float.Parse(tbPartG_totalNdsAmount.Text);
+			return tbPartG_totalNdsAmount.Text == ""? 0:float.Parse(tbPartG_totalNdsAmount.Text);
 		}
 
 		internal bool setProductSetTotalNDSAmount(float amount)
@@ -615,7 +615,7 @@ namespace ESF_kz.Forms
 
 		internal float getProductSetTotalPriceWithoutTax()
 		{
-			return float.Parse(tbPartG_totalPriceWithoutTax.Text);
+			return tbPartG_totalPriceWithoutTax.Text  == "" ? 0 : float.Parse(tbPartG_totalPriceWithoutTax.Text);
 		}
 
 		internal bool setProductSetTotalPriceWithoutTax(float amount)
@@ -633,7 +633,7 @@ namespace ESF_kz.Forms
 
 		internal float getProductSetTotalPriceWithTax()
 		{
-			return float.Parse(tbPartG_totalPriceWithoutTax.Text);
+			return tbPartG_totalPriceWithoutTax.Text == "" ? 0 : float.Parse(tbPartG_totalPriceWithoutTax.Text);
 		}
 
 		internal bool setProductSetTotalPriceWithTax(float amount)
@@ -651,7 +651,7 @@ namespace ESF_kz.Forms
 
 		internal float getProductSetTotalTurnoverSize()
 		{
-			return float.Parse(tbPartG_totalTurnoverSize.Text);
+			return tbPartG_totalTurnoverSize.Text == ""?0:float.Parse(tbPartG_totalTurnoverSize.Text);
 		}
 
 		internal bool setProductSetTotalTurnoverSize(float amount)

@@ -425,12 +425,10 @@ namespace ESF_kz
 			//Application.Run(new ESF_form());
 
 
-			InvoiceV2 invoiceV2 = new InvoiceV2();
-			DateTime date = new DateTime();
 
 
-			Application.Run(new LogInForm());
-			
+			Application.Run(new MainForm());
+
 		}
 	}
 }

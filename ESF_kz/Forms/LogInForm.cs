@@ -41,12 +41,8 @@ namespace ESF_kz.Forms
 			SessionDataManagerFacade.setUserPassword(tbPassword.Text);
 			SessionDataManagerFacade.setSignCertPath(tbSignCert.Text);
 			SessionDataManagerFacade.setAuthCertPath(tbAuthCert.Text);
-
-			CreateMainForm();
+			//CreateMainForm();
 			//closeLogInForm();
-
-
-
 		}
 
 		private void CreateMainForm()
