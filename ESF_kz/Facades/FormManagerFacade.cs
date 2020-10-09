@@ -203,6 +203,48 @@ namespace ESF_kz
 			return invoiceForm.getPannel<panelESFpartD>().getConsignorName();
 		}
 
+		internal static void FillNewInvoice()
+		{
+			FormManagerFacade.setInvoiceDate(DateTime.Now);
+			FormManagerFacade.setInvoiceNum(SessionDataManagerFacade.getNewInvoiceNum());///maybe before sending???
+			FormManagerFacade.setOperatorFullName(SessionDataManagerFacade.getOperatorFullName());
+			FormManagerFacade.highlightTurnoverDate();
+			FormManagerFacade.highlightSellerBtn();
+			FormManagerFacade.highlightCustomerBtn();
+			FormManagerFacade.highlightProductBtn();
+			FormManagerFacade.highlightDeliveryBtn();
+		}
+
+		private static void highlightDeliveryBtn()
+		{
+			invoiceForm.highlightDeliveryBtn();
+		}
+
+		private static void highlightProductBtn()
+		{
+			invoiceForm.highlightProductBtn();
+		}
+
+		private static void highlightCustomerBtn()
+		{
+			invoiceForm.highlightCustomerBtn();
+		}
+
+		private static void highlightSellerBtn()
+		{
+			invoiceForm.highlightSellerBtn();
+		}
+
+		private static void highlightTurnoverDate()
+		{
+			invoiceForm.getPannel<panelESFpartA>().highLightTurnoverDate();
+		}
+
+		private static bool setOperatorFullName(string v)
+		{
+			return invoiceForm.getPannel<panelESFpartA>().setOperatorFullname(v);
+		}
+
 		internal static string getConsignorTin()
 		{
 			return invoiceForm.getPannel<panelESFpartD>().getConsignorTin();

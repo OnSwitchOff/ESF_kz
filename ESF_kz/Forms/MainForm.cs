@@ -131,7 +131,7 @@ namespace ESF_kz.Forms
 		private void toolStripButton6_Click(object sender, EventArgs e)
 		{
 			ESF_form invoiceForm = new ESF_form();
-			FormManagerFacade.setInvoiceDate(DateTime.Now);
+			FormManagerFacade.FillNewInvoice();
 			invoiceForm.Show();
 		}
 	}

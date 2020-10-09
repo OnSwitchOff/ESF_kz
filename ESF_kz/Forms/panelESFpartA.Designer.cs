@@ -483,6 +483,7 @@ namespace ESF_kz.Forms
 			// tbPartA_Date
 			// 
 			this.tbPartA_Date.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.tbPartA_Date.BackColor = System.Drawing.SystemColors.Window;
 			this.tbPartA_Date.Location = new System.Drawing.Point(3, 6);
 			this.tbPartA_Date.Name = "tbPartA_Date";
 			this.tbPartA_Date.Size = new System.Drawing.Size(165, 20);

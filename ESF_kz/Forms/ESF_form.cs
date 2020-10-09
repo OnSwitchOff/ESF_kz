@@ -212,6 +212,26 @@ namespace ESF_kz
 			return result;
 		}
 
+		internal void highlightCustomerBtn()
+		{
+			btnESFpartC.BackColor = Color.FromArgb(134, 250, 131); 
+		}
+
+		internal void highlightSellerBtn()
+		{
+			btnESFpartB.BackColor = Color.FromArgb(134, 250, 131);
+		}
+
+		internal void highlightProductBtn()
+		{
+			btnESFpartG.BackColor = Color.FromArgb( 134, 250, 131);
+		}
+
+		internal void highlightDeliveryBtn()
+		{
+			btnESFpartE.BackColor = Color.FromArgb(134, 250, 131);
+		}
+
 		internal void SetEnableBtnESFpartI(bool state)
 		{
 			btnESFpartI.Enabled = state;

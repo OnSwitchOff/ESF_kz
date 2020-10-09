@@ -240,6 +240,22 @@ namespace ESF_kz.Forms
 			}
 		}
 
+		internal void highLightTurnoverDate()
+		{
+			highLightTextBox(tbPartA_TurnoverDate);
+			highLightDTP(dtpPartA_TurnoverDate);
+		}
+
+		private void highLightDTP(DateTimePicker dtp)
+		{
+			dtp.CalendarForeColor = Color.FromArgb(134, 250, 131);
+		}
+
+		private void highLightTextBox(TextBox tb)
+		{
+			tb.BackColor = Color.FromArgb(134,250,131);
+		}
+
 		//Делегат проверки -1.1 Номер учетной системы-
 		private void tbAccSysNum_Validating(object sender, CancelEventArgs e)
 		{
