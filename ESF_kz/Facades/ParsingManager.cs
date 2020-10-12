@@ -119,14 +119,27 @@ namespace ESF_kz
 			{
 				listEl = new XElement(tagName);
 				//string tag = 
-				for (int i = 0; i < count; i++)
+				if (tagName == "statuses")
 				{
-					object[] index = { i };
-					object item = value.GetType().GetProperty("Item").GetValue(value, index);
-
-					string itemTag = itemTagName;
-					listEl.Add(getXmlStringByObject(item, itemTag));
+					for (int i = 0; i < count; i++)
+					{
+						object[] index = { i };
+						object item = value.GetType().GetProperty("Item").GetValue(value, index);
+						XElement statusEl = new XElement("status", item);
+						listEl.Add(statusEl);
+					}
 				}
+				else
+				{
+					for (int i = 0; i < count; i++)
+					{
+						object[] index = { i };
+						object item = value.GetType().GetProperty("Item").GetValue(value, index);
+
+						string itemTag = itemTagName;
+						listEl.Add(getXmlStringByObject(item, itemTag));
+					}
+				}					
 			}			
 			return listEl;
 		}
@@ -190,6 +203,7 @@ namespace ESF_kz
 
 								if (typeRegex.IsMatch(fi.FieldType.ToString()))
 								{
+									
 									if ((int)fieldValue != 0)
 									{
 										XElement enumEl = new XElement(fi.Name, fieldValue.ToString());

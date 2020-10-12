@@ -136,13 +136,13 @@ namespace ESF_kz.Forms
 				setProductPriceWithTax(newRowIndex, product.priceWithTax);
 				setProductPriceWithoutTax(newRowIndex, product.priceWithoutTax);
 				setProductDeclaration(newRowIndex, product.productDeclaration);
-				setProductNumberInDeclaration(newRowIndex, product.productDeclaration);
+				setProductNumberInDeclaration(newRowIndex, product.productNumberInDeclaration);
 				setProductQuantity(newRowIndex, product.quantity);
 				setProductTnvedName(newRowIndex, product.tnvedName);
 				setProductTruOriginCode(newRowIndex, product.truOriginCode);
 				setProductTurnoverSize(newRowIndex, product.turnoverSize);
 				setProductUnitCode(newRowIndex, product.unitCode);
-				setProductUnitNominclature(newRowIndex, product.unitNomenclature);
+				setProductUnitNomenclature(newRowIndex, product.unitNomenclature);
 				setProductUnitPrice(newRowIndex, product.unitPrice);
 				return true;
 			}
@@ -205,7 +205,7 @@ namespace ESF_kz.Forms
 				setProductTruOriginCode(RowIndex, product.truOriginCode);
 				setProductTurnoverSize(RowIndex, product.turnoverSize);
 				setProductUnitCode(RowIndex, product.unitCode);
-				setProductUnitNominclature(RowIndex, product.unitNomenclature);
+				setProductUnitNomenclature(RowIndex, product.unitNomenclature);
 				setProductUnitPrice(RowIndex, product.unitPrice);
 				return true;
 			}
@@ -214,6 +214,11 @@ namespace ESF_kz.Forms
 				return false;
 			}
 			
+		}
+
+		internal float getTotalQuantityByProductNumber(int rowNumber)
+		{
+			return getProductQuantity(rowNumber);
 		}
 
 		internal bool setProductDescription(int productNum, string nameTRN)
@@ -480,7 +485,7 @@ namespace ESF_kz.Forms
 			return "";			
 		}
 
-		internal bool setProductUnitNominclature(int productNum, string measure)
+		internal bool setProductUnitNomenclature(int productNum, string measure)
 		{
 			try
 			{
@@ -739,6 +744,11 @@ namespace ESF_kz.Forms
 			tbPartG_totalPriceWithoutTax.Text = totalPriceWithoutTax.ToString();
 			tbPartG_totalPriceWithTax.Text = totalPriceWithTax.ToString();
 			tbPartG_totalTurnoverSize.Text = totalTurnoverSize.ToString();
+		}
+
+		private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 
 

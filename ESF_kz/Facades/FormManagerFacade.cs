@@ -51,6 +51,11 @@ namespace ESF_kz
 			return getProductForm().getProductFromForm();
 		}
 
+		internal static bool AddNewProductShareRow(ProductV2 product)
+		{
+			return invoiceForm.getPannel<panelESFpartH>().AddNewProductRow(product);
+		}
+
 		static internal bool setInvoiceForm(ESF_form form)
 		{
 			try
@@ -215,6 +220,11 @@ namespace ESF_kz
 			FormManagerFacade.highlightDeliveryBtn();
 		}
 
+		internal static void RecalcAmountsFor(int sellerIndex, float shareParicipation)
+		{
+			invoiceForm.getPannel<panelESFpartH>().getSellerTab(sellerIndex).RecalcAmounts(shareParicipation);
+		}
+
 		private static void highlightDeliveryBtn()
 		{
 			invoiceForm.highlightDeliveryBtn();
@@ -238,6 +248,11 @@ namespace ESF_kz
 		private static void highlightTurnoverDate()
 		{
 			invoiceForm.getPannel<panelESFpartA>().highLightTurnoverDate();
+		}
+
+		internal static float getTotalQuantityByProductNumber(int rowNumber)
+		{
+			return invoiceForm.getPannel<panelESFpartG>().getTotalQuantityByProductNumber(rowNumber);
 		}
 
 		private static bool setOperatorFullName(string v)
@@ -288,6 +303,12 @@ namespace ESF_kz
 		internal static ParticipantV2 getCustomerParticipant(int i)
 		{
 			throw new NotImplementedException();
+		}
+
+		internal static bool EditProductShareRow(ProductV2 product)
+		{
+			int rowNumber = invoiceForm.getPannel<panelESFpartG>().getSelectedRowIndex()+1;
+			return invoiceForm.getPannel<panelESFpartH>().EditProductShareRow(product,rowNumber);
 		}
 
 		internal static string getCustomerParticipantTin(int number)
@@ -455,7 +476,7 @@ namespace ESF_kz
 							panelG.setProductTruOriginCode(productCounter, product.truOriginCode);
 							panelG.setProductTurnoverSize(productCounter, product.turnoverSize);
 							panelG.setProductUnitCode(productCounter, product.unitCode);
-							panelG.setProductUnitNominclature(productCounter, product.unitNomenclature);
+							panelG.setProductUnitNomenclature(productCounter, product.unitNomenclature);
 							panelG.setProductUnitPrice(productCounter, product.unitPrice);
 						}
 						panelG.setProductSetTotalExciseAmount(invoice.productSet.totalExciseAmount);
@@ -575,6 +596,7 @@ namespace ESF_kz
 		internal static void RecalcTotalAmounts()
 		{
 			invoiceForm.getPannel<panelESFpartG>().RecalcTotalAmounts();
+			invoiceForm.getPannel<panelESFpartH>().RecalcTotalAmounts();
 		}
 
 		internal static ProductForm FillProductFormByProduct(ProductV2 product)
@@ -761,7 +783,7 @@ namespace ESF_kz
 					panelG.setProductTruOriginCode(productCounter, product.truOriginCode);
 					panelG.setProductTurnoverSize(productCounter, product.turnoverSize);
 					panelG.setProductUnitCode(productCounter, product.unitCode);
-					panelG.setProductUnitNominclature(productCounter, product.unitNomenclature);
+					panelG.setProductUnitNomenclature(productCounter, product.unitNomenclature);
 					panelG.setProductUnitPrice(productCounter, product.unitPrice);
 				}
 				panelG.setProductSetTotalExciseAmount(invoice.productSet.totalExciseAmount);

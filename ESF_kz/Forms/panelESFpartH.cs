@@ -22,7 +22,7 @@ namespace ESF_kz.Forms
 			InitializeComponent();
 		}
 
-		internal List<int> getCuromerIndexes()
+		internal List<int> getCustomerIndexes()
 		{
 			return customerIndexes;
 		}
@@ -42,6 +42,26 @@ namespace ESF_kz.Forms
 			sellerIndexes.Add(tabControl1.TabCount - 1);
 
 			return PanelESFPartHtab;
+		}
+
+		internal bool AddNewProductRow(ProductV2 product)
+		{
+			int sellerParticipantCount = sellerIndexes.Count;
+			int customerParticipantCount =	customerIndexes.Count;
+
+			for (int i = 1; i <= sellerParticipantCount; i++)
+			{
+				float shareParticipation = FormManagerFacade.getSellerShareParticipation(i);
+				getSellerTab(i).AddNewProductRow(product, shareParticipation);
+			}
+
+			for (int i = 1; i <= customerParticipantCount; i++)
+			{
+				float shareParticipation = FormManagerFacade.getCustomerShareParticipation(i);
+				getCustomerTab(i).AddNewProductRow(product, shareParticipation);
+			}
+
+			return true;
 		}
 
 		public panelESFpartHtab CreateCustomerTab(string title)
@@ -142,6 +162,34 @@ namespace ESF_kz.Forms
 			{
 				RemoveLastCustomerTab();
 			}
+		}
+
+		internal void RecalcTotalAmounts()
+		{
+			foreach (TabPage item in getTabControll().TabPages)
+			{
+				((panelESFpartHtab)item.Controls[0]).RecalcTotalAmounts();
+			}
+		}
+
+		internal bool EditProductShareRow(ProductV2 product, int rowNumber)
+		{
+			int sellerParticipantCount = sellerIndexes.Count;
+			int customerParticipantCount = customerIndexes.Count;
+
+			for (int i = 1; i <= sellerParticipantCount; i++)
+			{
+				float shareParticipation = FormManagerFacade.getSellerShareParticipation(i);
+				getSellerTab(i).EditProductRow(product, shareParticipation, rowNumber);
+			}
+
+			for (int i = 1; i <= customerParticipantCount; i++)
+			{
+				float shareParticipation = FormManagerFacade.getCustomerShareParticipation(i);
+				getCustomerTab(i).EditProductRow(product, shareParticipation, rowNumber);
+			}
+
+			return true;
 		}
 	}
 }

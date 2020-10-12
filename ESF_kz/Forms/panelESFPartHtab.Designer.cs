@@ -35,8 +35,18 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.tbPartH_ParticipantTin = new System.Windows.Forms.TextBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.tbPartHtab_totalPriceWithoutTax = new System.Windows.Forms.TextBox();
+			this.tbPartHtab_totalExciseAmount = new System.Windows.Forms.TextBox();
+			this.tbPartHtab_totalTurnoverSize = new System.Windows.Forms.TextBox();
+			this.tbPartHtab_totalNdsAmount = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.l_totalExciseAmount = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.tbPartHtab_totalPriceWithTax = new System.Windows.Forms.TextBox();
 			this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.typeTRN = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.typeTRN = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameTRN = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fullnameTRN = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TNVED = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +64,6 @@
 			this.productNumberInDeclaration = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.catalogTruId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.additional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.l_totalExciseAmount = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -75,11 +80,16 @@
 			this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tbPartH_ParticipantTin, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.l_totalExciseAmount, 0, 4);
-			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 5);
-			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 6);
-			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 7);
-			this.tableLayoutPanel1.Controls.Add(this.label4, 0, 8);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartHtab_totalPriceWithoutTax, 1, 4);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartHtab_totalExciseAmount, 1, 5);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartHtab_totalTurnoverSize, 1, 6);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartHtab_totalNdsAmount, 1, 7);
+			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.l_totalExciseAmount, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.label4, 0, 6);
+			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 8);
+			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 7);
+			this.tableLayoutPanel1.Controls.Add(this.tbPartHtab_totalPriceWithTax, 1, 8);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -179,6 +189,86 @@
 			this.dataGridView1.Size = new System.Drawing.Size(920, 380);
 			this.dataGridView1.TabIndex = 47;
 			// 
+			// tbPartHtab_totalPriceWithoutTax
+			// 
+			this.tbPartHtab_totalPriceWithoutTax.Location = new System.Drawing.Point(467, 503);
+			this.tbPartHtab_totalPriceWithoutTax.Name = "tbPartHtab_totalPriceWithoutTax";
+			this.tbPartHtab_totalPriceWithoutTax.Size = new System.Drawing.Size(100, 20);
+			this.tbPartHtab_totalPriceWithoutTax.TabIndex = 53;
+			// 
+			// tbPartHtab_totalExciseAmount
+			// 
+			this.tbPartHtab_totalExciseAmount.Location = new System.Drawing.Point(467, 531);
+			this.tbPartHtab_totalExciseAmount.Name = "tbPartHtab_totalExciseAmount";
+			this.tbPartHtab_totalExciseAmount.Size = new System.Drawing.Size(100, 20);
+			this.tbPartHtab_totalExciseAmount.TabIndex = 54;
+			// 
+			// tbPartHtab_totalTurnoverSize
+			// 
+			this.tbPartHtab_totalTurnoverSize.Location = new System.Drawing.Point(467, 559);
+			this.tbPartHtab_totalTurnoverSize.Name = "tbPartHtab_totalTurnoverSize";
+			this.tbPartHtab_totalTurnoverSize.Size = new System.Drawing.Size(100, 20);
+			this.tbPartHtab_totalTurnoverSize.TabIndex = 55;
+			// 
+			// tbPartHtab_totalNdsAmount
+			// 
+			this.tbPartHtab_totalNdsAmount.Location = new System.Drawing.Point(467, 587);
+			this.tbPartHtab_totalNdsAmount.Name = "tbPartHtab_totalNdsAmount";
+			this.tbPartHtab_totalNdsAmount.Size = new System.Drawing.Size(100, 20);
+			this.tbPartHtab_totalNdsAmount.TabIndex = 56;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(4, 500);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(107, 13);
+			this.label3.TabIndex = 51;
+			this.label3.Text = "totalPriceWIthoutTax";
+			// 
+			// l_totalExciseAmount
+			// 
+			this.l_totalExciseAmount.AutoSize = true;
+			this.l_totalExciseAmount.Location = new System.Drawing.Point(4, 528);
+			this.l_totalExciseAmount.Name = "l_totalExciseAmount";
+			this.l_totalExciseAmount.Size = new System.Drawing.Size(94, 13);
+			this.l_totalExciseAmount.TabIndex = 48;
+			this.l_totalExciseAmount.Text = "totalExciseAmount";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(4, 556);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(90, 13);
+			this.label4.TabIndex = 52;
+			this.label4.Text = "totalTurnoverSize";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(4, 612);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(91, 13);
+			this.label2.TabIndex = 50;
+			this.label2.Text = "totalPriceWithTax";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(4, 584);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(82, 13);
+			this.label1.TabIndex = 49;
+			this.label1.Text = "totalNdsAmount";
+			// 
+			// tbPartHtab_totalPriceWithTax
+			// 
+			this.tbPartHtab_totalPriceWithTax.Location = new System.Drawing.Point(467, 615);
+			this.tbPartHtab_totalPriceWithTax.Name = "tbPartHtab_totalPriceWithTax";
+			this.tbPartHtab_totalPriceWithTax.Size = new System.Drawing.Size(100, 20);
+			this.tbPartHtab_totalPriceWithTax.TabIndex = 57;
+			// 
 			// rowNumber
 			// 
 			this.rowNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -189,13 +279,9 @@
 			// 
 			this.typeTRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.typeTRN.HeaderText = "Признак происхождения товаров и услуг";
-			this.typeTRN.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
 			this.typeTRN.Name = "typeTRN";
+			this.typeTRN.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.typeTRN.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
 			// nameTRN
 			// 
@@ -316,51 +402,6 @@
 			this.additional.HeaderText = "Дополнительные данные";
 			this.additional.Name = "additional";
 			// 
-			// l_totalExciseAmount
-			// 
-			this.l_totalExciseAmount.AutoSize = true;
-			this.l_totalExciseAmount.Location = new System.Drawing.Point(4, 500);
-			this.l_totalExciseAmount.Name = "l_totalExciseAmount";
-			this.l_totalExciseAmount.Size = new System.Drawing.Size(94, 13);
-			this.l_totalExciseAmount.TabIndex = 48;
-			this.l_totalExciseAmount.Text = "totalExciseAmount";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(4, 528);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(82, 13);
-			this.label1.TabIndex = 49;
-			this.label1.Text = "totalNdsAmount";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(4, 556);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(91, 13);
-			this.label2.TabIndex = 50;
-			this.label2.Text = "totalPriceWithTax";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(4, 584);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(107, 13);
-			this.label3.TabIndex = 51;
-			this.label3.Text = "totalPriceWIthoutTax";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(4, 612);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(90, 13);
-			this.label4.TabIndex = 52;
-			this.label4.Text = "totalTurnoverSize";
-			// 
 			// panelESFpartHtab
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,8 +425,6 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox tbPartH_ParticipantTin;
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
-		private System.Windows.Forms.DataGridViewComboBoxColumn typeTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -404,6 +443,17 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
 		private System.Windows.Forms.Label l_totalExciseAmount;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox tbPartHtab_totalPriceWithoutTax;
+		private System.Windows.Forms.TextBox tbPartHtab_totalExciseAmount;
+		private System.Windows.Forms.TextBox tbPartHtab_totalTurnoverSize;
+		private System.Windows.Forms.TextBox tbPartHtab_totalNdsAmount;
+		private System.Windows.Forms.TextBox tbPartHtab_totalPriceWithTax;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
+		private System.Windows.Forms.DataGridViewTextBoxColumn typeTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameTRN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TNVED;
@@ -421,9 +471,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn productNumberInDeclaration;
 		private System.Windows.Forms.DataGridViewTextBoxColumn catalogTruId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn additional;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
 	}
 }

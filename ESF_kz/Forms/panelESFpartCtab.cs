@@ -65,7 +65,7 @@ namespace ESF_kz.Forms
 			panelESFpartB panelB = esf.getPannel<panelESFpartB>();
 			int customerParticipantsCount = (int)numUpDown_participantCounter.Value;
 			int sellerParticipantsCount = panelB.getSellerParticipantsCount();
-			List<int> indexes = panelH.getCuromerIndexes();
+			List<int> indexes = panelH.getCustomerIndexes();
 
 
 			if (customerParticipantsCount > 1)
@@ -412,7 +412,7 @@ namespace ESF_kz.Forms
 
 		internal float getCustomerShareParticipation()
 		{
-			return float.Parse(tbPartC_shareParticipation.Text);
+			return tbPartC_shareParticipation.Text == ""? 0: float.Parse(tbPartC_shareParticipation.Text);
 		}
 
 		internal int getCustomerStatusesCount()

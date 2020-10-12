@@ -5,6 +5,7 @@ using ESF_kz.SessionService;
 using ESF_kz.UploadInvoiceService;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
@@ -27,6 +28,7 @@ namespace ESF_kz
 		[STAThread]
 		static void Main()
 		{
+			Process process = Process.Start(new ProcessStartInfo("cmd.exe", "/c java -jar esf_local_server.jar"));			
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
@@ -428,7 +430,6 @@ namespace ESF_kz
 
 
 			Application.Run(new MainForm());
-
 		}
 	}
 }

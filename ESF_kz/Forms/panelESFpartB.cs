@@ -26,6 +26,7 @@ namespace ESF_kz.Forms
 			PanelESFPartBtab.Dock = DockStyle.Fill;
 			this.tabControl1.TabPages.Add(title);
 			this.tabControl1.TabPages[tabControl1.TabCount-1].Controls.Add(PanelESFPartBtab);
+			PanelESFPartBtab.setSellerIndex(tabControl1.TabCount);
 			return PanelESFPartBtab;
 		}
 
@@ -35,6 +36,7 @@ namespace ESF_kz.Forms
 			PanelESFPartBtab.Dock = DockStyle.Fill;
 			this.tabControl1.TabPages.Add(title);
 			this.tabControl1.TabPages[0].Controls.Add(PanelESFPartBtab);
+			PanelESFPartBtab.setSellerIndex(1);
 			return PanelESFPartBtab;
 		}
 

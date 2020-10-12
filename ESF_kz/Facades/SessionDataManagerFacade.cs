@@ -1,4 +1,5 @@
-﻿using ESF_kz.InvoiceService;
+﻿using ESF_kz.Forms;
+using ESF_kz.InvoiceService;
 using ESF_kz.LocalService;
 using ESF_kz.SessionService;
 using ESF_kz.UploadInvoiceService;
@@ -22,6 +23,7 @@ namespace ESF_kz
 		private static string invoiceSignatureId;
 		private static string invoiceSignatureIdWithReason;
 		private static long invoiceId;
+		private static long[] selectedIdList;
 
 		private static string userTin;
 		private static string userPassword;
@@ -37,6 +39,24 @@ namespace ESF_kz
 			{
 				LogManagerFacade.ParsingStringExeption(typeof(T), text);
 			}
+		}
+
+		internal static void setSelectedIdList(long[] list)
+		{
+			selectedIdList = list;
+		}
+
+		internal static ProductShare getProductShare(ProductV2 product)
+		{
+			ProductShare share = new ProductShare();
+			share.additional = product.additional;
+			share.exciseAmount = product.exciseAmount;
+			share.ndsAmount = product.ndsAmount;
+			share.priceWithTax = product.priceWithTax;
+			share.priceWithoutTax = product.priceWithoutTax;
+			share.quantity = product.quantity;
+			share.turnoverSize = product.turnoverSize;
+			return share;
 		}
 
 		private static string userAuthCertPath;
@@ -116,10 +136,20 @@ namespace ESF_kz
 			return true;
 		}
 
+		internal static float getTotalQuantityByProductNumber(int rowNumber)
+		{
+			return FormManagerFacade.getTotalQuantityByProductNumber(rowNumber);
+		}
+
 		internal static long[] getInvoiceIdList()
 		{
-			long[] idList = { getInvoiceId() };
+			long[] idList = getSelectedIdList();
 			return idList;
+		}
+
+		private static long[] getSelectedIdList()
+		{
+			return selectedIdList;
 		}
 
 		internal static invoiceContainerV2 ParseInvoiceXML(XmlDocument xDoc)
@@ -749,7 +779,7 @@ namespace ESF_kz
 			return FormManagerFacade.getProductAdditional(productNum);
 		}
 
-		private static int getProductsCount()
+		internal static int getProductsCount()
 		{
 			return FormManagerFacade.getProductsCount();
 		}
@@ -1240,8 +1270,26 @@ namespace ESF_kz
 
 		internal static bool setInvoiceId(SyncInvoiceResponse syncInvoiceResponse)
 		{
-			invoiceId = syncInvoiceResponse.acceptedSet[0].id;
-			return true;
+			if (syncInvoiceResponse.acceptedSet.Length > 0)
+			{
+				invoiceId = syncInvoiceResponse.acceptedSet[0].id;				
+				return true;
+			}
+			else
+			{
+				string str = "";
+				for (int i = 0; i < syncInvoiceResponse.declinedSet.Length; i++)
+				{
+					for (int j = 0; j < syncInvoiceResponse.declinedSet[i].errors.Length; j++)
+					{
+						str += syncInvoiceResponse.declinedSet[i].errors[j].text + "\n";
+					}
+					str += "\n";
+				}
+				InfoForm infoForm = new InfoForm("Invoice info", str);
+				infoForm.ShowDialog();
+				return false;
+			}
 		}
 
 		internal static bool setInvoiceId(long id)

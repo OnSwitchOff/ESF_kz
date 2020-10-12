@@ -39,6 +39,17 @@ namespace ESF_kz.Forms
 		public panelESFpartHtab()
 		{
 			InitializeComponent();
+			FillProductShares();
+		}
+
+		private void FillProductShares()
+		{
+			int productCount = SessionDataManagerFacade.getProductsCount();
+			for (int i = 1; i <= productCount; i++)
+			{
+				ProductV2 product = SessionDataManagerFacade.getProductV2ByRowNumber(i);
+				AddNewProductRow(product, 0);
+			}			
 		}
 
 		internal DataGridView GetDataGrid()
@@ -81,6 +92,98 @@ namespace ESF_kz.Forms
 				return false;
 			}
 		
+		}
+
+		internal void AddNewProductRow(ProductV2 product, float shareParticipation)
+		{
+			dataGridView1.Rows.Add();
+			int productShareNumber = dataGridView1.Rows.Count;			
+			setShareProductNumber(productShareNumber,productShareNumber);
+			setProductShareTruOriginCode(productShareNumber, product.truOriginCode);
+			setProductShareAdditional(productShareNumber, product.additional);
+			setProductShareCatalogTruId(productShareNumber, product.catalogTruId);
+			setProductShareDescription(productShareNumber, product.description);
+			setProductShareExciseAmount(productShareNumber, product.exciseAmount * shareParticipation);
+			setProductShareExciseRate(productShareNumber, product.exciseRate);
+			setProductShareNDSAmount(productShareNumber, product.ndsAmount);
+			setProductShareNdsRate(productShareNumber, product.ndsRate);
+			setProductSharePriceWithTax(productShareNumber, product.priceWithTax * shareParticipation);
+			setProductSharePriceWithoutTax(productShareNumber, product.priceWithoutTax * shareParticipation);
+			setProductShareProductDeclaration(productShareNumber, product.productDeclaration);
+			setProductShareProductNumberInDeclaration(productShareNumber, product.productNumberInDeclaration);
+			setProductShareQuantity(productShareNumber, product.quantity*shareParticipation);
+			setProductShareTnvedName(productShareNumber, product.tnvedName);
+			setProductShareTurnoverSize(productShareNumber, product.turnoverSize * shareParticipation);
+			setProductShareUnitCode(productShareNumber, product.unitCode);
+			setProductShareUnitNomenclature(productShareNumber, product.unitNomenclature);
+			setProductShareUnitPrice(productShareNumber, product.unitPrice);
+		}
+
+		internal void EditProductRow(ProductV2 product, float shareParticipation, int productShareNumber)
+		{
+			setShareProductNumber(productShareNumber, productShareNumber);
+			setProductShareTruOriginCode(productShareNumber, product.truOriginCode);
+			setProductShareAdditional(productShareNumber, product.additional);
+			setProductShareCatalogTruId(productShareNumber, product.catalogTruId);
+			setProductShareDescription(productShareNumber, product.description);
+			setProductShareExciseAmount(productShareNumber, product.exciseAmount * shareParticipation);
+			setProductShareExciseRate(productShareNumber, product.exciseRate);
+			setProductShareNDSAmount(productShareNumber, product.ndsAmount);
+			setProductShareNdsRate(productShareNumber, product.ndsRate);
+			setProductSharePriceWithTax(productShareNumber, product.priceWithTax * shareParticipation);
+			setProductSharePriceWithoutTax(productShareNumber, product.priceWithoutTax * shareParticipation);
+			setProductShareProductDeclaration(productShareNumber, product.productDeclaration);
+			setProductShareProductNumberInDeclaration(productShareNumber, product.productNumberInDeclaration);
+			setProductShareQuantity(productShareNumber, product.quantity * shareParticipation);
+			setProductShareTnvedName(productShareNumber, product.tnvedName);
+			setProductShareTurnoverSize(productShareNumber, product.turnoverSize * shareParticipation);
+			setProductShareUnitCode(productShareNumber, product.unitCode);
+			setProductShareUnitNomenclature(productShareNumber, product.unitNomenclature);
+			setProductShareUnitPrice(productShareNumber, product.unitPrice);
+		}
+
+		internal void RecalcAmounts(float shareParicipation)
+		{
+			for (int i = 0; i < dataGridView1.Rows.Count; i++)
+			{
+				ProductV2 product = SessionDataManagerFacade.getProductV2ByRowNumber(getRowNumber(i));
+				EditProductRow(product, shareParicipation, i+1);
+			}
+			RecalcTotalAmounts();
+		}
+
+		private int getRowNumber(int i)
+		{
+			return (int)dataGridView1.Rows[i].Cells["rowNumber"].Value;
+		}
+
+		internal void RecalcTotalAmounts()
+		{
+			DataGridView dataGrid = GetDataGrid();
+			float totalExciseAmount = 0;
+			float totalNdsAmount = 0;
+			float totalPriceWithoutTax = 0;
+			float totalPriceWithTax = 0;
+			float totalTurnoverSize = 0;
+			object temp;
+			foreach (DataGridViewRow row in dataGrid.Rows)
+			{
+				temp = row.Cells["exciseAmount"].Value;
+				totalExciseAmount += temp == null ? 0 : (float)temp;
+				temp = row.Cells["ndsAmount"].Value;
+				totalNdsAmount += temp == null ? 0 : (float)temp;
+				temp = row.Cells["priceWithoutTax"].Value;
+				totalPriceWithoutTax += temp == null ? 0 : (float)temp;
+				temp = row.Cells["priceWithTax"].Value;
+				totalPriceWithTax += temp == null ? 0 : (float)temp;
+				temp = row.Cells["turnoverSize"].Value;
+				totalTurnoverSize += temp == null ? 0 : (float)temp;
+			}
+			tbPartHtab_totalExciseAmount.Text = totalExciseAmount.ToString();
+			tbPartHtab_totalNdsAmount.Text = totalNdsAmount.ToString();
+			tbPartHtab_totalPriceWithoutTax.Text = totalPriceWithoutTax.ToString();
+			tbPartHtab_totalPriceWithTax.Text = totalPriceWithTax.ToString();
+			tbPartHtab_totalTurnoverSize.Text = totalTurnoverSize.ToString();
 		}
 
 		internal float getProductShareNDSAmount(int productShareNumber)
@@ -360,5 +463,7 @@ namespace ESF_kz.Forms
 				return false;
 			}
 		}
+
+
 	}
 }

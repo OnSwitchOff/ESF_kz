@@ -7,6 +7,7 @@ namespace ESF_kz.Forms
 {
 	public partial class panelESFpartBtab : AbstractUCESFpanelTab
 	{
+		private int sellerIndex;
 		private Dictionary<TextBox, bool> tbPartB1_isCorrect = new Dictionary<TextBox,bool>();
 
 		private List<SellerType> statusList = new List<SellerType>();
@@ -23,6 +24,15 @@ namespace ESF_kz.Forms
 			tbPartB1_isCorrect.Add(tbPartB1_iik, false);
 			tbPartB1_isCorrect.Add(tbPartB1_bik, false);
 			tbPartB1_isCorrect.Add(tbPartB1_bank, false);
+		}
+
+		internal void setSellerIndex(int index)
+		{
+			sellerIndex = index;
+		}
+		internal int getSellerIndex()
+		{
+			return sellerIndex;
 		}
 
 		internal SellerType getCustomerStatusById(int statusId)
@@ -174,6 +184,7 @@ namespace ESF_kz.Forms
 			else
 			{
 				epPartB_shareParticipation.Clear();
+				FormManagerFacade.RecalcAmountsFor(sellerIndex, float.Parse(tbPartB_shareParticipation.Text)); 
 			}
 		}
 
@@ -888,7 +899,7 @@ namespace ESF_kz.Forms
 
 		internal float getSellerShareParticipation()
 		{
-			return float.Parse(tbPartB_shareParticipation.Text);
+			return tbPartB_shareParticipation.Text == ""? 0:float.Parse(tbPartB_shareParticipation.Text);
 		}
 
 		internal bool setSellerShareParticipation(float part)

@@ -15,6 +15,12 @@ namespace ESF_kz.Forms
 {
 	public partial class MainForm : Form
 	{
+		private static long[] selectedIdList;
+
+		internal long[] getSelectedIdList()
+		{
+			return selectedIdList;
+		}
 		public MainForm()
 		{
 			new LogInForm().ShowDialog();
@@ -113,18 +119,7 @@ namespace ESF_kz.Forms
 		{
 			if (e.RowIndex > -1)
 			{
-				string invoiceId = getDataGrid().Rows[e.RowIndex].Cells[2].Value.ToString();
-				MessageBox.Show(invoiceId);
-				SessionDataManagerFacade.setInvoiceId(long.Parse(invoiceId));
-				QueryInvoiceResponse queryInvoiceResponse = new QueryInvoiceResponse();
-				InvoiceServiceOperationsFacade.QueryInvoiceById(out queryInvoiceResponse);
-
-				XmlDocument doc = new XmlDocument();
-				doc.LoadXml(queryInvoiceResponse.invoiceInfoList[0].invoiceBody);
-				XmlNode newNode = doc.DocumentElement;
-				InvoiceV2 invoice = ParsingManager.ParseInvoiceBody(newNode);
-				ESF_form invoiceForm = FormManagerFacade.FillInvoiceFormByInvoice(invoice);
-				invoiceForm.Show();
+				
 			}			
 		}
 
@@ -133,6 +128,50 @@ namespace ESF_kz.Forms
 			ESF_form invoiceForm = new ESF_form();
 			FormManagerFacade.FillNewInvoice();
 			invoiceForm.Show();
+		}
+
+		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+		{
+			List<int> rowIndexes = new List<int>();
+			for (int i = 0; i < dataGridView1.SelectedCells.Count; i++)
+			{
+				int tmp = dataGridView1.SelectedCells[i].RowIndex;
+				if (!rowIndexes.Contains(tmp))
+				{
+					rowIndexes.Add(tmp);
+				}
+			}
+			selectedIdList = new long[rowIndexes.Count];
+			for (int i = 0; i < rowIndexes.Count; i++)
+			{
+				object tmp = dataGridView1.Rows[rowIndexes[i]].Cells[2].Value;
+				if(tmp!=null)
+				{
+					selectedIdList[i] = (long)tmp;
+				}				
+			}
+			SessionDataManagerFacade.setSelectedIdList(selectedIdList);
+		}
+
+		private void toolStripButton7_Click(object sender, EventArgs e)
+		{
+			if (selectedIdList.Length == 1)
+			{
+				QueryInvoiceResponse queryInvoiceResponse = new QueryInvoiceResponse();
+				InvoiceServiceOperationsFacade.QueryInvoiceById(out queryInvoiceResponse);
+
+				XmlDocument doc = new XmlDocument();
+				doc.LoadXml(queryInvoiceResponse.invoiceInfoList[0].invoiceBody);
+				XmlNode newNode = doc.DocumentElement;
+				InvoiceV2 invoice = ParsingManager.ParseInvoiceBody(newNode);
+				ESF_form invoiceForm = FormManagerFacade.FillInvoiceFormByInvoice(invoice);
+				invoiceForm.Text += " id# " + queryInvoiceResponse.invoiceInfoList[0].invoiceId;
+				invoiceForm.Show();
+			}
+			else
+			{
+				MessageBox.Show("Select only one invoice!");
+			}
 		}
 	}
 }

@@ -27,6 +27,8 @@ namespace ESF_kz.Forms
 		{
 			ProductV2 product = FormManagerFacade.getProductFromProductForm();			
 			FormManagerFacade.AddNewProductRow(product);
+			//ProductShare share = SessionDataManagerFacade.getProductShare(product);
+			FormManagerFacade.AddNewProductShareRow(product);
 			FormManagerFacade.RecalcTotalAmounts();
 			this.Close();			
 		}
@@ -219,6 +221,7 @@ namespace ESF_kz.Forms
 		{
 			ProductV2 product = FormManagerFacade.getProductFromProductForm();
 			FormManagerFacade.EditProductRow(product);
+			FormManagerFacade.EditProductShareRow(product);
 			FormManagerFacade.RecalcTotalAmounts();
 			this.Close();
 		}
